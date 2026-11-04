@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>00 Foundations</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+.ds-h{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:40px}
+.ds-block{margin-top:96px}
+.sw{width:232px;display:flex;flex-direction:column;gap:12px}
+.sw .chipc{height:132px;border-radius:12px;border:1px solid var(--line)}
+.trow{display:grid;grid-template-columns:200px 1fr 300px;align-items:center;gap:32px;padding:22px 0;border-top:1px solid var(--line)}
+.lbl-s{font:500 12px/16px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+.box{border:1px solid var(--line2);border-radius:10px;padding:16px 20px;background:var(--steam)}
+.jr{display:flex;align-items:center;gap:8px}
+.jr .st{height:38px;display:flex;align-items:center;padding:0 13px;border-radius:999px;background:var(--steam);border:1px solid var(--line);font-size:13px;white-space:nowrap}
+.jr .st.k{background:var(--basalt);color:var(--ecru);border-color:var(--basalt)}
+.mt{display:grid;grid-template-columns:72px 230px 1fr 260px;gap:24px;padding:18px 0;border-top:1px solid var(--line);font-size:15px;line-height:22px;align-items:start}
+.refc{display:flex;flex-direction:column;gap:14px;width:410px}
+</style></head>
+<body class="board">
+
+<!-- ============ F1 COVER ============ -->
+<section class="frame desktop bg-basalt" data-name="Cover" style="height:1180px">
+  <div style="height:300px;overflow:hidden;border-bottom:1px solid var(--lined)">{{pattern|1440|300|.09|ecru|96}}</div>
+  <div class="flex jb" style="padding:72px 80px 0">
+    <div class="col g32" style="width:720px">
+      <div class="rail"><span class="rule"></span><span class="t-spec c-kraft">Al Reef &amp; Laurel · Website</span></div>
+      <div class="t-display c-ecru">Website wireframes,<br><em>round one.</em></div>
+      <p class="t-body c-ecru70" style="width:600px">Branded mid-fidelity wireframes for alreefandlaurel.com: ten templates on desktop and mobile, built from Brand Guidelines Ed.01 and Brand Strategy Ed.01, with lulaoil.com as the reference for arrangement and motion.</p>
+      <div class="flex g40" style="margin-top:12px">
+        <div class="col g8"><span class="t-spec-s c-kraft">Version</span><span class="t-ui c-ecru">Round 1 · 2 Nov 2026</span></div>
+        <div class="col g8"><span class="t-spec-s c-kraft">Fidelity</span><span class="t-ui c-ecru">Branded mid-fi</span></div>
+        <div class="col g8"><span class="t-spec-s c-kraft">Viewports</span><span class="t-ui c-ecru">Desktop 1440 · Mobile 390</span></div>
+        <div class="col g8"><span class="t-spec-s c-kraft">Platform</span><span class="t-ui c-ecru">Shopify (Horizon base)</span></div>
+      </div>
+    </div>
+    <div class="col g12" style="width:420px">
+      <span class="t-spec-s c-kraft" style="margin-bottom:8px">Pages in this file</span>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>00 · Foundations</span><span class="c-ecru50">System, motion, reference</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>01 · Home</span><span class="c-ecru50">/</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>02 · Rituals</span><span class="c-ecru50">/collections/rituals</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>03 · The Duo</span><span class="c-ecru50">/products/the-duo</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>04 · Build your ritual</span><span class="c-ecru50">/pages/build</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>05 · Little Reef</span><span class="c-ecru50">/collections/little-reef</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>06 · Gifts</span><span class="c-ecru50">/collections/gifts</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>07 · Our farm</span><span class="c-ecru50">/pages/our-farm</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>08 · Batch page</span><span class="c-ecru50">/batch/f7-0926 (QR)</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined)"><span>09 · Your ritual</span><span class="c-ecru50">/account/rituals</span></div>
+      <div class="flex jb t-ui c-ecru" style="padding:10px 0;border-top:1px solid var(--lined);border-bottom:1px solid var(--lined)"><span>10 · Bag, menu &amp; modals</span><span class="c-ecru50">Overlays</span></div>
+    </div>
+  </div>
+  <div class="flex ac g32" style="position:absolute;left:80px;bottom:56px">
+    <span class="flex ac g12 t-cap c-ecru70"><span class="mk mk-inline">M4</span>Motion or interaction note, explained in the Notes frame beside each page</span>
+    <span class="flex ac g12 t-cap c-ecru70"><span class="flag">&#9873; Check</span>Needs a decision or a fact check</span>
+    <span class="flex ac g12 t-cap c-ecru70"><span class="badge badge-dune">IMG 03</span>Brand stock collection image number</span>
+  </div>
+</section>
+
+<!-- ============ F2 SITEMAP + JOURNEYS ============ -->
+<section class="frame desktop" data-name="Sitemap &amp; journeys" style="padding:80px">
+  <div class="ds-h"><div class="col g16"><span class="t-spec c-clay">00 · Foundations</span><div class="t-display">Sitemap and <em>key journeys.</em></div></div>
+    <p class="t-body-s c-smoke" style="width:440px">Chapters run in the order a customer meets the brand. Renewal only works on our own store, so every journey ends in an account we own.</p></div>
+
+  <div class="flex jc"><div class="box t-card" style="padding:14px 40px;background:var(--basalt);color:var(--ecru);border-color:var(--basalt)">Home</div></div>
+  <div style="height:32px;width:1px;background:var(--line2);margin:0 auto"></div>
+  <div style="height:1px;background:var(--line2);margin:0 120px"></div>
+  <div class="flex jb" style="margin-top:0">
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Rituals</div><div class="col g8 t-cap c-smoke tc" style="margin-top:12px">The Duo<br>The Pair<br>The House<br>The Grooming Kit<br>The Hammam Chest<br>Single loofahs &amp; soaps</div></div>
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Build yours</div><div class="t-cap c-smoke tc" style="margin-top:12px">Fibre · soap · cycle<br>Live bundle saving</div></div>
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Little Reef</div><div class="t-cap c-smoke tc" style="margin-top:12px">Ages 0–3 · 3–10<br>Starter · First Bath</div></div>
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Gifts</div><div class="t-cap c-smoke tc" style="margin-top:12px">Ramadan &amp; Eid<br>Corporate (50+)<br>Gift card</div></div>
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Our farm</div><div class="t-cap c-smoke tc" style="margin-top:12px">Field 7 story<br>Seed to shower</div></div>
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Field notes</div><div class="t-cap c-smoke tc" style="margin-top:12px">Journal · 5 pillars<br>Articles</div></div>
+    <div class="col ac" style="width:150px"><div style="height:28px;width:1px;background:var(--line2)"></div><div class="box tc w5" style="width:150px">Account</div><div class="t-cap c-smoke tc" style="margin-top:12px">Your ritual (renewal)<br>Orders · Addresses</div></div>
+  </div>
+  <div class="flex g24" style="margin-top:40px">
+    <div class="box f1 flex ac jb"><span class="w5">Batch pages</span><span class="t-cap c-smoke">/batch/[id] · opened from the QR on every tag · mobile-first</span></div>
+    <div class="box f1 flex ac jb"><span class="w5">Bag drawer → Shopify checkout</span><span class="t-cap c-smoke">Recharge or Skio for renewal</span></div>
+    <div class="box f1 flex ac jb"><span class="w5">Utility</span><span class="t-cap c-smoke">Search · FAQ · Shipping · Policies</span></div>
+  </div>
+
+  <div class="ds-block" style="margin-top:72px">
+    <div class="flex jb ae" style="margin-bottom:24px"><div class="t-title">Five journeys</div><span class="t-cap c-smoke">From Brand Strategy · Audiences and Go-to-market</span></div>
+    <div class="col g16">
+      <div class="flex ac g24" style="padding:18px 0;border-top:1px solid var(--line)"><div style="width:230px"><div class="badge badge-clay">Primary</div><div class="w5" style="margin-top:8px">The Considered Self-Carer</div></div>
+        <div class="jr"><span class="st">Instagram reel</span>{{icon|arrow-right|16}}<span class="st">Home</span>{{icon|arrow-right|16}}<span class="st k">The Duo · renewal on</span>{{icon|arrow-right|16}}<span class="st">Bag</span>{{icon|arrow-right|16}}<span class="st">Scans the tag QR</span>{{icon|arrow-right|16}}<span class="st">Day-50 WhatsApp</span>{{icon|arrow-right|16}}<span class="st">Skip, swap, keep</span></div></div>
+      <div class="flex ac g24" style="padding:18px 0;border-top:1px solid var(--line)"><div style="width:230px"><div class="badge badge-dune">Seasonal</div><div class="w5" style="margin-top:8px">The Gifter</div></div>
+        <div class="jr"><span class="st">Google “Ramadan gift Dubai”</span>{{icon|arrow-right|16}}<span class="st">Gifts</span>{{icon|arrow-right|16}}<span class="st k">The Hammam Chest</span>{{icon|arrow-right|16}}<span class="st">Card message + delivery date</span>{{icon|arrow-right|16}}<span class="st">Checkout</span>{{icon|arrow-right|16}}<span class="st">Recipient scans QR</span></div></div>
+      <div class="flex ac g24" style="padding:18px 0;border-top:1px solid var(--line)"><div style="width:230px"><div class="badge badge-dune">Basket</div><div class="w5" style="margin-top:8px">The Family</div></div>
+        <div class="jr"><span class="st">Parenting creator</span>{{icon|arrow-right|16}}<span class="st">Little Reef</span>{{icon|arrow-right|16}}<span class="st k">The House</span>{{icon|arrow-right|16}}<span class="st">Colour-coded tags</span>{{icon|arrow-right|16}}<span class="st">Renews every 60 days</span></div></div>
+      <div class="flex ac g24" style="padding:18px 0;border-top:1px solid var(--line)"><div style="width:230px"><div class="badge badge-dune">Growth</div><div class="w5" style="margin-top:8px">The Grooming Man</div></div>
+        <div class="jr"><span class="st">TikTok / Snapchat ad</span>{{icon|arrow-right|16}}<span class="st k">The Grooming Kit page</span>{{icon|arrow-right|16}}<span class="st">Bag</span>{{icon|arrow-right|16}}<span class="st">Checkout (COD + BNPL in KSA)</span></div></div>
+      <div class="flex ac g24" style="padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div style="width:230px"><div class="badge badge-dune">Later</div><div class="w5" style="margin-top:8px">Hotel guest</div></div>
+        <div class="jr"><span class="st">Guest Bar card in the room</span>{{icon|arrow-right|16}}<span class="st">QR</span>{{icon|arrow-right|16}}<span class="st">Batch page</span>{{icon|arrow-right|16}}<span class="st k">First Duo at home</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ F3 DESIGN SYSTEM ============ -->
+<section class="frame desktop" data-name="Design system" style="padding:80px">
+  <div class="ds-h"><div class="col g16"><span class="t-spec c-clay">00 · Foundations</span><div class="t-display">Design <em>system.</em></div></div>
+    <p class="t-body-s c-smoke" style="width:480px">Everything here comes from Brand Guidelines Ed.01. Items marked * are proposed additions the website needs; confirm them at the revision meeting.</p></div>
+
+  <!-- colour -->
+  <div class="flex jb ae" style="margin-bottom:24px"><div class="t-title">Colour</div><span class="t-cap c-smoke">Ratio 60 Ecru / 25 Basalt / 10 Silt / 5 Kraft · never green · one Silt accent per screen</span></div>
+  <div class="flex g24 wrap">
+    <div class="sw"><div class="chipc bg-silt"></div><div class="w5">Nile Silt · #B5583B</div><div class="t-cap c-smoke">Action only: primary buttons, the one accent. Text in Silt only at 24 px+.</div></div>
+    <div class="sw"><div class="chipc bg-ecru"></div><div class="w5">Ecru Linen · #F3EEE4</div><div class="t-cap c-smoke">Page background.</div></div>
+    <div class="sw"><div class="chipc bg-basalt"></div><div class="w5">Basalt · #2B2A27</div><div class="t-cap c-smoke">Text, dark sections, selected states.</div></div>
+    <div class="sw"><div class="chipc bg-kraft"></div><div class="w5">Kraft · #C4A57B</div><div class="t-cap c-smoke">Material accent, spec rail on dark.</div></div>
+    <div class="sw"><div class="chipc" style="background:var(--clay)"></div><div class="w5">Delta Clay · #7E3A26</div><div class="t-cap c-smoke">Small Silt-family text on Ecru: renewal prices, badges, links.</div></div>
+    <div class="sw"><div class="chipc bg-dune"></div><div class="w5">Dune · #E6DAC6</div><div class="t-cap c-smoke">Image placeholders, table heads, quiet cards.</div></div>
+    <div class="sw"><div class="chipc bg-steam"></div><div class="w5">Steam · #FAF7F1</div><div class="t-cap c-smoke">Raised surfaces, inputs, selected options.</div></div>
+    <div class="sw"><div class="chipc" style="background:var(--smoke)"></div><div class="w5">Smoke · #6F6A62</div><div class="t-cap c-smoke">Secondary text (4.6:1 on Ecru).</div></div>
+    <div class="sw"><div class="chipc" style="background:var(--brass)"></div><div class="w5">Brass foil · #B08D57</div><div class="t-cap c-smoke">Print finish only. Not used on screen.</div></div>
+    <div class="sw"><div class="chipc" style="background:var(--anno)"></div><div class="w5">Annotation · #4353FF</div><div class="t-cap c-smoke">Wireframe notes only. Never ships.</div></div>
+  </div>
+  <div class="flex g16" style="margin-top:28px">
+    <span class="flag">&#9873; Ecru on Silt is 4.1:1, so primary button labels are 19 px SemiBold (guidelines: “19 px bold or larger”)</span>
+    <span class="flag">&#9873; Silt on Basalt 3.0:1: headings 44 px+ only</span>
+  </div>
+
+  <!-- type -->
+  <div class="ds-block">
+    <div class="flex jb ae" style="margin-bottom:12px"><div class="t-title">Type</div><span class="t-cap c-smoke">Cormorant Garamond · IBM Plex Sans · Aref Ruqaa (all SIL OFL) · sentence case · numerals for numbers</span></div>
+    <div class="trow"><span class="lbl-s">Display</span><span class="t-display">Grown, <em>not made.</em></span><span class="t-cap c-smoke">Cormorant Medium 72/76 · Medium Italic for emphasis</span></div>
+    <div class="trow"><span class="lbl-s">Display mobile *</span><span class="t-display-m">Grown, <em>not made.</em></span><span class="t-cap c-smoke">Cormorant Medium 44/48</span></div>
+    <div class="trow"><span class="lbl-s">Heading</span><span class="t-heading">From the Nile Delta</span><span class="t-cap c-smoke">Cormorant Light Italic 40/48 · mobile * 30/36</span></div>
+    <div class="trow"><span class="lbl-s">Title *</span><span class="t-title">The Duo</span><span class="t-cap c-smoke">Cormorant Medium 40/44 · product and section titles · mobile 32/36</span></div>
+    <div class="trow"><span class="lbl-s">Card title *</span><span class="t-card">The Hammam Mitt</span><span class="t-cap c-smoke">Cormorant Medium 28/32 · never below 28 px (guideline)</span></div>
+    <div class="trow"><span class="lbl-s">Body</span><span class="t-body">Sun-dried for 21 days, never bleached.</span><span class="t-cap c-smoke">Plex Sans Regular 18/28 · mobile 16/26</span></div>
+    <div class="trow"><span class="lbl-s">UI / caption *</span><span class="flex g32 ac"><span class="t-ui">Skip, swap or pause any time.</span><span class="t-cap c-smoke">Cancel before 24 Dec.</span></span><span class="t-cap c-smoke">Plex 15/22 · 13/20</span></div>
+    <div class="trow"><span class="lbl-s">Spec rail</span><span class="rail"><span class="rule"></span><span class="t-spec">Grade A · 58 / cm² · 16% laurel · 150 g</span></span><span class="t-cap c-smoke">Plex Medium 13, caps, tracked +120 · small * 11</span></div>
+    <div class="trow" style="border-bottom:1px solid var(--line)"><span class="lbl-s">Accent</span><span class="t-ar" style="font-size:64px">ليفة</span><span class="t-cap c-smoke">Aref Ruqaa · one meaningful word per layout, never a translation</span></div>
+  </div>
+
+  <!-- controls -->
+  <div class="ds-block">
+    <div class="flex jb ae" style="margin-bottom:28px"><div class="t-title">Controls</div><span class="t-cap c-smoke">Calm controls, one action each · one primary button per screen · pill radius</span></div>
+    <div class="flex ac g24 wrap">
+      <div class="col g8"><span class="btn btn-primary">Shop the Duo · AED 85</span><span class="lbl-s">Primary</span></div>
+      <div class="col g8"><span class="btn btn-primary hover">Shop the Duo · AED 85</span><span class="lbl-s">Primary · hover (Clay)</span></div>
+      <div class="col g8"><span class="btn btn-secondary">Find your ritual</span><span class="lbl-s">Secondary</span></div>
+      <div class="col g8"><span class="btn btn-dark">Add to next delivery</span><span class="lbl-s">Dark</span></div>
+      <div class="col g8"><span class="btn btn-disabled">Sold out</span><span class="lbl-s">Disabled</span></div>
+      <div class="col g8"><span class="btn btn-secondary btn-s">Load this set</span><span class="lbl-s">Small</span></div>
+      <div class="col g8" style="padding-top:16px"><span class="tlink">Read the farm story {{icon|arrow-right|16}}</span><span class="lbl-s" style="margin-top:14px">Text link</span></div>
+    </div>
+    <div class="flex ac g40 wrap" style="margin-top:40px">
+      <div class="col g12"><div class="flex g8"><span class="chip">Every 30 days</span><span class="chip on">Every 60 days · matches the tag</span><span class="chip">Every 90 days</span></div><span class="lbl-s">Chips · selected = Basalt (Silt is kept for action)</span></div>
+      <div class="col g12"><div class="flex g8 ac"><span class="badge">Founders’ pick</span><span class="badge badge-clay">Save 20%</span><span class="badge badge-dune">Ages 3–10</span></div><span class="lbl-s">Badges · one per card</span></div>
+    </div>
+    <div class="flex g40" style="margin-top:40px">
+      <div class="col g16" style="width:520px">
+        <div class="opt on"><span class="radio"></span><div class="f1"><div class="flex ac g8"><span class="w5">Renew every 60 days</span><span class="badge badge-clay">Save 20%</span></div><div class="t-cap c-smoke">Skip, swap or pause any time. WhatsApp reminder on day 50.</div></div><span class="w5 num">AED 68</span></div>
+        <div class="opt"><span class="radio"></span><div class="f1"><span class="w5">One-time purchase</span></div><span class="w5 num">AED 85</span></div>
+        <span class="lbl-s">Purchase option · selected / default</span>
+      </div>
+      <div class="col g16" style="width:340px">
+        <div class="field"><span>Email address</span><span class="btn btn-dark btn-s">Join</span></div>
+        <div class="field-sq">WhatsApp number</div>
+        <div class="flex ac g16"><span class="stepper">{{icon|minus|18}}<span class="num">1</span>{{icon|plus|18}}</span><span class="toggle"></span><span class="toggle on"></span></div>
+        <span class="lbl-s">Fields · stepper · toggles</span>
+      </div>
+      <div class="col g16 f1">
+        <div class="acc"><span class="w5">How long does a loofah last?</span>{{icon|plus|18}}</div>
+        <div class="acc" style="border-bottom:1px solid var(--line)"><span class="w5">Spec sheet</span>{{icon|minus|18}}</div>
+        <div class="col g8" style="margin-top:12px"><div class="flex jb t-cap"><span>Day 41 of 60 · your tag is fading</span><span class="c-smoke">Next refill 29 Dec</span></div><div class="bar"><i style="width:68%"></i></div></div>
+        <span class="lbl-s">Accordion · the Fade bar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- window + placeholders -->
+  <div class="ds-block">
+    <div class="flex jb ae" style="margin-bottom:28px"><div class="t-title">The Window and imagery</div><span class="t-cap c-smoke">A centred 3:4 oval · one subject · warm light from the left · one hard shadow · 30% empty · hands, never faces</span></div>
+    <div class="flex ae g32">
+      <div class="col g12 ac">{{win|240|320|IMG 01 · Lathered loofah in hand}}<span class="lbl-s">Window · 3:4</span></div>
+      <div class="col g12 ac">{{win|240|320|IMG 04 · Sabon Ghar on travertine|ring}}<span class="lbl-s">Window · ring</span></div>
+      <div class="col g12 ac">{{win|240|320|IMG 05 · Loofah discs, dark field|dark}}<span class="lbl-s">Window · dark field</span></div>
+      <div class="col g12 ac">{{win|120|160}}<span class="lbl-s">Thumb 120</span></div>
+      <div class="col g12 fn" style="width:300px">
+        <span class="lbl-s">Brand stock collection (image labels)</span>
+        <div class="col g4 t-cap c-smoke">
+          <span>01 Lathered loofah in hand</span><span>02 Wringing a wet loofah (loop)</span><span>03 Gourds on a Damanhour trellis</span><span>04 Seal-stamped Sabon Ghar on travertine</span><span>05 Loofah discs on a dark field</span><span>06 Unboxing flat-lay</span><span>07 Seal macro on soap</span><span>08 Linen tote against stone</span><span>09 Website on laptop</span><span>10 Three story phones</span><span>11 Dark editorial print pages</span><span>12 Hammam steam interior</span>
+        </div>
+        <span class="flag" style="margin-top:8px">&#9873; Replace AI renders with a real Field 7 shoot before launch</span>
+      </div>
+    </div>
+    <div class="flex g24" style="margin-top:32px">
+      {{ph|420|280|IMG 03 · Gourds on a Damanhour trellis||12}}{{ph|420|280|IMG 12 · Hammam steam interior|dark|12}}<div class="col g12 jc">{{circ|160|}}<span class="lbl-s">Circle · product cut-outs</span></div>
+    </div>
+  </div>
+
+  <!-- icons + marks -->
+  <div class="ds-block">
+    <div class="flex jb ae" style="margin-bottom:28px"><div class="t-title">Icons and brand marks</div><span class="t-cap c-smoke">64 px grid · 2.6 px stroke · round caps and joins · no fills · Basalt on light, Ecru on dark</span></div>
+    <div class="flex g24 wrap">
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|sun|48}}</div><span class="t-cap">Sun-dried</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|water|48}}</div><span class="t-cap">Water</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|laurel|48}}</div><span class="t-cap">Laurel</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|compost|48}}</div><span class="t-cap">Compost</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|renew|48}}</div><span class="t-cap">Renew · 60 days</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|origin|48}}</div><span class="t-cap">Origin</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|tag|48}}</div><span class="t-cap">Fading tag</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|box|48}}</div><span class="t-cap">Box &amp; caddy</span></div>
+      <div class="col ac g8" style="width:112px"><div class="card flex ac jc" style="width:112px;height:112px">{{icon|fibre|48}}</div><span class="t-cap">Fibre grade</span></div>
+    </div>
+    <div class="flex ac g16 wrap c-basalt" style="margin-top:28px">
+      {{icon|bag}}{{icon|user}}{{icon|search}}{{icon|menu}}{{icon|close}}{{icon|chev-down}}{{icon|chev-right}}{{icon|arrow-right}}{{icon|plus}}{{icon|minus}}{{icon|check}}{{icon|play}}{{icon|whatsapp}}{{icon|info}}{{icon|truck}}{{icon|gift}}{{icon|skip}}{{icon|pause}}{{icon|swap}}{{icon|calendar}}{{icon|qr}}{{icon|pin}}{{icon|insta}}{{icon|globe}}{{icon|lock}}
+      <span class="t-cap c-smoke" style="margin-left:12px">UI set · 24 px · 1.5 px stroke *</span>
+    </div>
+    <div class="flex g24" style="margin-top:40px">
+      <div class="card col ac jc g16" style="width:340px;height:220px">{{logo|24}}<span class="lbl-s">Primary · min 120 px wide on screen</span></div>
+      <div class="card col ac jc g16" style="width:170px;height:220px">{{rl|64}}<span class="lbl-s">Monogram</span></div>
+      <div class="card col ac jc g16" style="width:170px;height:220px">{{mono|72}}<span class="lbl-s">Three Chambers</span></div>
+      <div class="col ac jc g16 bg-basalt" style="width:528px;height:220px;border-radius:12px">{{lockup|25}}</div>
+    </div>
+    <div style="margin-top:24px;border-radius:12px;overflow:hidden;height:120px" class="bg-silt">{{pattern|1280|120|.35|ecru|80}}</div>
+    <div class="t-cap c-smoke" style="margin-top:10px">Three Chambers pattern · Ecru on Silt for retail; 8% Basalt or Ecru as section breaks and footers · never behind text</div>
+  </div>
+
+  <!-- tag states + grid -->
+  <div class="ds-block flex g80">
+    <div class="col g24">
+      <div class="t-title">The fading tag</div>
+      <div class="flex ae g32">
+        <div class="col ac g8">{{tag|110|01|0}}<span class="t-cap">Day 1</span></div>
+        <div class="col ac g8">{{tag|110|30|0.45}}<span class="t-cap">Day 30</span></div>
+        <div class="col ac g8">{{tag|110|50|0.8}}<span class="t-cap">Day 50 · WhatsApp</span></div>
+        <div class="col ac g8">{{tag|110|60|1}}<span class="t-cap">Day 60 · refill</span></div>
+        <div class="col ac g8">{{tag|110|20|0.3|kids}}<span class="t-cap">Little Reef · camel</span></div>
+      </div>
+    </div>
+    <div class="col g20 f1">
+      <div class="t-title">Grid and spacing</div>
+      <div class="flex g4" style="height:90px">
+        <div style="width:12px;background:#FFE1E1"></div>
+        <div class="f1 flex g4">
+          <div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div><div class="f1" style="background:rgba(181,88,59,.12)"></div>
+        </div>
+        <div style="width:12px;background:#FFE1E1"></div>
+      </div>
+      <div class="col g8 t-ui">
+        <div class="flex jb" style="border-top:1px solid var(--line);padding-top:10px"><span>Desktop</span><span class="c-smoke">1440 · 12 columns · 40 margin · 24 gutter · 1360 content</span></div>
+        <div class="flex jb" style="border-top:1px solid var(--line);padding-top:10px"><span>Mobile</span><span class="c-smoke">390 · 4 columns · 20 margin · 12 gutter</span></div>
+        <div class="flex jb" style="border-top:1px solid var(--line);padding-top:10px"><span>Section rhythm</span><span class="c-smoke">144 desktop · 88 mobile · 8 px base</span></div>
+        <div class="flex jb" style="border-top:1px solid var(--line);padding-top:10px"><span>Radius</span><span class="c-smoke">8 fields · 12 cards · 24 modules · pill controls · oval Window</span></div>
+        <div class="flex jb" style="border-top:1px solid var(--line);padding-top:10px;border-bottom:1px solid var(--line);padding-bottom:10px"><span>Header</span><span class="c-smoke">40 announcement + 84 desktop · 36 + 60 mobile</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ F4 MOTION ============ -->
+<section class="frame desktop" data-name="Motion system" style="padding:80px">
+  <div class="ds-h"><div class="col g16"><span class="t-spec c-clay">00 · Foundations</span><div class="t-display">Motion, <em>unhurried.</em></div></div>
+    <p class="t-body-s c-smoke" style="width:500px">Taken apart from lulaoil.com’s live code (Shopify Horizon 3.1 plus custom scripts), then slowed down to fit “quiet pride in doing it properly.” Codes like M04 appear as blue markers on every page.</p></div>
+
+  <div class="flex g24">
+    <div class="card f1" style="padding:28px"><span class="lbl-s">Durations</span><div class="col g8 t-ui" style="margin-top:16px">
+      <div class="flex jb"><span>Micro · hover, colour</span><span class="num w5">150 ms</span></div>
+      <div class="flex jb"><span>UI · toggles, accordions, header</span><span class="num w5">300 ms</span></div>
+      <div class="flex jb"><span>Reveal · fade-up, crossfade</span><span class="num w5">600 ms</span></div>
+      <div class="flex jb"><span>Draw · line icons, counters</span><span class="num w5">900 ms</span></div>
+      <div class="flex jb"><span>Cinematic · hero load</span><span class="num w5">1200 ms</span></div></div></div>
+    <div class="card f1" style="padding:28px"><span class="lbl-s">Easing</span><div class="col g8 t-ui" style="margin-top:16px">
+      <div class="flex jb"><span>Calm out (entrances)</span><span class="num w5">cubic-bezier(.22, 1, .36, 1)</span></div>
+      <div class="flex jb"><span>Standard (state changes)</span><span class="num w5">cubic-bezier(.4, 0, .2, 1)</span></div>
+      <div class="flex jb"><span>Scroll-linked</span><span class="num w5">linear, scrubbed</span></div>
+      <div class="flex jb"><span>Fade-up distance</span><span class="num w5">24 px</span></div>
+      <div class="flex jb"><span>Stagger</span><span class="num w5">80–120 ms</span></div></div></div>
+    <div class="card f1" style="padding:28px"><span class="lbl-s">Reduced motion</span><p class="t-ui" style="margin-top:16px">With <b>prefers-reduced-motion</b>: no scroll resistance (M01), manifesto shown in full (M04), specimen shows a still frame (M05), tag shown at day 41 (M10), no parallax (M11). Everything else becomes a 150 ms opacity fade.</p></div>
+  </div>
+
+  <div style="margin-top:56px">
+    <div class="mt" style="border-top:none"><span class="lbl-s">Code</span><span class="lbl-s">Pattern</span><span class="lbl-s">Behaviour · timing</span><span class="lbl-s">Lula source</span></div>
+    <div class="mt"><span class="n-chip">M01</span><b>Hero momentum</b><span>Scroll is damped while the hero is on screen, easing from 40% resistance to none by the hero’s bottom edge. Feels deliberate, not stuck.</span><span class="c-smoke">hero-momentum.js (uses 60%; we use “mild” 40%)</span></div>
+    <div class="mt"><span class="n-chip">M02</span><b>Window opens</b><span>On load the Window scales .94 → 1 and the photo inside settles 1.08 → 1 (1200 ms, calm out). Headline lines rise 24 px, 120 ms apart.</span><span class="c-smoke">Our own, replaces Lula’s static hero</span></div>
+    <div class="mt"><span class="n-chip">M03</span><b>Header</b><span>Sticky. Hides on scroll down, returns on scroll up (300 ms). After 80 px it gains a Steam background and hairline.</span><span class="c-smoke">Horizon sticky header, transparent → solid</span></div>
+    <div class="mt"><span class="n-chip">M04</span><b>Word reveal</b><span>Statement text starts at 20% opacity; words turn solid one by one as the paragraph scrolls through the viewport (400 ms per word, scroll-linked).</span><span class="c-smoke">text-animation.js</span></div>
+    <div class="mt"><span class="n-chip">M05</span><b>Scrubbed specimen</b><span>A backlit loofah slice turns as you scroll; playback follows scroll speed (0.7–1.9×) and reverses when you scroll up. Callouts fade in around it.</span><span class="c-smoke">video-spinning-smooth.js (the spinning bottle)</span></div>
+    <div class="mt"><span class="n-chip">M06</span><b>Sticky story</b><span>Image column sticks; each numbered step turns solid at viewport centre (inactive 45%) and the image crossfades (600 ms).</span><span class="c-smoke">hover-image-v2.js + mobile-sticky-image.js</span></div>
+    <div class="mt"><span class="n-chip">M07</span><b>Drag carousel</b><span>Drag or swipe with momentum (velocity × 0.95 per frame), grab cursor, arrow buttons and a progress line for keyboard and mouse users.</span><span class="c-smoke">product-slider.js, review-slider.js</span></div>
+    <div class="mt"><span class="n-chip">M08</span><b>Slow marquee</b><span>Lines drift slowly; on hover playback eases to a stop over 500 ms and resumes on leave.</span><span class="c-smoke">marquee.js</span></div>
+    <div class="mt"><span class="n-chip">M09</span><b>Line draw</b><span>Brand icons and maps draw their stroke when they enter (900 ms), then stay still.</span><span class="c-smoke">Our own, from the icon construction</span></div>
+    <div class="mt"><span class="n-chip">M10</span><b>The Fade</b><span>The tag’s three ink lines fade one after another and the day count ticks 01 → 60 as the section scrolls (scrubbed).</span><span class="c-smoke">Our own, the renewal story</span></div>
+    <div class="mt"><span class="n-chip">M11</span><b>Field parallax</b><span>The one full-bleed image moves at 0.85× scroll and settles from 1.1 to 1 scale.</span><span class="c-smoke">Horizon video/image background</span></div>
+    <div class="mt"><span class="n-chip">M12</span><b>Count-up</b><span>Numbers (21 days, 58 / cm², 60 days) count up once when they enter (900 ms).</span><span class="c-smoke">stars-count.js pattern</span></div>
+    <div class="mt"><span class="n-chip">M13</span><b>Price and option change</b><span>Selected card border and fill 200 ms; prices roll to the new value (300 ms); the button label updates with the price.</span><span class="c-smoke">Horizon variant-picker</span></div>
+    <div class="mt"><span class="n-chip">M14</span><b>Add to bag</b><span>Button shows “Added” with a tick (400 ms), then the bag drawer slides in from the right (400 ms) over a 30% Basalt backdrop.</span><span class="c-smoke">Horizon atc-slide-in, cart-drawer</span></div>
+    <div class="mt"><span class="n-chip">M15</span><b>Hover</b><span>Links: underline grows left to right (300 ms). Nav: 70% → 100% opacity. Cards: image 1.04 zoom (600 ms) and a “Quick add” pill rises 12 px.</span><span class="c-smoke">Horizon hover + Lula nav (0.4 s)</span></div>
+    <div class="mt"><span class="n-chip">M16</span><b>Pinned timeline</b><span>The farm’s seed-to-shower track pins and moves sideways as you scroll down; a Silt progress line fills.</span><span class="c-smoke">New, extends M06</span></div>
+    <div class="mt"><span class="n-chip">M17</span><b>Accordion</b><span>Height eases open 300 ms; plus turns to minus.</span><span class="c-smoke">accordion-custom.js</span></div>
+    <div class="mt"><span class="n-chip">M18</span><b>Drawers and sheets</b><span>Menu slides from the left, bag from the right, mobile sheets from the bottom (400 ms); links stagger in 40 ms apart.</span><span class="c-smoke">Horizon menu-drawer, dialog</span></div>
+    <div class="mt"><span class="n-chip">M19</span><b>Filter reflow</b><span>Cards re-order with a FLIP animation (400 ms) when a chip filter changes; no page reload.</span><span class="c-smoke">Horizon facets</span></div>
+    <div class="mt" style="border-bottom:1px solid var(--line)"><span class="n-chip">M20</span><b>Tag sway</b><span>The hanging tag on the hero Window sways ±2° on a 4 s loop. The one playful moment; stops after 3 loops.</span><span class="c-smoke">Our own (“one light twist per piece”)</span></div>
+  </div>
+
+  <div class="flex g24" style="margin-top:56px">
+    <div class="card f1" style="padding:28px"><span class="lbl-s">Not adopting from Lula</span>
+      <div class="col g12 t-ui" style="margin-top:16px">
+        <span>✕ The countdown-timer discount pop-up. Our voice rules out urgency tricks; the founding offer appears once, calmly, with no timer.</span>
+        <span>✕ All-caps hero headlines. Caps belong to the wordmark and the spec rail; headlines stay in sentence-case Cormorant.</span>
+        <span>✕ Full-bleed hero photo. The guidelines reserve the one bleed for the farm image; the hero uses the Window.</span>
+        <span>✕ Mono typeface, bright blue and yellow. Our information face is Plex Sans; colour stays Silt, Ecru, Basalt, Kraft.</span>
+      </div></div>
+    <div class="card f1" style="padding:28px"><span class="lbl-s">Build notes</span>
+      <div class="col g12 t-ui" style="margin-top:16px">
+        <span>Scrubbed video (M05): short H.264 + WebM, every frame a keyframe, poster image, loads only when near the viewport.</span>
+        <span>Lula keys out the white background of its bottle video on iOS with a canvas; shoot our specimen on a true Basalt field instead.</span>
+        <span>All motion off-main-thread where possible (CSS transforms and opacity only). No scroll-jacking beyond M01.</span>
+      </div></div>
+  </div>
+</section>
+
+<!-- ============ F5 LULA REFERENCE ============ -->
+<section class="frame desktop" data-name="Reference · lulaoil.com" style="padding:80px">
+  <div class="ds-h"><div class="col g16"><span class="t-spec c-clay">00 · Foundations</span><div class="t-display">Reference: <em>lulaoil.com</em></div></div>
+    <p class="t-body-s c-smoke" style="width:500px">Captured 2 Nov 2026 at 1440 and 390 wide. What we take is the arrangement and the motion; the look stays ours. Each card says how the pattern lands on our site.</p></div>
+  <div class="flex wrap" style="gap:56px 25px">
+    <div class="refc">{{img|ref/desk-s00b.jpg|410|256|10}}<span class="w5">Hero: full-bleed photo, giant headline</span><span class="t-cap c-smoke">→ Home hero keeps the scale but holds the photo in the Window, with a sentence-case Cormorant headline. Takes M01 momentum.</span></div>
+    <div class="refc">{{img|ref/desk-s01b.jpg|410|256|10}}<span class="w5">Buy box on the homepage</span><span class="t-cap c-smoke">→ “The Duo” module on Home: renewal preselected, fibre and soap chips, “Which cycle?” helper.</span></div>
+    <div class="refc">{{img|ref/desk-s02b.jpg|410|256|10}}<span class="w5">Three halftone proof tiles</span><span class="t-cap c-smoke">→ Rooted · Renewed · Returned, with line-drawn icons (M09) on Dune tiles.</span></div>
+    <div class="refc">{{img|ref/desk-s03b.jpg|410|256|10}}<span class="w5">Comparison table, own column raised</span><span class="t-cap c-smoke">→ Loofah vs plastic pouf vs supermarket mitt. Claims checked by the regulatory adviser.</span></div>
+    <div class="refc">{{img|ref/desk-s04b.jpg|410|256|10}}<span class="w5">Spinning bottle with six benefits</span><span class="t-cap c-smoke">→ Specimen: a backlit loofah slice turns with scroll (M05), six spec callouts around it.</span></div>
+    <div class="refc">{{img|ref/desk-s05b.jpg|410|256|10}}<span class="w5">Inset video with one line and a button</span><span class="t-cap c-smoke">→ “From the field” as the one full-bleed image with parallax (M11).</span></div>
+    <div class="refc">{{img|ref/desk-s07b.jpg|410|256|10}}<span class="w5">Sticky image + numbered questions</span><span class="t-cap c-smoke">→ “The two-minute scrub”: four steps, the image swaps per step (M06).</span></div>
+    <div class="refc">{{img|ref/desk-s10a.jpg|410|256|10}}<span class="w5">Draggable reviews, centre card larger</span><span class="t-cap c-smoke">→ Founding-member notes (M07). Hidden until real reviews exist.</span></div>
+    <div class="refc">{{img|ref/desk-s11b.jpg|410|256|10}}<span class="w5">Split panel of stacked claims</span><span class="t-cap c-smoke">→ Gifting panel: slow vertical marquee of gift promises (M08).</span></div>
+    <div class="refc">{{img|ref/desk-s13b.jpg|410|256|10}}<span class="w5">Journal cards, sign-up footer, Instagram row</span><span class="t-cap c-smoke">→ Field notes cards and “Letters from the Delta” footer.</span></div>
+    <div class="refc"><div class="bg-dune flex jc g16" style="width:410px;height:256px;border-radius:10px;padding-top:16px;overflow:hidden">{{img|ref/mob-s00b.jpg|112|240|8}}</div><span class="w5">Mobile: button above the headline</span><span class="t-cap c-smoke">→ On mobile our Window comes first, then headline, then one primary button.</span></div>
+    <div class="refc"><div class="bg-dune flex jc g16" style="width:410px;height:256px;border-radius:10px;padding-top:16px;overflow:hidden">{{img|ref/mob-s03b.jpg|112|240|8}}</div><span class="w5">Countdown discount pop-up</span><span class="t-cap c-smoke">→ Not adopting. Founding-list modal without a timer (see page 10).</span></div>
+  </div>
+</section>
+
+</body></html>

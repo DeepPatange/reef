@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>05 Little Reef</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+/* 05 Little Reef: page-level helpers only */
+.abs{position:absolute}
+.lr-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line)}
+.lr-row:last-child{border-bottom:1px solid var(--line)}
+.lr-promise{display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--line)}
+.lr-acc-open{padding:22px 0 10px}
+.twine{position:absolute;left:0;right:0;height:1px;background:var(--kraft);opacity:.55}
+.play{display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--ecru);color:var(--basalt);flex:none}
+.lr-desc{margin-top:8px;min-height:44px}
+.lr-desc-m{margin-top:6px;min-height:40px}
+</style></head>
+<body class="board">
+
+<!-- =====================================================================
+     05 LITTLE REEF — DESKTOP 1440
+     ===================================================================== -->
+<section class="frame desktop" data-name="05 Little Reef — Desktop 1440">
+{{announce}}{{header|little}}
+
+<!-- 01 HERO -->
+<section class="sec" style="padding:56px 40px 88px">
+  <div class="flex ac g24">
+    <div class="col" style="width:668px">
+      <div class="t-ar" style="font-size:80px">صغير</div>
+      <div class="rail" style="margin-top:28px"><span class="rule"></span><span class="t-spec">Little Reef · ages 0–10</span></div>
+      <div class="t-display" style="margin-top:24px">Little Reef,<br><em>for skin that’s<br>new at this.</em></div>
+      <p class="t-body" style="margin-top:28px;width:520px">The same honest materials, softer fibre, unscented olive soap, and a tag where a small camel walks away by day 60.</p>
+      <div class="flex ac g12" style="margin-top:40px">
+        <span class="btn btn-primary">Shop the Starter · AED 99</span>
+        <span class="btn btn-secondary">Shop by age</span>
+      </div>
+      <div class="col g12" style="margin-top:44px">
+        <div class="rail"><span class="rule"></span><span class="t-spec">Unscented · No small parts under 3</span></div>
+        <span style="align-self:flex-start">{{flag|“No small parts under 3” and the paediatric dermatology test are planned, not done. Don’t claim yet}}</span>
+      </div>
+    </div>
+    <div class="rel" style="width:668px;height:693px">
+      <div class="abs" style="left:74px;top:0">{{win|520|693|IMG · Camel Mitt on a folded towel}}</div>
+      {{mk|M02|0|74}}
+      <div class="abs" style="left:504px;top:268px">{{tag|130|20|0.3|kids}}</div>
+      {{mk|M20|252|490}}
+    </div>
+  </div>
+</section>
+
+<!-- 02 SHOP BY AGE -->
+<section class="sec" style="padding:112px 40px 144px">
+  <div class="flex jb ae">
+    <div class="col g20">
+      <div class="rail"><span class="rule"></span><span class="t-spec">The range · 5 pieces</span></div>
+      <div class="t-title">Shop by age</div>
+    </div>
+    <div class="flex ac g24">
+      <span class="t-ui c-smoke">Showing 5 of 5</span>
+      <div class="rel flex g8">{{mk|M19|-14|-14}}<span class="chip on">All ages</span><span class="chip">0–3</span><span class="chip">3–10</span></div>
+    </div>
+  </div>
+  <div class="hair" style="margin-top:32px"></div>
+  <div class="flex g24" style="margin-top:40px">
+    <!-- Cloud Sponge -->
+    <div class="f1 col">
+      <div class="ph" style="height:316px;border-radius:12px">{{circ|176||steam}}
+        <span class="badge abs" style="left:14px;top:14px">Age 0–3</span><span class="lbl">IMG · Cloud Sponge cut-out</span></div>
+      <div class="t-card" style="margin-top:24px">Cloud Sponge</div>
+      <div class="t-ui c-smoke lr-desc">Natural wool sea sponge. No loofah under 3.</div>
+      <div class="w5 num" style="margin-top:14px">AED 55</div>
+    </div>
+    <!-- Soft Pebble (hover state) -->
+    <div class="f1 col rel">
+      {{mk|M15|-12|-12}}
+      <div class="ph" style="height:316px;border-radius:12px"><div class="flex ac" style="margin-top:-28px">{{circ|146||steam}}<div style="margin-left:-40px">{{circ|116||steam}}</div></div>
+        <span class="badge abs" style="left:14px;top:14px">Ages 3–10</span>
+        <span class="btn btn-dark btn-s abs" style="left:14px;right:14px;bottom:14px">Quick add · AED 29</span></div>
+      <div class="t-card" style="margin-top:24px">Soft Pebble</div>
+      <div class="t-ui c-smoke lr-desc">9 cm pad: fine loofah one side, terry the other.</div>
+      <div class="w5 num" style="margin-top:14px">AED 29</div>
+    </div>
+    <!-- Camel Mitt -->
+    <div class="f1 col">
+      <div class="ph" style="height:316px;border-radius:12px">{{circ|180||steam}}
+        <span class="badge abs" style="left:14px;top:14px">Ages 3–10</span><span class="lbl">IMG · Camel Mitt cut-out</span></div>
+      <div class="t-card" style="margin-top:24px">Camel Mitt</div>
+      <div class="t-ui c-smoke lr-desc">Terry mitt, soft loofah palm, embroidered face.</div>
+      <div class="w5 num" style="margin-top:14px">AED 35</div>
+    </div>
+    <!-- Shaped Trio -->
+    <div class="f1 col">
+      <div class="ph" style="height:316px;border-radius:12px">
+        <div class="rel" style="width:196px;height:172px;margin-top:-16px">
+          <div class="abs" style="left:0;top:0">{{circ|100||steam}}</div>
+          <div class="abs" style="left:96px;top:10px">{{circ|100||steam}}</div>
+          <div class="abs" style="left:46px;top:76px">{{circ|96||steam}}</div>
+        </div>
+        <span class="badge abs" style="left:14px;top:14px">Ages 3+</span><span class="lbl">IMG · Camel, date palm, gourd</span></div>
+      <div class="t-card" style="margin-top:24px">Shaped Trio</div>
+      <div class="t-ui c-smoke lr-desc">Camel, date palm, little gourd. 3&nbsp;×&nbsp;60&nbsp;g, unscented, no laurel.</div>
+      <div class="w5 num" style="margin-top:14px">AED 39</div>
+    </div>
+    <!-- Gourd on a Rope -->
+    <div class="f1 col">
+      <div class="ph" style="height:316px;border-radius:12px">{{circ|156||steam}}
+        <span class="badge abs" style="left:14px;top:14px">Ages 3+</span><span class="lbl">IMG · Gourd soap on its rope</span></div>
+      <div class="t-card" style="margin-top:24px">Gourd on a Rope</div>
+      <div class="t-ui c-smoke lr-desc">A soap that can’t slip away.</div>
+      <div class="w5 num" style="margin-top:14px">AED 25</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 SETS -->
+<section class="sec bg-dune" style="padding:120px 40px 128px">
+  <div class="flex jb ae">
+    <div class="col g20">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Little Reef sets</span></div>
+      <div class="t-title">Start with a set</div>
+    </div>
+    <p class="t-body-s c-smoke" style="width:437px">Every set arrives complete, in a kraft box that becomes a caddy. The Starter covers ages 3 to 10; First Bath is a gift for a new baby.</p>
+  </div>
+  <div class="flex g24" style="margin-top:56px">
+    <!-- Starter -->
+    <div class="f1 bg-steam flex g32" style="border-radius:16px;padding:32px">
+      <div class="ph" style="width:248px;align-self:stretch;border-radius:12px">
+        <div class="rel" style="width:212px;height:288px;margin-top:-24px">
+          <div class="abs" style="left:36px;top:70px">{{circ|140||steam}}</div>
+          <div class="abs" style="left:6px;top:10px">{{circ|96||steam}}</div>
+          <div class="abs" style="left:128px;top:20px">{{circ|84||steam}}</div>
+          <div class="abs" style="left:60px;top:196px">{{circ|92||steam}}</div>
+        </div>
+        <span class="lbl">IMG · Starter, 4 cut-outs</span>
+      </div>
+      <div class="f1 col">
+        <span class="badge badge-dune" style="align-self:flex-start">Ages 3–10</span>
+        <div class="t-title" style="margin-top:16px">Little Reef Starter</div>
+        <div class="t-ui c-smoke" style="margin-top:10px">All 4 pieces for ages 3 to 10.</div>
+        <div class="col" style="margin-top:22px">
+          <div class="lr-row"><span class="t-ui w5">Soft Pebble</span><span class="t-cap c-smoke">Loofah and terry</span></div>
+          <div class="lr-row"><span class="t-ui w5">Camel Mitt</span><span class="t-cap c-smoke">Terry, loofah palm</span></div>
+          <div class="lr-row"><span class="t-ui w5">Shaped Trio</span><span class="t-cap c-smoke">3 soaps, unscented</span></div>
+          <div class="lr-row"><span class="t-ui w5">Gourd on a Rope</span><span class="t-cap c-smoke">Soap on a rope</span></div>
+        </div>
+        <div class="flex ae g12" style="margin-top:26px"><span class="w5 num" style="font-size:22px;line-height:30px;">AED 99</span><span class="t-ui strike num" style="padding-bottom:3px">AED 128</span></div>
+        <div class="t-ui c-clay w5" style="margin-top:6px">Renews at AED 69 every 60 days</div>
+        <span class="btn btn-dark" style="margin-top:24px;align-self:flex-start">Add to bag · AED 99</span>
+      </div>
+    </div>
+    <!-- First Bath -->
+    <div class="f1 bg-steam flex g32" style="border-radius:16px;padding:32px">
+      <div class="ph" style="width:248px;align-self:stretch;border-radius:12px">
+        <div class="rel" style="width:212px;height:280px;margin-top:-24px">
+          <div class="abs" style="left:31px;top:50px">{{circ|150||steam}}</div>
+          <div class="abs" style="left:128px;top:0">{{circ|84||steam}}</div>
+          <div class="abs" style="left:0;top:170px">{{circ|110||steam}}</div>
+        </div>
+        <span class="lbl">IMG · First Bath, 3 cut-outs</span>
+      </div>
+      <div class="f1 col">
+        <span class="badge badge-dune" style="align-self:flex-start">Baby gift</span>
+        <div class="t-title" style="margin-top:16px">First Bath</div>
+        <div class="t-ui c-smoke" style="margin-top:10px">Tissue, twine and a ritual card in the box.</div>
+        <div class="col" style="margin-top:22px">
+          <div class="lr-row"><span class="t-ui w5">Cloud Sponge</span><span class="t-cap c-smoke">Wool sea sponge</span></div>
+          <div class="lr-row"><span class="t-ui w5">Shaped Trio</span><span class="t-cap c-smoke">3 soaps, unscented</span></div>
+          <div class="lr-row"><span class="t-ui w5">Hooded towel</span><span class="t-cap c-smoke">Linen</span></div>
+        </div>
+        <div class="flex ae g12" style="margin-top:26px"><span class="w5 num" style="font-size:22px;line-height:30px;">AED 119</span><span class="t-ui strike num" style="padding-bottom:3px">AED 140</span></div>
+        <div class="t-ui c-smoke w5" style="margin-top:6px">Gift set · for new parents</div>
+        <span class="btn btn-dark" style="margin-top:24px;align-self:flex-start">Add to bag · AED 119</span>
+        <span style="margin-top:16px;align-self:flex-start">{{flag|Shaped Trio is age 3+; swap it for the baby set?}}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 THE CAMEL TAG (the one Basalt band) -->
+<section class="sec bg-basalt" style="padding:136px 40px">
+  <div class="flex ac g24">
+    <div class="rel" style="width:668px;height:352px">
+      {{mk|M10|-14|-14}}
+      <div class="twine" style="top:2px;left:-40px;right:-24px"></div>
+      <div class="abs col ac g16" style="left:0;top:0;width:170px">{{tag|170|01|0|kids}}<span class="t-ui w5 c-ecru">Day 1</span><span class="t-cap c-ecru50" style="margin-top:-12px">Fresh ink</span></div>
+      <div class="abs col ac g16" style="left:249px;top:0;width:170px">{{tag|170|30|0.5|kids}}<span class="t-ui w5 c-ecru">Day 30</span><span class="t-cap c-ecru50" style="margin-top:-12px">Halfway gone</span></div>
+      <div class="abs col ac g16" style="left:498px;top:0;width:170px">{{tag|170|60|1|kids}}<span class="t-ui w5 c-ecru">Day 60</span><span class="t-cap c-ecru50" style="margin-top:-12px">Walked away</span></div>
+    </div>
+    <div class="col" style="width:668px;padding-left:115px">
+      <div class="rail"><span class="rule-k"></span><span class="t-spec c-kraft">The camel tag</span></div>
+      <div class="t-display c-ecru" style="margin-top:24px">A camel that<br><em>walks away.</em></div>
+      <p class="t-body c-ecru70" style="margin-top:28px;width:500px">Little Reef tags print a small camel in fading ink. By day 60 it has wandered off, which is your cue for fresh ones. Children tend to notice before you do.</p>
+      <span class="tlink c-ecru" style="margin-top:36px;align-self:flex-start">How renewal works {{icon|arrow-right|16}}</span>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BATH TIME -->
+<section class="sec" style="padding:144px 40px">
+  <div class="flex jb ae">
+    <div class="col g20">
+      <div class="rail"><span class="rule"></span><span class="t-spec">The Little Reef ritual</span></div>
+      <div class="t-title">Bath time, two minutes</div>
+    </div>
+    <p class="t-body-s c-smoke" style="width:437px">Gentler than the grown-up ritual, in 3 steps. Let them choose the soap: camel, date palm or little gourd.</p>
+  </div>
+  <div class="flex g24" style="margin-top:64px">
+    <div class="f1 col ac tc">{{win|300|400|IMG · Hands in warm water}}<span class="t-spec c-clay" style="margin-top:36px">01</span><div class="t-card" style="margin-top:12px">Splash.</div><div class="t-ui c-smoke" style="margin-top:8px">Warm water, not hot.</div></div>
+    <div class="f1 col ac tc">{{win|300|400|IMG · Soap on the terry side}}<span class="t-spec c-clay" style="margin-top:36px">02</span><div class="t-card" style="margin-top:12px">Lather.</div><div class="t-ui c-smoke" style="margin-top:8px;width:380px">Rub the soap on the terry side; no laurel, no scent.</div></div>
+    <div class="f1 col ac tc">{{win|300|400|IMG · Mitt hung by its loop}}<span class="t-spec c-clay" style="margin-top:36px">03</span><div class="t-card" style="margin-top:12px">Rinse and hang.</div><div class="t-ui c-smoke" style="margin-top:8px">Hang it by the loop to dry.</div></div>
+  </div>
+  <div class="ph dark" style="height:560px;border-radius:16px;margin-top:96px">
+    <span class="play" style="width:96px;height:96px">{{icon|play|30}}</span>
+    <div class="abs col g12" style="left:40px;bottom:36px">
+      <span class="t-spec c-kraft">Video · monthly bath-time episode</span>
+      <span class="t-card c-ecru">This month: first bath with the Soft Pebble</span>
+    </div>
+    <span class="abs t-cap c-ecru50" style="right:40px;bottom:40px">New each month · captions on</span>
+  </div>
+</section>
+
+<!-- 06 OUR PROMISES -->
+<section class="sec bg-steam" style="padding:120px 40px 128px">
+  <div class="flex jb ae">
+    <div class="col g20">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Made for small skin</span></div>
+      <div class="t-title">Our promises</div>
+    </div>
+  </div>
+  <div class="flex g24" style="margin-top:56px">
+    <div class="f1 lr-promise">{{icon|hand|40}}<div class="t-card">No small parts under 3</div><div class="t-ui c-smoke" style="padding-right:12px">The 0–3 range is made without small parts. Loofah waits until age 3.</div><span style="align-self:flex-start">{{flag|Planned: needs the small-parts test}}</span></div>
+    <div class="f1 lr-promise">{{icon|water|40}}<div class="t-card">Unscented olive soap</div><div class="t-ui c-smoke" style="padding-right:12px">Olive oil soap with no laurel and no added scent.</div></div>
+    <div class="f1 lr-promise">{{icon|fibre|40}}<div class="t-card">Softer fibre</div><div class="t-ui c-smoke" style="padding-right:12px">Finer loofah than the grown-up pads, backed with soft terry.</div></div>
+    <div class="f1 lr-promise">{{icon|check|40||0.98}}<div class="t-card">Tested with paediatric dermatologists</div><div class="t-ui c-smoke" style="padding-right:12px">[Test house and results to add once the test is complete.]</div><span style="align-self:flex-start">{{flag|Planned, not done: hide until results exist}}</span></div>
+  </div>
+</section>
+
+<!-- 07 PARENTS ASK -->
+<section class="sec" style="padding:144px 40px 120px">
+  <div class="flex jb">
+    <div class="col" style="width:437px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">FAQ</span></div>
+      <div class="t-title" style="margin-top:20px">Parents ask</div>
+      <p class="t-body-s c-smoke" style="margin-top:16px">Still unsure? WhatsApp the founders.</p>
+      <span class="tlink" style="margin-top:24px;align-self:flex-start">{{icon|whatsapp|18}}WhatsApp the founders</span>
+    </div>
+    <div class="rel col" style="width:783px">
+      {{mk|M17|8|-44}}
+      <div class="acc lr-acc-open"><span class="t-body w5">From what age?</span>{{icon|minus|20}}</div>
+      <p class="t-body-s c-smoke" style="padding:0 80px 28px 0">Cloud Sponge from birth. Loofah from age 3, starting with the Soft Pebble.</p>
+      <div class="acc"><span class="t-body w5">Is the soap suitable for eczema?</span>{{icon|plus|20}}</div>
+      <div class="acc"><span class="t-body w5">How do I clean the sponge?</span>{{icon|plus|20}}</div>
+      <div class="acc" style="border-bottom:1px solid var(--line)"><span class="t-body w5">Does Little Reef renew too?</span>{{icon|plus|20}}</div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 FOR THE WHOLE HOUSE -->
+<section class="sec" style="padding:0 40px 144px">
+  <div class="bg-steam flex ac" style="border-radius:24px;padding:56px 72px 56px 56px;gap:80px">
+    <div class="ph" style="width:520px;height:400px;border-radius:16px">
+      <div class="rel" style="width:420px;height:300px">
+        <div class="abs" style="left:0;top:40px">{{circ|170||steam}}</div>
+        <div class="abs" style="left:130px;top:0">{{circ|140||steam}}</div>
+        <div class="abs" style="left:250px;top:56px">{{circ|150||steam}}</div>
+        <div class="abs" style="left:120px;top:160px">{{circ|116||steam}}</div>
+        <div class="abs" style="left:236px;top:196px">{{circ|96||steam}}</div>
+      </div>
+      <span class="lbl">IMG · The House, 9 pieces as cut-outs</span>
+    </div>
+    <div class="f1 col">
+      <div class="rail"><span class="rule"></span><span class="t-spec">For the whole house</span></div>
+      <div class="t-title" style="margin-top:20px">One ritual, <em>everyone’s<br>own loofah.</em></div>
+      <p class="t-body-s c-smoke" style="margin-top:20px;width:540px">The House puts 2 Daily Pads, a Back Strap, the Soft Pebble and Camel Mitt in one box, with laurel soap for the grown-ups and the Shaped Trio for the children. Colour-coded tags, so nobody borrows the wrong one.</p>
+      <div class="flex ae g12" style="margin-top:28px"><span class="t-ui w5">The House</span><span class="w5 num" style="font-size:22px;line-height:30px;margin-bottom:-4px">AED 299</span><span class="t-ui strike num">AED 401</span></div>
+      <div class="t-ui c-clay w5" style="margin-top:6px">Renews at AED 219 every 60 days</div>
+      <span class="btn btn-secondary" style="margin-top:28px;align-self:flex-start">See The House</span>
+    </div>
+  </div>
+</section>
+
+{{footer}}
+</section>
+
+
+<!-- =====================================================================
+     05 LITTLE REEF — MOBILE 390
+     ===================================================================== -->
+<section class="frame mobile" data-name="05 Little Reef — Mobile 390">
+{{mann}}{{mheader}}
+
+<!-- hero: Window first, then headline, then one primary -->
+<section class="sec-m" style="padding:24px 20px 72px">
+  <div class="rel" style="height:320px">
+    <div class="abs" style="left:55px;top:0">{{win|240|320|IMG · Camel Mitt on a towel}}</div>
+    <div class="abs t-ar" style="left:0;top:4px;font-size:48px">صغير</div>
+    <div class="abs" style="left:262px;top:96px">{{tag|78|20|0.3|kids}}</div>
+    {{mk|M20|82|248}}
+  </div>
+  <div class="rail" style="margin-top:28px"><span class="rule"></span><span class="t-spec-s">Little Reef · ages 0–10</span></div>
+  <div class="t-display-m" style="margin-top:16px">Little Reef,<br><em>for skin that’s<br>new at this.</em></div>
+  <p class="t-body-s" style="margin-top:16px">The same honest materials, softer fibre, unscented olive soap, and a tag where a small camel walks away by day 60.</p>
+  <div class="col g12" style="margin-top:28px">
+    <span class="btn btn-primary btn-block">Shop the Starter · AED 99</span>
+    <span class="btn btn-secondary btn-block">Shop by age</span>
+  </div>
+  <div class="col g12" style="margin-top:28px">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">Unscented · No small parts under 3</span></div>
+    <span style="align-self:flex-start">{{flag|Small-parts + dermatology tests planned, not done}}</span>
+  </div>
+</section>
+
+<!-- shop by age -->
+<section class="sec-m" style="padding:16px 20px 88px">
+  <div class="rail"><span class="rule"></span><span class="t-spec-s">The range · 5 pieces</span></div>
+  <div class="t-title-m" style="margin-top:14px">Shop by age</div>
+  <div class="rel flex g8" style="margin-top:30px">{{mk|M19|-22|-6}}<span class="chip on">All ages</span><span class="chip">0–3</span><span class="chip">3–10</span></div>
+  <div class="flex wrap" style="gap:36px 12px;margin-top:28px">
+    <div class="col" style="width:169px">
+      <div class="ph" style="height:211px;border-radius:12px">{{circ|116||steam}}<span class="badge abs" style="left:10px;top:10px">Age 0–3</span><span class="lbl">IMG · Cloud Sponge</span></div>
+      <div class="t-card" style="margin-top:14px">Cloud Sponge</div>
+      <div class="t-cap c-smoke lr-desc-m">Wool sea sponge, from birth</div>
+      <div class="t-ui w5 num" style="margin-top:8px">AED 55</div>
+    </div>
+    <div class="col" style="width:169px">
+      <div class="ph" style="height:211px;border-radius:12px"><div class="flex ac" style="margin-top:-18px">{{circ|96||steam}}<div style="margin-left:-26px">{{circ|76||steam}}</div></div><span class="badge abs" style="left:10px;top:10px">Ages 3–10</span><span class="lbl">IMG · Soft Pebble</span></div>
+      <div class="t-card" style="margin-top:14px">Soft Pebble</div>
+      <div class="t-cap c-smoke lr-desc-m">Loofah one side, terry the other</div>
+      <div class="t-ui w5 num" style="margin-top:8px">AED 29</div>
+    </div>
+    <div class="col" style="width:169px">
+      <div class="ph" style="height:211px;border-radius:12px">{{circ|118||steam}}<span class="badge abs" style="left:10px;top:10px">Ages 3–10</span><span class="lbl">IMG · Camel Mitt</span></div>
+      <div class="t-card" style="margin-top:14px">Camel Mitt</div>
+      <div class="t-cap c-smoke lr-desc-m">Terry mitt, soft loofah palm</div>
+      <div class="t-ui w5 num" style="margin-top:8px">AED 35</div>
+    </div>
+    <div class="col" style="width:169px">
+      <div class="ph" style="height:211px;border-radius:12px">
+        <div class="rel" style="width:128px;height:112px;margin-top:-14px">
+          <div class="abs" style="left:0;top:0">{{circ|66||steam}}</div><div class="abs" style="left:62px;top:6px">{{circ|66||steam}}</div><div class="abs" style="left:30px;top:50px">{{circ|62||steam}}</div>
+        </div>
+        <span class="badge abs" style="left:10px;top:10px">Ages 3+</span><span class="lbl">IMG · Shaped Trio</span></div>
+      <div class="t-card" style="margin-top:14px">Shaped Trio</div>
+      <div class="t-cap c-smoke lr-desc-m">3 unscented soaps, no laurel</div>
+      <div class="t-ui w5 num" style="margin-top:8px">AED 39</div>
+    </div>
+    <div class="col" style="width:169px">
+      <div class="ph" style="height:211px;border-radius:12px">{{circ|104||steam}}<span class="badge abs" style="left:10px;top:10px">Ages 3+</span><span class="lbl">IMG · Gourd soap</span></div>
+      <div class="t-card" style="margin-top:14px">Gourd on a Rope</div>
+      <div class="t-cap c-smoke lr-desc-m">A soap that can’t slip away</div>
+      <div class="t-ui w5 num" style="margin-top:8px">AED 25</div>
+    </div>
+    <!-- 6th slot: Starter tile keeps the grid whole -->
+    <div class="col jb bg-basalt" style="width:169px;border-radius:12px;padding:20px 16px">
+      <div class="col g8">
+        <span class="t-spec-s c-kraft">Ages 3–10</span>
+        <span class="t-card c-ecru">All 4,<br>one box</span>
+        <span class="t-cap c-ecru70">The Little Reef Starter.</span>
+        <span class="flex ac g8" style="margin-top:4px"><span class="t-ui w5 c-ecru num">AED 99</span><span class="t-cap c-ecru50 num" style="text-decoration:line-through">AED 128</span></span>
+      </div>
+      <span class="btn btn-ghost-ecru btn-s" style="align-self:flex-start">See the set</span>
+    </div>
+  </div>
+</section>
+
+<!-- sets -->
+<section class="sec-m bg-dune" style="padding:72px 20px 80px">
+  <div class="rail"><span class="rule"></span><span class="t-spec-s">Little Reef sets</span></div>
+  <div class="t-title-m" style="margin-top:14px">Start with a set</div>
+  <p class="t-body-s c-smoke" style="margin-top:12px">Every set arrives complete, in a kraft box that becomes a caddy.</p>
+  <div class="col g16" style="margin-top:28px">
+    <div class="bg-steam" style="border-radius:16px;padding:12px 12px 28px">
+      <div class="ph" style="height:196px;border-radius:12px">
+        <div class="rel" style="width:220px;height:162px;margin-top:-18px">
+          <div class="abs" style="left:68px;top:28px">{{circ|104||steam}}</div><div class="abs" style="left:14px;top:6px">{{circ|72||steam}}</div>
+          <div class="abs" style="left:156px;top:8px">{{circ|64||steam}}</div><div class="abs" style="left:150px;top:92px">{{circ|70||steam}}</div>
+        </div>
+        <span class="lbl">IMG · Starter, 4 cut-outs</span>
+      </div>
+      <div class="col" style="padding:22px 8px 0">
+        <span class="badge badge-dune" style="align-self:flex-start">Ages 3–10</span>
+        <div class="t-title-m" style="margin-top:12px">Little Reef Starter</div>
+        <div class="col" style="margin-top:16px">
+          <div class="lr-row"><span class="t-ui w5">Soft Pebble</span><span class="t-cap c-smoke">Loofah and terry</span></div>
+          <div class="lr-row"><span class="t-ui w5">Camel Mitt</span><span class="t-cap c-smoke">Terry, loofah palm</span></div>
+          <div class="lr-row"><span class="t-ui w5">Shaped Trio</span><span class="t-cap c-smoke">3 soaps, unscented</span></div>
+          <div class="lr-row"><span class="t-ui w5">Gourd on a Rope</span><span class="t-cap c-smoke">Soap on a rope</span></div>
+        </div>
+        <div class="flex ae g12" style="margin-top:20px"><span class="w5 num" style="font-size:22px;line-height:30px;">AED 99</span><span class="t-ui strike num" style="padding-bottom:3px">AED 128</span></div>
+        <div class="t-ui c-clay w5" style="margin-top:4px">Renews at AED 69 every 60 days</div>
+        <span class="btn btn-dark btn-block" style="margin-top:20px">Add to bag · AED 99</span>
+      </div>
+    </div>
+    <div class="bg-steam" style="border-radius:16px;padding:12px 12px 28px">
+      <div class="ph" style="height:196px;border-radius:12px">
+        <div class="rel" style="width:200px;height:162px;margin-top:-18px">
+          <div class="abs" style="left:44px;top:20px">{{circ|112||steam}}</div><div class="abs" style="left:136px;top:0">{{circ|64||steam}}</div><div class="abs" style="left:0;top:86px">{{circ|76||steam}}</div>
+        </div>
+        <span class="lbl">IMG · First Bath, 3 cut-outs</span>
+      </div>
+      <div class="col" style="padding:22px 8px 0">
+        <span class="badge badge-dune" style="align-self:flex-start">Baby gift</span>
+        <div class="t-title-m" style="margin-top:12px">First Bath</div>
+        <div class="col" style="margin-top:16px">
+          <div class="lr-row"><span class="t-ui w5">Cloud Sponge</span><span class="t-cap c-smoke">Wool sea sponge</span></div>
+          <div class="lr-row"><span class="t-ui w5">Shaped Trio</span><span class="t-cap c-smoke">3 soaps, unscented</span></div>
+          <div class="lr-row"><span class="t-ui w5">Hooded towel</span><span class="t-cap c-smoke">Linen</span></div>
+        </div>
+        <div class="flex ae g12" style="margin-top:20px"><span class="w5 num" style="font-size:22px;line-height:30px;">AED 119</span><span class="t-ui strike num" style="padding-bottom:3px">AED 140</span></div>
+        <div class="t-ui c-smoke w5" style="margin-top:4px">Gift set · for new parents</div>
+        <span class="btn btn-dark btn-block" style="margin-top:20px">Add to bag · AED 119</span>
+        <span style="margin-top:14px;align-self:flex-start">{{flag|Shaped Trio is 3+; swap for the baby set?}}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- camel tag -->
+<section class="sec-m bg-basalt" style="padding:72px 20px 88px">
+  <div class="rel" style="height:212px">
+    {{mk|M10|-12|-8}}
+    <div class="twine" style="top:1px"></div>
+    <div class="abs col ac g8" style="left:0;top:0;width:96px">{{tag|96|01|0|kids}}<span class="t-cap w5 c-ecru">Day 1</span></div>
+    <div class="abs col ac g8" style="left:127px;top:0;width:96px">{{tag|96|30|0.5|kids}}<span class="t-cap w5 c-ecru">Day 30</span></div>
+    <div class="abs col ac g8" style="left:254px;top:0;width:96px">{{tag|96|60|1|kids}}<span class="t-cap w5 c-ecru">Day 60</span></div>
+  </div>
+  <div class="rail" style="margin-top:40px"><span class="rule-k"></span><span class="t-spec-s c-kraft">The camel tag</span></div>
+  <div class="t-display-m c-ecru" style="margin-top:16px">A camel that<br><em>walks away.</em></div>
+  <p class="t-body-s c-ecru70" style="margin-top:16px">Little Reef tags print a small camel in fading ink. By day 60 it has wandered off, which is your cue for fresh ones. Children tend to notice before you do.</p>
+  <span class="tlink c-ecru" style="margin-top:24px">How renewal works {{icon|arrow-right|16}}</span>
+</section>
+
+<!-- bath time -->
+<section class="sec-m" style="padding:88px 20px">
+  <div class="rail"><span class="rule"></span><span class="t-spec-s">The Little Reef ritual</span></div>
+  <div class="t-title-m" style="margin-top:14px">Bath time, two minutes</div>
+  <p class="t-body-s c-smoke" style="margin-top:12px">Gentler than the grown-up ritual, in 3 steps. Let them choose the soap: camel, date palm or little gourd.</p>
+  <div class="col" style="margin-top:28px">
+    <div class="flex ac g20" style="padding:20px 0;border-top:1px solid var(--line)">{{win|96|128}}<div class="col g4"><span class="t-spec-s c-clay">01</span><span class="t-card">Splash.</span><span class="t-ui c-smoke">Warm water, not hot.</span></div></div>
+    <div class="flex ac g20" style="padding:20px 0;border-top:1px solid var(--line)">{{win|96|128}}<div class="col g4"><span class="t-spec-s c-clay">02</span><span class="t-card">Lather.</span><span class="t-ui c-smoke">Rub the soap on the terry side; no laurel, no scent.</span></div></div>
+    <div class="flex ac g20" style="padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">{{win|96|128}}<div class="col g4"><span class="t-spec-s c-clay">03</span><span class="t-card">Rinse and hang.</span><span class="t-ui c-smoke">Hang it by the loop to dry.</span></div></div>
+  </div>
+  <div class="ph dark" style="height:240px;border-radius:12px;margin-top:40px">
+    <span class="play" style="width:64px;height:64px">{{icon|play|22}}</span>
+    <span class="abs t-spec-s c-kraft" style="left:16px;bottom:16px">Video · monthly bath-time episode</span>
+  </div>
+  <div class="t-ui w5" style="margin-top:14px">This month: first bath with the Soft Pebble</div>
+  <div class="t-cap c-smoke" style="margin-top:2px">New each month · captions on</div>
+</section>
+
+<!-- promises -->
+<section class="sec-m bg-steam" style="padding:72px 20px 80px">
+  <div class="rail"><span class="rule"></span><span class="t-spec-s">Made for small skin</span></div>
+  <div class="t-title-m" style="margin-top:14px">Our promises</div>
+  <div class="col" style="margin-top:24px">
+    <div class="flex g16" style="padding:22px 0;border-top:1px solid var(--line)">{{icon|hand|32}}<div class="col g8 f1"><span class="t-card">No small parts under 3</span><span class="t-ui c-smoke">The 0–3 range is made without small parts. Loofah waits until age 3.</span><span style="align-self:flex-start">{{flag|Planned: needs the small-parts test}}</span></div></div>
+    <div class="flex g16" style="padding:22px 0;border-top:1px solid var(--line)">{{icon|water|32}}<div class="col g8 f1"><span class="t-card">Unscented olive soap</span><span class="t-ui c-smoke">Olive oil soap with no laurel and no added scent.</span></div></div>
+    <div class="flex g16" style="padding:22px 0;border-top:1px solid var(--line)">{{icon|fibre|32}}<div class="col g8 f1"><span class="t-card">Softer fibre</span><span class="t-ui c-smoke">Finer loofah than the grown-up pads, backed with soft terry.</span></div></div>
+    <div class="flex g16" style="padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">{{icon|check|32||0.98}}<div class="col g8 f1"><span class="t-card">Tested with paediatric dermatologists</span><span class="t-ui c-smoke">[Test house and results to add once complete.]</span><span style="align-self:flex-start">{{flag|Planned, not done: hide until results exist}}</span></div></div>
+  </div>
+</section>
+
+<!-- parents ask -->
+<section class="sec-m" style="padding:88px 20px 72px">
+  <div class="rail"><span class="rule"></span><span class="t-spec-s">FAQ</span></div>
+  <div class="t-title-m" style="margin-top:14px">Parents ask</div>
+  <div class="rel col" style="margin-top:32px">
+    {{mk|M17|-15|0}}
+    <div class="acc lr-acc-open"><span class="t-ui w5" style="font-size:16px">From what age?</span>{{icon|minus|18}}</div>
+    <p class="t-body-s c-smoke" style="padding:0 24px 24px 0">Cloud Sponge from birth. Loofah from age 3, starting with the Soft Pebble.</p>
+    <div class="acc"><span class="t-ui w5" style="font-size:16px">Is the soap suitable for eczema?</span>{{icon|plus|18}}</div>
+    <div class="acc"><span class="t-ui w5" style="font-size:16px">How do I clean the sponge?</span>{{icon|plus|18}}</div>
+    <div class="acc" style="border-bottom:1px solid var(--line)"><span class="t-ui w5" style="font-size:16px">Does Little Reef renew too?</span>{{icon|plus|18}}</div>
+  </div>
+  <p class="t-body-s c-smoke" style="margin-top:28px">Still unsure?</p>
+  <span class="tlink" style="margin-top:8px">{{icon|whatsapp|18}}WhatsApp the founders</span>
+</section>
+
+<!-- the house -->
+<section class="sec-m" style="padding:0 20px 88px">
+  <div class="bg-steam" style="border-radius:16px;padding:12px 12px 28px">
+    <div class="ph" style="height:216px;border-radius:12px">
+      <div class="rel" style="width:234px;height:156px;margin-top:-16px">
+        <div class="abs" style="left:75px;top:30px">{{circ|100||steam}}</div><div class="abs" style="left:18px;top:14px">{{circ|70||steam}}</div>
+        <div class="abs" style="left:158px;top:8px">{{circ|76||steam}}</div><div class="abs" style="left:36px;top:96px">{{circ|60||steam}}</div><div class="abs" style="left:156px;top:92px">{{circ|56||steam}}</div>
+      </div>
+      <span class="lbl">IMG · The House, cut-outs</span>
+    </div>
+    <div class="col" style="padding:24px 8px 0">
+      <div class="rail"><span class="rule"></span><span class="t-spec-s">For the whole house</span></div>
+      <div class="t-title-m" style="margin-top:14px">One ritual, <em>everyone’s own loofah.</em></div>
+      <p class="t-body-s c-smoke" style="margin-top:12px">2 Daily Pads, a Back Strap, the Soft Pebble and Camel Mitt, laurel soap for the grown-ups and the Shaped Trio for the children. Colour-coded tags, so nobody borrows the wrong one.</p>
+      <div class="flex ae g12" style="margin-top:20px"><span class="t-ui w5">The House</span><span class="w5 num" style="font-size:22px;line-height:30px;margin-bottom:-4px">AED 299</span><span class="t-ui strike num">AED 401</span></div>
+      <div class="t-ui c-clay w5" style="margin-top:6px">Renews at AED 219 every 60 days</div>
+      <span class="btn btn-secondary btn-block" style="margin-top:20px">See The House</span>
+    </div>
+  </div>
+</section>
+
+{{mfooter}}
+</section>
+
+
+<!-- =====================================================================
+     05 LITTLE REEF — NOTES
+     ===================================================================== -->
+<section class="frame notes" data-name="05 Little Reef — Notes">
+  <div class="n-kick">05 · Collection · /collections/little-reef</div>
+  <div class="n-title">Little Reef</div>
+  <p class="n-lead">The kids range (5 pieces) and the 2 sets built for parents. Parents arrive from the Little Reef nav link, The House on Rituals, parenting creators and the monthly bath-time episode. One primary action: <b>Shop the Starter · AED 99</b>. Tone: calm and careful. Every safety statement on this page is either true today or flagged.</p>
+
+  <div class="n-block"><div class="n-h">Sections, top to bottom</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Hero</b> — Window (Camel Mitt) with the kids tag hanging off its edge. Ruqaa صغير (“little”) is the page’s one Arabic word. Primary: Shop the Starter; secondary scrolls to Shop by age.</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Shop by age</b> — 5 pieces, 1 row of 5 on desktop. The age badge is the card’s one badge. Soft Pebble is drawn in its hover state.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>Sets</b> (Dune) — Little Reef Starter (renews) and First Bath (one-off gift), as wide Steam cards with contents listed so parents see what’s in the box.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>The camel tag</b> (the page’s one Basalt band) — the Little Reef version of the Fade. Explains renewal without the word “subscription”.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>Bath time, two minutes</b> — the 4-step ritual cut to 3 for children, plus the monthly bath-time episode (content pillar).</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>Our promises</b> (Steam) — 4 promises. 2 are planned, not done, and stay hidden until they are true.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span><b>Parents ask</b> — FAQ, first item open, WhatsApp link for everything else.</span></div>
+    <div class="n-item"><span class="n-num">08</span><span><b>For the whole house</b> — cross-sell to The House for families where grown-ups and children share the bathroom.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M02</span><span><b>Window opens</b> — hero Window scales .94 → 1, photo settles 1.08 → 1 (1200 ms, calm out).<span class="n-ref">Our own, same as Home</span></span></div>
+    <div class="n-item"><span class="n-chip">M20</span><span><b>Tag sway</b> — the camel tag sways ±2° on a 4 s loop and stops after 3 loops. The page’s one playful moment; off with reduced motion.<span class="n-ref">Our own</span></span></div>
+    <div class="n-item"><span class="n-chip">M19</span><span><b>Filter reflow</b> — age chips filter the 5 cards with a FLIP re-order (400 ms), no reload. 0–3 shows Cloud Sponge and links to First Bath; 3–10 shows the other 4. The count updates.<span class="n-ref">Horizon facets</span></span></div>
+    <div class="n-item"><span class="n-chip">M15</span><span><b>Card hover</b> — image zooms 1.04 (600 ms), label gives way to a “Quick add · AED 29” pill that rises 12 px. Quick add opens the bag drawer (M14).<span class="n-ref">Horizon quick-add</span></span></div>
+    <div class="n-item"><span class="n-chip">M10</span><span><b>The Fade, camel version</b> — scrubbed with scroll: ink lines fade in turn, the camel drops from 100% to 15% and the day count ticks 01 → 60. Reduced motion: the 3 static states as drawn.<span class="n-ref">Our own, the renewal story</span></span></div>
+    <div class="n-item"><span class="n-chip">M17</span><span><b>Accordion</b> — height eases open 300 ms, plus turns to minus. One open at a time.<span class="n-ref">accordion-custom.js</span></span></div>
+    <div class="n-item"><span class="n-num">·</span><span><b>Default</b> — every section fades up 24 px on enter (600 ms). The episode video plays only on tap, muted, with captions.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Mobile</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>Hero follows the Lula mobile order: Window first (Ruqaa word and tag on its edges), then headline, then one full-width primary, still above the fold at 844.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Grid is 2 columns; a Basalt “Starter” tile fills the 6th slot so the grid stays whole and the main set gets one more mention.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Sets stack; camel tags sit in a row of 3 (96 px); bath steps become rows with small Windows (no carousel, nothing hidden); promises become rows.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>Prices are Brand Strategy estimates. Starter value 128 = 29 + 35 + 39 + 25 (save 23%); First Bath value 140, no renewal.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Closed FAQ answers. <b>Eczema:</b> “Shaped Trio is unscented olive soap with no laurel. If your child has a skin condition, ask your paediatrician first.” <b>Renew:</b> “The Starter renews every 60 days at AED 69. First Bath is a one-off gift.” <b>Sponge care:</b> to write.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Photography: hands only, never children’s faces. All IMG labels are shot-list items for the real shoot.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Fallback hero rail if tests are not done by launch: “Unscented · Softer fibre · Ages 0–10”.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span><b>“No small parts under 3”</b> is planned, not done. Which test and standard applies is for the regulatory adviser. Until then, remove it from the hero rail and promise 01.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Paediatric dermatology test</b> is planned, not done. Promise 04 stays hidden until results exist; never imply it in ads or on packs.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>First Bath</b> (baby gift) includes the Shaped Trio, which is age 3+. Swap for a baby-safe soap or drop it; the price and value change.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Eczema answer reads as skin advice: the regulatory adviser signs it off before launch.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>What ships when the Starter renews at AED 69: everything, or the Soft Pebble, mitt and soaps only?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Can single pieces be added to a parent’s renewal? If yes, add “Add to my renewal” to quick add.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Cloud Sponge is wool sea sponge, not loofah: origin and harvest story needed to sit under “Grown, not made.”</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Bath-time episodes: filming plan and parental consent; hands only.</span></div>
+  </div></div>
+</section>
+
+</body></html>

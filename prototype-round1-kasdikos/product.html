@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Duo — Al Reef &amp; Laurel</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .crumb { padding: 22px var(--gutter); color: var(--soft); }
+  .crumb a:hover { color: var(--laurel); }
+  .pdp { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .gallery { display: grid; gap: 14px; }
+  .gallery .main { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--rule); background: #E6DBCC; cursor: zoom-in; }
+  .gallery .main img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--fx) var(--fy); transform: scale(var(--z)); transform-origin: var(--fx) var(--fy); transition: opacity .7s var(--ease-io), transform 1.2s var(--ease); }
+  .gallery .main img.leaving { opacity: 0; }
+  .gallery .main:hover img { transform: scale(calc(var(--z) * 1.06)); }
+  .gallery .count { position: absolute; left: 16px; bottom: 16px; z-index: 2; background: var(--cream); padding: 7px 11px; }
+  .gallery .nav { position: absolute; right: 16px; bottom: 16px; z-index: 2; display: flex; gap: 8px; }
+  .gallery .nav button { width: 42px; height: 42px; border-radius: 50%; background: var(--cream); display: inline-flex; align-items: center; justify-content: center; color: var(--laurel); transition: background .3s, color .3s; }
+  .gallery .nav button:hover { background: var(--laurel); color: var(--cream); }
+  .thumbs { display: flex; gap: 10px; }
+  .thumbs button { width: 74px; height: 92px; overflow: hidden; border: 1px solid transparent; opacity: .55; transition: opacity .3s, border-color .3s; }
+  .thumbs button.on, .thumbs button:hover { opacity: 1; border-color: var(--laurel); }
+  .thumbs img { width: 100%; height: 100%; object-fit: cover; object-position: var(--fx) var(--fy); transform: scale(var(--z)); transform-origin: var(--fx) var(--fy); }
+  .buy { position: sticky; top: 140px; }
+  .buy .price-row { display: flex; align-items: baseline; gap: 14px; margin-top: 22px; }
+  .buy .price { font: 400 26px/1 var(--sans); color: var(--laurel); }
+  .buy .was { font: 300 15px/1 var(--sans); color: var(--soft); text-decoration: line-through; }
+  .spec { margin-top: 18px; padding: 12px 0; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); color: var(--laurel); }
+  .row-label { display: flex; justify-content: space-between; margin: 26px 0 12px; }
+  .add-row { display: flex; gap: 12px; margin-top: 26px; }
+  .add-row .qty { margin: 0; height: 52px; padding: 0 10px; border: 1px solid var(--rule); }
+  .add-row .btn { flex: 1; }
+  .ticks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin-top: 22px; }
+  .ticks span { display: flex; gap: 10px; align-items: flex-start; font: 300 13.5px/1.5 var(--sans); }
+  .ticks svg { width: 16px; height: 16px; flex: none; margin-top: 2px; color: var(--clay); }
+  .ticks svg * { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .accs { margin-top: 30px; }
+  .sticky-buy { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; background: rgba(251, 245, 236, .97); backdrop-filter: blur(10px); border-top: 1px solid var(--rule); transform: translateY(110%); transition: transform .55s var(--ease); }
+  .sticky-buy.on { transform: none; }
+  .sticky-buy .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 76px; }
+  .inbox { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .inbox > div { padding: 34px 20px; text-align: center; }
+  .inbox > div + div { border-left: 1px solid var(--rule); }
+  .inbox .n { font: 300 34px/1 var(--serif); color: var(--clay); letter-spacing: -.03em; }
+  .zoom { position: fixed; inset: 0; z-index: 130; background: rgba(20, 22, 18, .92); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .5s var(--ease); cursor: zoom-out; }
+  .zoom.on { opacity: 1; pointer-events: auto; }
+  .zoom img { max-width: 92vw; max-height: 92vh; object-fit: contain; transform: scale(.96); transition: transform .7s var(--ease); }
+  .zoom.on img { transform: none; }
+  @media (max-width: 860px) {
+    .pdp { grid-template-columns: 1fr; }
+    .buy { position: static; }
+    .inbox { grid-template-columns: 1fr 1fr; }
+    .inbox > div:nth-child(odd) { border-left: 0; }
+    .inbox > div { border-top: 1px solid var(--rule); }
+    .ticks { grid-template-columns: 1fr; }
+    .sticky-buy .h4 { font-size: 16px; }
+  }
+</style>
+</head>
+<body data-page="duo">
+<main>
+  <div class="wrap crumb caps-s"><a href="index.html">Home</a> · <a href="shop.html">Shop</a> · <span data-crumb>The Duo</span></div>
+
+  <section class="wrap pdp">
+    <div class="gallery" data-reveal>
+      <div class="main"><img alt="" data-main><span class="count caps-s num" data-count>1 / 4</span>
+        <div class="nav"><button data-step="-1" aria-label="Previous image"><svg width="16" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22 5H1M5.5 1 1 5l4.5 4"/></svg></button>
+          <button data-step="1" aria-label="Next image"><svg width="16" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M16.5 1 21 5l-4.5 4"/></svg></button></div></div>
+      <div class="thumbs" data-thumbs></div>
+    </div>
+
+    <div class="buy">
+      <span class="caps-s soft" data-reveal>Al Reef &amp; Laurel · <span data-type></span></span>
+      <h1 class="h1" style="margin-top:14px" data-name data-reveal>The Duo</h1>
+      <div class="price-row" data-reveal><span class="price num" data-price>AED 68</span><span class="was num" data-was></span><span class="small soft" data-per>per delivery</span></div>
+      <p class="body" style="margin-top:22px" data-intro data-reveal></p>
+      <div class="spec caps-s" data-spec data-reveal></div>
+
+      <div data-reveal data-modes>
+        <div class="row-label"><span class="caps-s">How would you like it?</span></div>
+        <label class="opt on" data-mode="renew"><span class="radio"></span><span><span class="t">Renew every 60 days <span class="save">Save 20%</span></span><span class="d">Skip, swap or pause any time. One WhatsApp on day 50.</span></span><span class="p num" data-p-renew></span></label>
+        <label class="opt" data-mode="once"><span class="radio"></span><span><span class="t">One-time purchase</span><span class="d">The day-50 reminder still offers a refill.</span></span><span class="p num" data-p-once></span></label>
+      </div>
+
+      <div data-reveal data-cycle-wrap>
+        <div class="row-label"><span class="caps-s">How often</span><span class="small soft">60 matches the tag</span></div>
+        <div class="chips" data-cycle><button class="chip" data-v="30">Every 30 days</button><button class="chip on" data-v="60">Every 60 days</button><button class="chip" data-v="90">Every 90 days</button></div>
+      </div>
+
+      <div data-reveal data-fibre-wrap>
+        <div class="row-label"><span class="caps-s">Fibre</span><span class="small soft" data-fibre-note>Softer, for daily use and sensitive skin</span></div>
+        <div class="chips" data-fibre><button class="chip on" data-v="Gentle">Gentle</button><button class="chip" data-v="Deep">Deep</button></div>
+      </div>
+
+      <div class="add-row" data-reveal>
+        <div class="qty"><button data-qd="-1" aria-label="Less">−</button><span class="num" data-qty>1</span><button data-qd="1" aria-label="More">+</button></div>
+        <button class="btn btn-clay" data-add-main>Add to bag · <span class="num" data-btn-price>AED 68</span></button>
+      </div>
+
+      <div class="ticks" data-reveal>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free UAE delivery, ships in 2 working days</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Traced to Field 7 by batch QR</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>The box folds into a shower caddy</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cancel any time before the next ship date</span>
+      </div>
+
+      <div class="accs" data-reveal>
+        <details class="acc" open><summary>In the box <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner"><ul data-contents style="list-style:none;display:grid;gap:8px"></ul></div></div></details>
+        <details class="acc"><summary>Spec sheet <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner"><dl class="kv">
+          <dt>Species</dt><dd>Luffa aegyptiaca</dd><dt>Origin</dt><dd>Field 7, Damanhour, Nile Delta, Egypt</dd><dt>Drying</dt><dd>21 days in the sun, never bleached</dd>
+          <dt>Grade</dt><dd>A · 58 fibres per cm²</dd><dt>Soap</dt><dd>Olive oil and laurel oil, cured in the Levant</dd><dt>Afterlife</dt><dd>The loofah composts; the box becomes a caddy</dd></dl></div></div></details>
+        <details class="acc"><summary>How to use <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Wet the loofah for 30 seconds. Work the soap into the fibre, not onto your skin. Small circles for two minutes, one area at a time. Hang it by the tag to dry.</div></div></details>
+        <details class="acc"><summary>Delivery &amp; returns <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Free delivery across the UAE in 2 working days. Saudi Arabia from April 2027. Unopened sets can be returned within 14 days.</div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="center" style="max-width:760px;margin:0 auto 48px"><span class="eyebrow caps" data-reveal>Traced to Field 7</span>
+        <h2 class="h2" data-split>Know exactly <em>where it grew.</em></h2></div>
+      <div class="inbox" data-reveal>
+        <div><div class="n num">21</div><p class="caps-s soft" style="margin-top:12px">Days in the sun</p></div>
+        <div><div class="n num">58</div><p class="caps-s soft" style="margin-top:12px">Fibres per cm²</p></div>
+        <div><div class="n num">60</div><p class="caps-s soft" style="margin-top:12px">Days per loofah</p></div>
+        <div><div class="n num">16%</div><p class="caps-s soft" style="margin-top:12px">Laurel oil</p></div>
+        <div><div class="n num">0</div><p class="caps-s soft" style="margin-top:12px">Plastic</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-s" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2" data-split>You may also like</h2><a class="link caps" href="shop.html" data-reveal>Shop all</a></div>
+      <div class="grid g4 swipe-m" data-related></div>
+    </div>
+  </section>
+  <section class="section-s"></section>
+
+  <div class="sticky-buy" aria-hidden="true"><div class="wrap">
+    <div><div class="h4" data-name>The Duo</div><div class="small soft"><span data-sticky-mode>Renew every 60 days</span> · <span class="num" data-sticky-price>AED 68</span></div></div>
+    <button class="btn btn-clay" data-add-main>Add to bag</button></div></div>
+  <div class="zoom" aria-hidden="true"><img alt=""></div>
+</main>
+<script src="assets/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s), $$ = (s) => [...document.querySelectorAll(s)];
+  const slug = new URLSearchParams(location.search).get("p") || "the-duo";
+  const p = window.findProduct(slug);
+  document.title = `${p.name} — Al Reef & Laurel`;
+  if (slug !== "the-duo") document.body.dataset.page = "";
+  $$("[data-name]").forEach((e) => (e.textContent = p.name)); $("[data-crumb]").textContent = p.name;
+  $("[data-type]").textContent = { rituals: "Ritual", loofahs: "Loofah", soap: "Sabon Ghar", gifts: "Gift set" }[p.type];
+  $("[data-intro]").textContent = p.intro; $("[data-spec]").textContent = p.spec;
+  $("[data-contents]").innerHTML = p.contents.map((c) => `<li style="display:flex;gap:12px"><span class="clay">—</span>${c}</li>`).join("");
+  if (!p.renew) { $("[data-modes]").remove(); $("[data-cycle-wrap]").remove(); }
+  if (!["the-duo", "the-daily-pad"].includes(slug)) $("[data-fibre-wrap]").remove();
+  else $$("[data-fibre] .chip").forEach((c) => c.addEventListener("click", () => { $$("[data-fibre] .chip").forEach((x) => x.classList.toggle("on", x === c)); $("[data-fibre-note]").textContent = c.dataset.v === "Gentle" ? "Softer, for daily use and sensitive skin" : "Firmer, for a weekly scrub, backs and feet"; }));
+
+  // gallery
+  let gi = 0;
+  const main = $("[data-main]");
+  const show = (k, instant) => {
+    gi = (k + p.images.length) % p.images.length; const im = p.images[gi];
+    const set = () => { main.src = im.src; main.style.setProperty("--fx", im.fx + "%"); main.style.setProperty("--fy", im.fy + "%"); main.style.setProperty("--z", im.z); main.classList.remove("leaving"); };
+    if (instant) set(); else { main.classList.add("leaving"); setTimeout(set, 320); }
+    $("[data-count]").textContent = `${gi + 1} / ${p.images.length}`;
+    $$("[data-thumbs] button").forEach((b, j) => b.classList.toggle("on", j === gi));
+  };
+  $("[data-thumbs]").innerHTML = p.images.map((im, j) => `<button aria-label="Image ${j + 1}"><img src="${im.sm}" alt="" style="--fx:${im.fx}%;--fy:${im.fy}%;--z:${im.z}"></button>`).join("");
+  $$("[data-thumbs] button").forEach((b, j) => b.addEventListener("click", () => show(j)));
+  $$("[data-step]").forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); show(gi + +b.dataset.step); }));
+  let sx = null; const g = $(".gallery .main");
+  g.addEventListener("touchstart", (e) => (sx = e.touches[0].clientX), { passive: true });
+  g.addEventListener("touchend", (e) => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) show(gi + (dx < 0 ? 1 : -1)); sx = null; });
+  show(0, true);
+  const zoom = $(".zoom");
+  g.addEventListener("click", () => { zoom.querySelector("img").src = p.images[gi].src; zoom.classList.add("on"); });
+  zoom.addEventListener("click", () => zoom.classList.remove("on"));
+
+  // options + price roll
+  let mode = p.renew ? "renew" : "once", qty = 1, cycle = 60;
+  const unit = () => (mode === "renew" ? p.renew : p.price);
+  const roll = (el, to) => { const from = +(el.dataset.v || to); el.dataset.v = to; if (from === to) { el.textContent = window.AED(to); return; } const t0 = performance.now();
+    const step = (t) => { const k = Math.min(1, (t - t0) / 450), e = 1 - Math.pow(1 - k, 3); el.textContent = window.AED(Math.round(from + (to - from) * e)); if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+  const update = () => {
+    roll($("[data-price]"), unit()); roll($("[data-btn-price]"), unit() * qty);
+    $("[data-was]").textContent = mode === "renew" ? window.AED(p.price) : (p.value && p.value > p.price ? window.AED(p.value) : "");
+    $("[data-per]").textContent = mode === "renew" ? "per delivery" : (p.from ? "from" : "");
+    $("[data-qty]").textContent = qty;
+    $("[data-sticky-mode]").textContent = mode === "renew" ? `Renew every ${cycle} days` : "One-time";
+    $("[data-sticky-price]").textContent = window.AED(unit() * qty);
+    $$(".opt").forEach((o) => o.classList.toggle("on", o.dataset.mode === mode));
+    const cw = $("[data-cycle-wrap]"); if (cw) { cw.style.opacity = mode === "renew" ? 1 : .35; cw.style.pointerEvents = mode === "renew" ? "" : "none"; }
+  };
+  if (p.renew) { $("[data-p-renew]").textContent = window.AED(p.renew); $("[data-p-once]").textContent = window.AED(p.price); }
+  $$(".opt").forEach((o) => o.addEventListener("click", (e) => { e.preventDefault(); mode = o.dataset.mode; update(); }));
+  $$("[data-cycle] .chip").forEach((c) => c.addEventListener("click", () => { cycle = +c.dataset.v; $$("[data-cycle] .chip").forEach((x) => x.classList.toggle("on", x === c)); update(); }));
+  $$("[data-qd]").forEach((b) => b.addEventListener("click", () => { qty = Math.max(1, qty + +b.dataset.qd); update(); }));
+  $$("[data-add-main]").forEach((b) => b.addEventListener("click", () => {
+    const fib = $("[data-fibre] .chip.on"); const lbl = b.innerHTML; b.textContent = "Added";
+    window.addToBag(p.slug, { mode, qty, cycle, variant: fib ? fib.dataset.v : "" }); setTimeout(() => (b.innerHTML = lbl, update()), 1400); }));
+  update();
+
+  // sticky add-to-bag once the buy box scrolls away
+  const sb = $(".sticky-buy"), anchor = $(".add-row");
+  new IntersectionObserver(([e]) => { const on = !e.isIntersecting && e.boundingClientRect.top < 0; sb.classList.toggle("on", on); sb.setAttribute("aria-hidden", !on); }).observe(anchor);
+
+  // related
+  const rel = window.PRODUCTS.filter((x) => x.slug !== slug).sort((a, b) => (a.type === p.type ? -1 : 0) - (b.type === p.type ? -1 : 0)).slice(0, 4);
+  $("[data-related]").innerHTML = rel.map((x, i) => window.cardHTML(x, i * 0.08)).join(""); window.observeReveal($("[data-related]"));
+})();
+</script>
+</body>
+</html>

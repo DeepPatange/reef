@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our farm — Al Reef &amp; Laurel</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .her-head { padding-block: var(--sec-s) var(--s-8); text-align: center; }
+  .intro { max-width: 760px; margin: 0 auto; text-align: center; }
+  .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--rule); }
+  .steps > div { padding: var(--s-6) var(--s-5) var(--s-7) 0; }
+  .steps > div + div { padding-left: var(--s-5); border-left: 1px solid var(--rule); }
+  .steps .n { font: 300 var(--t-stat)/1 var(--serif); color: var(--clay); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .quote { max-width: 980px; margin: 0 auto; text-align: center; }
+  .founder { border: 1px dashed var(--rule); padding: var(--s-5); margin: var(--gap-text) auto 0; max-width: var(--measure); color: var(--soft); }
+
+  /* ---------------------------------------------------------------- farm story
+     Seven gouache paintings, from Field 7 to the bathroom. With JS (.is-live) the stage stays
+     pinned while you scroll: each painting is brushed on over the one before, moves slowly,
+     and its caption crossfades in one cream panel. Without JS, or with reduced motion, the
+     chapters simply stack (the base styles below). */
+  .fs { position: relative; border-top: 1px solid var(--rule); }
+  .fs-stage { display: grid; gap: var(--sec-s); padding-block: var(--sec-s); }
+  .fs-ch { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--s-8); align-items: center; width: 100%; max-width: var(--max, 1440px); margin: 0 auto; padding-inline: var(--gutter); }
+  .fs-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--linen); }
+  .fs-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--fx, 50%) 50%; transform-origin: 50% 55%; }
+  .fs-cap .h2 { margin-top: var(--gap-label); }
+  .fs-cap p { margin-top: var(--s-3); font: 300 var(--fs-16)/1.6 var(--sans); color: var(--ink); max-width: 36em; }
+  .fs-cap .fs-stat { display: flex; align-items: baseline; gap: var(--s-2); margin-top: var(--s-4); }
+  .fs-cap .fs-n { font: 300 var(--t-stat)/1 var(--serif); color: var(--clay); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .fs-sun, .fs-panel { display: none; }
+
+  .fs.is-live { height: calc(var(--n, 7) * 130svh + 100svh); background: var(--linen); }
+  .fs.is-live .fs-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; display: block; padding: 0; }
+  .fs.is-live .fs-ch { position: absolute; inset: 0; display: block; max-width: none; padding: 0; pointer-events: none; }
+  .fs.is-live .fs-media { position: absolute; inset: 0; aspect-ratio: auto; visibility: hidden; }
+  .fs.is-live .fs-media img { will-change: transform; }
+  .fs.is-live .fs-b { opacity: 0; }
+  .fs.is-live .fs-sun { display: block; position: absolute; inset: 0; background: radial-gradient(circle at var(--sx, 10%) var(--sy, 40%), rgba(255, 236, 200, .55), rgba(255, 236, 200, 0) 34%); mix-blend-mode: soft-light; pointer-events: none; }
+  .fs.is-live .fs-panel, .fs.is-live .fs-cap { position: absolute; left: var(--gutter); bottom: var(--s-7); width: min(460px, calc(100% - var(--gutter) * 2)); }
+  .fs.is-live .fs-panel { display: block; z-index: 1; height: 0; background: var(--cream); transition: height var(--t-ui) var(--ease); }
+  .fs.is-live .fs-panel::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--clay); transform: scaleX(var(--p, 0)); transform-origin: left; }
+  .fs.is-live .fs-cap { z-index: 2; padding: var(--s-6); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity var(--t-fast) var(--ease), transform var(--t-ui) var(--ease), visibility 0s var(--t-fast); }
+  .fs.is-live .fs-ch.is-on .fs-cap { opacity: 1; visibility: visible; transform: none; pointer-events: auto; transition: opacity var(--t-ui) var(--ease) .15s, transform var(--t-ui) var(--ease) .15s; }
+
+  @media (max-width: 860px) {
+    .steps { grid-template-columns: 1fr 1fr; } .steps > div:nth-child(3) { border-left: 0; padding-left: 0; } .steps > div { border-top: 1px solid var(--rule); padding-top: var(--s-5); }
+    .fs-ch { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+    /* phones: the painting fills the top of the screen and the caption sits below it, in a band as tall as the longest caption (--cap, set by JS) */
+    .fs.is-live .fs-media { bottom: var(--cap, 36%); }
+    .fs.is-live .fs-panel, .fs.is-live .fs-cap { left: 0; width: 100%; }
+    .fs.is-live .fs-panel { bottom: 0; height: var(--cap, 36%) !important; }
+    .fs.is-live .fs-cap { top: calc(100% - var(--cap, 36%)); bottom: auto; padding: var(--s-5) var(--gutter) var(--s-6); }
+  }
+</style>
+</head>
+<body data-page="farm">
+<main>
+  <header class="her-head"><span class="caps soft" data-reveal>31.03° N · 30.47° E · Damanhour, Egypt</span><h1 class="h1" data-split style="margin-top:var(--gap-label)">Our farm</h1></header>
+
+  <section class="fs" data-fs aria-label="From Field 7 to your shower: the story of one loofah">
+    <div class="fs-stage">
+      <article class="fs-ch" data-zoom="1 1.08">
+        <div class="fs-media"><img class="fs-a" src="assets/img/farm/01-delta.jpg" alt="Painting: Nile Delta farmland at dawn, with canals, trellises and date palms"></div>
+        <div class="fs-cap"><span class="caps-s soft">01 / 07 · Field 7</span><h2 class="h2">We begin<br>with the field.</h2><p>Field 7 lies in the flat green farmland of the Nile Delta, between the canals and the date palms of Damanhour.</p></div>
+      </article>
+      <article class="fs-ch" data-zoom="1.06 1.06" data-pan="1.5 -1.5" style="--fx:55%">
+        <div class="fs-media"><img class="fs-a" data-src="assets/img/farm/02-planting.jpg" alt="Painting: hands pressing luffa seeds into dark furrowed soil"></div>
+        <div class="fs-cap"><span class="caps-s soft">02 / 07 · March</span><h2 class="h2">Seeds into<br><em>Delta soil.</em></h2><p>Planting starts as the days lengthen, in March and April. The seeds come from last year’s harvest.</p></div>
+      </article>
+      <article class="fs-ch" data-zoom="1.08 1" data-wipe="bt" style="--fx:45%">
+        <div class="fs-media"><img class="fs-a" data-src="assets/img/farm/03-vines.jpg" alt="Painting: young luffa vines with yellow flowers climbing wooden trellises"></div>
+        <div class="fs-cap"><span class="caps-s soft">03 / 07 · Summer</span><h2 class="h2">The vine<br><em>climbs.</em></h2><p>Gourds climb the trellises from March and hang to arm’s length by late summer.</p></div>
+      </article>
+      <article class="fs-ch" data-zoom="1 1.05" data-wipe="fade" data-turn=".3 .75" style="--fx:30%">
+        <div class="fs-media"><img class="fs-a" data-src="assets/img/farm/04-green.jpg" alt=""><img class="fs-b" data-src="assets/img/farm/04-harvest.jpg" alt="Painting: farmers picking ripe, pale luffa gourds from the trellis at first light"></div>
+        <div class="fs-cap"><span class="caps-s soft">04 / 07 · September</span><h2 class="h2">From green<br><em>to light.</em></h2><p>We pick in September, once the skin turns from green to brown and light.</p></div>
+      </article>
+      <article class="fs-ch" data-zoom="1.04 1" style="--fx:50%">
+        <div class="fs-media"><img class="fs-a" data-src="assets/img/farm/05-drying.jpg" alt="Painting: rows of luffa gourds drying on reed mats in the sun"><div class="fs-sun"></div></div>
+        <div class="fs-cap"><span class="caps-s soft">05 / 07 · In the sun</span><h2 class="h2">The sun<br><em>does the rest.</em></h2><p>Twenty-one days drying in the open air. Nothing is bleached: the colour you see is the sun’s.</p><p class="fs-stat"><span class="fs-n num" data-from="1" data-to="21">01</span><span class="caps-s soft">Days in the sun</span></p></div>
+      </article>
+      <article class="fs-ch" data-zoom="1 1.12" data-turn=".4 .75" style="--fx:50%">
+        <div class="fs-media"><img class="fs-a" data-src="assets/img/farm/06-peel.jpg" alt="Painting: hands peeling the dry skin from a gourd to show the sponge inside"><img class="fs-b" data-src="assets/img/farm/06-fibre.jpg" alt="Painting: a close view of the pale loofah fibre with a cotton tag"></div>
+        <div class="fs-cap"><span class="caps-s soft">06 / 07 · By hand</span><h2 class="h2">Peeled, seeded,<br><em>graded.</em></h2><p>Skins come off by hand and the seeds are saved for spring. Grade A means 58 fibres in every square centimetre.</p><p class="fs-stat"><span class="fs-n num" data-from="0" data-to="58">00</span><span class="caps-s soft">Fibres per cm²</span></p></div>
+      </article>
+      <article class="fs-ch" data-zoom="1 1.05" style="--fx:45%">
+        <div class="fs-media"><img class="fs-a" data-src="assets/img/farm/07-home.jpg" alt="Painting: a loofah with a cotton tag hanging on green tiles beside laurel soap"></div>
+        <div class="fs-cap"><span class="caps-s soft">07 / 07 · Home</span><h2 class="h2">Then it<br><em>comes home.</em></h2><p>The cotton tag fades as the loofah wears. By day 60 a fresh one arrives, and the old one goes back to the soil.</p><p class="fs-stat"><span class="fs-n num" data-from="1" data-to="60">01</span><span class="caps-s soft">Days in your shower</span></p></div>
+      </article>
+      <div class="fs-panel" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap intro">
+      <h2 class="h2 flush" data-split>Al Reef &amp; Laurel</h2>
+      <p class="lede italic soft" data-reveal style="--d:.15s;margin-top:var(--gap-text)">The countryside, and the laurel.</p>
+      <p class="body" data-reveal style="--d:.25s;margin-top:var(--gap-text)"><em>Al Reef</em> means the countryside: the Nile Delta farmland where our loofahs grow on trellises at Field 7, Damanhour. <em>Laurel</em> is the oil in our Sabon Ghar, the soap of Levantine hammams.</p>
+      <div class="founder small" data-reveal style="--d:.3s">[Founder story: the founders’ Egyptian roots go here. To be written with the founders before launch.]</div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow caps" data-reveal>From seed to shower</span><h2 class="h2" data-split>Four seasons, one loofah</h2></div></div>
+      <div class="steps">
+        <div data-reveal><div class="n num">03</div><h3 class="h4" style="margin-top:var(--s-4)">Planting</h3><p class="small soft" style="margin-top:var(--s-2)">Seeds go into Delta soil as the days lengthen, in March and April.</p></div>
+        <div data-reveal style="--d:.1s"><div class="n num">09</div><h3 class="h4" style="margin-top:var(--s-4)">Harvest</h3><p class="small soft" style="margin-top:var(--s-2)">Picked in September once the gourds turn light and dry.</p></div>
+        <div data-reveal style="--d:.2s"><div class="n num">21</div><h3 class="h4" style="margin-top:var(--s-4)">Sun-drying</h3><p class="small soft" style="margin-top:var(--s-2)">Twenty-one days in the open air. Peeled, seeded and rinsed by hand.</p></div>
+        <div data-reveal style="--d:.3s"><div class="n num">58</div><h3 class="h4" style="margin-top:var(--s-4)">Graded</h3><p class="small soft" style="margin-top:var(--s-2)">Every batch counted: Grade A means 58 fibres per cm².</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-clay tiles">
+    <div class="wrap quote"><span class="caps" data-reveal>Grown, not made.</span>
+      <h2 class="display flush" data-split style="margin-top:var(--gap-label)">A vegetable from Damanhour,<br><em>finished like a luxury object.</em></h2>
+      <div data-reveal style="--d:.3s;margin-top:var(--gap-actions)"><a class="btn btn-light" href="product.html?p=the-duo">Shop the Duo · AED 85</a></div></div>
+  </section>
+</main>
+<script src="assets/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* farm story: scroll drives which painting is showing, how far it is brushed on, and its slow movement */
+(() => {
+  const fs = document.querySelector("[data-fs]"); if (!fs) return;
+  const chs = [...fs.querySelectorAll(".fs-ch")];
+  const load = (ch) => ch && ch.querySelectorAll("img[data-src]").forEach((i) => { i.src = i.dataset.src; i.removeAttribute("data-src"); });
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { chs.forEach(load); return; } // chapters stack as stills
+
+  fs.classList.add("is-live"); fs.style.setProperty("--n", chs.length);
+  load(chs[1]);
+  const panel = fs.querySelector(".fs-panel");
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const smooth = (a, b, v) => { const x = clamp((v - a) / (b - a)); return x * x * (3 - 2 * x); };
+  const pair = (s, d) => (s || d).split(" ").map(Number);
+  // a fixed ragged edge, so each painting looks brushed on rather than slid in
+  const J = Array.from({ length: 15 }, (_, k) => (Math.sin(k * 12.9898 + 1) * 43758.5453) % 1);
+  const edge = (w, dir) => {
+    const A = 5, e = w * (100 + A * 2) - A, n = J.length - 1;
+    if (dir === "bt") return `polygon(0% 100%, 100% 100%, ${J.map((j, k) => `${100 - (k * 100) / n}% ${100 - (e + j * A)}%`).join(", ")})`;
+    return `polygon(0% 0%, ${J.map((j, k) => `${e + j * A}% ${(k * 100) / n}%`).join(", ")}, 0% 100%)`;
+  };
+  const measure = () => fs.style.setProperty("--cap", Math.max(...chs.map((c) => c.querySelector(".fs-cap").offsetHeight)) + "px");
+  let active = -1, queued = false;
+  const update = () => {
+    queued = false;
+    const total = fs.offsetHeight - innerHeight, p = clamp(-fs.getBoundingClientRect().top / total), f = p * chs.length, now = Math.floor(f);
+    fs.style.setProperty("--p", p.toFixed(4));
+    let cap = 0;
+    chs.forEach((ch, k) => {
+      const lt = clamp(f - k), w = k === 0 ? 1 : clamp((f - k) / 0.3); // a painting brushes on over the first 30% of its chapter
+      if (k <= now + 2) load(ch);
+      const m = ch.querySelector(".fs-media"), show = w > 0 && k >= now - 1;
+      m.style.visibility = show ? "visible" : "hidden";
+      if (show) {
+        const dir = ch.dataset.wipe || "lr";
+        m.style.opacity = dir === "fade" ? w : 1;
+        m.style.clipPath = w >= 1 || dir === "fade" ? "none" : edge(w, dir);
+        const [z0, z1] = pair(ch.dataset.zoom, "1 1"), [x0, x1] = pair(ch.dataset.pan, "0 0");
+        const t = `translate3d(${(x0 + (x1 - x0) * lt).toFixed(2)}%, 0, 0) scale(${(z0 + (z1 - z0) * lt).toFixed(4)})`;
+        m.querySelectorAll("img").forEach((i) => (i.style.transform = t));
+        const b = m.querySelector(".fs-b"); if (b) { const [a1, a2] = pair(ch.dataset.turn, ".3 .7"); b.style.opacity = smooth(a1, a2, lt); }
+        const sun = m.querySelector(".fs-sun"); if (sun) { sun.style.setProperty("--sx", 8 + 84 * lt + "%"); sun.style.setProperty("--sy", 42 - Math.sin(Math.PI * lt) * 30 + "%"); }
+      }
+      ch.querySelectorAll("[data-to]").forEach((n) => { const a = +n.dataset.from, b = +n.dataset.to; n.textContent = String(Math.round(a + (b - a) * smooth(0.25, 0.85, lt))).padStart(2, "0"); });
+      if (w > 0.5) cap = k;
+    });
+    if (cap !== active) {
+      active = cap;
+      chs.forEach((ch, k) => ch.classList.toggle("is-on", k === cap));
+      panel.style.height = chs[cap].querySelector(".fs-cap").offsetHeight + "px";
+    }
+  };
+  const ask = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+  addEventListener("scroll", ask, { passive: true });
+  addEventListener("resize", () => { active = -1; measure(); ask(); });
+  measure(); update();
+})();
+</script>
+</body>
+</html>

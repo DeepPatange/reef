@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>07 Our Farm</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+/* 07 Our Farm — page-level helpers (wireframe only) */
+.slot{background:#FFF1C2;color:#5A4500;border-radius:4px;padding:0 3px}            /* copy still to be supplied */
+.dash{border:1.5px dashed var(--line2);border-radius:16px}
+.ghost{display:block;height:10px;border-radius:5px;background:var(--dune)}
+.seg{display:block;height:2px;flex:1 1 0;background:var(--line2)}
+.seg.on{background:var(--silt)}
+.stat{border-left:1px solid var(--lined);padding-left:24px}
+.lnum{font-variant-numeric:lining-nums tabular-nums}
+.stat-n{font-family:var(--serif);font-weight:500;font-size:112px;line-height:104px;color:var(--ecru);font-variant-numeric:lining-nums tabular-nums}
+.stat-n-m{font-family:var(--serif);font-weight:500;font-size:64px;line-height:64px;color:var(--ecru);font-variant-numeric:lining-nums tabular-nums}
+.ghosts{display:flex;flex-direction:column;gap:18px}   /* 10 + 18 = one 28 px body line */
+.node{display:block;width:16px;height:16px;border-radius:50%;background:var(--silt);flex:none}
+.node.next{background:var(--ecru);border:1.5px dashed var(--basalt)}
+.pin-tl{position:absolute;top:16px;left:16px}
+</style></head>
+<body class="board">
+
+<!-- ================================================================ -->
+<!-- 07 OUR FARM — DESKTOP 1440                                        -->
+<!-- ================================================================ -->
+<section class="frame desktop" data-name="07 Our Farm — Desktop 1440">
+{{announce}}{{header|farm}}
+
+  <!-- 02 Hero -->
+  <div class="sec" style="padding:112px 40px 0">
+    <div class="col ac tc">
+      <div class="rail"><span class="rule"></span><span class="t-spec">31.03° N · 30.47° E · Damanhour, Egypt</span><span class="rule"></span></div>
+      <h1 class="t-display" style="margin-top:32px">Field 7, <em>Damanhour.</em></h1>
+      <p class="t-body" style="width:640px;margin-top:24px">Where our loofahs grow on trellises above the Nile Delta,<br>and dry for 21 days in the sun.</p>
+    </div>
+    <div class="rel" style="margin-top:80px">
+      {{ph|1360|640|IMG 03 · Gourds on a Damanhour trellis · panoramic||16}}
+      {{mk|M11|-15|-15}}
+      <div style="position:absolute;top:24px;right:24px">{{flag|Real shoot needed · Field 7, harvest week}}</div>
+    </div>
+  </div>
+
+  <!-- 03 Manifesto word reveal -->
+  <div class="sec" style="padding:160px 40px">
+    <div class="col ac g40">
+      {{mono|36|kraft}}
+      <div class="rel">
+        {{mk|M04|-4|-48}}
+        <p class="t-display tc" style="width:1080px">A vegetable from Damanhour, finished like a luxury object. We’d like <span style="opacity:.2">you to know every step it takes.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Why we started -->
+  <div class="sec" style="padding:0 40px 160px">
+    <div class="flex" style="gap:139px">
+      {{ph|668|835|IMG · Founders’ hands holding a dried gourd · hands only||16}}
+      <div class="col jb" style="width:553px">
+        <div class="col">
+          <div class="rail"><span class="rule"></span><span class="t-spec">The founders</span></div>
+          <h2 class="t-title" style="margin-top:24px">Why we started</h2>
+          <div class="dash col" style="margin-top:40px;padding:36px 40px 40px">
+            <div class="flex jb ac"><span class="t-spec-s c-smoke">Placeholder · founder story</span>{{flag|Founder story to write}}</div>
+            <p class="t-body" style="margin-top:24px">[Founder story: add the founders’ Egyptian roots here.]</p>
+            <div class="ghosts" style="margin-top:28px">
+              <i class="ghost" style="width:100%"></i><i class="ghost" style="width:97%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:94%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:58%"></i>
+            </div>
+            <div class="ghosts" style="margin-top:28px">
+              <i class="ghost" style="width:99%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:96%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:36%"></i>
+            </div>
+            <p class="t-cap c-smoke" style="margin-top:28px">About 100 words, in the founders’ own voice. Every fact comes from them.</p>
+          </div>
+        </div>
+        <div class="col g8">
+          <span class="t-ar" style="font-size:64px">الريف</span>
+          <span class="t-cap c-smoke">Al Reef: the countryside</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 From seed to shower (pinned horizontal timeline) -->
+  <div class="sec bg-steam" style="padding:144px 40px 152px">
+    <div class="flex jb ae">
+      <div class="col g24">
+        <div class="rail"><span class="rule"></span><span class="t-spec">A year at Field 7</span></div>
+        <h2 class="t-display">From seed <em>to shower.</em></h2>
+      </div>
+      <div class="flex ac g32" style="padding-bottom:6px">
+        <span class="t-title lnum">03<span class="c-smoke"> / 08</span></span>
+        <span class="flex g12"><span class="arrowbtn">{{icon|arrow-left|20}}</span><span class="arrowbtn">{{icon|arrow-right|20}}</span></span>
+      </div>
+    </div>
+    <div class="rel" style="margin-top:64px">
+      {{mk|M16|-34|-15}}
+      <div class="flex g4"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div>
+      <div class="flex g4 t-cap" style="margin-top:14px">
+        <span class="f1 w5">01 Planting</span><span class="f1 w5">02 The trellis</span><span class="f1 w5">03 Harvest</span><span class="f1 c-smoke">04 Sun-drying</span>
+        <span class="f1 c-smoke">05 Peel, seed, rinse</span><span class="f1 c-smoke">06 Grade and cut</span><span class="f1 c-smoke">07 The journey</span><span class="f1 c-smoke">08 Your shower</span>
+      </div>
+    </div>
+    <div data-bleed="1" class="flex g24" style="margin-top:56px;width:3368px">
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · A hand pressing seeds into Delta soil||12}}
+        <div class="col g12"><span class="t-spec">01 · March–April</span><span class="t-card">Planting</span><p class="t-ui c-smoke">Seeds go into Delta soil as the days lengthen.</p></div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · Vines on the trellis, gourds hanging||12}}
+        <div class="col g12"><span class="t-spec">02 · May–August</span><span class="t-card">The trellis</span><p class="t-ui c-smoke">Vines climb; gourds hang and grow to arm’s length.</p></div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · Hands cutting a brown gourd from the vine||12}}
+        <div class="col g12"><span class="t-spec">03 · September</span><span class="t-card">Harvest</span><p class="t-ui c-smoke">Picked once the skin turns from green to brown and light.</p></div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · Gourds drying in rows, open air||12}}
+        <div class="col g12"><span class="t-spec">04 · 21 days</span><span class="t-card">Sun-drying</span><p class="t-ui c-smoke">Dried in the open air on the farm. The colour is the sun’s.</p></div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · Hands peeling a dried gourd||12}}
+        <div class="col g12"><span class="t-spec">05 · By hand</span><span class="t-card">Peel, seed, rinse</span><p class="t-ui c-smoke">Skins come off by hand; seeds are saved for next spring. No bleach.</p></div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · Grading fibre density, cutting pads||12}}
+        <div class="col g12"><span class="t-spec">06 · Every batch</span><span class="t-card">Grade and cut</span><p class="t-ui c-smoke">Every batch is graded for density: Grade A means 58 fibres per cm².</p></div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG · Kraft boxes tied with twine||12}}
+        <div class="col g12"><span class="t-spec">07 · Egypt to Dubai</span><span class="t-card">The journey</span><p class="t-ui c-smoke">Packed in kraft and twine, shipped from Egypt to Dubai.</p>{{flag|Route to confirm}}</div></div>
+      <div class="col g24" style="width:400px">{{ph|400|300|IMG 01 · Lathered loofah in hand||12}}
+        <div class="col g12"><span class="t-spec">08 · At home</span><span class="t-card">Your shower</span><p class="t-ui c-smoke">Day 01 of 60. Hang it to dry.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 06 Numbers -->
+  <div class="sec bg-basalt" style="padding:120px 40px 128px">
+    <div class="rail"><span class="rule-k"></span><span class="t-spec c-kraft">Field 7, in numbers</span></div>
+    <div class="rel flex g24" style="margin-top:64px">
+      {{mk|M12|-15|-15}}
+      <div class="f1 col stat"><span class="stat-n num">21</span><span class="t-spec c-kraft" style="margin-top:20px">Days of sun</span><p class="t-ui c-ecru70" style="margin-top:12px;width:260px">Dried in the open air on the farm, never bleached. The colour is the sun’s.</p></div>
+      <div class="f1 col stat"><span class="stat-n num">58</span><span class="t-spec c-kraft" style="margin-top:20px">Fibres per cm²</span><p class="t-ui c-ecru70" style="margin-top:12px;width:260px">Grade A density, checked on every batch. Premium A, for the Back Strap, reaches 65.</p></div>
+      <div class="f1 col stat"><span class="stat-n num">60</span><span class="t-spec c-kraft" style="margin-top:20px">Days per loofah</span><p class="t-ui c-ecru70" style="margin-top:12px;width:260px">A cotton tag on every loofah fades by day 60, so you know when it’s time.</p></div>
+      <div class="f1 col stat"><span class="stat-n num">0</span><span class="t-spec c-kraft" style="margin-top:20px">Plastic</span><p class="t-ui c-ecru70" style="margin-top:12px;width:260px">Kraft, twine and cotton. The loofah composts; the box becomes a caddy.</p></div>
+    </div>
+  </div>
+
+  <!-- 07 The hands behind Field 7 -->
+  <div class="sec" style="padding:144px 40px">
+    <div class="flex jb ae">
+      <div class="col g24">
+        <div class="rail"><span class="rule"></span><span class="t-spec">The people</span></div>
+        <h2 class="t-title">The hands behind Field 7</h2>
+      </div>
+      {{flag|Names, roles and photo consent to confirm}}
+    </div>
+    <div class="flex g24" style="margin-top:56px">
+      <div class="f1 col g20">{{ph|100%|546|IMG · Hands harvesting a gourd||12}}<p class="t-ui"><span class="w5">Harvest</span> · <span class="slot">[name]</span>, farm lead</p></div>
+      <div class="f1 col g20">{{ph|100%|546|IMG · Hands peeling a dried gourd||12}}<p class="t-ui"><span class="w5">Peeling</span> · <span class="slot">[name]</span>, <span class="slot">[role]</span></p></div>
+      <div class="f1 col g20">{{ph|100%|546|IMG · Hands grading fibre||12}}<p class="t-ui"><span class="w5">Grading</span> · <span class="slot">[name]</span>, <span class="slot">[role]</span></p></div>
+    </div>
+  </div>
+
+  <!-- 08 And the soap? -->
+  <div class="sec bg-dune" style="padding:144px 40px">
+    <div class="flex ac" style="gap:139px">
+      <div class="flex jc fn" style="width:668px">{{win|480|640|IMG 07 · Seal macro on soap · cut bar, green core, gold crust|steam}}</div>
+      <div class="col fn" style="width:553px">
+        <div class="rail"><span class="rule"></span><span class="t-spec">From the Levant</span></div>
+        <h2 class="t-display" style="margin-top:28px">And the <em>soap?</em></h2>
+        <p class="t-body" style="margin-top:28px">Sabon Ghar: olive oil and laurel oil, cured slowly <span class="slot">[x months]</span> in <span class="slot">[city]</span>. Laurel 16 for every day; Laurel 30 for oily skin.</p>
+        <div style="margin-top:16px">{{flag|Cure time and city to confirm with the soap maker}}</div>
+        <div class="rail" style="margin-top:44px"><span class="rule"></span><span class="t-spec">Laurel 16 · 150 g · Laurel 30 · 150 g</span></div>
+        <div style="margin-top:44px"><a class="tlink">Shop the soaps {{icon|arrow-right|16}}</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09 The route -->
+  <div class="sec" style="padding:144px 40px 120px">
+    <div class="flex jb ae">
+      <div class="col g24">
+        <div class="rail"><span class="rule"></span><span class="t-spec">The route</span></div>
+        <h2 class="t-title">From Damanhour to your door</h2>
+      </div>
+      {{flag|Route, ports and timings to confirm}}
+    </div>
+    <div class="rel" style="margin-top:80px">
+      {{mk|M09|-34|-15}}
+      <svg width="1360" height="16" viewBox="0 0 1360 16" fill="none" style="position:absolute;left:0;top:0">
+        <path d="M8 8H700" stroke="#2B2A27" stroke-width="1.5"/>
+        <path d="M700 8H1046" stroke="#2B2A27" stroke-width="1.5" stroke-dasharray="6 6"/>
+      </svg>
+      <div class="flex g24" style="position:relative">
+        <div class="f1 col"><i class="node"></i><span class="t-spec-s c-smoke" style="margin-top:32px">Egypt</span><span class="t-card" style="margin-top:10px">Field 7</span><span class="t-ui">Damanhour</span><p class="t-cap c-smoke" style="margin-top:14px;width:300px">Grown on trellises and sun-dried for 21 days.</p></div>
+        <div class="f1 col"><i class="node"></i><span class="t-spec-s c-smoke" style="margin-top:32px">Egypt</span><span class="t-card" style="margin-top:10px">Alexandria</span><span class="t-ui">Port</span><p class="t-cap c-smoke" style="margin-top:14px;width:300px">Where the season’s harvest leaves Egypt.</p></div>
+        <div class="f1 col"><i class="node"></i><span class="t-spec-s c-smoke" style="margin-top:32px">United Arab Emirates</span><span class="t-card" style="margin-top:10px">Jebel Ali</span><span class="t-ui">Dubai</span><p class="t-cap c-smoke" style="margin-top:14px;width:300px">Arrives in the UAE, then on to your door.</p></div>
+        <div class="f1 col"><i class="node next"></i><span class="t-spec-s c-smoke" style="margin-top:32px">Saudi Arabia</span><span class="t-card" style="margin-top:10px">Riyadh</span><span class="t-ui">From April 2027</span><p class="t-cap c-smoke" style="margin-top:14px;width:300px">Next, then the rest of the GCC.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 Field notes -->
+  <div class="sec" style="padding:72px 40px 144px">
+    <div class="flex jb ae">
+      <div class="col g24">
+        <div class="rail"><span class="rule"></span><span class="t-spec">By season</span></div>
+        <h2 class="t-title">Field notes</h2>
+      </div>
+      <a class="tlink">All field notes {{icon|arrow-right|16}}</a>
+    </div>
+    <div class="flex g24" style="margin-top:48px">
+      <div class="f1 col g20 rel">{{mk|M15|-15|-15}}
+        <div class="rel">{{ph|100%|328|IMG · Harvest week, gourds in crates||12}}<span class="badge pin-tl">Field Notes</span></div>
+        <div class="col g8"><span class="t-card">Harvest week at Field 7</span><p class="t-ui c-smoke">September on the farm: each gourd picked once its skin turns brown and light.</p></div></div>
+      <div class="f1 col g20">
+        <div class="rel">{{ph|100%|328|IMG 05 · Loofah discs on a dark field|dark|12}}<span class="badge pin-tl">Specimen</span></div>
+        <div class="col g8"><span class="t-card">What Grade A actually means</span><p class="t-ui c-smoke">One backlit slice, its grade and its field: what 58 fibres per cm² feels like.</p></div></div>
+      <div class="f1 col g20">
+        <div class="rel">{{ph|100%|328|IMG · Dried gourds, unbleached||12}}<span class="badge pin-tl">Ask the Delta</span></div>
+        <div class="col g8"><span class="t-card">Why don’t you bleach them?</span><p class="t-ui c-smoke">The founders answer one real question a week. The short answer: the colour is the sun’s.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 11 CTA band -->
+  <div class="sec bg-steam" style="padding:144px 40px 160px">
+    <div class="col ac tc">
+      {{win|210|280|IMG · The Duo on travertine}}
+      <h2 class="t-display" style="margin-top:48px">Meet the vegetable <em>in person.</em></h2>
+      <p class="t-body c-smoke" style="margin-top:20px;width:600px">The Duo: a Daily Pad from Field 7 and a bar of Laurel 16,<br>renewed every 60 days.</p>
+      <span class="btn btn-primary" style="margin-top:40px">Shop the Duo · AED 85</span>
+      <span class="t-ui c-clay w5" style="margin-top:16px">AED 68 on renewal</span>
+    </div>
+  </div>
+
+{{footer}}
+</section>
+
+<!-- ================================================================ -->
+<!-- 07 OUR FARM — MOBILE 390                                          -->
+<!-- ================================================================ -->
+<section class="frame mobile" data-name="07 Our Farm — Mobile 390">
+{{mann}}{{mheader}}
+
+  <!-- Hero -->
+  <div class="sec-m" style="padding:56px 20px 0">
+    <div class="col ac tc">
+      <span class="t-spec-s">31.03° N · 30.47° E · Damanhour, Egypt</span>
+      <h1 class="t-display-m" style="margin-top:20px">Field 7, <em>Damanhour.</em></h1>
+      <p class="t-body-s" style="margin-top:16px">Where our loofahs grow on trellises above the Nile Delta, and dry for 21 days in the sun.</p>
+    </div>
+    <div class="rel" style="margin-top:40px">
+      {{ph|350|440|IMG 03 · Gourds on a Damanhour trellis||16}}
+      {{mk|M11|12|12}}
+      <div style="position:absolute;top:16px;right:16px">{{flag|Real shoot needed}}</div>
+    </div>
+  </div>
+
+  <!-- Manifesto -->
+  <div class="sec-m" style="padding:96px 20px">
+    <div class="col ac g32">
+      {{mono|28|kraft}}
+      <div class="rel">
+        {{mk|M04|-36|0}}
+        <p class="t-display-m tc">A vegetable from Damanhour, finished like a luxury object. We’d like <span style="opacity:.2">you to know every step it takes.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why we started -->
+  <div class="sec-m" style="padding:0 20px 96px">
+    {{ph|350|438|IMG · Founders’ hands holding a dried gourd||16}}
+    <div class="rail" style="margin-top:40px"><span class="rule"></span><span class="t-spec-s">The founders</span></div>
+    <h2 class="t-title-m" style="margin-top:16px">Why we started</h2>
+    <div class="dash col" style="margin-top:28px;padding:24px">
+      <div class="flex jb ac"><span class="t-spec-s c-smoke">Placeholder</span>{{flag|Founder story to write}}</div>
+      <p class="t-body-s" style="margin-top:16px">[Founder story: add the founders’ Egyptian roots here.]</p>
+      <div class="ghosts" style="gap:16px;margin-top:20px"><i class="ghost" style="width:100%"></i><i class="ghost" style="width:94%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:97%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:52%"></i></div>
+      <div class="ghosts" style="gap:16px;margin-top:26px"><i class="ghost" style="width:98%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:95%"></i><i class="ghost" style="width:100%"></i><i class="ghost" style="width:40%"></i></div>
+      <p class="t-cap c-smoke" style="margin-top:20px">About 100 words, in the founders’ own voice.</p>
+    </div>
+    <div class="flex ae jb" style="margin-top:32px">
+      <span class="t-ar" style="font-size:52px">الريف</span>
+      <span class="t-cap c-smoke" style="padding-bottom:10px">Al Reef: the countryside</span>
+    </div>
+  </div>
+
+  <!-- From seed to shower (swipe) -->
+  <div class="sec-m bg-steam" style="padding:88px 20px 80px">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">A year at Field 7</span></div>
+    <h2 class="t-display-m" style="margin-top:16px">From seed <em>to shower.</em></h2>
+    <div class="flex ac g16" style="margin-top:32px">
+      <span class="t-card lnum">01<span class="c-smoke"> / 08</span></span>
+      <div class="f1 flex g4"><i class="seg on"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div>
+    </div>
+    <div class="rel" style="margin-top:28px">
+      {{mk|M07|-12|-8}}
+      <div data-bleed="1" class="flex g12" style="width:2484px">
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · A hand pressing seeds into soil||12}}
+          <div class="col g8"><span class="t-spec-s">01 · March–April</span><span class="t-card">Planting</span><p class="t-ui c-smoke">Seeds go into Delta soil as the days lengthen.</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · Vines on the trellis||12}}
+          <div class="col g8"><span class="t-spec-s">02 · May–August</span><span class="t-card">The trellis</span><p class="t-ui c-smoke">Vines climb; gourds hang and grow to arm’s length.</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · Harvest||12}}
+          <div class="col g8"><span class="t-spec-s">03 · September</span><span class="t-card">Harvest</span><p class="t-ui c-smoke">Picked once the skin turns from green to brown and light.</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · Sun-drying||12}}
+          <div class="col g8"><span class="t-spec-s">04 · 21 days</span><span class="t-card">Sun-drying</span><p class="t-ui c-smoke">Dried in the open air on the farm. The colour is the sun’s.</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · Peeling||12}}
+          <div class="col g8"><span class="t-spec-s">05 · By hand</span><span class="t-card">Peel, seed, rinse</span><p class="t-ui c-smoke">Skins come off by hand; seeds are saved for next spring. No bleach.</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · Grading||12}}
+          <div class="col g8"><span class="t-spec-s">06 · Every batch</span><span class="t-card">Grade and cut</span><p class="t-ui c-smoke">Every batch is graded for density: Grade A means 58 fibres per cm².</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG · Kraft and twine||12}}
+          <div class="col g8"><span class="t-spec-s">07 · Egypt to Dubai</span><span class="t-card">The journey</span><p class="t-ui c-smoke">Packed in kraft and twine, shipped from Egypt to Dubai.</p></div></div>
+        <div class="col g20" style="width:300px">{{ph|300|225|IMG 01 · Lathered loofah in hand||12}}
+          <div class="col g8"><span class="t-spec-s">08 · At home</span><span class="t-card">Your shower</span><p class="t-ui c-smoke">Day 01 of 60. Hang it to dry.</p></div></div>
+      </div>
+    </div>
+    <div class="flex ac g8 t-cap c-smoke" style="margin-top:28px">{{icon|grab|18}}Swipe to follow the year</div>
+  </div>
+
+  <!-- Numbers 2 x 2 -->
+  <div class="sec-m bg-basalt" style="padding:72px 20px 80px">
+    <div class="rail"><span class="rule-k"></span><span class="t-spec-s c-kraft">Field 7, in numbers</span></div>
+    <div class="rel" style="margin-top:40px">
+      {{mk|M12|-12|-8}}
+      <div class="flex g12">
+        <div class="f1 col" style="border-top:1px solid var(--lined);padding-top:20px"><span class="stat-n-m num">21</span><span class="t-spec-s c-kraft" style="margin-top:12px">Days of sun</span></div>
+        <div class="f1 col" style="border-top:1px solid var(--lined);padding-top:20px"><span class="stat-n-m num">58</span><span class="t-spec-s c-kraft" style="margin-top:12px">Fibres per cm²</span></div>
+      </div>
+      <div class="flex g12" style="margin-top:40px">
+        <div class="f1 col" style="border-top:1px solid var(--lined);padding-top:20px"><span class="stat-n-m num">60</span><span class="t-spec-s c-kraft" style="margin-top:12px">Days per loofah</span></div>
+        <div class="f1 col" style="border-top:1px solid var(--lined);padding-top:20px"><span class="stat-n-m num">0</span><span class="t-spec-s c-kraft" style="margin-top:12px">Plastic</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hands (swipe) -->
+  <div class="sec-m" style="padding:88px 20px">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">The people</span></div>
+    <h2 class="t-title-m" style="margin-top:16px">The hands behind Field 7</h2>
+    <div style="margin-top:16px">{{flag|Names, roles and photo consent}}</div>
+    <div data-bleed="1" class="flex g12" style="margin-top:28px;width:864px">
+      <div class="col g12" style="width:280px">{{ph|280|350|IMG · Hands harvesting||12}}<p class="t-ui"><span class="w5">Harvest</span> · <span class="slot">[name]</span>, farm lead</p></div>
+      <div class="col g12" style="width:280px">{{ph|280|350|IMG · Hands peeling||12}}<p class="t-ui"><span class="w5">Peeling</span> · <span class="slot">[name]</span>, <span class="slot">[role]</span></p></div>
+      <div class="col g12" style="width:280px">{{ph|280|350|IMG · Hands grading||12}}<p class="t-ui"><span class="w5">Grading</span> · <span class="slot">[name]</span></p></div>
+    </div>
+  </div>
+
+  <!-- And the soap? -->
+  <div class="sec-m bg-dune" style="padding:80px 20px 88px">
+    <div class="flex jc">{{win|270|360|IMG 07 · Seal macro on soap|steam}}</div>
+    <div class="rail" style="margin-top:40px"><span class="rule"></span><span class="t-spec-s">From the Levant</span></div>
+    <h2 class="t-display-m" style="margin-top:16px">And the <em>soap?</em></h2>
+    <p class="t-body-s" style="margin-top:16px">Sabon Ghar: olive oil and laurel oil, cured slowly <span class="slot">[x months]</span> in <span class="slot">[city]</span>. Laurel 16 for every day; Laurel 30 for oily skin.</p>
+    <div style="margin-top:12px">{{flag|Cure time and city to confirm}}</div>
+    <div class="rail" style="margin-top:28px"><span class="rule"></span><span class="t-spec-s">Laurel 16 · 150 g · Laurel 30 · 150 g</span></div>
+    <div style="margin-top:28px"><a class="tlink">Shop the soaps {{icon|arrow-right|16}}</a></div>
+  </div>
+
+  <!-- The route (vertical) -->
+  <div class="sec-m" style="padding:88px 20px 72px">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">The route</span></div>
+    <h2 class="t-title-m" style="margin-top:16px">From Damanhour<br>to your door</h2>
+    <div class="flex ac g12" style="margin-top:16px">{{mk|M09}}{{flag|Route to confirm}}</div>
+    <div class="rel" style="margin-top:32px">
+      <svg width="16" height="420" viewBox="0 0 16 420" fill="none" style="position:absolute;left:0;top:0">
+        <path d="M8 10V286" stroke="#2B2A27" stroke-width="1.5"/>
+        <path d="M8 286V398" stroke="#2B2A27" stroke-width="1.5" stroke-dasharray="5 5"/>
+      </svg>
+      <div class="col" style="position:relative">
+        <div class="flex g20" style="height:138px"><i class="node" style="margin-top:2px"></i><div class="col"><span class="t-spec-s c-smoke">Egypt</span><span class="t-card" style="margin-top:6px">Field 7 · Damanhour</span><p class="t-cap c-smoke" style="margin-top:6px">Grown on trellises and sun-dried for 21 days.</p></div></div>
+        <div class="flex g20" style="height:138px"><i class="node" style="margin-top:2px"></i><div class="col"><span class="t-spec-s c-smoke">Egypt</span><span class="t-card" style="margin-top:6px">Alexandria · port</span><p class="t-cap c-smoke" style="margin-top:6px">Where the season’s harvest leaves Egypt.</p></div></div>
+        <div class="flex g20" style="height:138px"><i class="node" style="margin-top:2px"></i><div class="col"><span class="t-spec-s c-smoke">United Arab Emirates</span><span class="t-card" style="margin-top:6px">Jebel Ali · Dubai</span><p class="t-cap c-smoke" style="margin-top:6px">Arrives in the UAE, then on to your door.</p></div></div>
+        <div class="flex g20"><i class="node next" style="margin-top:2px"></i><div class="col"><span class="t-spec-s c-smoke">Saudi Arabia · from April 2027</span><span class="t-card" style="margin-top:6px">Riyadh</span><p class="t-cap c-smoke" style="margin-top:6px">Next, then the rest of the GCC.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field notes -->
+  <div class="sec-m" style="padding:72px 20px 88px;border-top:1px solid var(--line)">
+    <div class="flex jb ae">
+      <h2 class="t-title-m">Field notes</h2>
+      <a class="tlink" style="font-size:15px">All notes {{icon|arrow-right|16}}</a>
+    </div>
+    <div class="rel col g16" style="margin-top:28px">
+      {{mk|M15|-12|-8}}
+      <div class="rel">{{ph|350|262|IMG · Harvest week, gourds in crates||12}}<span class="badge pin-tl">Field Notes</span></div>
+      <span class="t-card" style="margin-top:4px">Harvest week at Field 7</span>
+      <p class="t-ui c-smoke">September on the farm: each gourd picked once its skin turns brown and light.</p>
+    </div>
+    <div class="flex g16" style="margin-top:32px;padding-top:24px;border-top:1px solid var(--line)">
+      {{ph|112|112|IMG 05|dark|12}}
+      <div class="col g8 f1"><span class="badge" style="align-self:flex-start">Specimen</span><span class="t-card">What Grade A actually means</span></div>
+    </div>
+    <div class="flex g16" style="margin-top:24px;padding-top:24px;border-top:1px solid var(--line)">
+      {{ph|112|112|IMG · Dried gourds||12}}
+      <div class="col g8 f1"><span class="badge" style="align-self:flex-start">Ask the Delta</span><span class="t-card">Why don’t you bleach them?</span></div>
+    </div>
+  </div>
+
+  <!-- CTA band -->
+  <div class="sec-m bg-steam" style="padding:88px 20px 96px">
+    <div class="col ac tc">
+      {{win|150|200|IMG · The Duo}}
+      <h2 class="t-display-m" style="margin-top:36px">Meet the vegetable <em>in person.</em></h2>
+      <p class="t-body-s c-smoke" style="margin-top:16px">The Duo: a Daily Pad from Field 7 and a bar of Laurel 16, renewed every 60 days.</p>
+      <span class="btn btn-primary btn-block" style="margin-top:32px">Shop the Duo · AED 85</span>
+      <span class="t-ui c-clay w5" style="margin-top:14px">AED 68 on renewal</span>
+    </div>
+  </div>
+
+{{mfooter}}
+</section>
+
+<!-- ================================================================ -->
+<!-- 07 OUR FARM — NOTES                                               -->
+<!-- ================================================================ -->
+<section class="frame notes" data-name="07 Our Farm — Notes">
+  <div class="n-kick">07 · Our farm · /pages/our-farm</div>
+  <div class="n-title">Our farm</div>
+  <p class="n-lead">The origin story and the proof behind it: where the loofah grows, how it is made, who handles it and how it reaches the Gulf. Visitors arrive from the header and footer, the “Traced to Field 7” band on product pages, Field notes and Instagram. The page earns trust first and sells once, at the end: <b>Shop the Duo · AED 85</b>.</p>
+
+  <div class="n-block"><div class="n-h">Sections, top to bottom</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Header</b>: announcement + header, “Our farm” active.</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Hero</b>: coordinates rail, “Field 7, Damanhour.”, one line of place and process, then the panoramic trellis image. Centred, quiet, no button: the page is a read.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>Manifesto</b>: one display sentence revealed word by word. Sets up the promise the rest of the page keeps: every step, shown.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>Why we started</b>: founders’ hands with a dried gourd, then the founder story (placeholder) and the one Ruqaa word, الريف, with its meaning.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>From seed to shower</b>: eight steps from planting to Day 01 in your shower, as a pinned horizontal timeline with a step index above it.</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>Field 7, in numbers</b>: the four proof points (21 · 58 · 60 · 0) on the page’s one Basalt band, each with a line on why it matters.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span><b>The hands behind Field 7</b>: three portraits of hands at work, captioned with task, name and role.</span></div>
+    <div class="n-item"><span class="n-num">08</span><span><b>And the soap?</b>: the Sabon Ghar half of the ritual, on Dune, with a link to the soaps.</span></div>
+    <div class="n-item"><span class="n-num">09</span><span><b>The route</b>: Field 7 → Alexandria → Jebel Ali, with Riyadh dashed as the next stop.</span></div>
+    <div class="n-item"><span class="n-num">10</span><span><b>Field notes</b>: three articles, one per content pillar, so the story keeps going after this page.</span></div>
+    <div class="n-item"><span class="n-num">11</span><span><b>CTA band</b>: the page’s only primary button, with the renewal price beneath it in Clay.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M11</span><span><b>Field parallax</b>: the panoramic moves at 0.85× scroll and settles from 1.1 to 1 scale. This is the page’s one big image moment.<span class="n-ref">Lula: Horizon image/video background (inset hero video)</span></span></div>
+    <div class="n-item"><span class="n-chip">M04</span><span><b>Word reveal</b>: words start at 20% and turn solid as the sentence scrolls through the viewport. Shown here at about 60% read.<span class="n-ref">Lula: text-animation.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M16</span><span><b>Pinned timeline</b>: the section pins; scrolling down moves the track sideways. The counter and Silt segments show the furthest step fully in view (shown: 03 of 08). Arrows and the step index jump to a step for keyboard and mouse users. The pin releases after card 08.<span class="n-ref">Lula: new, extends hover-image-v2.js sticky story</span></span></div>
+    <div class="n-item"><span class="n-chip">M12</span><span><b>Count-up</b>: 21, 58 and 60 count up once on enter (900 ms); 0 fades in without counting.<span class="n-ref">Lula: stars-count.js pattern</span></span></div>
+    <div class="n-item"><span class="n-chip">M09</span><span><b>Line draw</b>: the route draws left to right (900 ms); each dot appears as the line reaches it; the dashed Riyadh leg draws last.<span class="n-ref">Our own, from the icon construction</span></span></div>
+    <div class="n-item"><span class="n-chip">M07</span><span><b>Swipe rows (mobile)</b>: seed to shower and the hands swipe with momentum; the counter and segments follow the card in view.<span class="n-ref">Lula: product-slider.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M15</span><span><b>Hover</b>: Field notes images zoom 1.04 (600 ms); text links underline left to right.<span class="n-ref">Lula: Horizon card hover</span></span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Everything else fades up 24 px on enter (600 ms). Reduced motion: no parallax, manifesto shown in full, timeline becomes a plain swipe row, numbers shown final.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Mobile</div><div class="n-list">
+    <div class="n-item"><span class="n-num">—</span><span>Same order. Hero stays centred; the panoramic becomes a 350 × 440 portrait crop of the same shot.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Seed to shower is a swipe row (M07), not pinned: one card plus a peek, counter and segments update per card.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Numbers 2 × 2 without the explainer lines; hands become a swipe row; the route turns vertical; Field notes show one lead card and two compact rows.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">—</span><span>Origin facts from Brand Strategy: Field 7, Damanhour, 31.03° N 30.47° E, harvest Sept 2026, sun-dried 21 days, never bleached, Grade A 58 / cm² (Premium A 65).</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Yellow highlights in copy (e.g. <span class="slot">[city]</span>) are slots waiting for facts. Nothing in them should be guessed.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Every image here is from the Field 7 shoot. Hands only, never faces, including the founders.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Field notes cards pull the latest article per pillar (Field Notes · Specimen · Ask the Delta).</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span>Founder story still a placeholder: founders to supply their Egyptian roots, and approve the hands photo.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Real Field 7 shoot needed for every image; current renders look AI-generated.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Farm team: names, roles and written consent for named, photographed hands.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Sabon Ghar cure time and city are unknown. Confirm with the soap maker before any copy is written.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Route: confirm Alexandria → Jebel Ali. Also, where is it packed? Step 07 says packed, then shipped from Egypt; the batch page says “Packed · October 2026, Dubai”.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Season dates (planting March–April, trellis May–August, harvest September) to confirm with the farm.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Claims for the regulatory adviser: “0 plastic”, “never bleached”, “the loofah composts”, how Grade A density is measured.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>“60 days per loofah” sits beside a 90-day renewal option elsewhere; the 90-day cycle contradicts “when the tag fades”.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Riyadh from April 2027 depends on SFDA registration; dashed until confirmed.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>الريف (“the countryside”): native-speaker check that this is the word the brand name means to carry.</span></div>
+  </div></div>
+</section>
+
+</body></html>

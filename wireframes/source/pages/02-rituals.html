@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>02 Rituals</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+/* 02 Rituals · page-level additions */
+.anno{font:500 12px/16px var(--sans);color:var(--anno)}
+/* product card · stacked variant for the 4-up grid (322) */
+.pc{width:322px;flex:none;display:flex;flex-direction:column;position:relative}
+.pc .im{width:322px;height:402px;border-radius:12px}
+.pc .nm{margin-top:22px}
+.pc .ct{margin-top:4px}
+.pc .pr{margin-top:14px;display:flex;align-items:baseline;gap:8px}
+.pc .rn{margin-top:2px}
+.cut{border-radius:50%;box-shadow:0 10px 28px rgba(43,42,39,.10)}
+.btl{position:absolute;top:16px;left:16px}
+/* renewal band steps */
+.rstep{width:322px;flex:none;display:flex;flex-direction:column;padding-left:28px;border-left:1px solid var(--line2)}
+/* compare table */
+.cmp{display:flex;gap:24px;padding:18px 24px;border-top:1px solid var(--line);align-items:baseline}
+.cmp > *{flex:1 1 0;min-width:0}
+/* faq */
+.qa{padding:0 120px 30px 0;margin-top:-6px}
+/* mobile */
+.pm{width:169px;flex:none;display:flex;flex-direction:column}
+.pm .im{width:169px;height:211px;border-radius:12px}
+.btl-m{position:absolute;top:10px;left:10px}
+.mstep{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--line2)}
+.cmpm{display:flex;gap:16px;padding:14px 16px;border-top:1px solid var(--line);align-items:baseline}
+.cmpm > *{width:140px;flex:none}
+.cmpm > :first-child{width:84px}
+.optm{padding:14px 16px}
+</style></head>
+<body class="board">
+
+<!-- =============================== DESKTOP =============================== -->
+<section class="frame desktop" data-name="02 Rituals — Desktop 1440">
+  {{announce}}{{header|rituals}}
+
+  <!-- 2 · COLLECTION HEADER -->
+  <div class="flex jb ae" style="padding:96px 40px 56px">
+    <div class="col" style="width:668px;padding-bottom:8px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">7 sets · renew every 60 days</span></div>
+      <div class="t-display" style="margin-top:28px">Rituals</div>
+      <p class="t-body" style="width:560px;margin-top:20px">Every set renews every 60 days, so nobody in the house keeps a loofah too long. Pick the one that fits your bathroom, or build your own.</p>
+    </div>
+    <div class="flex ac g32">
+      <span class="t-ar" style="font-size:64px;line-height:80px">طقس</span>
+      {{win|220|293|IMG 06 · Unboxing flat-lay}}
+    </div>
+  </div>
+
+  <!-- 3 · FILTER ROW -->
+  <div style="padding:0 40px">
+    <div class="flex jb ac" style="padding:0 0 20px;border-bottom:1px solid var(--line)">
+      <div class="flex ac g24">
+        <span class="t-spec">Who’s it for?</span>
+        <div class="flex g8 rel">{{mk|M19|-15|-15}}
+          <span class="chip on">All</span><span class="chip">Just me</span><span class="chip">Two of us</span><span class="chip">The whole house</span><span class="chip">Kids</span><span class="chip">A gift</span><span class="chip">Grooming</span>
+        </div>
+      </div>
+      <div class="flex ac g24">
+        <div class="flex ac g12 rel">{{mk|M13|-15|-15}}<span class="toggle"></span><span class="t-ui">Show renewal prices</span></div>
+        <span style="width:1px;height:24px;background:var(--line2)"></span>
+        <div class="flex ac g8 t-ui"><span class="c-smoke">Sort</span><span class="w5">Recommended</span>{{icon|chev-down|16}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 · GRID 4 × 2 -->
+  <div class="rel" style="padding:56px 40px 144px">
+    <div class="flex g24">
+      <!-- The Duo -->
+      <div class="pc">
+        <div class="ph im">
+          <div class="flex ac"><div class="cut" style="margin-top:-44px">{{circ|156||steam}}</div><div class="cut" style="margin:76px 0 0 -40px">{{circ|128||steam}}</div></div>
+          <span class="badge btl">Founders’ pick</span>
+          <span class="lbl">IMG · Pad and bar, cut-outs</span>
+        </div>
+        <div class="t-card nm">The Duo</div>
+        <div class="t-ui c-smoke ct">Daily Pad + Laurel 16</div>
+        <div class="pr"><span class="t-ui strike num">89</span><span class="t-ui w5 num">AED 85</span></div>
+        <div class="t-ui c-clay w5 rn">AED 68 on renewal</div>
+      </div>
+      <!-- The Pair · hover state -->
+      <div class="pc">
+        {{mk|M15|-15|-15}}
+        <div class="ph im" style="background:#DFD1BA">
+          <div class="flex ac"><div class="cut" style="margin-top:-52px">{{circ|166||steam}}</div><div class="cut" style="margin:80px 0 0 -42px">{{circ|136||steam}}</div></div>
+          <span class="anno" style="position:absolute;top:18px;right:18px">hover · image 1.04×</span>
+          <div style="position:absolute;left:16px;right:16px;bottom:16px"><span class="btn btn-dark btn-s btn-block">Quick add · AED 199</span></div>
+        </div>
+        <div class="t-card nm">The Pair</div>
+        <div class="t-ui c-smoke ct">2 Daily Pads, Back Strap, 2 soaps, soap rest</div>
+        <div class="pr"><span class="t-ui strike num">278</span><span class="t-ui w5 num">AED 199</span></div>
+        <div class="t-ui c-clay w5 rn">AED 149 on renewal</div>
+      </div>
+      <!-- The House -->
+      <div class="pc">
+        <div class="ph im">
+          <div class="flex ac"><div class="cut" style="margin-top:-44px">{{circ|156||steam}}</div><div class="cut" style="margin:76px 0 0 -40px">{{circ|128||steam}}</div></div>
+          <span class="badge badge-clay btl">Save 25%</span>
+          <span class="lbl">IMG · The House, cut-outs</span>
+        </div>
+        <div class="t-card nm">The House</div>
+        <div class="t-ui c-smoke ct">5 loofahs, 3 laurel bars, Shaped Trio</div>
+        <div class="pr"><span class="t-ui strike num">401</span><span class="t-ui w5 num">AED 299</span></div>
+        <div class="t-ui c-clay w5 rn">AED 219 on renewal</div>
+      </div>
+      <!-- The Grooming Kit -->
+      <div class="pc">
+        <div class="ph im">
+          <div class="flex ac"><div class="cut" style="margin-top:-44px">{{circ|156||steam}}</div><div class="cut" style="margin:76px 0 0 -40px">{{circ|128||steam}}</div></div>
+          <span class="lbl">IMG · Back Strap and Laurel 30</span>
+        </div>
+        <div class="t-card nm">The Grooming Kit</div>
+        <div class="t-ui c-smoke ct">Back Strap, Daily Pad (Deep), Laurel 30</div>
+        <div class="pr"><span class="t-ui strike num">164</span><span class="t-ui w5 num">AED 129</span></div>
+        <div class="t-ui c-clay w5 rn">AED 99 on renewal</div>
+      </div>
+    </div>
+
+    <div class="flex g24" style="margin-top:72px">
+      <!-- Little Reef Starter -->
+      <div class="pc">
+        <div class="ph im">
+          <div class="flex ac"><div class="cut" style="margin-top:-44px">{{circ|156||steam}}</div><div class="cut" style="margin:76px 0 0 -40px">{{circ|128||steam}}</div></div>
+          <span class="badge badge-dune btl" style="background:var(--steam)">Ages 3–10</span>
+          <span class="lbl">IMG · Camel Mitt and Shaped Trio</span>
+        </div>
+        <div class="t-card nm">Little Reef Starter</div>
+        <div class="t-ui c-smoke ct">Soft Pebble, Camel Mitt, 4 kids’ soaps</div>
+        <div class="pr"><span class="t-ui strike num">128</span><span class="t-ui w5 num">AED 99</span></div>
+        <div class="t-ui c-clay w5 rn">AED 69 on renewal</div>
+      </div>
+      <!-- First Bath -->
+      <div class="pc">
+        <div class="ph im">
+          <div class="flex ac"><div class="cut" style="margin-top:-44px">{{circ|156||steam}}</div><div class="cut" style="margin:76px 0 0 -40px">{{circ|128||steam}}</div></div>
+          <span class="badge btl">For new parents</span>
+          <span class="lbl">IMG · Cloud Sponge and linen towel</span>
+        </div>
+        <div class="t-card nm">First Bath</div>
+        <div class="t-ui c-smoke ct">Cloud Sponge, Shaped Trio, hooded towel</div>
+        <div class="pr"><span class="t-ui strike num">140</span><span class="t-ui w5 num">AED 119</span></div>
+        <div class="t-ui c-smoke w5 rn">Gift set · no renewal</div>
+      </div>
+      <!-- The Hammam Chest -->
+      <div class="pc">
+        <div class="ph im">
+          <div class="flex ac"><div class="cut" style="margin-top:-44px">{{circ|156||dark}}</div><div class="cut" style="margin:76px 0 0 -40px">{{circ|128||steam}}</div></div>
+          <span class="badge btl">Gift</span>
+          <span class="lbl">IMG · Basalt chest and rosewater</span>
+        </div>
+        <div class="t-card nm">The Hammam Chest</div>
+        <div class="t-ui c-smoke ct">Mitt, Back Strap, 2 soaps, rosewater</div>
+        <div class="pr"><span class="t-ui w5 num">From AED 350</span></div>
+        <div class="t-ui c-smoke w5 rn">Gift set · no renewal</div>
+      </div>
+      <!-- Build your own tile -->
+      <div class="pc bg-basalt jb" style="border-radius:12px;padding:32px 28px 28px">
+        <div class="col">
+          {{icon|fibre|56|ecru}}
+          <div class="t-card c-ecru" style="margin-top:36px">Build your own</div>
+          <p class="t-ui c-ecru70" style="margin-top:10px">Pick a fibre, a soap and a cycle. The saving updates as you go.</p>
+        </div>
+        <div class="col">
+          <div class="flex jb t-cap" style="padding:12px 0;border-top:1px solid var(--lined)"><span class="c-kraft">01 · Fibre</span><span class="c-ecru70">Gentle or Deep</span></div>
+          <div class="flex jb t-cap" style="padding:12px 0;border-top:1px solid var(--lined)"><span class="c-kraft">02 · Soap</span><span class="c-ecru70">Laurel 16 or 30</span></div>
+          <div class="flex jb t-cap" style="padding:12px 0;border-top:1px solid var(--lined);border-bottom:1px solid var(--lined)"><span class="c-kraft">03 · Cycle</span><span class="c-ecru70">30, 60 or 90 days</span></div>
+          <span class="btn btn-ghost-ecru btn-s" style="align-self:flex-start;margin-top:24px">Build yours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 · HOW RENEWAL WORKS -->
+  <div class="sec bg-dune flex jb as" style="padding:96px 40px">
+    <div class="col" style="width:322px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Renewal in three steps</span></div>
+      <div class="t-title" style="margin-top:24px">When the tag fades, <em>so should your loofah.</em></div>
+      <span class="tlink" style="align-self:flex-start;margin-top:32px">How renewal works {{icon|arrow-right|16}}</span>
+    </div>
+    <div class="flex g24 rel">{{mk|M09|-15|-15}}
+      <div class="rstep">{{icon|box|48}}<span class="t-spec c-smoke" style="margin-top:28px">01</span><div class="t-card" style="margin-top:10px">Choose a set</div><p class="t-ui c-smoke" style="margin-top:10px;width:260px">Every set arrives complete: loofahs, soaps and a box that becomes a caddy.</p></div>
+      <div class="rstep">{{icon|tag|48}}<span class="t-spec c-smoke" style="margin-top:28px">02</span><div class="t-card" style="margin-top:10px">Watch the tag</div><p class="t-ui c-smoke" style="margin-top:10px;width:260px">A cotton tag fades by day 60. We WhatsApp you on day 50.</p></div>
+      <div class="rstep">{{icon|renew|48}}<span class="t-spec c-smoke" style="margin-top:28px">03</span><div class="t-card" style="margin-top:10px">The refill arrives</div><p class="t-ui c-smoke" style="margin-top:10px;width:260px">Fresh loofahs and soap only. Skip, swap or pause any time.</p></div>
+    </div>
+  </div>
+
+  <!-- 6 · COMPARE THE SETS -->
+  <div class="sec" style="padding:144px 40px 120px">
+    <div class="flex jb ae">
+      <div class="t-title">Compare the sets</div>
+      <span class="t-cap c-smoke">Prices in AED · saving against the same pieces bought singly</span>
+    </div>
+    <div style="margin-top:48px">
+      <div class="cmp bg-steam" style="border-top:0;border-radius:16px 16px 0 0;padding:32px 24px 28px;align-items:stretch">
+        <span class="t-ui c-smoke" style="align-self:flex-end;padding-bottom:4px">The five sets that renew every 60 days.</span>
+        <div class="col g16">{{circ|72||}}<span class="t-card">The Duo</span></div>
+        <div class="col g16">{{circ|72||}}<span class="t-card">The Pair</span></div>
+        <div class="col g16">{{circ|72||}}<span class="t-card">The House</span></div>
+        <div class="col g16">{{circ|72||}}<span class="t-card">The Grooming Kit</span></div>
+        <div class="col g16">{{circ|72||}}<span class="t-card">Little Reef Starter</span></div>
+      </div>
+      <div class="cmp" style="border-top:1px solid var(--line2)"><span class="t-spec-s c-smoke">For</span><span class="t-ui">Just me</span><span class="t-ui">Two of us</span><span class="t-ui">The whole house</span><span class="t-ui">Grooming</span><span class="t-ui">Kids 3–10</span></div>
+      <div class="cmp"><span class="t-spec-s c-smoke">Loofahs</span><span class="t-ui">1 Daily Pad</span><span class="t-ui">2 Daily Pads, Back Strap</span><span class="t-ui">2 Daily Pads, Back Strap, Soft Pebble, Camel Mitt</span><span class="t-ui">Back Strap, Daily Pad (Deep)</span><span class="t-ui">Soft Pebble, Camel Mitt</span></div>
+      <div class="cmp"><span class="t-spec-s c-smoke">Soaps</span><span class="t-ui">Laurel 16</span><span class="t-ui">Laurel 16, Laurel 30, soap rest</span><span class="t-ui">2 × Laurel 16, Laurel 30, Shaped Trio</span><span class="t-ui">Laurel 30</span><span class="t-ui">Shaped Trio, Gourd on a Rope</span></div>
+      <div class="cmp"><span class="t-spec-s c-smoke">One-time</span><span class="t-ui w5 num">AED 85</span><span class="t-ui w5 num">AED 199</span><span class="t-ui w5 num">AED 299</span><span class="t-ui w5 num">AED 129</span><span class="t-ui w5 num">AED 99</span></div>
+      <div class="cmp"><span class="t-spec-s c-smoke">On renewal</span><span class="t-ui num"><b class="c-clay w5">AED 68</b> <span class="c-smoke">· 60 days</span></span><span class="t-ui num"><b class="c-clay w5">AED 149</b> <span class="c-smoke">· 60 days</span></span><span class="t-ui num"><b class="c-clay w5">AED 219</b> <span class="c-smoke">· 60 days</span></span><span class="t-ui num"><b class="c-clay w5">AED 99</b> <span class="c-smoke">· 60 days</span></span><span class="t-ui num"><b class="c-clay w5">AED 69</b> <span class="c-smoke">· 60 days</span></span></div>
+      <div class="cmp"><span class="t-spec-s c-smoke">Saving</span><span class="t-ui num">5%</span><span class="t-ui num">28%</span><span class="t-ui num">25%</span><span class="t-ui num">21%</span><span class="t-ui num">23%</span></div>
+      <div class="cmp" style="padding-top:24px;padding-bottom:24px;align-items:center;border-bottom:1px solid var(--line)"><span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span></div>
+    </div>
+  </div>
+
+  <!-- 7 · FAQ -->
+  <div style="padding:0 40px"><div style="height:1px;background:var(--line)"></div></div>
+  <div class="sec flex jb as" style="padding:120px 40px 144px">
+    <div class="col" style="width:435px">
+      <div class="t-title">Questions, answered</div>
+      <p class="t-body-s c-smoke" style="margin-top:16px">Still unsure? WhatsApp the founders.</p>
+      <span class="tlink" style="align-self:flex-start;margin-top:24px">{{icon|whatsapp|18}}Chat on WhatsApp</span>
+    </div>
+    <div class="rel" style="width:891px">{{mk|M17|-15|-15}}
+      <div class="acc" style="border-top-color:var(--line2)"><span class="t-body w5">Can I mix fibres and soaps in a set?</span>{{icon|minus|20}}</div>
+      <p class="t-body-s c-smoke qa">Yes. Choose Gentle or Deep for each Daily Pad and Laurel 16 or Laurel 30 for each bar before you add a set to your bag. To start from scratch, build your own.</p>
+      <div class="acc"><span class="t-body w5">What ships on renewal?</span>{{icon|plus|20}}</div>
+      <div class="acc"><span class="t-body w5">Can I skip or pause?</span>{{icon|plus|20}}</div>
+      <div class="acc"><span class="t-body w5">Do you deliver outside the UAE?</span>{{icon|plus|20}}</div>
+      <div class="acc" style="border-bottom:1px solid var(--line)"><span class="t-body w5">Is everything plastic-free?</span>{{icon|plus|20}}</div>
+    </div>
+  </div>
+
+  {{footer}}
+</section>
+
+<!-- =============================== MOBILE =============================== -->
+<section class="frame mobile" data-name="02 Rituals — Mobile 390">
+  {{mann}}{{mheader}}
+
+  <!-- collection header -->
+  <div style="padding:40px 20px 32px">
+    <div class="rail"><span class="rule" style="width:24px"></span><span class="t-spec-s">7 sets · renew every 60 days</span></div>
+    <div class="flex jb ae" style="margin-top:20px">
+      <div class="col">
+        <span class="t-ar" style="font-size:40px;line-height:52px">طقس</span>
+        <div class="t-display-m" style="margin-top:12px">Rituals</div>
+      </div>
+      {{win|120|160|IMG 06}}
+    </div>
+    <p class="t-body-s" style="margin-top:20px">Every set renews every 60 days, so nobody in the house keeps a loofah too long. Pick the one that fits your bathroom, or build your own.</p>
+  </div>
+
+  <!-- filters -->
+  <div style="padding-left:20px">
+    <div class="t-spec-s c-smoke">Who’s it for?</div>
+    <div class="rel" style="margin-top:12px">{{mk|M19|-14|-10}}<div class="flex g8" data-bleed="1" style="width:max-content;padding-right:20px">
+      <span class="chip on">All</span><span class="chip">Just me</span><span class="chip">Two of us</span><span class="chip">The whole house</span><span class="chip">Kids</span><span class="chip">A gift</span><span class="chip">Grooming</span>
+    </div></div>
+  </div>
+  <div class="flex jb ac rel" style="margin:20px 20px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    {{mk|M18|-6|-10}}
+    <span class="btn btn-secondary btn-s">{{icon|filter|18}}Filter and sort</span>
+    <span class="flex ac g12 rel"><span class="t-ui">Renewal prices</span><span class="toggle"></span></span>
+  </div>
+
+  <!-- grid 2 columns -->
+  <div style="padding:28px 20px 72px">
+    <div class="flex g12">
+      <div class="pm">
+        <div class="ph im"><div class="flex ac"><div class="cut" style="margin-top:-26px">{{circ|84||steam}}</div><div class="cut" style="margin:40px 0 0 -22px">{{circ|68||steam}}</div></div><span class="badge btl-m">Founders’ pick</span></div>
+        <div class="t-card" style="margin-top:14px">The Duo</div>
+        <div class="t-cap c-smoke" style="margin-top:4px">Daily Pad + Laurel 16</div>
+        <div class="flex ac g8" style="margin-top:10px"><span class="t-cap strike num">89</span><span class="t-ui w5 num">AED 85</span></div>
+        <div class="t-cap c-clay w5">AED 68 on renewal</div>
+      </div>
+      <div class="pm">
+        <div class="ph im"><div class="flex ac"><div class="cut" style="margin-top:-26px">{{circ|84||steam}}</div><div class="cut" style="margin:40px 0 0 -22px">{{circ|68||steam}}</div></div></div>
+        <div class="t-card" style="margin-top:14px">The Pair</div>
+        <div class="t-cap c-smoke" style="margin-top:4px">2 Daily Pads, Back Strap, 2 soaps, soap rest</div>
+        <div class="flex ac g8" style="margin-top:10px"><span class="t-cap strike num">278</span><span class="t-ui w5 num">AED 199</span></div>
+        <div class="t-cap c-clay w5">AED 149 on renewal</div>
+      </div>
+    </div>
+    <div class="flex g12" style="margin-top:40px">
+      <div class="pm">
+        <div class="ph im"><div class="flex ac"><div class="cut" style="margin-top:-26px">{{circ|84||steam}}</div><div class="cut" style="margin:40px 0 0 -22px">{{circ|68||steam}}</div></div><span class="badge badge-clay btl-m">Save 25%</span></div>
+        <div class="t-card" style="margin-top:14px">The House</div>
+        <div class="t-cap c-smoke" style="margin-top:4px">5 loofahs, 3 laurel bars, Shaped Trio</div>
+        <div class="flex ac g8" style="margin-top:10px"><span class="t-cap strike num">401</span><span class="t-ui w5 num">AED 299</span></div>
+        <div class="t-cap c-clay w5">AED 219 on renewal</div>
+      </div>
+      <div class="pm">
+        <div class="ph im"><div class="flex ac"><div class="cut" style="margin-top:-26px">{{circ|84||steam}}</div><div class="cut" style="margin:40px 0 0 -22px">{{circ|68||steam}}</div></div></div>
+        <div class="t-card" style="margin-top:14px">The Grooming Kit</div>
+        <div class="t-cap c-smoke" style="margin-top:4px">Back Strap, Daily Pad (Deep), Laurel 30</div>
+        <div class="flex ac g8" style="margin-top:10px"><span class="t-cap strike num">164</span><span class="t-ui w5 num">AED 129</span></div>
+        <div class="t-cap c-clay w5">AED 99 on renewal</div>
+      </div>
+    </div>
+    <div class="flex g12" style="margin-top:40px">
+      <div class="pm">
+        <div class="ph im"><div class="flex ac"><div class="cut" style="margin-top:-26px">{{circ|84||steam}}</div><div class="cut" style="margin:40px 0 0 -22px">{{circ|68||steam}}</div></div><span class="badge badge-dune btl-m" style="background:var(--steam)">Ages 3–10</span></div>
+        <div class="t-card" style="margin-top:14px">Little Reef Starter</div>
+        <div class="t-cap c-smoke" style="margin-top:4px">Soft Pebble, Camel Mitt, 4 kids’ soaps</div>
+        <div class="flex ac g8" style="margin-top:10px"><span class="t-cap strike num">128</span><span class="t-ui w5 num">AED 99</span></div>
+        <div class="t-cap c-clay w5">AED 69 on renewal</div>
+      </div>
+      <div class="pm">
+        <div class="ph im"><div class="flex ac"><div class="cut" style="margin-top:-26px">{{circ|84||steam}}</div><div class="cut" style="margin:40px 0 0 -22px">{{circ|68||steam}}</div></div><span class="badge btl-m">For new parents</span></div>
+        <div class="t-card" style="margin-top:14px">First Bath</div>
+        <div class="t-cap c-smoke" style="margin-top:4px">Cloud Sponge, Shaped Trio, hooded towel</div>
+        <div class="flex ac g8" style="margin-top:10px"><span class="t-cap strike num">140</span><span class="t-ui w5 num">AED 119</span></div>
+        <div class="t-cap c-smoke w5">Gift set · no renewal</div>
+      </div>
+    </div>
+    <!-- Hammam Chest · full-width feature -->
+    <div class="col" style="margin-top:40px">
+      <div class="ph" style="width:350px;height:240px;border-radius:12px"><div class="flex ac"><div class="cut" style="margin-top:-30px">{{circ|128||dark}}</div><div class="cut" style="margin:56px 0 0 -32px">{{circ|100||steam}}</div></div><span class="badge btl-m">Gift</span><span class="lbl">IMG · Basalt chest and rosewater</span></div>
+      <div class="flex jb as" style="margin-top:14px"><div class="t-card">The Hammam Chest</div><span class="t-ui w5 num" style="padding-top:5px">From AED 350</span></div>
+      <div class="t-cap c-smoke" style="margin-top:4px">Mitt, Back Strap, 2 soaps, rosewater</div>
+      <div class="t-cap c-smoke w5" style="margin-top:2px">Gift set · no renewal</div>
+    </div>
+    <!-- Build your own · full width -->
+    <div class="bg-basalt col" style="margin-top:40px;border-radius:12px;padding:28px 24px 24px">
+      <div class="flex ac g16">{{icon|fibre|48|ecru}}<div class="t-card c-ecru">Build your own</div></div>
+      <p class="t-ui c-ecru70" style="margin-top:14px">Pick a fibre, a soap and a cycle. The saving updates as you go.</p>
+      <div class="flex jb t-cap" style="margin-top:20px;padding:10px 0;border-top:1px solid var(--lined)"><span class="c-kraft">01 · Fibre</span><span class="c-ecru70">Gentle or Deep</span></div>
+      <div class="flex jb t-cap" style="padding:10px 0;border-top:1px solid var(--lined)"><span class="c-kraft">02 · Soap</span><span class="c-ecru70">Laurel 16 or 30</span></div>
+      <div class="flex jb t-cap" style="padding:10px 0;border-top:1px solid var(--lined);border-bottom:1px solid var(--lined)"><span class="c-kraft">03 · Cycle</span><span class="c-ecru70">30, 60 or 90 days</span></div>
+      <span class="btn btn-ghost-ecru btn-s btn-block" style="margin-top:20px">Build yours</span>
+    </div>
+  </div>
+
+  <!-- how renewal works -->
+  <div class="sec-m bg-dune" style="padding:64px 20px">
+    <div class="rail"><span class="rule" style="width:24px"></span><span class="t-spec-s">Renewal in three steps</span></div>
+    <div class="t-title-m" style="margin-top:16px">When the tag fades, <em>so should your loofah.</em></div>
+    <div class="rel" style="margin-top:28px">{{mk|M09|-14|-10}}
+      <div class="mstep">{{icon|box|40}}<div class="col g4"><span class="t-spec-s c-smoke">01 · Choose a set</span><p class="t-ui">Every set arrives complete: loofahs, soaps and a box that becomes a caddy.</p></div></div>
+      <div class="mstep">{{icon|tag|40}}<div class="col g4"><span class="t-spec-s c-smoke">02 · Watch the tag</span><p class="t-ui">A cotton tag fades by day 60. We WhatsApp you on day 50.</p></div></div>
+      <div class="mstep" style="border-bottom:1px solid var(--line2)">{{icon|renew|40}}<div class="col g4"><span class="t-spec-s c-smoke">03 · The refill arrives</span><p class="t-ui">Fresh loofahs and soap only. Skip, swap or pause any time.</p></div></div>
+    </div>
+    <span class="tlink" style="margin-top:28px">How renewal works {{icon|arrow-right|16}}</span>
+  </div>
+
+  <!-- compare (swipe) -->
+  <div class="sec-m" style="padding:72px 0 64px 20px">
+    <div class="t-title-m">Compare the sets</div>
+    <div class="flex ac g8 t-cap c-smoke rel" style="margin-top:10px">{{icon|arrow-left|16}}{{icon|arrow-right|16}}<span>Swipe to compare</span></div>
+    <div class="rel" style="margin-top:24px">{{mk|M07|-14|-10}}
+      <div data-bleed="1" style="width:max-content;padding-right:20px">
+        <div class="cmpm bg-steam" style="border-top:0;border-radius:12px 12px 0 0;padding-top:20px;padding-bottom:18px;align-items:flex-start">
+          <span></span>
+          <div class="col g12">{{circ|56||}}<span class="t-card">The Duo</span></div>
+          <div class="col g12">{{circ|56||}}<span class="t-card">The Pair</span></div>
+          <div class="col g12">{{circ|56||}}<span class="t-card">The House</span></div>
+          <div class="col g12">{{circ|56||}}<span class="t-card">The Grooming Kit</span></div>
+          <div class="col g12">{{circ|56||}}<span class="t-card">Little Reef Starter</span></div>
+        </div>
+        <div class="cmpm" style="border-top-color:var(--line2)"><span class="t-spec-s c-smoke">For</span><span class="t-cap">Just me</span><span class="t-cap">Two of us</span><span class="t-cap">The whole house</span><span class="t-cap">Grooming</span><span class="t-cap">Kids 3–10</span></div>
+        <div class="cmpm"><span class="t-spec-s c-smoke">Loofahs</span><span class="t-cap">1 Daily Pad</span><span class="t-cap">2 Daily Pads, Back Strap</span><span class="t-cap">2 Daily Pads, Back Strap, Soft Pebble, Camel Mitt</span><span class="t-cap">Back Strap, Daily Pad (Deep)</span><span class="t-cap">Soft Pebble, Camel Mitt</span></div>
+        <div class="cmpm"><span class="t-spec-s c-smoke">Soaps</span><span class="t-cap">Laurel 16</span><span class="t-cap">Laurel 16, Laurel 30, soap rest</span><span class="t-cap">2 × Laurel 16, Laurel 30, Shaped Trio</span><span class="t-cap">Laurel 30</span><span class="t-cap">Shaped Trio, Gourd on a Rope</span></div>
+        <div class="cmpm"><span class="t-spec-s c-smoke">One-time</span><span class="t-cap w5 num">AED 85</span><span class="t-cap w5 num">AED 199</span><span class="t-cap w5 num">AED 299</span><span class="t-cap w5 num">AED 129</span><span class="t-cap w5 num">AED 99</span></div>
+        <div class="cmpm"><span class="t-spec-s c-smoke">Renewal</span><span class="t-cap w5 c-clay num">AED 68</span><span class="t-cap w5 c-clay num">AED 149</span><span class="t-cap w5 c-clay num">AED 219</span><span class="t-cap w5 c-clay num">AED 99</span><span class="t-cap w5 c-clay num">AED 69</span></div>
+        <div class="cmpm"><span class="t-spec-s c-smoke">Saving</span><span class="t-cap num">5%</span><span class="t-cap num">28%</span><span class="t-cap num">25%</span><span class="t-cap num">21%</span><span class="t-cap num">23%</span></div>
+        <div class="cmpm" style="align-items:center;border-bottom:1px solid var(--line)"><span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span><span><span class="btn btn-secondary btn-s">View</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- faq -->
+  <div class="sec-m" style="padding:16px 20px 88px">
+    <div class="t-title-m">Questions, answered</div>
+    <div class="rel" style="margin-top:24px">{{mk|M17|-14|-10}}
+      <div class="acc" style="border-top-color:var(--line2);padding:18px 0"><span class="t-ui w5">Can I mix fibres and soaps in a set?</span>{{icon|minus|18}}</div>
+      <p class="t-ui c-smoke" style="padding:0 24px 22px 0;margin-top:-4px">Yes. Choose Gentle or Deep for each Daily Pad and Laurel 16 or Laurel 30 for each bar before you add a set to your bag. To start from scratch, build your own.</p>
+      <div class="acc" style="padding:18px 0"><span class="t-ui w5">What ships on renewal?</span>{{icon|plus|18}}</div>
+      <div class="acc" style="padding:18px 0"><span class="t-ui w5">Can I skip or pause?</span>{{icon|plus|18}}</div>
+      <div class="acc" style="padding:18px 0"><span class="t-ui w5">Do you deliver outside the UAE?</span>{{icon|plus|18}}</div>
+      <div class="acc" style="padding:18px 0;border-bottom:1px solid var(--line)"><span class="t-ui w5">Is everything plastic-free?</span>{{icon|plus|18}}</div>
+    </div>
+    <p class="t-body-s c-smoke" style="margin-top:28px">Still unsure? WhatsApp the founders.</p>
+    <span class="tlink" style="margin-top:12px">{{icon|whatsapp|18}}Chat on WhatsApp</span>
+  </div>
+
+  {{mfooter}}
+</section>
+
+<!-- =============================== MOBILE · FILTER SHEET =============================== -->
+<section class="frame mobile" data-name="02 Rituals — Mobile 390 · Filter sheet" style="height:844px">
+  {{mann}}{{mheader}}
+  <div style="padding:40px 20px 0">
+    <div class="rail"><span class="rule" style="width:24px"></span><span class="t-spec-s">7 sets · renew every 60 days</span></div>
+    <div class="t-display-m" style="margin-top:20px">Rituals</div>
+  </div>
+  <div class="scrim"></div>
+  <div class="sheet shadow" style="position:absolute;left:0;right:0;bottom:0;padding:0 20px 24px">
+    {{mk|M18|-15|20}}
+    <div class="grab-bar"></div>
+    <div class="flex jb ac" style="margin-top:22px"><div class="t-title-m">Filter and sort</div><span class="flex ac jc" style="width:40px;height:40px;border-radius:50%;border:1px solid var(--line2)">{{icon|close|18}}</span></div>
+    <div class="t-spec-s c-smoke" style="margin-top:24px">Who’s it for?</div>
+    <div class="flex wrap g8" style="margin-top:12px">
+      <span class="chip on">All</span><span class="chip">Just me</span><span class="chip">Two of us</span><span class="chip">The whole house</span><span class="chip">Kids</span><span class="chip">A gift</span><span class="chip">Grooming</span>
+    </div>
+    <div class="t-spec-s c-smoke" style="margin-top:28px">Sort by</div>
+    <div class="col g8" style="margin-top:12px">
+      <div class="opt on optm"><span class="radio"></span><span class="f1 t-ui w5">Recommended</span></div>
+      <div class="opt optm"><span class="radio"></span><span class="f1 t-ui">Price, low to high</span></div>
+      <div class="opt optm"><span class="radio"></span><span class="f1 t-ui">Biggest saving</span></div>
+    </div>
+    <div class="flex jb ac" style="margin-top:20px;padding:16px 0;border-top:1px solid var(--line)">
+      <div class="col"><span class="t-ui w5">Show renewal prices</span><span class="t-cap c-smoke">What each set costs every 60 days</span></div>
+      <span class="toggle"></span>
+    </div>
+    <span class="btn btn-primary btn-block" style="margin-top:12px">Show 7 sets</span>
+    <div class="flex jc" style="margin-top:16px"><span class="tlink">Clear all</span></div>
+  </div>
+</section>
+
+<!-- =============================== NOTES =============================== -->
+<section class="frame notes" data-name="02 Rituals — Notes">
+  <div class="n-kick">02 · Rituals · /collections/rituals</div>
+  <div class="n-title">Rituals</div>
+  <p class="n-lead">The collection of all seven sets, plus a way out for anyone who doesn’t fit one (Build your own). Visitors arrive from the header, the home “Rituals” carousel, Instagram and search ads (often with a filter preset, e.g. ?for=a-gift). Primary action: open a set. Quick add is the shortcut for people who already know.</p>
+
+  <div class="n-block"><div class="n-h">Sections, top to bottom</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Collection header</b> — names the idea (every set renews) before any price. Window IMG 06 + Ruqaa طقس as the page’s one Arabic word.</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Filter row</b> — “Who’s it for?” chips map to the audiences in Brand Strategy (self-carer, couples, families, kids, gifters, grooming). Renewal-price toggle and sort sit right; hairline below.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>Grid 4 × 2</b> — 7 sets + the Basalt “Build your own” tile in slot 8. Card: 4:5 Dune image with cut-out circles, max one badge, name, contents, value struck through + price, renewal price in Clay. Gift sets say “Gift set · no renewal”. This is the stacked card variant (322 wide); Home uses the 400-wide variant with the price on the name row.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>How renewal works</b> — three steps that answer “what am I signing up for?” before the compare table. Links to the full explainer.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>Compare the sets</b> — the five renewing sets side by side. Gifts (First Bath, Hammam Chest) are left out because they don’t renew.</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>Questions, answered</b> — five pre-purchase questions, first one open; WhatsApp to the founders for the rest.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M19</span><span><b>Filter reflow</b> — single-select chips; cards re-order with FLIP, 400 ms, no reload. URL updates (?for=two-of-us) so filtered views can be shared and used in ads. Build your own always stays last.<span class="n-ref">Lula: none (single product); Horizon facets</span></span></div>
+    <div class="n-item"><span class="n-chip">M13</span><span><b>Renewal-price toggle</b> — prices roll to the renewal price (300 ms); the struck value hides and the second line reads “AED 85 one-time”. Remembered for the session.<span class="n-ref">Horizon variant-picker price roll</span></span></div>
+    <div class="n-item"><span class="n-chip">M15</span><span><b>Card hover</b> (The Pair shown) — image 1.04 zoom over 600 ms; “Quick add · AED 199” rises 12 px. Quick add uses the defaults (renew every 60 days, Gentle, Laurel 16) and opens the bag drawer (M14), where fibre and soap can be changed.<span class="n-ref">Lula: product-slider hover; Horizon quick-add</span></span></div>
+    <div class="n-item"><span class="n-chip">M09</span><span><b>Icons draw</b> — box, tag and renew icons draw their stroke as the band enters (900 ms, 120 ms apart).</span></div>
+    <div class="n-item"><span class="n-chip">M17</span><span><b>Accordion</b> — one open at a time; height eases 300 ms; plus turns to minus.<span class="n-ref">Lula: accordion-custom.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M18</span><span><b>Filter sheet</b> (mobile) — slides up 400 ms over a 38% Basalt scrim; drag down, tap the scrim or the close button to dismiss. The button count updates live (“Show 3 sets”).<span class="n-ref">Horizon dialog / menu-drawer</span></span></div>
+    <div class="n-item"><span class="n-chip">M07</span><span><b>Compare swipe</b> (mobile) — the table scrolls sideways with momentum; the label column stays pinned at the left edge.<span class="n-ref">Lula: product-slider.js</span></span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Mobile</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>Chips scroll sideways under the title; “Filter and sort” opens the bottom sheet (frame 3), where the same chips wrap.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>2-column grid (169 wide). Seven sets leave an odd one, so The Hammam Chest becomes a full-width feature card, followed by Build your own at full width.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>No hover on touch: tapping a card opens the set. No quick add on mobile in round 1 to keep cards calm (test later).</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Compare table swipes; renewal band stacks with 40 px icons.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>All prices from Brand Strategy and still estimates until landed cost. Struck value = the same pieces bought singly.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Badges on Dune images use the Steam fill (“Ages 3–10” is badge-dune, which would vanish on Dune).</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Sort options: Recommended (Duo first, then by audience size) · Price, low to high · Biggest saving.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Closed FAQ answers. <b>What ships on renewal?</b> Fresh loofahs and soap only; the first box is already your caddy. <b>Can I skip or pause?</b> Yes, any time before the next ship date, on WhatsApp or in your account. <b>Outside the UAE?</b> Saudi Arabia from April 2027, then the rest of the GCC. <b>Plastic-free?</b> Yes: unbleached FSC kraft, twine and cotton; no plastic, no lamination.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span>“Founders’ pick” on The Duo instead of “Bestseller”, which isn’t true at launch.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>First Bath is a new-baby gift but includes the Shaped Trio (age 3+). Swap it for a baby-safe soap?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>The Hammam Chest final price (AED 350–550); the card shows “From AED 350”.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Compare-table savings (5–28%) are estimates against singles; confirm against landed cost and the margin floor.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Renew as you go offers 30, 60 or 90 days (see the Build tile), but the tag fades at day 60. Keep the 90-day option?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>طقس means “rite”, but most Gulf readers will read it as “weather” first. Ask the Arabic copywriter; طقوس (rituals) or another word may land better.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>The Duo’s set saving is only 5%, while the founding offer is 25%. Should cards show the founding price to the launch list?</span></div>
+  </div></div>
+</section>
+
+</body></html>

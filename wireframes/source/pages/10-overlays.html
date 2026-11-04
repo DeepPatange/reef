@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>10 Bag, menu and modals</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+/* ---- page 10 · overlays and touchpoints ---- */
+.abs{position:absolute}
+.under{opacity:.5}                                   /* the page beneath an overlay */
+.sh-panel{box-shadow:0 36px 56px -20px rgba(43,42,39,.28)}
+.sh-modal{box-shadow:0 40px 96px rgba(43,42,39,.28)}
+.sh-drawer{box-shadow:-28px 0 64px rgba(43,42,39,.18)}
+.sh-sheet{box-shadow:0 -16px 48px rgba(43,42,39,.16)}
+.sh-foot{box-shadow:0 -14px 28px rgba(43,42,39,.06)}
+.xbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;flex:none}
+.xbtn-s{width:36px;height:36px}
+.ulink{box-shadow:inset 0 -1px 0 currentColor;padding-bottom:1px;white-space:nowrap}
+.lbl-row{display:flex;align-items:center;justify-content:space-between;height:16px;margin-bottom:16px}
+/* mega menu */
+.mm-row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:50px;border-top:1px solid var(--line)}
+.sg-row{display:flex;align-items:center;justify-content:space-between;gap:12px;height:40px;border-top:1px solid var(--line);font-size:15px;line-height:22px}
+.ring-ic{width:64px;height:64px;border-radius:50%;border:1px solid var(--lined2);display:flex;align-items:center;justify-content:center}
+/* bag */
+.li{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.addon{display:flex;align-items:center;gap:12px;padding:10px 14px 10px 10px;border-radius:12px;background:var(--ecru)}
+.nudge{position:relative;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--ecru)}
+/* founding */
+.fl-win .win .lbl{left:44px;right:44px}
+.cc{display:flex;align-items:center;gap:6px;height:100%;padding:0 12px 0 16px;border-right:1px solid var(--line);color:var(--basalt)}
+/* search */
+.kbd{display:inline-flex;align-items:center;height:24px;padding:0 8px;border:1px solid var(--line2);border-radius:6px;font:500 12px/16px var(--sans);color:var(--smoke)}
+.caret{display:inline-block;width:2px;height:38px;background:var(--basalt);margin-left:4px;vertical-align:-8px}
+.res-img{height:150px;border-radius:12px;background:var(--dune);display:flex;align-items:center;justify-content:center}
+.s-on .hdr nav.r > span{box-shadow:inset 0 -1.5px 0 var(--basalt);padding-bottom:3px}   /* search icon = active */
+/* mobile menu */
+.mrow{display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid var(--line)}
+/* chat */
+.bub{max-width:288px;background:var(--steam);border:1px solid var(--line);border-radius:18px 18px 18px 6px;padding:10px 14px 8px;font-size:15px;line-height:22px}
+.bub-me{align-self:flex-end;background:var(--basalt);border-color:var(--basalt);color:var(--ecru);border-radius:18px 18px 6px 18px}
+.tm{display:block;text-align:right;font-size:11px;line-height:14px;color:var(--smoke);margin-top:4px}
+.bub-me .tm{color:rgba(243,238,228,.6)}
+.qr{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:var(--steam);font-weight:500;font-size:14px;line-height:20px;white-space:nowrap;flex:none}
+.qr.on{background:var(--basalt);border-color:var(--basalt);color:var(--ecru)}
+.pill-date{align-self:center;height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:999px;background:var(--dune);font:500 11px/14px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+</style></head>
+<body class="board">
+
+<!-- ============ 1 · DESKTOP · MEGA MENU ============ -->
+<section class="frame desktop" data-name="10 — Desktop · Mega menu" style="height:900px">
+  {{announce}}{{header|rituals}}
+  <!-- page beneath: Home hero -->
+  <div class="under flex jb" style="padding:64px 40px 0">
+    <div class="col" style="width:640px;padding-top:120px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Nile Delta loofah · Levantine laurel soap</span></div>
+      <div class="t-display" style="margin-top:28px">Grown, <em>not made.</em></div>
+      <p class="t-body" style="margin-top:24px;width:500px">A Damanhour loofah and a bar of Sabon Ghar that renew every 60 days. The cotton tag tells you when.</p>
+      <div class="flex g16" style="margin-top:40px"><span class="btn btn-primary">Shop the Duo · AED 85</span><span class="btn btn-secondary">How renewal works</span></div>
+    </div>
+    <div class="rel fn" style="width:600px;height:700px">
+      <div class="abs" style="right:0;top:0">{{win|480|640|IMG 01 · Lathered loofah in hand}}</div>
+      <div class="abs" style="left:40px;top:300px">{{tag|100|01|0}}</div>
+    </div>
+  </div>
+  <div class="scrim" style="top:124px"></div>
+
+  <!-- panel -->
+  <div class="abs bg-ecru sh-panel" style="left:0;right:0;top:124px;padding:48px 40px">
+    <div class="flex g24" style="height:480px">
+      <!-- A · rituals -->
+      <div class="col fn rel" style="width:436px">
+        <div class="lbl-row"><span class="t-spec-s c-smoke">Rituals · 7 sets</span></div>
+        <div class="col" style="border-bottom:1px solid var(--line)">
+          <div class="mm-row"><span class="flex ac g12"><span class="t-card">The Duo</span>{{icon|arrow-right|18}}</span><span class="t-ui w5 num">AED 85</span></div>
+          <div class="mm-row"><span class="t-card">The Pair</span><span class="t-ui c-smoke num">AED 199</span></div>
+          <div class="mm-row"><span class="t-card">The House</span><span class="t-ui c-smoke num">AED 299</span></div>
+          <div class="mm-row"><span class="t-card">The Grooming Kit</span><span class="t-ui c-smoke num">AED 129</span></div>
+          <div class="mm-row"><span class="t-card">Little Reef Starter</span><span class="t-ui c-smoke num">AED 99</span></div>
+          <div class="mm-row"><span class="t-card">First Bath</span><span class="t-ui c-smoke num">AED 119</span></div>
+          <div class="mm-row"><span class="t-card">The Hammam Chest</span><span class="t-ui c-smoke num">from AED 350</span></div>
+        </div>
+        <span class="tlink" style="margin-top:auto;align-self:flex-start">Shop all rituals {{icon|arrow-right|16}}</span>
+        {{mk|M15|42|134}}
+      </div>
+      <!-- B · singles -->
+      <div class="col fn" style="width:207px">
+        <div class="lbl-row"><span class="t-spec-s c-smoke">Loofahs</span></div>
+        <div class="col" style="border-bottom:1px solid var(--line)">
+          <div class="sg-row"><span>The Daily Pad</span><span class="c-smoke num">AED 44</span></div>
+          <div class="sg-row"><span>The Hammam Mitt</span><span class="c-smoke num">AED 48</span></div>
+          <div class="sg-row"><span>The Back Strap</span><span class="c-smoke num">AED 65</span></div>
+        </div>
+        <div class="lbl-row" style="margin-top:36px"><span class="t-spec-s c-smoke">Soaps · Sabon Ghar</span></div>
+        <div class="col" style="border-bottom:1px solid var(--line)">
+          <div class="sg-row"><span>Laurel 16</span><span class="c-smoke num">AED 45</span></div>
+          <div class="sg-row"><span>Laurel 30</span><span class="c-smoke num">AED 55</span></div>
+          <div class="sg-row"><span>Guest Bar</span><span class="c-smoke num">AED 15</span></div>
+        </div>
+        <p class="t-cap c-smoke" style="margin-top:auto">Every loofah carries a cotton tag that fades by day 60, and a QR code back to its field.</p>
+      </div>
+      <!-- C · featured -->
+      <div class="col fn bg-steam rel" style="width:322px;border-radius:16px;padding:24px 24px 26px">
+        <span class="badge badge-dune abs" style="top:20px;left:20px">Founders’ pick</span>
+        <div class="flex jc" style="margin-top:36px">{{win|200|267|IMG · The Duo}}</div>
+        <div class="flex jb ac" style="margin-top:22px"><span class="t-card">The Duo</span><span class="w5 num">AED 85</span></div>
+        <span class="t-ui c-smoke" style="margin-top:4px">The hammam, every morning.</span>
+        <span class="tlink" style="margin-top:auto;align-self:flex-start">Shop the Duo {{icon|arrow-right|16}}</span>
+      </div>
+      <!-- D · build your own -->
+      <div class="col fn bg-basalt" style="width:322px;border-radius:16px;padding:32px">
+        <div class="flex g16">
+          <div class="col ac g8"><span class="ring-ic">{{icon|fibre|32|ecru}}</span><span class="t-spec-s c-kraft">Fibre</span></div>
+          <div class="col ac g8"><span class="ring-ic">{{icon|laurel|32|ecru}}</span><span class="t-spec-s c-kraft">Soap</span></div>
+          <div class="col ac g8"><span class="ring-ic">{{icon|renew|32|ecru}}</span><span class="t-spec-s c-kraft">Cycle</span></div>
+        </div>
+        <div class="col" style="margin-top:auto">
+          <div class="t-card c-ecru">Build your own</div>
+          <p class="t-ui c-ecru70" style="margin-top:10px">Pick a fibre, a soap and a cycle. The saving updates as you go.</p>
+          <span class="btn btn-ghost-ecru btn-s" style="align-self:flex-start;margin-top:24px">Build yours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{mk|M18|134|4}}
+</section>
+
+<!-- ============ 2 · DESKTOP · BAG DRAWER ============ -->
+<section class="frame desktop" data-name="10 — Desktop · Bag drawer" style="height:900px">
+  <!-- page beneath: The Duo, just added -->
+  <div class="under">
+    {{announce}}{{header|rituals|2}}
+    <div class="t-cap c-smoke" style="padding:24px 40px">Rituals / The Duo</div>
+    <div class="flex" style="padding:0 40px;gap:40px">
+      <div class="bg-steam flex ac jc fn" style="width:800px;height:960px;border-radius:16px">{{win|480|640|IMG · The Duo on travertine}}</div>
+      <div class="col fn" style="width:520px">
+        <div class="rail"><span class="rule"></span><span class="t-spec">Hero ritual · Daily Pad + Laurel 16</span></div>
+        <div class="t-display" style="margin-top:20px">The Duo</div>
+        <div class="t-heading">The hammam, every morning.</div>
+        <div class="flex ae g12" style="margin-top:24px"><span class="w5 num" style="font-size:32px;line-height:40px;">AED 68</span><span class="t-ui c-smoke" style="padding-bottom:6px">per delivery</span></div>
+        <div class="col g12" style="margin-top:28px">
+          <div class="opt on"><span class="radio"></span><div class="f1"><span class="w5">Renew every 60 days</span></div><span class="w5 num">AED 68</span></div>
+          <div class="opt"><span class="radio"></span><div class="f1"><span class="w5">One-time purchase</span></div><span class="w5 num">AED 85</span></div>
+        </div>
+        <span class="btn btn-primary btn-block" style="margin-top:28px">{{icon|check|20}}Added</span>
+      </div>
+    </div>
+  </div>
+  <div class="scrim"></div>
+
+  <!-- drawer -->
+  <aside class="abs bg-steam sh-drawer col" style="top:0;right:0;bottom:0;width:480px">
+    <div class="flex jb ac" style="padding:22px 32px 14px">
+      <div class="flex ae g8"><span class="t-card">Your bag</span><span class="t-card c-smoke">(2)</span></div>
+      <span class="xbtn">{{icon|close|20}}</span>
+    </div>
+    <div style="padding:0 32px 18px">
+      <div class="flex ac g8 t-ui w5">{{icon|truck|20}}Free UAE delivery unlocked</div>
+      <div class="bar" style="margin-top:8px"><i style="width:100%"></i></div>
+    </div>
+    <div style="padding:0 32px;border-top:1px solid var(--line)">
+      <div class="li" style="padding:16px 0">
+        {{circ|80}}
+        <div class="col f1">
+          <div class="flex jb ac"><span class="t-card">The Duo</span><span class="w5 num">AED 68</span></div>
+          <span class="t-cap c-smoke"><span class="c-clay w5">Renew every 60 days</span> · Gentle · Laurel 16</span>
+          <div class="flex jb ac" style="margin-top:10px"><span class="stepper stepper-s">{{icon|minus|16}}<span class="num">1</span>{{icon|plus|16}}</span><span class="t-cap c-smoke ulink">Remove</span></div>
+        </div>
+      </div>
+      <div style="padding:16px 0;border-bottom:1px solid var(--line)">
+        <div class="flex g20">
+          {{circ|80}}
+          <div class="col f1">
+            <div class="flex jb ac"><span class="t-card">Laurel 30</span><span class="w5 num">AED 55</span></div>
+            <span class="t-cap c-smoke">One-time · 150 g · 30% laurel</span>
+            <div class="flex jb ac" style="margin-top:10px"><span class="stepper stepper-s">{{icon|minus|16}}<span class="num">1</span>{{icon|plus|16}}</span><span class="t-cap c-smoke ulink">Remove</span></div>
+          </div>
+        </div>
+        <div class="nudge" style="margin-top:12px">{{icon|refresh|16|clay}}<span class="t-cap w5 c-clay ulink">Add to your renewal instead and save AED 11</span>{{mk|M13|-15|-15}}</div>
+      </div>
+    </div>
+    <div style="padding:16px 32px">
+      <div class="t-spec-s c-smoke">Add to your order</div>
+      <div class="flex g12" style="margin-top:10px">
+        <div class="addon f1" style="padding:8px 14px 8px 8px">{{circ|48}}<div class="col f1"><span class="t-ui w5">Guest Bar</span><div class="flex jb t-cap"><span class="c-smoke num">AED 15</span><span class="w5 ulink">Add</span></div></div></div>
+        <div class="addon f1" style="padding:8px 14px 8px 8px">{{circ|48}}<div class="col f1"><span class="t-ui w5">The Back Strap</span><div class="flex jb t-cap"><span class="c-smoke num">AED 65</span><span class="w5 ulink">Add</span></div></div></div>
+      </div>
+    </div>
+    <div class="flex ac g12" style="padding:12px 32px;border-top:1px solid var(--line)">
+      {{icon|gift|22}}
+      <div class="col f1"><span class="t-ui w5">This is a gift</span><span class="t-cap c-smoke">Add a ritual card message</span></div>
+      <span class="toggle"></span>
+    </div>
+    <div class="sh-foot" style="margin-top:auto;padding:18px 32px 22px;border-top:1px solid var(--line)">
+      <div class="flex jb t-ui"><span class="w5">Subtotal</span><span class="w5 num">AED 123</span></div>
+      <div class="flex jb t-cap c-smoke"><span>UAE delivery</span><span>Free</span></div>
+      <span class="btn btn-primary btn-block" style="margin-top:16px">Checkout · AED 123</span>
+      <div class="flex jc" style="margin-top:12px">{{pay|light}}</div>
+      <p class="t-cap c-smoke tc" style="margin-top:10px">Renewal: AED 68 every 60 days for the Duo.<br>Skip, swap or cancel any time.</p>
+    </div>
+  </aside>
+  {{mk|M14|12|940}}
+</section>
+
+<!-- ============ 3 · DESKTOP · FOUNDING LIST ============ -->
+<section class="frame desktop" data-name="10 — Desktop · Founding list" style="height:900px">
+  <div class="under">
+    {{announce}}{{header|none}}
+    <div class="flex jb" style="padding:64px 40px 0">
+      <div class="col" style="width:640px;padding-top:120px">
+        <div class="rail"><span class="rule"></span><span class="t-spec">Nile Delta loofah · Levantine laurel soap</span></div>
+        <div class="t-display" style="margin-top:28px">Grown, <em>not made.</em></div>
+        <p class="t-body" style="margin-top:24px;width:500px">A Damanhour loofah and a bar of Sabon Ghar that renew every 60 days. The cotton tag tells you when.</p>
+        <div class="flex g16" style="margin-top:40px"><span class="btn btn-primary">Shop the Duo · AED 85</span><span class="btn btn-secondary">How renewal works</span></div>
+      </div>
+      <div class="rel fn" style="width:600px;height:700px">
+        <div class="abs" style="right:0;top:0">{{win|480|640|IMG 01 · Lathered loofah in hand}}</div>
+        <div class="abs" style="left:40px;top:300px">{{tag|100|01|0}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="scrim"></div>
+
+  <!-- modal -->
+  <div class="abs flex sh-modal" style="left:280px;top:170px;width:880px;height:560px;border-radius:20px;overflow:hidden;background:var(--ecru)">
+    <div class="bg-silt col ac jc fn fl-win" style="width:360px;height:560px;gap:20px">
+      <span class="t-ar c-ecru" style="font-size:64px">حصاد</span>
+      {{win|240|320|IMG 03 · Gourds on a Damanhour trellis}}
+    </div>
+    <div class="col jc rel f1" style="padding:48px">
+      <span class="xbtn abs" style="top:20px;right:20px">{{icon|close|20}}</span>
+      <div class="rail"><span class="rule"></span><span class="t-spec">Founding members</span></div>
+      <div class="t-title" style="margin-top:20px">25% off <em>your first Duo.</em></div>
+      <p class="t-body-s" style="margin-top:16px">Join the founding list for first access to the September harvest and 25% off your first Duo. One email when we launch, then once a month at most.</p>
+      <div class="col g12" style="margin-top:32px">
+        <div class="field-sq">Email address</div>
+        <div class="field-sq" style="padding:0"><span class="cc">+971{{icon|chev-down|14}}</span><span style="padding-left:14px">WhatsApp number (optional)</span></div>
+      </div>
+      <span class="btn btn-primary btn-block" style="margin-top:24px">Join the list</span>
+      <div class="flex jb ac" style="margin-top:20px"><span class="t-cap c-smoke">No countdowns. No daily emails.</span><span class="tlink c-smoke" style="font-size:15px;line-height:22px">No thanks</span></div>
+    </div>
+  </div>
+  {{mk|M18|156|266}}
+</section>
+
+<!-- ============ 4 · DESKTOP · SEARCH ============ -->
+<section class="frame desktop s-on" data-name="10 — Desktop · Search" style="height:640px">
+  {{announce}}{{header|none}}
+  <div class="under flex jb" style="padding:64px 40px 0">
+    <div class="col" style="width:640px;padding-top:120px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Nile Delta loofah · Levantine laurel soap</span></div>
+      <div class="t-display" style="margin-top:28px">Grown, <em>not made.</em></div>
+    </div>
+    <div class="rel fn" style="width:600px;height:700px">
+      <div class="abs" style="right:0;top:0">{{win|480|640|IMG 01 · Lathered loofah in hand}}</div>
+    </div>
+  </div>
+  <div class="scrim" style="top:124px"></div>
+
+  <!-- search panel -->
+  <div class="abs bg-ecru sh-panel" style="left:0;right:0;top:124px;padding:28px 40px 40px">
+    <div class="flex ac g20" style="padding-bottom:14px;border-bottom:1.5px solid var(--basalt)">
+      {{icon|search|28}}
+      <div class="f1 t-title">back str<span class="caret"></span></div>
+      <span class="flex ac g8 t-cap c-smoke"><span class="kbd">Esc</span>to close</span>
+      <span class="xbtn">{{icon|close|20}}</span>
+    </div>
+    <div class="flex g24" style="margin-top:32px">
+      <div class="col fn" style="width:322px">
+        <div class="flex ac" style="height:28px;margin-bottom:12px"><span class="t-spec-s c-smoke">Popular</span></div>
+        <div class="col" style="border-bottom:1px solid var(--line)">
+          <div class="sg-row" style="height:46px"><span class="t-body-s">The Duo</span>{{icon|arrow-up-right|16}}</div>
+          <div class="sg-row" style="height:46px"><span class="t-body-s">Back Strap</span>{{icon|arrow-up-right|16}}</div>
+          <div class="sg-row" style="height:46px"><span class="t-body-s">Gifts under AED 150</span>{{icon|arrow-up-right|16}}</div>
+          <div class="sg-row" style="height:46px"><span class="t-body-s">Little Reef</span>{{icon|arrow-up-right|16}}</div>
+        </div>
+      </div>
+      <div class="col fn rel" style="width:1014px">
+        <div class="flex jb ac" style="height:28px;margin-bottom:12px"><span class="t-spec-s c-smoke">Products · 5</span><span class="tlink">See all 5 results {{icon|arrow-right|16}}</span></div>
+        <div class="flex g24">
+          <div class="col fn" style="width:322px">
+            <div class="res-img">{{circ|112||steam}}</div>
+            <span class="t-card" style="margin-top:14px">The Back Strap</span>
+            <span class="t-ui c-smoke" style="margin-top:2px">75 cm band, woven handles</span>
+            <div class="flex ac g8" style="margin-top:8px"><span class="w5 num">AED 65</span></div>
+          </div>
+          <div class="col fn" style="width:322px">
+            <div class="res-img"><div class="flex">{{circ|104||steam}}<div style="margin-left:-28px">{{circ|104||steam}}</div></div></div>
+            <span class="t-card" style="margin-top:14px">The Grooming Kit</span>
+            <span class="t-ui c-smoke" style="margin-top:2px">Includes the <span class="c-basalt w5">Back Strap</span></span>
+            <div class="flex ac g8" style="margin-top:8px"><span class="w5 num">AED 129</span><span class="t-ui strike num">AED 164</span><span class="t-ui c-clay w5" style="margin-left:auto">AED 99 on renewal</span></div>
+          </div>
+          <div class="col fn" style="width:322px">
+            <div class="res-img"><div class="flex">{{circ|104||steam}}<div style="margin-left:-28px">{{circ|104||steam}}</div></div></div>
+            <span class="t-card" style="margin-top:14px">The Pair</span>
+            <span class="t-ui c-smoke" style="margin-top:2px">Includes the <span class="c-basalt w5">Back Strap</span></span>
+            <div class="flex ac g8" style="margin-top:8px"><span class="w5 num">AED 199</span><span class="t-ui strike num">AED 278</span><span class="t-ui c-clay w5" style="margin-left:auto">AED 149 on renewal</span></div>
+          </div>
+        </div>
+        {{mk|M19|26|-14}}
+      </div>
+    </div>
+  </div>
+  {{mk|M18|134|4}}
+</section>
+
+<!-- ============ 5 · MOBILE · MENU ============ -->
+<section class="frame mobile" data-name="10 — Mobile · Menu" style="height:844px">
+  <div class="flex jb ac" style="height:60px;padding:0 20px;border-bottom:1px solid var(--line)">
+    <span class="flex ac g8 t-spec-s">{{icon|close|20}}Close</span>
+    {{logo|15}}
+    <span class="t-ui">Bag (0)</span>
+  </div>
+  <div class="col rel" style="padding:12px 20px 0">
+    <div class="mrow"><span class="t-title-m">Rituals</span>{{icon|chev-right|20}}</div>
+    <div class="mrow"><span class="t-title-m">Build yours</span>{{icon|chev-right|20}}</div>
+    <div class="mrow"><span class="t-title-m">Little Reef</span>{{icon|chev-right|20}}</div>
+    <div class="mrow"><span class="t-title-m">Gifts</span>{{icon|chev-right|20}}</div>
+    <div class="mrow"><span class="t-title-m">Our farm</span>{{icon|chev-right|20}}</div>
+    <div class="mrow"><span class="t-title-m">Field notes</span>{{icon|chev-right|20}}</div>
+    {{mk|M18|-10|4}}
+  </div>
+  <div class="col g16" style="padding:28px 20px 0">
+    <span class="flex ac g12 t-ui">{{icon|user|20}}Account</span>
+    <span class="flex ac g12 t-ui">{{icon|refresh|20}}Manage your renewal</span>
+    <span class="flex ac g12 t-ui">{{icon|truck|20}}Shipping and returns</span>
+    <span class="flex ac g12 t-ui">{{icon|whatsapp|20}}WhatsApp us</span>
+  </div>
+  <div class="abs" style="left:0;right:0;bottom:0">
+    <div class="flex jb ac" style="padding:0 20px 18px">
+      <span class="flex ac g8 t-ui">{{icon|globe|18}}UAE · AED{{icon|chev-down|14}}</span>
+      {{icon|insta|22}}
+    </div>
+    <div style="height:96px;overflow:hidden;border-top:1px solid var(--line)">{{pattern|390|96|.08|basalt}}</div>
+  </div>
+</section>
+
+<!-- ============ 6 · MOBILE · BAG ============ -->
+<section class="frame mobile" data-name="10 — Mobile · Bag" style="height:844px">
+  <div class="under">{{mann}}{{mheader|2}}</div>
+  <div class="scrim"></div>
+  <div class="abs sheet sh-sheet col" style="left:0;right:0;top:20px;bottom:0">
+    <div class="grab-bar"></div>
+    <div class="flex jb ac" style="padding:8px 20px 10px">
+      <div class="flex ae g8"><span class="t-card">Your bag</span><span class="t-card c-smoke">(2)</span></div>
+      <span class="xbtn xbtn-s">{{icon|close|18}}</span>
+    </div>
+    <div style="padding:0 20px 14px">
+      <div class="flex ac g8 t-ui w5">{{icon|truck|18}}Free UAE delivery unlocked</div>
+      <div class="bar" style="margin-top:8px"><i style="width:100%"></i></div>
+    </div>
+    <div style="padding:0 20px;border-top:1px solid var(--line)">
+      <div class="li" style="gap:14px;padding:14px 0">
+        {{circ|64}}
+        <div class="col f1">
+          <div class="flex jb ac"><span class="t-card">The Duo</span><span class="w5 num">AED 68</span></div>
+          <span class="t-cap c-smoke"><span class="c-clay w5">Renew every 60 days</span> · Gentle · Laurel 16</span>
+          <div class="flex jb ac" style="margin-top:8px"><span class="stepper stepper-s">{{icon|minus|16}}<span class="num">1</span>{{icon|plus|16}}</span><span class="t-cap c-smoke ulink">Remove</span></div>
+        </div>
+      </div>
+      <div style="padding:14px 0;border-bottom:1px solid var(--line)">
+        <div class="flex" style="gap:14px">
+          {{circ|64}}
+          <div class="col f1">
+            <div class="flex jb ac"><span class="t-card">Laurel 30</span><span class="w5 num">AED 55</span></div>
+            <span class="t-cap c-smoke">One-time · 150 g · 30% laurel</span>
+            <div class="flex jb ac" style="margin-top:8px"><span class="stepper stepper-s">{{icon|minus|16}}<span class="num">1</span>{{icon|plus|16}}</span><span class="t-cap c-smoke ulink">Remove</span></div>
+          </div>
+        </div>
+        <div class="nudge" style="margin-top:10px">{{icon|refresh|16|clay}}<span class="t-cap w5 c-clay ulink">Add to your renewal instead and save AED 11</span>{{mk|M13|-15|-12}}</div>
+      </div>
+    </div>
+    <div style="padding:12px 0 12px 20px">
+      <div class="t-spec-s c-smoke">Add to your order</div>
+      <div class="flex" data-bleed="1" style="margin-top:10px;width:max-content;gap:10px">
+        <div class="addon fn" style="width:300px;padding:8px 16px 8px 8px">{{circ|44}}<div class="col f1"><span class="t-ui w5">Guest Bar</span><span class="t-cap c-smoke">40 g · 16% laurel</span></div><div class="col ae"><span class="t-ui w5 num">AED 15</span><span class="t-cap w5 ulink">Add</span></div></div>
+        <div class="addon fn" style="width:300px;padding:8px 16px 8px 8px">{{circ|44}}<div class="col f1"><span class="t-ui w5">The Back Strap</span><span class="t-cap c-smoke">75 cm band, woven handles</span></div><div class="col ae"><span class="t-ui w5 num">AED 65</span><span class="t-cap w5 ulink">Add</span></div></div>
+        <div class="addon fn" style="width:300px;padding:8px 16px 8px 8px">{{circ|44}}<div class="col f1"><span class="t-ui w5">The Hammam Mitt</span><span class="t-cap c-smoke">For the weekly deep scrub</span></div><div class="col ae"><span class="t-ui w5 num">AED 48</span><span class="t-cap w5 ulink">Add</span></div></div>
+      </div>
+    </div>
+    <div class="flex ac g12" style="padding:10px 20px;border-top:1px solid var(--line)">
+      {{icon|gift|20}}
+      <div class="col f1"><span class="t-ui w5">This is a gift</span><span class="t-cap c-smoke">Add a ritual card message</span></div>
+      <span class="toggle"></span>
+    </div>
+    <div class="sh-foot bg-steam" style="margin-top:auto;padding:14px 20px 24px;border-top:1px solid var(--line)">
+      <div class="flex jb t-ui"><span class="w5">Subtotal</span><span class="w5 num">AED 123</span></div>
+      <span class="btn btn-primary btn-block" style="margin-top:12px">Checkout · AED 123</span>
+      <p class="t-cap c-smoke tc" style="margin-top:10px">Renewal: AED 68 every 60 days for the Duo.<br>Skip, swap or cancel any time.</p>
+    </div>
+    {{mk|M18|-12|6}}
+  </div>
+</section>
+
+<!-- ============ 7 · MOBILE · FOUNDING LIST SHEET ============ -->
+<section class="frame mobile" data-name="10 — Mobile · Founding list sheet" style="height:844px">
+  <div class="under">
+    {{mann}}{{mheader}}
+    <div style="padding:20px 20px 0">
+      {{win|350|467|IMG 01 · Lathered loofah in hand}}
+      <div class="t-display-m" style="margin-top:28px">Grown, <em>not made.</em></div>
+    </div>
+  </div>
+  <div class="scrim"></div>
+  <div class="abs sheet sh-sheet" style="left:0;right:0;bottom:0;padding:0 20px 30px">
+    <div class="grab-bar"></div>
+    <span class="xbtn xbtn-s abs" style="top:18px;right:16px">{{icon|close|18}}</span>
+    <div class="rail" style="margin-top:26px"><span class="rule"></span><span class="t-spec">Founding members</span></div>
+    <div class="t-title-m" style="margin-top:16px">25% off<br><em>your first Duo.</em></div>
+    <p class="t-body-s" style="margin-top:12px;width:328px">Join the founding list for first access to the September harvest and 25% off your first Duo. One email when we launch, then once a month at most.</p>
+    <div class="col g10" style="margin-top:20px;gap:10px">
+      <div class="field-sq">Email address</div>
+      <div class="field-sq" style="padding:0"><span class="cc">+971{{icon|chev-down|14}}</span><span style="padding-left:14px">WhatsApp number (optional)</span></div>
+    </div>
+    <span class="btn btn-primary btn-block" style="margin-top:18px">Join the list</span>
+    <div class="flex jb ac" style="margin-top:16px"><span class="t-cap c-smoke">No countdowns. No daily emails.</span><span class="tlink c-smoke" style="font-size:15px;line-height:22px">No thanks</span></div>
+    {{mk|M18|-14|6}}
+  </div>
+</section>
+
+<!-- ============ 8 · MOBILE · DAY-50 WHATSAPP ============ -->
+<section class="frame mobile" data-name="10 — Mobile · Day-50 WhatsApp" style="height:844px">
+  <!-- status bar -->
+  <div class="flex jb ac bg-steam" style="height:44px;padding:0 22px 0 30px">
+    <span style="font:600 15px/20px var(--sans)">10:04</span>
+    <span class="flex ac g8">
+      <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#2B2A27"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#2B2A27"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#2B2A27"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#2B2A27"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="#2B2A27" stroke-width="1.6" stroke-linecap="round"><path d="M1.5 4.2a9.5 9.5 0 0 1 13 0"/><path d="M4 7a6 6 0 0 1 8 0"/><circle cx="8" cy="10" r="1.2" fill="#2B2A27" stroke="none"/></svg>
+      <svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#2B2A27" stroke-opacity=".4"/><rect x="2.5" y="2.5" width="15" height="7" rx="1.5" fill="#2B2A27"/><rect x="24" y="4" width="1.6" height="4" rx=".8" fill="#2B2A27" fill-opacity=".4"/></svg>
+    </span>
+  </div>
+  <!-- chat header -->
+  <div class="flex ac g12 bg-steam" style="height:64px;padding:0 16px 0 10px;border-bottom:1px solid var(--line)">
+    {{icon|chev-left|24}}
+    <div class="flex ac jc fn" style="width:40px;height:40px;border-radius:50%;background:var(--basalt)"><span style="font-family:var(--serif);font-weight:500;font-size:16px;line-height:1;color:var(--ecru);letter-spacing:.02em">R<i style="color:var(--silt)">&amp;</i>L</span></div>
+    <div class="col f1">
+      <span class="flex ac g6" style="gap:6px"><span class="w6" style="font-size:16px;line-height:20px">Al Reef &amp; Laurel</span><span class="flex ac jc fn" style="width:16px;height:16px;border-radius:50%;background:var(--basalt)">{{icon|check|11|ecru|3}}</span></span>
+      <span class="t-cap c-smoke">Business account</span>
+    </div>
+    {{icon|dots|24}}
+  </div>
+  <!-- thread -->
+  <div class="col" style="padding:12px 14px">
+    <span class="pill-date">Today</span>
+    <div class="bub rel" style="margin-top:12px;padding:6px 6px 8px">
+      <div class="ph" style="width:274px;height:116px;border-radius:13px;padding-bottom:14px">{{tag|42|50|0.8}}<span class="lbl">IMG · Tag at day 50</span></div>
+      <div style="padding:10px 8px 0">Your tag is fading. A fresh one ships Wednesday.</div>
+      <span class="tm" style="padding-right:8px">10:00</span>
+      {{mk|Day 50 · renewal touchpoint|-14|-4}}
+    </div>
+    <div class="bub" style="margin-top:6px">
+      <div class="t-spec-s c-smoke">Your next refill</div>
+      <div class="flex ac g12" style="margin-top:10px">
+        {{circ|44}}
+        <div class="col"><span class="w6">The Pair · refill · AED 149</span><span>ships Wed 29 Dec,<br>arrives Thu 30 Dec</span></div>
+      </div>
+      <div class="t-cap c-smoke" style="margin-top:10px;padding-top:8px;border-top:1px solid var(--line)">2 Daily Pads · Back Strap · Laurel 16 + 30</div>
+      <span class="tm">10:00</span>
+    </div>
+    <div class="flex g8" style="margin-top:8px">
+      <span class="qr">Ship it</span><span class="qr">Skip this one</span><span class="qr on">Swap soaps</span>
+    </div>
+    <div class="bub bub-me" style="margin-top:12px">Swap soaps<span class="tm">10:02</span></div>
+    <div class="bub" style="margin-top:8px">Done: 2 × Laurel 16 this time. See you on day 60.<span class="tm">10:02</span></div>
+  </div>
+  <!-- composer -->
+  <div class="abs bg-steam flex ac g10" style="left:0;right:0;bottom:0;padding:10px 14px 34px;border-top:1px solid var(--line);gap:10px">
+    {{icon|plus|24}}
+    <div class="f1 flex ac" style="height:40px;border-radius:999px;background:var(--ecru);border:1px solid var(--line);padding:0 16px;color:var(--smoke);font-size:15px">Message</div>
+    <span class="flex ac jc fn" style="width:40px;height:40px;border-radius:50%;background:var(--basalt)">{{icon|arrow-right|18|ecru}}</span>
+  </div>
+  <div class="abs" style="left:128px;bottom:8px;width:134px;height:5px;border-radius:999px;background:var(--basalt)"></div>
+</section>
+
+<!-- ============ NOTES ============ -->
+<section class="frame notes" data-name="10 Bag, menu and modals — Notes">
+  <div class="n-kick">10 · Bag, menu and modals · overlays</div>
+  <div class="n-title">Overlays and touchpoints</div>
+  <p class="n-lead">Everything that opens over a page: the mega menu, the bag, search, the founding-list invitation and the day-50 WhatsApp that keeps a ritual renewing. Each layer does one job, carries at most one Silt button and closes the same way: ✕, Esc or a click on the scrim.</p>
+
+  <div class="n-block"><div class="n-h">Overlays, one by one</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Mega menu</b> — opens from “Rituals” on hover (150 ms intent delay) or on click/Enter. All seven sets with one-time prices, the singles, one featured set and the Build-your-own tile. Navigation only, so no primary button.</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Bag drawer</b> — opens after Add to bag (M14) or from “Bag (n)”. Each line names its cycle; one quiet nudge moves the one-time soap onto the renewal. Primary: Checkout · AED 123.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>Founding list</b> — the site’s only marketing pop-up: no timer, no stock counts, no “hurry”. Primary: Join the list. The Silt panel is the screen’s one accent; حصاد (hasad, “harvest”) is this page’s one Ruqaa word.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>Search</b> — opens from the header icon or the “/” key with focus in the field. Popular searches before typing; results from 2 characters, matched on names and on what’s inside each set. Enter opens the full results page.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>Mobile menu</b> — full screen from the left: big links in Cormorant, service links, region at the foot.</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>Mobile bag</b> — full-height sheet from the bottom. The list scrolls; Subtotal and Checkout stay pinned.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span><b>Mobile founding sheet</b> — half-height bottom sheet, same copy and rules as 03, no image so the form clears the keyboard.</span></div>
+    <div class="n-item"><span class="n-num">08</span><span><b>Day-50 WhatsApp</b> — the renewal touchpoint, outside the site. One message per cycle; the quick replies change the next refill in Recharge/Skio and show on 09 Your ritual. Neutral mock: the live chat uses WhatsApp’s own interface.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M18</span><span><b>Drawers, sheets, dialogs</b> — mega menu and search drop 8 px and fade in (300 ms), columns 40 ms apart. Bag slides in from the right, mobile menu from the left, sheets from the bottom (400 ms, calm out). The founding dialog fades and rises 16 px (400 ms). Scrim fades to Basalt 38% (300 ms). Closing reverses in 300 ms.<span class="n-ref">Lula: Horizon menu-drawer, cart-drawer, dialog</span></span></div>
+    <div class="n-item"><span class="n-chip">M14</span><span><b>Add to bag → drawer</b> — the button reads “Added” with a tick (400 ms), then the drawer opens and the header count ticks to 2. The new line starts on Dune and settles to Steam over 1200 ms so the eye finds it.<span class="n-ref">Lula: Horizon atc-slide-in</span></span></div>
+    <div class="n-item"><span class="n-chip">M13</span><span><b>Move to renewal</b> — the Clay nudge turns Laurel 30 into a renewal line: AED 55 rolls to AED 44, the subtotal to AED 112, and the button label follows (300 ms). Undo shows for 5 s.</span></div>
+    <div class="n-item"><span class="n-chip">M15</span><span><b>Menu hover</b> — the hovered set gains an arrow that slides in 8 px; the featured card crossfades to that set (300 ms).<span class="n-ref">Lula: hover-image-v2.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M19</span><span><b>Search results</b> — update as you type (150 ms debounce); cards crossfade in place, no layout jump.</span></div>
+    <div class="n-item"><span class="n-chip">Day 50</span><span><b>Renewal touchpoint</b> — sent on day 50 of each cycle, mid-morning local time (in this sample, Sun 19 Dec 2027). “Ship it” confirms Wednesday’s shipment; “Skip this one” moves the refill on 60 days; “Swap soaps” offers 2 × Laurel 16 · 2 × Laurel 30 · keep both. No reply means it ships as planned.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Focus, Escape and scrims</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>Bag, search, founding list, mobile menu and sheets are modal dialogs (role “dialog”, aria-modal, named by their title). Focus moves in on open (bag: its title · search: the field · founding list: the email field · menu: the first link), stays trapped while open and returns to the trigger on close.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>The mega menu is a disclosure, not a dialog: aria-expanded on “Rituals”, arrow keys move through the links, tabbing past the last link closes it, and it closes 300 ms after the pointer leaves.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Everything closes with ✕, Esc or a click or tap on the scrim. Sheets also close on a downward swipe past 30% of their height; the founding list also on “No thanks”.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Page scroll locks while a drawer, sheet or dialog is open (scrollbar width reserved, so nothing jumps).</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Scrim: Basalt at 38%. The mega menu and search keep the header above the scrim (they belong to it); the bag and the founding dialog dim the whole page.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Reduced motion: overlays fade only (150 ms), no slides.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Founding list: when it appears</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span><b>Once per visitor</b>, after 30 s on the site or 50% scroll of a page, whichever comes first.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span><b>Never</b> on checkout, the bag, account or batch pages (QR visitors already own a loofah), and never on a product page before something is in the bag.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Not shown to founding members or signed-in customers. Closing it any way, or joining, stops it on that browser; the offer stays in the announcement bar.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Joined state, same dialog: “You’re on the list.” + “Your 25% code comes with our launch email.” + btn-secondary “Keep browsing”.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Mobile</div><div class="n-list">
+    <div class="n-item"><span class="n-num">05</span><span>Each big link opens a second level that slides in from the right with a Back row (Rituals: the seven sets with prices; Field notes: the five pillars).</span></div>
+    <div class="n-item"><span class="n-num">06</span><span>Add-ons scroll sideways, the next card peeking in. Free delivery is said once, at the top; the pinned footer keeps only Subtotal, Checkout and the renewal line. Payment marks move to checkout so Checkout stays in view on a 390 × 844 screen.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span>Email field uses the email keyboard; WhatsApp uses the phone keypad with +971 preselected. The sheet rises with the keyboard.</span></div>
+    <div class="n-item"><span class="n-num">08</span><span>Customers can also type “skip”, “swap” or “pause”; anything else goes to a founder.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span><b>Bag</b>: The Duo on renewal AED 68 + Laurel 30 one-time AED 55 = AED 123. At the Duo’s renewal rate (20% off) Laurel 30 is AED 44: a saving of AED 11, subtotal AED 112. Confirm the renewal price for single items.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span><b>Mega menu</b>: one-time prices from the price list, all estimates until landed cost. The Hammam Chest “from AED 350” (range 350–550).</span></div>
+    <div class="n-item"><span class="n-num">·</span><span><b>Search</b> “back str”: 5 products contain the Back Strap — The Back Strap, The Grooming Kit, The Pair, The House, The Hammam Chest.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span><b>Chat</b>: The Pair refill (2 Daily Pads, Back Strap, Laurel 16 + 30) AED 149, shipping Wed 29 Dec 2027 (day 60) and arriving Thu 30 Dec, as on 09 Your ritual; day 50 is Sun 19 Dec. The swap makes it 2 × Laurel 16.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Free UAE delivery</b> has no threshold yet. The drawer shows “unlocked” with a full bar; set the rule (a threshold, or free on all rituals) before we draw the “AED X to go” state.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Founding offer</b>: 25% off which price — the AED 85 one-time Duo (AED 63.75) or the first renewal box (AED 68 → AED 51)? Rounding, and does it stack with the renewal saving?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>WhatsApp opt-in</b>: Meta needs explicit opt-in and UAE PDPL needs consent wording. Add one consent line and a privacy link under the founding fields (left out here to test the fit).</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Chat dates</b>: sample dates match 09 Your ritual. Use live order dates in production.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Swap price</b>: Laurel 16 costs AED 10 less than Laurel 30 as a single. Does the refill stay AED 149 after “2 × Laurel 16”? Match the swap dialog on 09.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Scrim</b>: Foundations M14 says a 30% backdrop; the .scrim token is 38%. Drawn at 38%; pick one.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Search by contents</b> needs each set’s contents as product metafields or tags (Shopify Search &amp; Discovery). Confirm with the developer.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>“The September harvest”</b>: if the list runs into 2027, say “the September 2026 harvest” so it doesn’t read as a wait for next autumn.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>حصاد</b>: confirm the word and its Ruqaa setting with an Arabic reader.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span><b>Verified tick</b>: on WhatsApp, verification is Meta’s own badge and colours; the neutral tick here only marks where it sits.</span></div>
+  </div></div>
+</section>
+
+</body></html>

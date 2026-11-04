@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>01 Home</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+.tile-icon{width:100%;height:400px;border-radius:16px;background:var(--dune);display:flex;align-items:center;justify-content:center;position:relative}
+.co{display:flex;flex-direction:column;gap:10px;padding:26px 0;border-top:1px solid var(--lined)}
+.cmp{display:grid;grid-template-columns:240px 320px 1fr 1fr;position:relative}
+.cmp > div{padding:22px 24px;border-top:1px solid var(--line);position:relative;z-index:1;font-size:16px;line-height:24px}
+.cmp > .hd{border-top:none;padding-bottom:28px}
+.cmp > .lb{font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);padding-left:0}
+.cmp > .us{color:var(--basalt);font-weight:500}
+.cmp > .th{color:var(--smoke)}
+.step{display:flex;flex-direction:column;gap:12px;padding:34px 0;border-top:1px solid var(--line)}
+.tl{display:flex;gap:20px;position:relative}
+.tl .dotc{width:14px;height:14px;border-radius:50%;background:var(--silt);flex:none;margin-top:6px;position:relative;z-index:1}
+.tl .dotc.o{background:var(--ecru);border:1.5px solid var(--silt)}
+.way{display:flex;flex-direction:column;gap:14px;padding:32px;border-radius:16px;border:1px solid var(--line2)}
+.rcard{width:400px;flex:none;display:flex;flex-direction:column;gap:18px}
+.rimg{position:relative;width:400px;height:500px;border-radius:12px;background:var(--dune);display:flex;align-items:center;justify-content:center}
+.rv{flex:none;width:360px;background:var(--steam);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px;opacity:.55}
+.rv.c{width:420px;opacity:1;box-shadow:0 24px 64px rgba(43,42,39,.14);padding:40px}
+.fnc{width:322px;display:flex;flex-direction:column;gap:14px}
+/* mobile */
+.m-step{display:flex;flex-direction:column;gap:8px;padding:22px 0;border-top:1px solid var(--line)}
+.m-card{width:280px;flex:none;display:flex;flex-direction:column;gap:12px}
+</style></head>
+<body class="board">
+
+<!-- =============================== DESKTOP =============================== -->
+<section class="frame desktop" data-name="01 Home — Desktop 1440">
+  {{announce}}
+  <div class="rel">{{header}}{{mk|M03|27|560}}</div>
+
+  <!-- HERO -->
+  <section class="sec" style="padding:48px 40px 104px">
+    {{mk|M01|20|12}}
+    <div class="flex jb ac">
+      <div class="col" style="width:600px">
+        <div class="t-ar" style="font-size:64px;line-height:80px;margin-bottom:18px">ليفة</div>
+        <div class="rail" style="margin-bottom:28px"><span class="rule"></span><span class="t-spec">Nile Delta loofah · Levantine laurel soap</span></div>
+        <h1 class="t-display">Grown,<br><em class="c-silt">not made.</em></h1>
+        <p class="t-body c-basalt" style="width:470px;margin-top:28px">A loofah from Damanhour and a bar of laurel soap, renewed every 60 days so your ritual never goes stale.</p>
+        <div class="flex g16" style="margin-top:40px"><span class="btn btn-primary">Shop the Duo · AED 85</span><span class="btn btn-secondary">Find your ritual</span></div>
+        <div class="flex g32" style="margin-top:56px;padding-top:24px;border-top:1px solid var(--line);width:560px">
+          <span class="flex ac g12 t-cap">{{icon|sun|28}}Sun-dried for 21 days</span>
+          <span class="flex ac g12 t-cap">{{icon|origin|28}}Traced to Field 7</span>
+          <span class="flex ac g12 t-cap">{{icon|compost|28}}Nothing plastic</span>
+        </div>
+      </div>
+      <div class="rel" style="width:680px;height:740px">
+        <div style="position:absolute;left:88px;top:0">{{win|504|672|IMG 02 · Wringing a wet loofah · slow loop}}</div>
+        <div style="position:absolute;left:548px;top:96px;transform:rotate(7deg)">{{tag|92|01|0}}</div>
+        <div class="flex ac jc g12" style="position:absolute;left:0;right:0;top:708px"><span class="dot" style="background:var(--silt)"></span><span class="t-spec">Now shipping · Field 7 · Harvest Sept 2026</span></div>
+        {{mk|M02|20|72}}{{mk|M20|80|640}}
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="sec tc" style="padding:120px 40px 144px;border-top:1px solid var(--line)">
+    {{mk|M04|120|128}}
+    <div class="col ac g32" style="width:1120px;margin:0 auto">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Why we exist</span><span class="rule"></span></div>
+      <p class="t-display">Bring the honesty of the hammam back to the everyday shower. Real materials <span style="opacity:.2">from real farms. Nothing plastic, nothing hidden.</span></p>
+      <span class="tlink">Read our story {{icon|arrow-right|16}}</span>
+    </div>
+  </section>
+
+  <!-- THE DUO MODULE -->
+  <section class="sec" style="padding:0 40px 144px">
+    <div class="col ac g16" style="margin-bottom:56px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">The hero ritual</span><span class="rule"></span></div>
+      <div class="t-display tc">The hammam, <em>every morning.</em></div>
+    </div>
+    <div class="outline flex g56" style="padding:40px">
+      <div class="col g16 fn" style="width:640px">
+        <div class="rel bg-steam flex ac jc" style="width:640px;height:720px;border-radius:16px">
+          {{win|420|560|IMG · The Duo on travertine}}
+          <span class="arrowbtn bg-ecru" style="position:absolute;left:24px;top:336px">{{icon|chev-left|20}}</span>
+          <span class="arrowbtn bg-ecru" style="position:absolute;right:24px;top:336px">{{icon|chev-right|20}}</span>
+          <span class="t-cap w5 bg-ecru tc" style="position:absolute;left:284px;bottom:24px;width:72px;padding:4px 0;border-radius:999px">1 / 5</span>
+          {{mk|M07|20|20}}
+        </div>
+        <div class="flex g12">{{circ|64}}{{circ|64}}{{circ|64}}{{circ|64}}{{circ|64}}</div>
+      </div>
+      <div class="col g24 f1 rel">
+        <div class="flex jb as">
+          <div class="col g8"><span class="t-spec c-clay">Daily Pad + Laurel 16</span><span class="t-title">The Duo</span></div>
+          <div class="col ae g4"><span class="w5 num" style="font-size:24px;line-height:32px">AED 68</span><span class="t-cap c-smoke">per delivery · or AED 85 once</span></div>
+        </div>
+        <p class="t-body-s">A Daily Pad sun-dried for 21 days in Damanhour and a bar of Laurel 16 Sabon Ghar, made to work together.</p>
+        <div class="rail"><span class="rule"></span><span class="t-spec">Grade A · 58 / cm² · 16% laurel · 150 g</span></div>
+        <div class="flex wrap" style="gap:16px 24px">
+          <span class="flex ac g12 t-ui" style="width:270px">{{icon|sun|30}}Sun-dried for 21 days, never bleached</span>
+          <span class="flex ac g12 t-ui" style="width:270px">{{icon|origin|30}}Traced to Field 7 by batch QR</span>
+          <span class="flex ac g12 t-ui" style="width:270px">{{icon|tag|30}}Cotton tag fades by day 60</span>
+          <span class="flex ac g12 t-ui" style="width:270px">{{icon|box|30}}The box becomes a shower caddy</span>
+        </div>
+        <div class="col g12 rel">
+          {{mk|M13|-14|-44}}
+          <div class="opt on"><span class="radio"></span><div class="f1"><div class="flex ac g8"><span class="w5">Renew every 60 days</span><span class="badge badge-clay">Save 20%</span></div><div class="t-cap c-smoke">Skip, swap or pause any time. WhatsApp reminder on day 50.</div></div><span class="w5 num">AED 68</span></div>
+          <div class="opt"><span class="radio"></span><div class="f1"><span class="w5">One-time purchase</span></div><span class="w5 num">AED 85</span></div>
+        </div>
+        <div class="flex g32">
+          <div class="col g8"><span class="t-spec-s c-smoke">Fibre</span><div class="flex g8"><span class="chip on">Gentle</span><span class="chip">Deep</span></div></div>
+          <div class="col g8"><span class="t-spec-s c-smoke">Soap</span><div class="flex g8"><span class="chip on">Laurel 16</span><span class="chip">Laurel 30</span></div></div>
+        </div>
+        <div class="flex g12 rel"><span class="stepper">{{icon|minus|18}}<span class="num">1</span>{{icon|plus|18}}</span><span class="btn btn-primary" style="flex:1 1 0">Add to bag · AED 68</span>{{mk|M14|-14|150}}</div>
+        <div class="flex jb t-cap c-smoke"><span class="flex ac g8">{{icon|truck|18}}Free UAE delivery on the Duo</span><span class="flex ac g8">{{icon|calendar|18}}Cancel any time</span><span class="flex ac g8">{{icon|qr|18}}Batch QR on every tag</span></div>
+        <div class="col g8" style="padding-top:20px;border-top:1px solid var(--line)">
+          <span class="w5">Which fibre is mine?</span>
+          <span class="t-ui c-smoke"><b class="c-basalt w5">Gentle</b> is softer, for daily use and sensitive skin. <b class="c-basalt w5">Deep</b> is firmer, for a weekly scrub, backs and feet. Not sure? Start with Gentle.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PROOFS -->
+  <section class="sec bg-steam" style="padding:144px 40px">
+    <div class="col ac g16" style="margin-bottom:64px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">One idea, three proofs</span><span class="rule"></span></div>
+      <div class="t-display tc">Rooted. Renewed. <em>Returned.</em></div>
+    </div>
+    <div class="flex g24 rel">
+      {{mk|M09|-14|-14}}
+      <div class="col g20 f1"><div class="tile-icon">{{icon|origin|168}}<span class="t-spec-s c-smoke" style="position:absolute;left:20px;bottom:18px">Trust</span></div><span class="t-card">Rooted</span><p class="t-body-s c-smoke">Every loofah carries a batch QR: its field, harvest month and grade, on your phone in a second.</p><span class="tlink">See a batch page {{icon|arrow-right|16}}</span></div>
+      <div class="col g20 f1"><div class="tile-icon">{{icon|tag|168}}<span class="t-spec-s c-smoke" style="position:absolute;left:20px;bottom:18px">Hygiene</span></div><span class="t-card">Renewed</span><p class="t-body-s c-smoke">A cotton tag fades by day 60. A fresh loofah ships before yours is past its best.</p><span class="tlink">How renewal works {{icon|arrow-right|16}}</span></div>
+      <div class="col g20 f1"><div class="tile-icon">{{icon|compost|168}}<span class="t-spec-s c-smoke" style="position:absolute;left:20px;bottom:18px">Planet</span></div><span class="t-card">Returned</span><p class="t-body-s c-smoke">Compost the loofah, keep the box: it folds into a shower caddy. No plastic anywhere.</p><span class="tlink">From box to caddy {{icon|arrow-right|16}}</span></div>
+    </div>
+  </section>
+
+  <!-- SPECIMEN -->
+  <section class="sec bg-basalt" style="padding:144px 40px 160px">
+    <div class="col ac g16" style="margin-bottom:72px">
+      <div class="rail"><span class="rule-k"></span><span class="t-spec c-kraft">Specimen · Field 7 · Grade A</span><span class="rule-k"></span></div>
+      <div class="t-display c-ecru tc">One slice, <em>nothing hidden.</em></div>
+      <p class="t-body c-ecru70 tc" style="width:560px">A backlit cross-section of a Grade A loofah, turning as you scroll. Every number here is printed on your tag.</p>
+    </div>
+    <div class="flex jb ac">
+      <div class="col tr" style="width:400px">
+        <div class="co" style="border-top:none"><span class="t-spec c-kraft">58 / cm²</span><span class="t-card c-ecru">Grade A density</span><span class="t-ui c-ecru70">Counted on every batch and printed on the tag.</span></div>
+        <div class="co"><span class="t-spec c-kraft">21 days</span><span class="t-card c-ecru">Dried by the sun</span><span class="t-ui c-ecru70">On the farm in Damanhour, never bleached. The colour is the sun’s.</span></div>
+        <div class="co"><span class="t-spec c-kraft">8–12 weeks</span><span class="t-card c-ecru">A fibre that lasts</span><span class="t-ui c-ecru70">Dense Nile Delta fibre keeps its shape for the full cycle.</span><span>{{flag|Claim to verify}}</span></div>
+      </div>
+      <div class="rel">{{win|440|587|VIDEO · backlit slice turning · scroll-scrubbed|dark}}{{mk|M05|12|12}}</div>
+      <div class="col" style="width:400px">
+        <div class="co" style="border-top:none"><span class="t-spec c-kraft">16% laurel</span><span class="t-card c-ecru">Sabon Ghar</span><span class="t-ui c-ecru70">Olive and laurel oils, cured slowly in the Levant.</span></div>
+        <div class="co"><span class="t-spec c-kraft">0 plastic</span><span class="t-card c-ecru">Cotton, kraft, twine</span><span class="t-ui c-ecru70">No lamination, no shrink wrap, no plastic tags.</span></div>
+        <div class="co"><span class="t-spec c-kraft">Compostable</span><span class="t-card c-ecru">Back to the soil</span><span class="t-ui c-ecru70">When the tag fades, cut it up and add it to compost.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="sec" style="padding:144px 40px;background:linear-gradient(180deg,#F3EEE4 0%,#E9DFCF 100%)">
+    <div class="col ac g16" style="margin-bottom:72px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">The honest comparison</span><span class="rule"></span></div>
+      <div class="t-display tc">Why the loofah, <em>not the pouf.</em></div>
+    </div>
+    <div style="width:1200px;margin:0 auto" class="rel">
+      <div style="position:absolute;left:240px;top:-28px;width:320px;bottom:-28px;background:var(--steam);border-radius:16px;box-shadow:0 24px 64px rgba(43,42,39,.12)"></div>
+      <div class="cmp">
+        <div class="hd lb"></div>
+        <div class="hd col ac g12">{{win|72|96}}<span class="t-card">The Daily Pad</span></div>
+        <div class="hd col ac g12">{{circ|96}}<span class="t-ui w5 c-smoke">Plastic pouf</span></div>
+        <div class="hd col ac g12">{{circ|96}}<span class="t-ui w5 c-smoke">Supermarket mitt</span></div>
+        <div class="lb">Made from</div><div class="us tc">Nile Delta Luffa aegyptiaca, sun-dried</div><div class="th tc">Nylon mesh</div><div class="th tc">Synthetic or bleached fibre</div>
+        <div class="lb">When to replace</div><div class="us tc">The tag fades by day 60</div><div class="th tc">Guesswork</div><div class="th tc">Guesswork</div>
+        <div class="lb">Where it grew</div><div class="us tc">Field, month and grade on a QR</div><div class="th tc">Not applicable</div><div class="th tc">Rarely stated</div>
+        <div class="lb">After use</div><div class="us tc">Compost it, keep the box</div><div class="th tc">Landfill</div><div class="th tc">Landfill</div>
+        <div class="lb">Price</div><div class="us tc">AED 44, or AED 85 with soap</div><div class="th tc">AED 8–24</div><div class="th tc">AED 8–24</div>
+      </div>
+    </div>
+    <div class="flex jc" style="margin-top:56px">{{flag|Comparison claims reviewed by the regulatory adviser before launch}}</div>
+  </section>
+
+  <!-- THE RITUAL (sticky) -->
+  <section class="sec" style="padding:144px 40px">
+    <div class="flex jb ae" style="margin-bottom:64px">
+      <div class="col g16"><div class="rail"><span class="rule"></span><span class="t-spec">The ritual · two minutes</span></div><div class="t-display">The two-minute <em>scrub.</em></div></div>
+      <div class="col g16" style="width:420px"><p class="t-body-s c-smoke">Four steps, one area at a time. The hammam’s logic, shortened for a weekday morning.</p><span class="tlink">Download the ritual card {{icon|download|16}}</span></div>
+    </div>
+    <div class="flex g72 as" style="gap:72px">
+      <div class="rel fn">
+        {{ph|668|760|IMG 01 · Lathered loofah in hand · image changes per step||16}}
+        <span class="flex ac g8 bg-ecru" style="position:absolute;left:24px;top:24px;height:36px;padding:0 16px;border-radius:999px"><span class="t-spec-s">Step 02 / 04</span></span>
+        {{mk|M06|-14|-14}}
+      </div>
+      <div class="col" style="width:620px">
+        <div class="step" style="opacity:.45"><div class="flex jb ac"><span class="t-spec c-smoke">01</span><span class="t-spec-s c-smoke">30 seconds</span></div><span class="t-title">Wet.</span><p class="t-body">Soak the loofah under warm water for 30 seconds. It softens as it drinks.</p></div>
+        <div class="step"><div class="flex jb ac"><span class="t-spec c-clay">02</span><span class="t-spec-s">20 seconds</span></div><span class="t-title">Lather.</span><p class="t-body">Work the Sabon Ghar into the fibre, not onto your skin. Ten turns is plenty.</p></div>
+        <div class="step" style="opacity:.45"><div class="flex jb ac"><span class="t-spec c-smoke">03</span><span class="t-spec-s c-smoke">2 minutes</span></div><span class="t-title">Circle.</span><p class="t-body">Small circles, one area at a time. Lighter where skin is thin, firmer on the back.</p></div>
+        <div class="step" style="opacity:.45;border-bottom:1px solid var(--line)"><div class="flex jb ac"><span class="t-spec c-smoke">04</span><span class="t-spec-s c-smoke">Every time</span></div><span class="t-title">Hang to dry.</span><p class="t-body">Hang it by the cotton tag, out of the spray. Dry fibre lasts longer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM THE FIELD (the one bleed) -->
+  <section class="rel" style="height:820px">
+    {{ph|1440|820|IMG 03 · Gourds on a Damanhour trellis · real Field 7 shoot|dark}}
+    <div style="position:absolute;left:0;top:0;right:0;bottom:0;background:linear-gradient(90deg,rgba(43,42,39,.72) 0%,rgba(43,42,39,.15) 60%,rgba(43,42,39,0) 100%)"></div>
+    <div class="col g24" style="position:absolute;left:40px;bottom:96px;width:640px">
+      <div class="rail"><span class="rule-k"></span><span class="t-spec c-kraft">31.03° N · 30.47° E · Damanhour, Egypt</span></div>
+      <div class="t-display c-ecru">This was a vegetable <em>in September.</em></div>
+      <p class="t-body c-ecru70" style="width:520px">Meet Field 7, where our gourds ripen on trellises above the Nile Delta and dry for 21 days in the sun.</p>
+      <span class="tlink c-ecru">Read the farm story {{icon|arrow-right|16}}</span>
+    </div>
+    {{mk|M11|24|24}}
+  </section>
+
+  <!-- RENEWAL -->
+  <section class="sec" style="padding:144px 40px">
+    <div class="flex jb as">
+      <div class="rel bg-dune flex col ac jc g24 fn" style="width:552px;height:640px;border-radius:16px">
+        {{tag|196|41|0.62}}
+        <span class="t-spec c-smoke">Day 41 / 60 · ink fading</span>
+        {{mk|M10|20|20}}
+      </div>
+      <div class="col g32" style="width:696px">
+        <div class="rail"><span class="rule"></span><span class="t-spec">Renewal</span></div>
+        <div class="t-display">When the tag fades, <em>so should your loofah.</em></div>
+        <p class="t-body">Every loofah wears a cotton tag printed in fading ink. By day 60 it’s gone, and your next one is already on its way.</p>
+        <div class="col rel" style="margin-top:8px">
+          <div style="position:absolute;left:6px;top:14px;bottom:30px;width:1.5px;background:var(--silt);opacity:.5"></div>
+          <div class="tl" style="padding-bottom:22px"><span class="dotc"></span><div class="col g4"><span class="t-spec">Day 0</span><span class="t-ui">Your set arrives: loofah, soap, a box that becomes a caddy, and the ritual card.</span></div></div>
+          <div class="tl" style="padding-bottom:22px"><span class="dotc o"></span><div class="col g4"><span class="t-spec">Day 50</span><span class="t-ui">A WhatsApp: “Your tag is fading. A fresh one ships Tuesday.” Skip, swap or keep.</span></div></div>
+          <div class="tl" style="padding-bottom:22px"><span class="dotc"></span><div class="col g4"><span class="t-spec">Day 60</span><span class="t-ui">A fresh loofah and soap arrive. No new box, nothing wasted.</span></div></div>
+          <div class="tl"><span class="dotc o"></span><div class="col g4"><span class="t-spec">Every 60 days</span><span class="t-ui">Repeat, or pause whenever you like.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex g24" style="margin-top:96px">
+      <div class="way f1"><span class="t-spec c-smoke">Option 1</span><span class="t-card">One-time</span><p class="t-ui c-smoke">Buy once at the full set price. A day-50 reminder offers renewal.</p><span class="w5 num" style="margin-top:auto;padding-top:12px">The Duo · AED 85</span></div>
+      <div class="way f1 bg-steam" style="border:1.5px solid var(--basalt)"><div class="flex jb ac"><span class="t-spec c-clay">Option 2</span><span class="badge badge-clay">Recommended</span></div><span class="t-card">Renew as you go</span><p class="t-ui c-smoke">Pay per delivery, every 30, 60 or 90 days. Skip, swap, pause or cancel before the next ship date.</p><span class="w5 num" style="margin-top:auto;padding-top:12px">The Duo · AED 68 per delivery</span></div>
+      <div class="way f1 bg-basalt" style="border-color:var(--basalt)"><span class="t-spec c-kraft">Option 3</span><span class="t-card c-ecru">The Year of Rituals</span><p class="t-ui c-ecru70">Six deliveries prepaid, a brass soap rest in the first box. Works beautifully as a gift.</p><span class="w5 num c-ecru" style="margin-top:auto;padding-top:12px">The Duo · AED 349 a year <span class="c-ecru50" style="text-decoration:line-through;font-weight:400">408</span></span></div>
+    </div>
+    <div class="flex jc" style="margin-top:56px"><span class="btn btn-primary">Start your ritual</span></div>
+  </section>
+
+  <!-- RITUALS CAROUSEL -->
+  <section class="sec bg-steam" style="padding:144px 0 144px 40px">
+    <div class="flex jb ae" style="padding-right:40px;margin-bottom:56px">
+      <div class="col g16"><div class="rail"><span class="rule"></span><span class="t-spec">7 rituals · renew every 60 days</span></div><div class="t-display">A ritual for <em>every bathroom.</em></div></div>
+      <div class="flex ac g24"><span class="tlink">See all 7 rituals {{icon|arrow-right|16}}</span><div class="flex g8"><span class="arrowbtn">{{icon|arrow-left|20}}</span><span class="arrowbtn">{{icon|arrow-right|20}}</span></div></div>
+    </div>
+    <div class="rel">
+      {{mk|M07|-14|-14}}
+      <div class="flex g24" data-bleed="1" style="width:2944px">
+        <div class="rcard"><div class="rimg"><span class="badge" style="position:absolute;left:16px;top:16px">Founders’ pick</span><div class="flex">{{circ|170||steam}}<div style="margin-left:-36px">{{circ|170||steam}}</div></div></div><div class="flex jb as"><span class="t-card">The Duo</span><span class="w5 num" style="padding-top:4px">AED 85</span></div><span class="t-ui c-smoke" style="margin-top:-10px">Daily Pad + Laurel 16</span><span class="t-ui c-clay w5" style="margin-top:-10px">AED 68 on renewal</span></div>
+        <div class="rcard rel"><div class="rimg" style="background:#DCCDB4"><div class="flex">{{circ|150||steam}}<div style="margin-left:-30px">{{circ|150||steam}}</div><div style="margin-left:-30px">{{circ|150||steam}}</div></div><span class="btn btn-dark btn-s" style="position:absolute;left:24px;right:24px;bottom:24px">Quick add · AED 199</span>{{mk|M15|-14|-14}}</div><div class="flex jb as"><span class="t-card">The Pair</span><span class="flex g8 ac" style="padding-top:4px"><span class="t-ui strike num">278</span><span class="w5 num">AED 199</span></span></div><span class="t-ui c-smoke" style="margin-top:-10px">For two · colour-coded tags</span><span class="t-ui c-clay w5" style="margin-top:-10px">AED 149 on renewal</span></div>
+        <div class="rcard"><div class="rimg"><span class="badge badge-clay" style="position:absolute;left:16px;top:16px">Save 25%</span><div class="flex">{{circ|140||steam}}<div style="margin-left:-28px">{{circ|140||steam}}</div><div style="margin-left:-28px">{{circ|140||steam}}</div></div></div><div class="flex jb as"><span class="t-card">The House</span><span class="flex g8 ac" style="padding-top:4px"><span class="t-ui strike num">401</span><span class="w5 num">AED 299</span></span></div><span class="t-ui c-smoke" style="margin-top:-10px">Families of four</span><span class="t-ui c-clay w5" style="margin-top:-10px">AED 219 on renewal</span></div>
+        <div class="rcard"><div class="rimg">{{circ|170||steam}}<div style="margin-left:-36px">{{circ|170||steam}}</div></div><div class="flex jb as"><span class="t-card">The Grooming Kit</span><span class="flex g8 ac" style="padding-top:4px"><span class="t-ui strike num">164</span><span class="w5 num">AED 129</span></span></div><span class="t-ui c-smoke" style="margin-top:-10px">Back Strap, Deep pad, Laurel 30</span><span class="t-ui c-clay w5" style="margin-top:-10px">AED 99 on renewal</span></div>
+        <div class="rcard"><div class="rimg"><span class="badge badge-dune" style="position:absolute;left:16px;top:16px;background:var(--steam)">Ages 3–10</span>{{circ|170||steam}}<div style="margin-left:-36px">{{circ|170||steam}}</div></div><div class="flex jb as"><span class="t-card">Little Reef Starter</span><span class="w5 num" style="padding-top:4px">AED 99</span></div><span class="t-ui c-smoke" style="margin-top:-10px">For kids 3–10</span><span class="t-ui c-clay w5" style="margin-top:-10px">AED 69 on renewal</span></div>
+        <div class="rcard"><div class="rimg">{{circ|170||steam}}<div style="margin-left:-36px">{{circ|170||steam}}</div></div><div class="flex jb as"><span class="t-card">First Bath</span><span class="w5 num" style="padding-top:4px">AED 119</span></div><span class="t-ui c-smoke" style="margin-top:-10px">For new parents</span><span class="t-ui c-smoke w5" style="margin-top:-10px">Gift set · no renewal</span></div>
+        <div class="rcard"><div class="rimg" style="background:var(--char)"><span class="badge" style="position:absolute;left:16px;top:16px">Gift</span>{{win|210|280||dark}}</div><div class="flex jb as"><span class="t-card">The Hammam Chest</span><span class="w5 num" style="padding-top:4px">From AED 350</span></div><span class="t-ui c-smoke" style="margin-top:-10px">Brass-stamped basalt chest</span><span class="t-ui c-smoke w5" style="margin-top:-10px">Gift set · no renewal</span></div>
+      </div>
+      <div style="margin:48px 40px 0 0;height:2px;background:var(--line)"><div style="width:420px;height:2px;background:var(--basalt)"></div></div>
+    </div>
+  </section>
+
+  <!-- GIFTING SPLIT -->
+  <section class="flex rel">
+    <div class="bg-basalt col jb fn" style="width:720px;height:760px;padding:80px 64px">
+      <div class="rail"><span class="rule-k"></span><span class="t-spec c-kraft">Ramadan · Eid · weddings · thank-yous</span></div>
+      <div class="col rel" style="gap:4px">
+        {{mk|M08|-34|-34}}
+        <span class="t-display c-ecru" style="opacity:.16">For the team.</span>
+        <span class="t-display c-ecru">For <em>Ramadan.</em></span>
+        <span class="t-display c-ecru" style="opacity:.28">For Eid.</span>
+        <span class="t-display c-ecru" style="opacity:.28">For weddings.</span>
+        <span class="t-display c-ecru" style="opacity:.16">For thank-yous.</span>
+      </div>
+      <p class="t-body c-ecru70" style="width:470px">Ramadan, renewed. Gift sets from AED 119, wrapped in tissue and twine with a ritual card, delivered on the date you choose.</p>
+    </div>
+    <div class="rel">
+      {{ph|720|760|IMG · The Hammam Chest on travertine, steam behind}}
+      <div class="col ac g16" style="position:absolute;left:0;right:0;bottom:72px">
+        <span class="t-spec">The Hammam Chest · from AED 350</span>
+        <span class="btn btn-primary">Shop gifts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec" style="padding:144px 0">
+    <div class="col ac g16" style="margin-bottom:64px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Founding members</span><span class="rule"></span></div>
+      <div class="t-display tc">Notes from <em>the first showers.</em></div>
+      <p class="t-ui c-smoke tc">From founding members and early testers, shared with permission.</p>
+    </div>
+    <div class="rel">
+      {{mk|M07|-14|60}}
+      <div class="flex jc ac g24" data-bleed="1">
+        <div class="rv"><p class="t-body-s">“The soap is the one my grandmother used, without the fuss. The loofah is better than hers.”</p><span class="t-spec-s c-smoke">L. H., Abu Dhabi · Laurel 16 · Day 50</span></div>
+        <div class="rv"><p class="t-body-s">“Finally something for my back that isn’t a stick with a sponge on it.”</p><span class="t-spec-s c-smoke">K. R., Riyadh · Back Strap · Day 21</span></div>
+        <div class="rv c">{{stars|5|18}}<p class="t-heading" style="font-size:30px;line-height:38px">“I didn’t expect to care about a loofah’s birthday. Now I check the tag every morning.”</p><span class="t-spec-s c-smoke">S. A., Dubai · Daily Pad, Gentle · Day 34</span></div>
+        <div class="rv"><p class="t-body-s">“Gave The Pair at a wedding. The ritual card did the talking.”</p><span class="t-spec-s c-smoke">N. M., Sharjah · The Pair · Gift</span></div>
+        <div class="rv"><p class="t-body-s">“My kids argue over who gets the camel mitt. Bath time has never been shorter.”</p><span class="t-spec-s c-smoke">R. T., Dubai · Little Reef · Day 12</span></div>
+      </div>
+    </div>
+    <div class="flex jc g16" style="margin-top:48px">{{flag|Sample quotes. Show only real, verified reviews; hide this section until there are 20+}}</div>
+  </section>
+
+  <!-- FIELD NOTES -->
+  <section class="sec bg-steam" style="padding:144px 40px">
+    <div class="flex jb ae" style="padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:40px">
+      <div class="col g16"><div class="rail"><span class="rule"></span><span class="t-spec">The journal</span></div><div class="t-display">Field <em>notes.</em></div></div>
+      <span class="tlink">All field notes {{icon|arrow-right|16}}</span>
+    </div>
+    <div class="flex jb rel">
+      {{mk|M15|-14|-14}}
+      <div class="fnc"><div class="rel">{{ph|322|242|IMG 03 · Harvest week||12}}<span class="badge" style="position:absolute;left:14px;top:14px">Field Notes</span></div><span class="t-card">Harvest week at Field 7</span><span class="t-ui c-smoke">What September looks like on a Nile Delta farm.</span></div>
+      <div class="fnc"><div class="rel">{{ph|322|242|IMG 01 · Back scrub, strap in hand||12}}<span class="badge" style="position:absolute;left:14px;top:14px">Two-Minute Hammam</span></div><span class="t-card">How to scrub your own back</span><span class="t-ui c-smoke">One body area, two minutes, one strap.</span></div>
+      <div class="fnc"><div class="rel">{{ph|322|242|IMG · Founders’ hands with a dried gourd||12}}<span class="badge" style="position:absolute;left:14px;top:14px">Ask the Delta</span></div><span class="t-card">Yes, it’s a vegetable</span><span class="t-ui c-smoke">No, don’t cook it. This week’s question, answered.</span></div>
+      <div class="fnc"><div class="rel">{{ph|322|242|IMG 05 · Loofah disc, dark field|dark|12}}<span class="badge" style="position:absolute;left:14px;top:14px">Specimen</span></div><span class="t-card">What Grade A actually means</span><span class="t-ui c-smoke">Fibres per square centimetre, counted.</span></div>
+    </div>
+  </section>
+
+  {{footer}}
+</section>
+
+<!-- =============================== MOBILE =============================== -->
+<section class="frame mobile" data-name="01 Home — Mobile 390">
+  {{mann}}
+  {{mheader}}
+
+  <!-- hero -->
+  <section class="sec-m" style="padding:20px 20px 64px">
+    <div class="rel" style="height:500px">
+      <div style="position:absolute;left:20px;top:0">{{win|310|413|IMG 02 · Wringing a wet loofah · loop}}</div>
+      <div style="position:absolute;left:286px;top:64px;transform:rotate(7deg)">{{tag|60|01|0}}</div>
+      <div class="flex ac jc g8" style="position:absolute;left:0;right:0;top:440px"><span class="dot" style="background:var(--silt);width:8px;height:8px"></span><span class="t-spec-s">Now shipping · Field 7</span></div>
+      {{mk|M02|8|0}}
+    </div>
+    <div class="t-ar" style="font-size:44px;line-height:56px">ليفة</div>
+    <div class="rail" style="margin:8px 0 18px"><span class="rule"></span><span class="t-spec-s">Nile Delta loofah · laurel soap</span></div>
+    <h1 class="t-display-m">Grown, <em class="c-silt">not made.</em></h1>
+    <p class="t-body-s" style="margin-top:16px">A loofah from Damanhour and a bar of laurel soap, renewed every 60 days so your ritual never goes stale.</p>
+    <div class="col g12" style="margin-top:28px"><span class="btn btn-primary btn-block">Shop the Duo · AED 85</span><span class="btn btn-secondary btn-block">Find your ritual</span></div>
+    <div class="flex jb" style="margin-top:32px;padding-top:18px;border-top:1px solid var(--line)">
+      <span class="col ac g8 t-cap tc" style="width:104px">{{icon|sun|26}}Sun-dried 21 days</span>
+      <span class="col ac g8 t-cap tc" style="width:104px">{{icon|origin|26}}Traced to Field 7</span>
+      <span class="col ac g8 t-cap tc" style="width:104px">{{icon|compost|26}}Nothing plastic</span>
+    </div>
+  </section>
+
+  <!-- manifesto -->
+  <section class="sec-m tc" style="border-top:1px solid var(--line)">
+    {{mk|M04|56|8}}
+    <div class="rail jc" style="margin-bottom:20px"><span class="rule"></span><span class="t-spec-s">Why we exist</span><span class="rule"></span></div>
+    <p class="t-title-m">Bring the honesty of the hammam back to the everyday shower. Real materials <span style="opacity:.2">from real farms. Nothing plastic, nothing hidden.</span></p>
+  </section>
+
+  <!-- duo -->
+  <section class="sec-m" style="padding-top:0">
+    <div class="t-display-m tc" style="margin-bottom:28px">The hammam, <em>every morning.</em></div>
+    <div class="rel bg-steam flex ac jc" style="width:350px;height:420px;border-radius:16px">
+      {{win|246|328|IMG · The Duo on travertine}}
+      <span class="t-cap w5 bg-ecru tc" style="position:absolute;left:139px;bottom:16px;width:72px;padding:3px 0;border-radius:999px">1 / 5</span>
+      {{mk|M07|10|10}}
+    </div>
+    <div class="col g20" style="margin-top:24px">
+      <div class="flex jb as"><div class="col g4"><span class="t-spec-s c-clay">Daily Pad + Laurel 16</span><span class="t-title-m">The Duo</span></div><div class="col ae"><span class="w5 num" style="font-size:20px;line-height:28px">AED 68</span><span class="t-cap c-smoke">or AED 85 once</span></div></div>
+      <div class="rail"><span class="rule"></span><span class="t-spec-s">Grade A · 58 / cm² · 16% laurel · 150 g</span></div>
+      <div class="col g12 rel">
+        {{mk|M13|-12|300}}
+        <div class="opt on" style="padding:16px"><span class="radio"></span><div class="f1"><div class="flex ac g8 wrap"><span class="w5">Renew every 60 days</span><span class="badge badge-clay">Save 20%</span></div><div class="t-cap c-smoke">Skip, swap or pause any time.</div></div><span class="w5 num">AED 68</span></div>
+        <div class="opt" style="padding:16px"><span class="radio"></span><div class="f1"><span class="w5">One-time purchase</span></div><span class="w5 num">AED 85</span></div>
+      </div>
+      <div class="col g8"><span class="t-spec-s c-smoke">Fibre</span><div class="flex g8"><span class="chip on">Gentle</span><span class="chip">Deep</span></div></div>
+      <div class="col g8"><span class="t-spec-s c-smoke">Soap</span><div class="flex g8"><span class="chip on">Laurel 16</span><span class="chip">Laurel 30</span></div></div>
+      <span class="btn btn-primary btn-block">Add to bag · AED 68</span>
+      <div class="flex jb t-cap c-smoke"><span>Free UAE delivery</span><span>Cancel any time</span><span>Batch QR</span></div>
+    </div>
+  </section>
+
+  <!-- proofs -->
+  <section class="sec-m bg-steam">
+    <div class="t-display-m" style="margin-bottom:28px">Rooted. Renewed. <em>Returned.</em></div>
+    <div class="col rel">
+      {{mk|M09|-12|300}}
+      <div class="flex g16 as" style="padding:20px 0;border-top:1px solid var(--line)"><div class="bg-dune flex ac jc fn" style="width:88px;height:88px;border-radius:12px">{{icon|origin|48}}</div><div class="col g4"><span class="t-card">Rooted</span><span class="t-ui c-smoke">A batch QR on every tag: field, harvest month, grade.</span></div></div>
+      <div class="flex g16 as" style="padding:20px 0;border-top:1px solid var(--line)"><div class="bg-dune flex ac jc fn" style="width:88px;height:88px;border-radius:12px">{{icon|tag|48}}</div><div class="col g4"><span class="t-card">Renewed</span><span class="t-ui c-smoke">The tag fades by day 60; a fresh loofah ships first.</span></div></div>
+      <div class="flex g16 as" style="padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="bg-dune flex ac jc fn" style="width:88px;height:88px;border-radius:12px">{{icon|compost|48}}</div><div class="col g4"><span class="t-card">Returned</span><span class="t-ui c-smoke">Compost the loofah; the box becomes a caddy.</span></div></div>
+    </div>
+  </section>
+
+  <!-- specimen -->
+  <section class="sec-m bg-basalt">
+    <div class="rail" style="margin-bottom:14px"><span class="rule-k"></span><span class="t-spec-s c-kraft">Specimen · Field 7 · Grade A</span></div>
+    <div class="t-display-m c-ecru">One slice, <em>nothing hidden.</em></div>
+    <div class="flex jc rel" style="margin:32px 0">{{win|270|360|VIDEO · slice turning|dark}}{{mk|M05|0|20}}</div>
+    <div class="flex wrap" style="gap:24px 22px">
+      <div class="col g4" style="width:164px"><span class="t-spec-s c-kraft">58 / cm²</span><span class="t-ui w5 c-ecru">Grade A density</span><span class="t-cap c-ecru70">Counted on every batch.</span></div>
+      <div class="col g4" style="width:164px"><span class="t-spec-s c-kraft">21 days</span><span class="t-ui w5 c-ecru">Dried by the sun</span><span class="t-cap c-ecru70">Never bleached.</span></div>
+      <div class="col g4" style="width:164px"><span class="t-spec-s c-kraft">8–12 weeks</span><span class="t-ui w5 c-ecru">A fibre that lasts</span><span class="t-cap c-ecru70">Claim to verify.</span></div>
+      <div class="col g4" style="width:164px"><span class="t-spec-s c-kraft">16% laurel</span><span class="t-ui w5 c-ecru">Sabon Ghar</span><span class="t-cap c-ecru70">Cured in the Levant.</span></div>
+      <div class="col g4" style="width:164px"><span class="t-spec-s c-kraft">0 plastic</span><span class="t-ui w5 c-ecru">Cotton, kraft, twine</span><span class="t-cap c-ecru70">No lamination.</span></div>
+      <div class="col g4" style="width:164px"><span class="t-spec-s c-kraft">Compostable</span><span class="t-ui w5 c-ecru">Back to the soil</span><span class="t-cap c-ecru70">When the tag fades.</span></div>
+    </div>
+  </section>
+
+  <!-- comparison -->
+  <section class="sec-m" style="background:linear-gradient(180deg,#F3EEE4 0%,#E9DFCF 100%)">
+    <div class="t-display-m" style="margin-bottom:20px">Why the loofah, <em>not the pouf.</em></div>
+    <div class="flex g8" style="margin-bottom:20px"><span class="t-spec-s c-smoke" style="padding-top:12px">Compare with</span><span class="chip on">Plastic pouf</span><span class="chip">Mitt</span></div>
+    <div class="flex">
+      <div class="col f1 bg-steam" style="border-radius:12px;padding:0 14px 6px;box-shadow:0 12px 32px rgba(43,42,39,.10)">
+        <div class="t-ui w5" style="padding:14px 0">The Daily Pad</div>
+        <div class="col g4" style="padding:12px 0;border-top:1px solid var(--line)"><span class="t-spec-s c-smoke">Made from</span><span class="t-cap w5">Nile Delta loofah, sun-dried</span></div>
+        <div class="col g4" style="padding:12px 0;border-top:1px solid var(--line)"><span class="t-spec-s c-smoke">Replace</span><span class="t-cap w5">When the tag fades</span></div>
+        <div class="col g4" style="padding:12px 0;border-top:1px solid var(--line)"><span class="t-spec-s c-smoke">After use</span><span class="t-cap w5">Compost it</span></div>
+      </div>
+      <div class="col f1" style="padding:0 14px 6px">
+        <div class="t-ui w5 c-smoke" style="padding:14px 0">Plastic pouf</div>
+        <div class="col g4" style="padding:12px 0;border-top:1px solid var(--line)"><span class="t-spec-s c-smoke">Made from</span><span class="t-cap c-smoke">Nylon mesh</span></div>
+        <div class="col g4" style="padding:12px 0;border-top:1px solid var(--line)"><span class="t-spec-s c-smoke">Replace</span><span class="t-cap c-smoke">Guesswork</span></div>
+        <div class="col g4" style="padding:12px 0;border-top:1px solid var(--line)"><span class="t-spec-s c-smoke">After use</span><span class="t-cap c-smoke">Landfill</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ritual -->
+  <section class="sec-m">
+    <div class="rail" style="margin-bottom:14px"><span class="rule"></span><span class="t-spec-s">The ritual · two minutes</span></div>
+    <div class="t-display-m" style="margin-bottom:24px">The two-minute <em>scrub.</em></div>
+    <div class="rel">{{ph|350|300|IMG 01 · sticks under the header, swaps per step||16}}<span class="bg-ecru t-spec-s" style="position:absolute;left:14px;top:14px;padding:8px 12px;border-radius:999px">Step 02 / 04</span>{{mk|M06|-12|300}}</div>
+    <div class="col" style="margin-top:8px">
+      <div class="m-step" style="opacity:.45"><span class="t-spec-s">01 · 30 seconds</span><span class="t-card">Wet.</span><span class="t-ui">Soak under warm water for 30 seconds. It softens as it drinks.</span></div>
+      <div class="m-step"><span class="t-spec-s c-clay">02 · 20 seconds</span><span class="t-card">Lather.</span><span class="t-ui">Work the Sabon Ghar into the fibre, not onto your skin.</span></div>
+      <div class="m-step" style="opacity:.45"><span class="t-spec-s">03 · 2 minutes</span><span class="t-card">Circle.</span><span class="t-ui">Small circles, one area at a time.</span></div>
+      <div class="m-step" style="opacity:.45;border-bottom:1px solid var(--line)"><span class="t-spec-s">04 · every time</span><span class="t-card">Hang to dry.</span><span class="t-ui">Hang it by the tag, out of the spray.</span></div>
+    </div>
+  </section>
+
+  <!-- field -->
+  <section class="rel" style="height:600px">
+    {{ph|390|600|IMG 03 · Gourds on the trellis · real shoot|dark}}
+    <div style="position:absolute;left:0;top:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(43,42,39,.8) 0%,rgba(43,42,39,0) 70%)"></div>
+    <div class="col g16" style="position:absolute;left:20px;right:20px;bottom:48px">
+      <span class="t-spec-s c-kraft">31.03° N · 30.47° E · Damanhour</span>
+      <div class="t-display-m c-ecru">This was a vegetable <em>in September.</em></div>
+      <span class="tlink c-ecru">Read the farm story {{icon|arrow-right|16}}</span>
+    </div>
+    {{mk|M11|16|16}}
+  </section>
+
+  <!-- renewal -->
+  <section class="sec-m">
+    <div class="rel bg-dune flex col ac jc g16" style="height:340px;border-radius:16px">{{tag|132|41|0.62}}<span class="t-spec-s c-smoke">Day 41 / 60</span>{{mk|M10|12|12}}</div>
+    <div class="t-display-m" style="margin-top:32px">When the tag fades, <em>so should your loofah.</em></div>
+    <p class="t-body-s" style="margin-top:16px">Every loofah wears a cotton tag printed in fading ink. By day 60 it’s gone, and your next one is already on its way.</p>
+    <div class="col rel" style="margin-top:24px">
+      <div style="position:absolute;left:6px;top:14px;bottom:26px;width:1.5px;background:var(--silt);opacity:.5"></div>
+      <div class="tl" style="padding-bottom:16px"><span class="dotc"></span><div class="col g4"><span class="t-spec-s">Day 0</span><span class="t-ui">Your set arrives, box and all.</span></div></div>
+      <div class="tl" style="padding-bottom:16px"><span class="dotc o"></span><div class="col g4"><span class="t-spec-s">Day 50</span><span class="t-ui">“Your tag is fading. A fresh one ships Tuesday.”</span></div></div>
+      <div class="tl"><span class="dotc"></span><div class="col g4"><span class="t-spec-s">Day 60</span><span class="t-ui">Fresh loofah and soap. Nothing wasted.</span></div></div>
+    </div>
+    <div class="col g12" style="margin-top:32px">
+      <div class="way bg-steam" style="border:1.5px solid var(--basalt);padding:22px"><div class="flex jb ac"><span class="t-card">Renew as you go</span><span class="badge badge-clay">Recommended</span></div><span class="t-ui c-smoke">Every 30, 60 or 90 days. Skip, swap or pause any time.</span><span class="w5 num">AED 68 per delivery</span></div>
+      <div class="way" style="padding:22px"><span class="t-card">One-time</span><span class="w5 num">AED 85</span></div>
+      <div class="way bg-basalt" style="padding:22px;border-color:var(--basalt)"><span class="t-card c-ecru">The Year of Rituals</span><span class="w5 num c-ecru">AED 349 a year <span class="c-ecru50" style="text-decoration:line-through;font-weight:400">408</span></span></div>
+    </div>
+    <span class="btn btn-primary btn-block" style="margin-top:24px">Start your ritual</span>
+  </section>
+
+  <!-- rituals carousel -->
+  <section class="sec-m bg-steam" style="padding-right:0">
+    <div class="t-display-m" style="padding-right:20px">A ritual for <em>every bathroom.</em></div>
+    <div class="rel" style="margin-top:28px">
+      {{mk|M07|-12|290}}
+      <div class="flex g12" data-bleed="1" style="width:1200px">
+        <div class="m-card"><div class="rel bg-dune flex ac jc" style="width:280px;height:350px;border-radius:12px"><span class="badge" style="position:absolute;left:12px;top:12px">Founders’ pick</span>{{circ|124||steam}}<div style="margin-left:-26px">{{circ|124||steam}}</div></div><div class="flex jb as"><span class="t-card">The Duo</span><span class="w5 num" style="padding-top:4px">AED 85</span></div><span class="t-ui c-clay w5" style="margin-top:-6px">AED 68 on renewal</span></div>
+        <div class="m-card"><div class="rel bg-dune flex ac jc" style="width:280px;height:350px;border-radius:12px">{{circ|110||steam}}<div style="margin-left:-22px">{{circ|110||steam}}</div><div style="margin-left:-22px">{{circ|110||steam}}</div></div><div class="flex jb as"><span class="t-card">The Pair</span><span class="w5 num" style="padding-top:4px">AED 199</span></div><span class="t-ui c-clay w5" style="margin-top:-6px">AED 149 on renewal</span></div>
+        <div class="m-card"><div class="rel bg-dune flex ac jc" style="width:280px;height:350px;border-radius:12px">{{circ|110||steam}}<div style="margin-left:-22px">{{circ|110||steam}}</div><div style="margin-left:-22px">{{circ|110||steam}}</div></div><div class="flex jb as"><span class="t-card">The House</span><span class="w5 num" style="padding-top:4px">AED 299</span></div><span class="t-ui c-clay w5" style="margin-top:-6px">AED 219 on renewal</span></div>
+        <div class="m-card"><div class="rel bg-dune flex ac jc" style="width:280px;height:350px;border-radius:12px">{{circ|124||steam}}</div><div class="flex jb as"><span class="t-card">The Grooming Kit</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- gifting -->
+  <section class="rel">
+    <div class="bg-basalt col g20" style="padding:64px 20px 48px">
+      <span class="t-spec-s c-kraft">Ramadan · Eid · weddings · thank-yous</span>
+      <div class="col rel" style="gap:2px">
+        {{mk|M08|-6|300}}
+        <span class="t-display-m c-ecru" style="opacity:.16">For the team.</span>
+        <span class="t-display-m c-ecru">For <em>Ramadan.</em></span>
+        <span class="t-display-m c-ecru" style="opacity:.28">For Eid.</span>
+        <span class="t-display-m c-ecru" style="opacity:.16">For weddings.</span>
+      </div>
+      <p class="t-body-s c-ecru70">Ramadan, renewed. Gift sets from AED 119, wrapped and ready to give, delivered on the date you choose.</p>
+    </div>
+    <div class="rel">{{ph|390|420|IMG · The Hammam Chest on travertine}}<div class="col ac g12" style="position:absolute;left:20px;right:20px;bottom:44px"><span class="t-spec-s">The Hammam Chest · from AED 350</span><span class="btn btn-primary btn-block">Shop gifts</span></div></div>
+  </section>
+
+  <!-- reviews -->
+  <section class="sec-m" style="padding-right:0">
+    <div class="t-display-m" style="padding-right:20px;margin-bottom:24px">Notes from <em>the first showers.</em></div>
+    <div class="rel">
+      {{mk|M07|-12|290}}
+      <div class="flex g12" data-bleed="1" style="width:900px">
+        <div class="rv c" style="width:300px;padding:28px">{{stars|5|16}}<p class="t-heading-m" style="font-size:26px;line-height:32px">“I didn’t expect to care about a loofah’s birthday.”</p><span class="t-spec-s c-smoke">S. A., Dubai · Day 34</span></div>
+        <div class="rv" style="width:280px;padding:28px"><p class="t-body-s">“Finally something for my back that isn’t a stick with a sponge on it.”</p><span class="t-spec-s c-smoke">K. R., Riyadh</span></div>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding-right:20px">{{flag|Sample quotes · hide until 20+ real reviews}}</div>
+  </section>
+
+  <!-- field notes -->
+  <section class="sec-m bg-steam" style="padding-right:0">
+    <div class="flex jb ae" style="padding-right:20px;margin-bottom:24px"><div class="t-display-m">Field <em>notes.</em></div><span class="tlink">All notes</span></div>
+    <div class="flex g12" data-bleed="1" style="width:900px">
+      <div class="m-card"><div class="rel">{{ph|280|210|IMG 03 · Harvest week||12}}<span class="badge" style="position:absolute;left:12px;top:12px">Field Notes</span></div><span class="t-card">Harvest week at Field 7</span></div>
+      <div class="m-card"><div class="rel">{{ph|280|210|IMG 01 · Back scrub||12}}<span class="badge" style="position:absolute;left:12px;top:12px">Two-Minute Hammam</span></div><span class="t-card">How to scrub your own back</span></div>
+    </div>
+  </section>
+
+  {{mfooter}}
+</section>
+
+<!-- =============================== NOTES =============================== -->
+<section class="frame notes" data-name="01 Home — Notes">
+  <div class="n-kick">01 · Home · /</div>
+  <div class="n-title">Home</div>
+  <p class="n-lead">The front door for every audience, built to sell one thing first: The Duo with renewal switched on. Most visitors arrive from Instagram, TikTok and creators, so the page proves the product (origin, ritual, renewal) in the order a customer meets the brand, then widens the basket (sets, gifts, kids). Primary action: Shop the Duo · AED 85.</p>
+
+  <div class="n-block"><div class="n-h">Sections, top to bottom</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Hero</b> — Field &amp; Marble: headline left, the Window right holding a slow loop of a wet loofah (stock 02), a hanging tag at Day 01. One Ruqaa word: <span class="t-ar" style="font-size:18px">ليفة</span>. The only Silt text is “not made.”</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Manifesto</b> — the purpose line, revealed word by word.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>The Duo module</b> — Lula’s homepage buy box, ours: renewal preselected, fibre and soap chips, “Which fibre is mine?” helper. Lets Instagram traffic buy without leaving the page.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>Three proofs</b> — Rooted (trust) · Renewed (hygiene) · Returned (planet), from the messaging framework, each linking deeper.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>Specimen</b> — the content pillar as a section: one backlit slice, six facts. Basalt field, the page’s dark moment.</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>Comparison</b> — loofah vs plastic pouf vs supermarket mitt; our column raised.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span><b>The two-minute scrub</b> — sticky image + four steps (Wet, Lather, Circle, Hang).</span></div>
+    <div class="n-item"><span class="n-num">08</span><span><b>From the field</b> — the one full-bleed image on the site (guidelines), Field 7 coordinates.</span></div>
+    <div class="n-item"><span class="n-num">09</span><span><b>Renewal</b> — the Fade, the Day 0/50/60 timeline, three ways to buy, “Start your ritual”.</span></div>
+    <div class="n-item"><span class="n-num">10</span><span><b>Rituals carousel</b> — all 7 sets, drag to browse, quick add on hover.</span></div>
+    <div class="n-item"><span class="n-num">11</span><span><b>Gifting</b> — split panel (Lula’s claims panel) for Ramadan, Eid and weddings.</span></div>
+    <div class="n-item"><span class="n-num">12</span><span><b>Notes from the first showers</b> — reviews carousel, hidden until real reviews exist.</span></div>
+    <div class="n-item"><span class="n-num">13</span><span><b>Field notes</b> — the journal, one card per content pillar.</span></div>
+    <div class="n-item"><span class="n-num">14</span><span><b>Footer</b> — “Letters from the Delta”, links, Instagram row, expanded lockup.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M01</span><span><b>Hero momentum</b> — first scroll is damped (40% → 0 across the hero), so the hero is felt, not skipped.<span class="n-ref">Lula: hero-momentum.js (60%)</span></span></div>
+    <div class="n-item"><span class="n-chip">M02</span><span><b>Window opens</b> — oval scales .94 → 1, footage settles 1.08 → 1 over 1200 ms; headline lines rise 24 px, 120 ms apart.</span></div>
+    <div class="n-item"><span class="n-chip">M03</span><span><b>Header</b> — hides on scroll down, returns on scroll up; Steam + hairline after 80 px.<span class="n-ref">Lula: Horizon sticky header</span></span></div>
+    <div class="n-item"><span class="n-chip">M20</span><span><b>Tag sway</b> — the hanging tag sways ±2° for three loops, then rests.</span></div>
+    <div class="n-item"><span class="n-chip">M04</span><span><b>Word reveal</b> — words go 20% → 100% as the paragraph crosses the viewport.<span class="n-ref">Lula: text-animation.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M07</span><span><b>Gallery, carousels, reviews</b> — drag/swipe with momentum, arrows and a progress line; reviews keep the centre card large.<span class="n-ref">Lula: product-slider.js, review-slider.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M13</span><span><b>Options</b> — switching One-time ↔ Renew rolls the prices and updates the button label.</span></div>
+    <div class="n-item"><span class="n-chip">M14</span><span><b>Add to bag</b> — “Added” tick, then the bag drawer slides in (page 10).</span></div>
+    <div class="n-item"><span class="n-chip">M09</span><span><b>Line draw</b> — the three proof icons draw their strokes on enter (900 ms).</span></div>
+    <div class="n-item"><span class="n-chip">M05</span><span><b>Scrubbed specimen</b> — slice turns with scroll speed, reverses on scroll up; callouts fade in left then right.<span class="n-ref">Lula: video-spinning-smooth.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M06</span><span><b>Sticky ritual</b> — image sticks; each step turns solid at viewport centre and the image crossfades.<span class="n-ref">Lula: hover-image-v2.js</span></span></div>
+    <div class="n-item"><span class="n-chip">M11</span><span><b>Field parallax</b> — image at 0.85× scroll, 1.1 → 1 scale.</span></div>
+    <div class="n-item"><span class="n-chip">M10</span><span><b>The Fade</b> — ink lines fade one by one and the day count ticks 01 → 60 as you scroll through Renewal.</span></div>
+    <div class="n-item"><span class="n-chip">M15</span><span><b>Hover</b> — card image 1.04 zoom + “Quick add” pill rises; journal titles underline.</span></div>
+    <div class="n-item"><span class="n-chip">M08</span><span><b>Slow marquee</b> — gift promises drift upwards; the centre line is solid; pauses on hover.<span class="n-ref">Lula: marquee.js</span></span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Mobile</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>Window first, then headline and one full-width primary button (Lula puts its button above the headline; ours stays under it).</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Specimen callouts become a 2 × 3 grid; comparison becomes “ours vs one” with a chip to switch the competitor.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Sticky ritual: the image sticks under the header while the four steps scroll beneath it.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>Option to test: a slim sticky “Shop the Duo · AED 85” bar once the hero scrolls out.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">·</span><span>Prices from the strategy (estimates until landed cost). Renewal pricing shows on every set.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>“Now shipping · Field 7 · Harvest Sept 2026” and the specimen numbers should come from the live batch data, not be typed into the theme.</span></div>
+    <div class="n-item"><span class="n-num">·</span><span>“Founders’ pick” replaces “Bestseller” until there is sales data.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span>Photography: the hero loop, Field 7 and the specimen video need a real shoot; current renders look AI-generated.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>“8–12 weeks of life”, “compostable” and the comparison rows need the regulatory adviser.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Common advice is to replace natural loofahs every 3–4 weeks; the 60-day story needs evidence for Nile Delta fibre.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Guidelines banner says “Gift sets from AED 185”; no set costs 185. Wireframe uses AED 119 (First Bath).</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Every 90 days contradicts “when the tag fades (day 60)”. Keep, or offer 30/60 only?</span></div>
+    <div class="n-item"><span class="n-flag">Decide</span><span>Hero type is Display 72 per the guidelines. Lula runs ~80 px caps; test a larger hero size only if the brand team agrees.</span></div>
+  </div></div>
+</section>
+
+</body></html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewal — Al Reef &amp; Laurel</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .r-intro { padding-block: var(--sec-s) var(--s-8); }
+  .r-bleed { position: relative; height: 640px; overflow: hidden; }
+  .r-bleed img { position: absolute; left: 0; top: -10%; width: 100%; height: 120%; object-fit: cover; object-position: 60% 58%; }
+  .r-copy { padding-block: var(--sec-s) var(--s-8); }
+  .renew-grid { padding-bottom: 0; }
+  .cycles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .cycle { background: var(--linen); padding: var(--s-7); display: flex; flex-direction: column; gap: var(--s-3); transition: background var(--t-fast); cursor: pointer; }
+  .cycle:hover { background: var(--cream); }
+  .cycle.on { background: var(--laurel); color: var(--on-dark); }
+  .cycle .n { font: 300 var(--fs-64)/1 var(--serif); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+  .cycle.on .label, .cycle.on .small { color: var(--on-dark); }
+  .faq { max-width: 864px; }
+  @media (max-width: 860px) { .r-bleed { height: 400px; } .cycles { grid-template-columns: 1fr; } .cycle { padding: var(--s-5); } .cycle .n { font-size: var(--fs-44); } }
+</style>
+</head>
+<body data-page="renewal">
+<main>
+  <!-- intro: label + large statement paragraph (Frama subscriptions) -->
+  <section class="wrap r-intro">
+    <h1 class="label" data-reveal>Renewal</h1>
+    <p class="statement" data-reveal style="--d:.1s;margin-top:var(--gap-text)">Make the hammam part of every morning. Choose how often you want a fresh loofah and soap, and save 20% on every delivery. They arrive just as your cotton tag fades, so your ritual never goes stale.</p>
+  </section>
+
+  <section class="r-bleed" data-reveal="img"><img data-parallax="6" src="assets/img/ref/shelves-wood.jpg" alt="Wooden bathroom shelves with bottles, folded towels and a woven basket" style="object-position:50% 45%"></section>
+
+  <!-- first set vs refills (Frama: glass bottle vs refills) -->
+  <section class="wrap r-copy">
+    <h2 class="label" data-reveal>The loofah, renewed over time</h2>
+    <p class="statement" data-reveal style="--d:.1s">Begin with a full set: loofah, soap, the kraft box that becomes a caddy, and the ritual card. After that, only what wears out arrives: a fresh loofah and soap, every 30, 60 or 90 days.</p>
+  </section>
+  <div class="tiles2">
+    <a class="tile" href="product.html?p=the-duo" data-reveal style="--fx:58%;--fy:50%"><img src="assets/img/ref/zellige-green.jpg" alt="" style="--fx:50%;--fy:55%"><span class="tile-title">The first set</span><span class="tile-sub">Everything you need, in a box that folds into a shower caddy.</span><span class="btn btn-light">Discover</span></a>
+    <a class="tile" href="shop.html#loofahs" data-reveal style="--d:.1s"><img src="assets/img/ref/mitt-tap.jpg" alt="" style="--fx:45%;--fy:45%"><span class="tile-title">Refills</span><span class="tile-sub">A fresh loofah and soap, nothing else. No new box, nothing wasted.</span><span class="btn btn-light">Discover</span></a>
+  </div>
+
+  <!-- how often -->
+  <section class="wrap section-s">
+    <div class="sec-head"><div><h2 class="h2" data-split>How often?</h2></div>
+      <p class="small soft" data-reveal style="max-width:360px">Change it any time from your account or by replying to our day-50 WhatsApp.</p></div>
+    <div class="cycles" data-reveal>
+      <div class="cycle" data-c="30"><span class="n num">30</span><span class="label">Every 30 days</span><span class="small soft">For daily scrubbers and humid bathrooms.</span></div>
+      <div class="cycle on" data-c="60"><span class="n num">60</span><span class="label">Every 60 days</span><span class="small">Matches the fading tag. Our recommendation.</span></div>
+      <div class="cycle" data-c="90"><span class="n num">90</span><span class="label">Every 90 days</span><span class="small soft">For a weekly scrub, or a second bathroom.</span></div>
+    </div>
+  </section>
+
+  <!-- renewable products -->
+  <section class="wrap renew-grid" style="padding-top:0">
+    <div class="sec-head"><div><h2 class="h2" data-split>Replenish your ritual</h2></div><a class="link caps" href="shop.html" data-reveal>View all</a></div>
+    <div class="grid g4 swipe-m" data-grid></div>
+  </section>
+
+  <!-- how it works -->
+  <section class="wrap section">
+    <h2 class="label" data-reveal style="margin-bottom:var(--s-5)">How it works</h2>
+    <div class="steps4" data-reveal>
+      <div><div class="n num">0</div><h3 class="h4" style="margin-top:var(--s-4)">Your set arrives</h3><p class="small soft" style="margin-top:var(--s-2)">Loofah, soap, a box that becomes a caddy, and the ritual card.</p></div>
+      <div><div class="n num">50</div><h3 class="h4" style="margin-top:var(--s-4)">One WhatsApp</h3><p class="small soft" style="margin-top:var(--s-2)">“Your tag is fading. A fresh one ships Wednesday.” Skip, swap or keep.</p></div>
+      <div><div class="n num">60</div><h3 class="h4" style="margin-top:var(--s-4)">The refill arrives</h3><p class="small soft" style="margin-top:var(--s-2)">A fresh loofah and soap. Compost the old one.</p></div>
+      <div><div class="n num">∞</div><h3 class="h4" style="margin-top:var(--s-4)">Until you stop</h3><p class="small soft" style="margin-top:var(--s-2)">Pause or cancel before any ship date. No calls, no forms.</p></div>
+    </div>
+  </section>
+
+  <!-- benefits: two images + numbered list (Frama) -->
+  <section class="benefits">
+    <div class="media" data-reveal="img"><img src="assets/img/ref/back-soap.jpg" alt="" style="--fx:50%;--fy:50%"></div>
+    <div class="media" data-reveal="img" style="--d:.1s"><img src="assets/img/ref/soap-hand.jpg" alt="" style="--fx:50%;--fy:50%"></div>
+    <div class="copy" data-reveal>
+      <h2 class="h2">Renewal<br>benefits</h2>
+      <ul>
+        <li>Save 20% on every refill.</li>
+        <li>One WhatsApp on day 50, nothing else.</li>
+        <li>Choose every 30, 60 or 90 days.</li>
+        <li>Skip, swap, pause or cancel before any ship date.</li>
+        <li>Free UAE delivery on every box.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap section">
+    <div class="faq">
+      <h2 class="h2" data-split style="margin-bottom:var(--s-6)">Questions</h2>
+      <details class="acc"><summary>Do I pay for the first set and the refills separately? <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">You pay the renewal price for each delivery, starting with the first: The Duo is AED 68 every 60 days instead of AED 85 once.</div></div></details>
+      <details class="acc"><summary>Can I swap my soap or fibre? <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Yes. Reply to the day-50 WhatsApp with “swap”, or change it in your account before the ship date.</div></div></details>
+      <details class="acc"><summary>What if my tag fades early? <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Ship your next box now from your account, or move to every 30 days. The tag is a guide; your skin is the judge.</div></div></details>
+      <details class="acc"><summary>How do I cancel? <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">One click in your account, any time before the next ship date. Cancelling is never hidden.</div></div></details>
+    </div>
+  </section>
+
+  <section class="section bg-laurel tiles">
+    <div class="wrap center"><span class="caps" data-reveal>Start with the Duo</span>
+      <h2 class="display flush" data-split style="margin-top:var(--gap-label)">The hammam,<br><em>every morning.</em></h2>
+      <div data-reveal style="--d:.3s;margin-top:var(--gap-actions)"><a class="btn btn-light" href="product.html?p=the-duo">Renew every 60 days · AED 68</a></div></div>
+  </section>
+</main>
+<script src="assets/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  const g = document.querySelector("[data-grid]");
+  g.innerHTML = ["the-duo", "the-pair", "the-grooming-kit", "the-daily-pad"].map((s, i) => window.cardHTML(window.findProduct(s), i * .08)).join("");
+  window.observeReveal(g);
+  document.querySelectorAll(".cycle").forEach((c) => c.addEventListener("click", () => {
+    document.querySelectorAll(".cycle").forEach((x) => { x.classList.toggle("on", x === c); x.querySelector(".small").classList.toggle("soft", x !== c); });
+    window.toast(`Every ${c.dataset.c} days selected. You can change it any time.`);
+  }));
+</script>
+</body>
+</html>

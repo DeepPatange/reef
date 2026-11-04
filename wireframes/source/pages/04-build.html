@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>04 Build your ritual</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+/* ---- 04 Build your ritual · page-level styles ---- */
+.anno{display:inline-flex;align-items:center;gap:8px;font:500 12px/16px var(--sans);color:var(--anno);white-space:nowrap}
+.travel{flex:1 1 0;display:flex;flex-direction:column;align-items:center;min-height:120px;margin-top:20px}
+.travel .ln{flex:1 1 0;width:0;border-left:1.5px dashed rgba(67,83,255,.55)}
+/* step pills */
+.sp{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 20px 0 7px;border:1px solid var(--line2);border-radius:999px;font-size:15px;line-height:22px;white-space:nowrap;color:var(--smoke);flex:none}
+.sp.on{border:1.5px solid var(--basalt);padding-left:6.5px;background:var(--steam);color:var(--basalt);font-weight:500}
+.sp.done{color:var(--basalt)}
+.sp-line{width:16px;height:1px;background:var(--line2);flex:none}
+/* steps */
+.stephead{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.choice{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column;padding:24px 20px 22px;border:1px solid var(--line2);border-radius:12px;min-height:196px}
+.choice.on{border:1.5px solid var(--basalt);background:var(--steam)}
+.choice .ic{height:36px;display:flex;align-items:center;margin-bottom:20px}
+.tick{position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;background:var(--basalt);display:flex;align-items:center;justify-content:center}
+.item{position:relative;flex:1 1 0;min-width:0;display:flex;gap:20px;padding:20px;border-radius:12px;background:var(--steam);border:1.5px solid transparent}
+.item.on{border-color:var(--basalt)}
+.item .badge{position:absolute;top:18px;right:18px}
+.item .meta{display:flex;flex-direction:column;flex:1 1 0;min-width:0}
+.item .buy{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px}
+.dim{opacity:.28;display:flex}
+.swatch{display:block;width:12px;height:12px;border-radius:50%;flex:none}
+.chip.on .swatch{box-shadow:0 0 0 1.5px rgba(243,238,228,.75)}
+.tagrow{display:flex;align-items:center;gap:24px;padding:16px 0;border-top:1px solid var(--line)}
+.tl3{display:flex;gap:0;border-radius:12px;background:var(--dune);padding:28px 0}
+.tl3 > div{flex:1 1 0;min-width:0;padding:0 28px;display:flex;flex-direction:column;gap:8px}
+.tl3 > div + div{border-left:1px solid rgba(43,42,39,.16)}
+/* summary */
+.srow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0;font-size:15px;line-height:22px}
+.segs{display:flex;gap:4px}
+.seg{flex:1 1 0;height:6px;border-radius:999px;background:var(--dune)}
+.seg.f{background:var(--basalt)}
+.segl{display:flex;gap:4px;margin-top:10px}
+.segl > div{flex:1 1 0;text-align:right;font-size:13px;line-height:18px}
+/* set cards */
+.setc{width:322px;flex:none;display:flex;flex-direction:column;padding:28px;border-radius:16px;background:var(--steam);position:relative}
+.setc .badge{position:absolute;top:28px;right:28px}
+.pair{display:flex;align-items:flex-end}
+.pair > div + div{margin-left:-30px}
+/* mobile */
+.mtrack{display:flex;position:relative}
+.mtrack > div{flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:1}
+.mtrack .ln{position:absolute;top:16px;left:44px;right:44px;height:1px;background:var(--line2)}
+.mchoice{position:relative;width:169px;flex:none;display:flex;flex-direction:column;padding:18px 16px 18px;border:1px solid var(--line2);border-radius:12px;min-height:172px}
+.mchoice.on{border:1.5px solid var(--basalt);background:var(--steam)}
+.mchoice .ic{height:32px;display:flex;align-items:center;margin-bottom:14px}
+.mchoice .tick{top:12px;right:12px;width:24px;height:24px}
+.item.m{flex:none;width:100%;gap:16px;padding:16px}
+.item.m .badge{top:16px;right:16px}
+.stepper-m{height:44px;gap:18px;padding:0 16px;font-size:15px}
+.mbar{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:var(--steam);border-top:1px solid var(--line);box-shadow:0 -12px 32px rgba(43,42,39,.12)}
+.msetc{width:268px;flex:none;display:flex;flex-direction:column;padding:24px;border-radius:16px;background:var(--steam);position:relative}
+.msetc .badge{position:absolute;top:24px;right:24px}
+.mtl{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+</style></head>
+<body class="board">
+
+<!-- ======================================================================= DESKTOP -->
+<section class="frame desktop" data-name="04 Build your ritual — Desktop 1440">
+  {{announce}}{{header|build}}
+
+  <!-- INTRO -->
+  <div class="rel flex jb ae" style="padding:96px 40px 48px">
+    <div class="col" style="width:668px">
+      <div class="rail"><span class="rule"></span><span class="t-spec">Build yours</span></div>
+      <div class="t-display" style="margin-top:24px">Build your <em>ritual.</em></div>
+      <p class="t-body" style="width:560px;margin-top:24px">Tap a fibre, a soap and a cycle. The saving updates as you go.</p>
+    </div>
+    <div class="rel flex ac g8" style="padding-bottom:0">
+      <span class="sp done"><span class="step-n done">{{icon|check|16}}</span>Who it’s for</span>
+      <span class="sp-line"></span>
+      <span class="sp on"><span class="step-n on">2</span>Loofahs</span>
+      <span class="sp-line"></span>
+      <span class="sp"><span class="step-n">3</span>Soaps</span>
+      <span class="sp-line"></span>
+      <span class="sp"><span class="step-n">4</span>How often</span>
+    </div>
+  </div>
+  <div style="padding:0 40px"><div class="hair"></div></div>
+
+  <!-- BUILDER -->
+  <div class="flex g24" style="padding:72px 40px 144px;align-items:stretch">
+
+    <!-- LEFT · steps (8 cols) -->
+    <div class="col" style="width:899px">
+
+      <!-- STEP 1 -->
+      <div class="stephead">
+        <div class="flex ac g16"><span class="step-n done">{{icon|check|16}}</span><div class="t-title">Who’s it for?</div></div>
+        <span class="t-ui c-smoke">We’ll suggest quantities and tag colours. Change anything.</span>
+      </div>
+      <div class="flex g24" style="margin-top:32px">
+        <div class="choice">
+          <div class="ic">{{icon|tag|36}}</div>
+          <div class="t-card">Just me</div>
+          <div class="t-cap c-smoke" style="margin-top:8px">One pad and one bar, with your own tag.</div>
+        </div>
+        <div class="choice on">
+          <span class="tick">{{icon|check|14|ecru}}</span>
+          <div class="ic">{{icon|tag|36}}<span style="margin-left:-8px;display:flex">{{icon|tag|36}}</span></div>
+          <div class="t-card">Two of us</div>
+          <div class="t-cap c-smoke" style="margin-top:8px">Two pads in two tag colours, and a Back Strap to share.</div>
+        </div>
+        <div class="choice">
+          <div class="ic">{{icon|tag|36}}<span style="margin-left:-8px;display:flex">{{icon|tag|36}}</span><span style="margin-left:-8px;display:flex">{{icon|tag|36}}</span><span style="margin-left:-8px;display:flex">{{icon|tag|36}}</span></div>
+          <div class="t-card">The whole house</div>
+          <div class="t-cap c-smoke" style="margin-top:8px">A tag colour for everyone, kids included.</div>
+        </div>
+        <div class="choice">
+          <div class="ic">{{icon|gift|32}}</div>
+          <div class="t-card">A gift</div>
+          <div class="t-cap c-smoke" style="margin-top:8px">Tissue, twine and a ritual card with your message.</div>
+        </div>
+      </div>
+
+      <div class="hair" style="margin:80px 0 72px"></div>
+
+      <!-- STEP 2 -->
+      <div class="stephead">
+        <div class="flex ac g16"><span class="step-n on">2</span><div class="t-title">Choose your loofahs</div></div>
+        <span class="t-ui c-smoke">Each loofah carries its own fading tag.</span>
+      </div>
+      <div class="rel col g24" style="margin-top:32px">
+        {{mk|M13|-14|-14}}
+        <div class="flex g24">
+          <div class="item on">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Daily Pad · Gentle</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">Grade A · 58 / cm²</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">Oval pad, cotton back, hand strap. Softer fibre for daily use and sensitive skin.</div>
+              <div class="buy"><span class="w5 num">AED 44</span><span class="stepper stepper-s">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+          <div class="item on">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Daily Pad · Deep</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">Grade A · 58 / cm²</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">The same pad in a firmer fibre, for oily skin and a deeper scrub.</div>
+              <div class="buy"><span class="w5 num">AED 44</span><span class="stepper stepper-s">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex g24">
+          <div class="item">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">The Hammam Mitt</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">Grade A · 60 / cm²</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">Worn like a glove. For the weekly deep scrub.</div>
+              <div class="buy"><span class="w5 num">AED 48</span><span class="stepper stepper-s"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+          <div class="item on">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">The Back Strap</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">Premium A · 65 / cm²</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">75 cm band, woven handles. Reaches every part of the back.</div>
+              <div class="buy"><span class="w5 num">AED 65</span><span class="stepper stepper-s">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex g24">
+          <div class="item">
+            <span class="badge badge-dune">Ages 3–10</span>
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Soft Pebble</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">Little Reef · 9 cm</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">Fine loofah on one side, terry on the other.</div>
+              <div class="buy"><span class="w5 num">AED 29</span><span class="stepper stepper-s"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+          <div class="item">
+            <span class="badge badge-dune">Ages 3–10</span>
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Camel Mitt</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">Little Reef · terry</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">Terry mitt with a soft loofah palm and an embroidered face.</div>
+              <div class="buy"><span class="w5 num">AED 35</span><span class="stepper stepper-s"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tag colours -->
+      <div style="margin-top:40px">
+        <div class="flex jb ae" style="padding-bottom:16px">
+          <div class="col g4"><span class="t-ui w5">Tag colours</span><span class="t-cap c-smoke">So nobody borrows the wrong one.</span></div>
+          <span class="t-cap c-smoke">One colour per pad · printed on the cotton tag</span>
+        </div>
+        <div class="tagrow">
+          <span class="t-ui" style="width:200px">Daily Pad · Gentle</span>
+          <div class="flex g8"><span class="chip on"><span class="swatch bg-silt"></span>Silt</span><span class="chip"><span class="swatch bg-basalt"></span>Basalt</span><span class="chip"><span class="swatch bg-kraft"></span>Kraft</span></div>
+        </div>
+        <div class="tagrow" style="border-bottom:1px solid var(--line)">
+          <span class="t-ui" style="width:200px">Daily Pad · Deep</span>
+          <div class="flex g8"><span class="chip"><span class="swatch bg-silt"></span>Silt</span><span class="chip on"><span class="swatch bg-basalt"></span>Basalt</span><span class="chip"><span class="swatch bg-kraft"></span>Kraft</span></div>
+        </div>
+      </div>
+
+      <div class="hair" style="margin:80px 0 72px"></div>
+
+      <!-- STEP 3 -->
+      <div class="stephead">
+        <div class="flex ac g16"><span class="step-n">3</span><div class="t-title">Choose your soaps</div></div>
+        <span class="t-ui c-smoke">Sabon Ghar: olive oil and laurel oil, 150 g bars.</span>
+      </div>
+      <div class="col g24" style="margin-top:32px">
+        <div class="flex g24">
+          <div class="item on">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Laurel 16</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">150 g · 16% laurel</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">For daily use, normal and sensitive skin.</div>
+              <div class="buy"><span class="w5 num">AED 45</span><span class="stepper stepper-s">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+          <div class="item on">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Laurel 30</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">150 g · 30% laurel</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">A stronger bar for oily and acne-prone skin.</div>
+              <div class="buy"><span class="w5 num">AED 55</span><span class="stepper stepper-s">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex g24">
+          <div class="item">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Shaped Trio</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">3 × 60 g · unscented</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">Camel, date palm, little gourd. Olive soap, no laurel.</div>
+              <div class="buy"><span class="w5 num">AED 39</span><span class="stepper stepper-s"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+          <div class="item">
+            {{circ|88}}
+            <div class="meta">
+              <div class="t-card">Guest Bar</div>
+              <div class="t-spec-s c-smoke" style="margin-top:8px">40 g · 16% laurel</div>
+              <div class="t-cap c-smoke" style="margin-top:8px">A small bar for guests, travel and the gym bag.</div>
+              <div class="buy"><span class="w5 num">AED 15</span><span class="stepper stepper-s"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hair" style="margin:80px 0 72px"></div>
+
+      <!-- STEP 4 -->
+      <div class="stephead">
+        <div class="flex ac g16"><span class="step-n">4</span><div class="t-title">How often?</div></div>
+        <span class="t-ui c-smoke">Your tags fade by day 60, so that’s where we start.</span>
+      </div>
+      <div class="rel flex g8 wrap" style="margin-top:32px">
+        <span class="chip">Every 30 days</span><span class="chip on">Every 60 days · matches the tag</span><span class="chip">Every 90 days</span><span class="chip">Just once</span>
+      </div>
+      <div class="tl3" style="margin-top:32px">
+        <div>{{icon|box|36}}<span class="t-ui w5" style="margin-top:8px">Today · AED 195</span><span class="t-cap c-smoke">The full set: loofahs, soaps, a box that becomes a caddy and a ritual card.</span></div>
+        <div>{{icon|tag|36}}<span class="t-ui w5" style="margin-top:8px">Day 50 · one WhatsApp</span><span class="t-cap c-smoke">Your tags are fading. Reply to skip, swap or keep the refill.</span></div>
+        <div>{{icon|renew|36}}<span class="t-ui w5" style="margin-top:8px">Day 60 · AED 156</span><span class="t-cap c-smoke">Fresh loofahs and soaps only. Then every 60 days, until you stop.</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT · summary (4 cols) -->
+    <div class="col" style="width:437px">
+      <div class="rel">
+        {{mk|M06|-14|-14}}
+        <div class="bg-steam shadow-s" style="border-radius:16px;padding:32px">
+          <div class="flex jb ac"><div class="t-title">Your ritual</div><span class="badge badge-dune">Two of us</span></div>
+          <div class="t-cap c-smoke" style="margin-top:6px">5 items · every 60 days</div>
+          <div class="col" style="margin-top:20px;border-top:1px solid var(--line);padding-top:8px">
+            <div class="srow"><span>Daily Pad · Gentle <span class="c-smoke">×1</span></span><span class="num">AED 44</span></div>
+            <div class="srow"><span>Daily Pad · Deep <span class="c-smoke">×1</span></span><span class="num">AED 44</span></div>
+            <div class="srow"><span>The Back Strap <span class="c-smoke">×1</span></span><span class="num">AED 65</span></div>
+            <div class="srow"><span>Laurel 16 <span class="c-smoke">×1</span></span><span class="num">AED 45</span></div>
+            <div class="srow"><span>Laurel 30 <span class="c-smoke">×1</span></span><span class="num">AED 55</span></div>
+            <div class="srow c-smoke t-cap" style="font-size:13px;line-height:20px"><span>Box that becomes a caddy · ritual card</span><span>Included</span></div>
+          </div>
+          <div class="rel" style="margin-top:8px;border-top:1px solid var(--line);padding-top:8px">
+            {{mk|M13|-6|-46}}
+            <div class="srow"><span class="c-smoke">Value</span><span class="num">AED 253</span></div>
+            <div class="srow c-clay w5"><span>Bundle saving</span><span class="num">−AED 58 (23%)</span></div>
+            <div class="flex jb ae" style="margin-top:10px"><span class="t-ui w5" style="padding-bottom:6px">Today</span><span class="w5 num" style="font-size:32px;line-height:40px;">AED 195</span></div>
+            <div class="t-ui c-clay w5 tr" style="margin-top:2px">Then AED 156 every 60 days</div>
+          </div>
+          <div style="margin-top:28px">
+            <div class="t-spec-s c-smoke" style="margin-bottom:12px">The more you add, the more you save</div>
+            <div class="segs"><span class="seg f"></span><span class="seg f"></span><span class="seg f"></span><span class="seg"></span></div>
+            <div class="segl">
+              <div>2 items<br><span class="c-smoke">5%</span></div>
+              <div>4 items<br><span class="c-smoke">15%</span></div>
+              <div class="w5">5 items<br>23%</div>
+              <div class="c-smoke">7 items<br>28%</div>
+            </div>
+            <div class="t-cap" style="margin-top:14px">Add 2 more items to save 28%.</div>
+          </div>
+          <div class="rel" style="margin-top:24px">
+            <span class="btn btn-primary btn-block">Add ritual to bag · AED 195</span>
+            {{mk|M14|-14|-14}}
+          </div>
+          <div class="t-cap c-smoke tc" style="margin-top:14px">Skip, swap or pause any time. Cancel before any ship date.</div>
+        </div>
+      </div>
+      <div style="margin-top:20px">{{flag|Tier logic is illustrative · confirm against landed cost and the 70% margin floor}}</div>
+      <div class="travel">
+        <span class="anno">{{icon|arrow-up-right|14}}Sticky: stays in view while the steps scroll</span>
+        <span class="ln" style="margin-top:12px"></span>
+        <span class="anno" style="margin-top:8px">{{icon|chev-down|14}}Releases at the end of step 4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OR START FROM A SET -->
+  <div class="rel bg-dune" style="padding:120px 40px">
+    <div class="flex jb ae">
+      <div class="col">
+        <div class="rail"><span class="rule"></span><span class="t-spec">Ready-made</span></div>
+        <div class="t-title" style="margin-top:20px">Or start from a set</div>
+      </div>
+      <p class="t-body-s c-smoke" style="width:437px">Load a set into the builder, then change anything you like. The saving recalculates as you go.</p>
+    </div>
+    <div class="flex g24" style="margin-top:48px;align-items:stretch">
+      <div class="setc">
+        <span class="badge">Founders’ pick</span>
+        <div class="pair">{{circ|112}}<div>{{circ|76}}</div></div>
+        <div class="t-card" style="margin-top:28px">The Duo</div>
+        <div class="t-ui c-smoke" style="margin-top:6px">Daily Pad + Laurel 16</div>
+        <div class="flex ac g8" style="margin-top:20px"><span class="w5 num">AED 85</span><span class="t-ui strike num">AED 89</span></div>
+        <div class="t-ui c-clay w5" style="margin-top:2px">AED 68 on renewal</div>
+        <div style="margin-top:auto;padding-top:24px"><span class="btn btn-secondary btn-s">Load this set</span></div>
+      </div>
+      <div class="setc">
+        <span class="badge badge-dune">Closest to yours</span>
+        <div class="pair">{{circ|112}}<div>{{circ|76}}</div></div>
+        <div class="t-card" style="margin-top:28px">The Pair</div>
+        <div class="t-ui c-smoke" style="margin-top:6px">2 Daily Pads, Back Strap, Laurel 16 + 30, soap rest</div>
+        <div class="flex ac g8" style="margin-top:20px"><span class="w5 num">AED 199</span><span class="t-ui strike num">AED 278</span></div>
+        <div class="t-ui c-clay w5" style="margin-top:2px">AED 149 on renewal</div>
+        <div style="margin-top:auto;padding-top:24px"><span class="btn btn-secondary btn-s">Load this set</span></div>
+      </div>
+      <div class="setc">
+        <span class="badge badge-clay">Save 25%</span>
+        <div class="pair">{{circ|112}}<div>{{circ|76}}</div></div>
+        <div class="t-card" style="margin-top:28px">The House</div>
+        <div class="t-ui c-smoke" style="margin-top:6px">2 Daily Pads, Back Strap, Soft Pebble, Camel Mitt, 2 × Laurel 16, Laurel 30, Shaped Trio</div>
+        <div class="flex ac g8" style="margin-top:20px"><span class="w5 num">AED 299</span><span class="t-ui strike num">AED 401</span></div>
+        <div class="t-ui c-clay w5" style="margin-top:2px">AED 219 on renewal</div>
+        <div style="margin-top:auto;padding-top:24px"><span class="btn btn-secondary btn-s">Load this set</span></div>
+      </div>
+      <div class="setc">
+        <div class="pair">{{circ|112}}<div>{{circ|76}}</div></div>
+        <div class="t-card" style="margin-top:28px">The Grooming Kit</div>
+        <div class="t-ui c-smoke" style="margin-top:6px">Back Strap, Daily Pad (Deep), Laurel 30</div>
+        <div class="flex ac g8" style="margin-top:20px"><span class="w5 num">AED 129</span><span class="t-ui strike num">AED 164</span></div>
+        <div class="t-ui c-clay w5" style="margin-top:2px">AED 99 on renewal</div>
+        <div style="margin-top:auto;padding-top:24px"><span class="btn btn-secondary btn-s">Load this set</span></div>
+      </div>
+    </div>
+  </div>
+
+  {{footer}}
+</section>
+
+<!-- ======================================================================= MOBILE -->
+<section class="frame mobile" data-name="04 Build your ritual — Mobile 390">
+  {{mann}}{{mheader}}
+
+  <div class="rel" style="padding:48px 20px 40px">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">Build yours</span></div>
+    <div class="t-display-m" style="margin-top:20px">Build your <em>ritual.</em></div>
+    <p class="t-body-s" style="margin-top:16px">Tap a fibre, a soap and a cycle. The saving updates as you go.</p>
+    <div class="mtrack" style="margin-top:36px">
+      <span class="ln"></span>
+      <div><span class="step-n done">{{icon|check|16}}</span><span class="t-cap">Who it’s for</span></div>
+      <div><span class="step-n on">2</span><span class="t-cap w5">Loofahs</span></div>
+      <div><span class="step-n bg-ecru">3</span><span class="t-cap c-smoke">Soaps</span></div>
+      <div><span class="step-n bg-ecru">4</span><span class="t-cap c-smoke">How often</span></div>
+    </div>
+  </div>
+  <div style="padding:0 20px"><div class="hair"></div></div>
+
+  <!-- step 1 -->
+  <div class="rel" style="padding:40px 20px 0">
+    <div class="flex ac g12"><span class="step-n done">{{icon|check|16}}</span><div class="t-title-m">Who’s it for?</div></div>
+    <p class="t-cap c-smoke" style="margin-top:10px">We’ll suggest quantities and tag colours. Change anything.</p>
+    <div class="flex wrap g12" style="margin-top:20px">
+      <div class="mchoice"><div class="ic">{{icon|tag|32}}</div><div class="t-card">Just me</div><div class="t-cap c-smoke" style="margin-top:6px">One pad, one bar, your own tag.</div></div>
+      <div class="mchoice on"><span class="tick">{{icon|check|13|ecru}}</span><div class="ic">{{icon|tag|32}}<span style="margin-left:-7px;display:flex">{{icon|tag|32}}</span></div><div class="t-card">Two of us</div><div class="t-cap c-smoke" style="margin-top:6px">Two tag colours, one Back Strap to share.</div></div>
+      <div class="mchoice"><div class="ic">{{icon|tag|32}}<span style="margin-left:-7px;display:flex">{{icon|tag|32}}</span><span style="margin-left:-7px;display:flex">{{icon|tag|32}}</span><span style="margin-left:-7px;display:flex">{{icon|tag|32}}</span></div><div class="t-card">The whole house</div><div class="t-cap c-smoke" style="margin-top:6px">A colour for everyone.</div></div>
+      <div class="mchoice"><div class="ic">{{icon|gift|28}}</div><div class="t-card">A gift</div><div class="t-cap c-smoke" style="margin-top:6px">Tissue, twine and a ritual card.</div></div>
+    </div>
+  </div>
+
+  <!-- step 2 -->
+  <div class="rel" style="padding:56px 20px 0">
+    <div class="flex ac g12"><span class="step-n on">2</span><div class="t-title-m">Choose your loofahs</div></div>
+    <p class="t-cap c-smoke" style="margin-top:10px">Each loofah carries its own fading tag.</p>
+    <div class="rel col g12" style="margin-top:20px">
+      {{mk|M13|-12|-10}}
+      <div class="item m on">{{circ|72}}<div class="meta"><div class="t-card">Daily Pad · Gentle</div><div class="t-spec-s c-smoke" style="margin-top:6px">Grade A · 58 / cm²</div><div class="t-cap c-smoke" style="margin-top:6px">Softer fibre, for daily use and sensitive skin.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 44</span><span class="stepper stepper-m">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m on">{{circ|72}}<div class="meta"><div class="t-card">Daily Pad · Deep</div><div class="t-spec-s c-smoke" style="margin-top:6px">Grade A · 58 / cm²</div><div class="t-cap c-smoke" style="margin-top:6px">Firmer fibre, for oily skin and a deeper scrub.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 44</span><span class="stepper stepper-m">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m">{{circ|72}}<div class="meta"><div class="t-card">The Hammam Mitt</div><div class="t-spec-s c-smoke" style="margin-top:6px">Grade A · 60 / cm²</div><div class="t-cap c-smoke" style="margin-top:6px">Worn like a glove, for the weekly deep scrub.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 48</span><span class="stepper stepper-m"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m on">{{circ|72}}<div class="meta"><div class="t-card">The Back Strap</div><div class="t-spec-s c-smoke" style="margin-top:6px">Premium A · 65 / cm²</div><div class="t-cap c-smoke" style="margin-top:6px">75 cm band, woven handles. Reaches every part of the back.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 65</span><span class="stepper stepper-m">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m"><span class="badge badge-dune">Ages 3–10</span>{{circ|72}}<div class="meta"><div class="t-card">Soft Pebble</div><div class="t-spec-s c-smoke" style="margin-top:6px">Little Reef · 9 cm</div><div class="t-cap c-smoke" style="margin-top:6px">Fine loofah one side, terry the other.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 29</span><span class="stepper stepper-m"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m"><span class="badge badge-dune">Ages 3–10</span>{{circ|72}}<div class="meta"><div class="t-card">Camel Mitt</div><div class="t-spec-s c-smoke" style="margin-top:6px">Little Reef · terry</div><div class="t-cap c-smoke" style="margin-top:6px">Terry mitt, soft loofah palm, embroidered face.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 35</span><span class="stepper stepper-m"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div></div></div>
+    </div>
+    <div style="margin-top:32px">
+      <div class="t-ui w5">Tag colours</div>
+      <div class="t-cap c-smoke" style="margin-top:2px">So nobody borrows the wrong one.</div>
+      <div class="col g12" style="padding:16px 0;margin-top:16px;border-top:1px solid var(--line)">
+        <span class="t-cap">Daily Pad · Gentle</span>
+        <div class="flex g8"><span class="chip on"><span class="swatch bg-silt"></span>Silt</span><span class="chip"><span class="swatch bg-basalt"></span>Basalt</span><span class="chip"><span class="swatch bg-kraft"></span>Kraft</span></div>
+      </div>
+      <div class="col g12" style="padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+        <span class="t-cap">Daily Pad · Deep</span>
+        <div class="flex g8"><span class="chip"><span class="swatch bg-silt"></span>Silt</span><span class="chip on"><span class="swatch bg-basalt"></span>Basalt</span><span class="chip"><span class="swatch bg-kraft"></span>Kraft</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sticky bottom bar, drawn in place -->
+  <div class="rel" style="margin-top:40px">
+    <div class="flex ac g12" style="padding:0 20px 12px">{{mk|M18}}<span class="anno" style="white-space:normal">Sticky bottom bar from step 2. “Review” opens the summary sheet.</span></div>
+    <div class="mbar">
+      <span class="t-ui"><span class="w5">5 items · AED 195</span> · <span class="c-clay w5">save 23%</span></span>
+      <span class="btn btn-dark btn-s">Review</span>
+    </div>
+  </div>
+
+  <!-- step 3 -->
+  <div class="rel" style="padding:48px 20px 0">
+    <div class="flex ac g12"><span class="step-n bg-ecru">3</span><div class="t-title-m">Choose your soaps</div></div>
+    <p class="t-cap c-smoke" style="margin-top:10px">Sabon Ghar: olive oil and laurel oil.</p>
+    <div class="col g12" style="margin-top:20px">
+      <div class="item m on">{{circ|72}}<div class="meta"><div class="t-card">Laurel 16</div><div class="t-spec-s c-smoke" style="margin-top:6px">150 g · 16% laurel</div><div class="t-cap c-smoke" style="margin-top:6px">For daily use, normal and sensitive skin.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 45</span><span class="stepper stepper-m">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m on">{{circ|72}}<div class="meta"><div class="t-card">Laurel 30</div><div class="t-spec-s c-smoke" style="margin-top:6px">150 g · 30% laurel</div><div class="t-cap c-smoke" style="margin-top:6px">A stronger bar for oily and acne-prone skin.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 55</span><span class="stepper stepper-m">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m">{{circ|72}}<div class="meta"><div class="t-card">Shaped Trio</div><div class="t-spec-s c-smoke" style="margin-top:6px">3 × 60 g · unscented</div><div class="t-cap c-smoke" style="margin-top:6px">Camel, date palm, little gourd. No laurel.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 39</span><span class="stepper stepper-m"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div></div></div>
+      <div class="item m">{{circ|72}}<div class="meta"><div class="t-card">Guest Bar</div><div class="t-spec-s c-smoke" style="margin-top:6px">40 g · 16% laurel</div><div class="t-cap c-smoke" style="margin-top:6px">For guests, travel and the gym bag.</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 15</span><span class="stepper stepper-m"><span class="dim">{{icon|minus|16}}</span><span class="num c-smoke">0</span>{{icon|plus|16}}</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- step 4 -->
+  <div class="rel" style="padding:56px 20px 0">
+    <div class="flex ac g12"><span class="step-n bg-ecru">4</span><div class="t-title-m">How often?</div></div>
+    <p class="t-cap c-smoke" style="margin-top:10px">Your tags fade by day 60, so that’s where we start.</p>
+    <div class="rel col g8" style="margin-top:20px">
+      <div class="opt"><span class="radio"></span><span class="f1 t-ui">Every 30 days</span></div>
+      <div class="opt on"><span class="radio"></span><span class="f1 t-ui w5">Every 60 days</span><span class="t-cap c-smoke">Matches the tag</span></div>
+      <div class="opt"><span class="radio"></span><span class="f1 t-ui">Every 90 days</span></div>
+      <div class="opt"><span class="radio"></span><span class="f1 t-ui">Just once</span><span class="t-cap c-smoke">No renewal</span></div>
+    </div>
+    <div style="margin-top:28px">
+      <div class="mtl">{{icon|box|32}}<div class="col g4"><span class="t-ui w5">Today · AED 195</span><span class="t-cap c-smoke">The full set, a box that becomes a caddy and a ritual card.</span></div></div>
+      <div class="mtl">{{icon|tag|32}}<div class="col g4"><span class="t-ui w5">Day 50 · one WhatsApp</span><span class="t-cap c-smoke">Reply to skip, swap or keep the refill.</span></div></div>
+      <div class="mtl" style="border-bottom:1px solid var(--line)">{{icon|renew|32}}<div class="col g4"><span class="t-ui w5">Day 60 · AED 156</span><span class="t-cap c-smoke">Fresh loofahs and soaps only, every 60 days.</span></div></div>
+    </div>
+  </div>
+
+  <!-- summary at the end of the flow -->
+  <div class="rel" style="padding:56px 20px 88px">
+    <div class="bg-steam shadow-s" style="border-radius:16px;padding:24px 20px">
+      <div class="flex jb ac"><div class="t-title-m">Your ritual</div><span class="badge badge-dune">Two of us</span></div>
+      <div class="t-cap c-smoke" style="margin-top:6px">5 items · every 60 days</div>
+      <div class="col" style="margin-top:16px;border-top:1px solid var(--line);padding-top:6px">
+        <div class="srow"><span>Daily Pad · Gentle <span class="c-smoke">×1</span></span><span class="num">AED 44</span></div>
+        <div class="srow"><span>Daily Pad · Deep <span class="c-smoke">×1</span></span><span class="num">AED 44</span></div>
+        <div class="srow"><span>The Back Strap <span class="c-smoke">×1</span></span><span class="num">AED 65</span></div>
+        <div class="srow"><span>Laurel 16 <span class="c-smoke">×1</span></span><span class="num">AED 45</span></div>
+        <div class="srow"><span>Laurel 30 <span class="c-smoke">×1</span></span><span class="num">AED 55</span></div>
+      </div>
+      <div class="rel" style="margin-top:6px;border-top:1px solid var(--line);padding-top:6px">
+        {{mk|M13|-16|-34}}
+        <div class="srow"><span class="c-smoke">Value</span><span class="num">AED 253</span></div>
+        <div class="srow c-clay w5"><span>Bundle saving</span><span class="num">−AED 58 (23%)</span></div>
+        <div class="flex jb ae" style="margin-top:6px"><span class="t-ui w5" style="padding-bottom:4px">Today</span><span class="w5 num" style="font-size:26px;line-height:34px;">AED 195</span></div>
+        <div class="t-ui c-clay w5 tr" style="margin-top:2px">Then AED 156 every 60 days</div>
+      </div>
+      <div style="margin-top:24px">
+        <div class="segs"><span class="seg f"></span><span class="seg f"></span><span class="seg f"></span><span class="seg"></span></div>
+        <div class="segl">
+          <div>2 items<br><span class="c-smoke">5%</span></div>
+          <div>4 items<br><span class="c-smoke">15%</span></div>
+          <div class="w5">5 items<br>23%</div>
+          <div class="c-smoke">7 items<br>28%</div>
+        </div>
+        <div class="t-cap" style="margin-top:12px">Add 2 more items to save 28%.</div>
+      </div>
+      <div class="rel" style="margin-top:20px"><span class="btn btn-primary btn-block">Add ritual to bag · AED 195</span>{{mk|M14|-12|-8}}</div>
+      <div class="t-cap c-smoke tc" style="margin-top:12px">Skip, swap or pause any time.<br>Cancel before any ship date.</div>
+    </div>
+  </div>
+
+  <!-- or start from a set -->
+  <div class="rel bg-dune" style="padding:64px 0 72px">
+    <div style="padding:0 20px">
+      <div class="rail"><span class="rule"></span><span class="t-spec-s">Ready-made</span></div>
+      <div class="t-title-m" style="margin-top:16px">Or start from a set</div>
+      <p class="t-cap c-smoke" style="margin-top:8px">Load a set, then change anything you like.</p>
+    </div>
+    <div class="rel" style="margin-top:28px">
+      {{mk|M07|-12|10}}
+      <div data-bleed="1" class="flex g12" style="padding:0 20px;width:max-content">
+        <div class="msetc"><span class="badge">Founders’ pick</span><div class="pair">{{circ|96}}<div>{{circ|64}}</div></div><div class="t-card" style="margin-top:20px">The Duo</div><div class="t-cap c-smoke" style="margin-top:4px">Daily Pad + Laurel 16</div><div class="flex ac g8" style="margin-top:14px"><span class="w5 num">AED 85</span><span class="t-ui strike num">AED 89</span></div><div class="t-ui c-clay w5">AED 68 on renewal</div><div style="margin-top:auto;padding-top:20px"><span class="btn btn-secondary btn-s">Load this set</span></div></div>
+        <div class="msetc"><span class="badge badge-dune">Closest to yours</span><div class="pair">{{circ|96}}<div>{{circ|64}}</div></div><div class="t-card" style="margin-top:20px">The Pair</div><div class="t-cap c-smoke" style="margin-top:4px">2 Daily Pads, Back Strap, Laurel 16 + 30, soap rest</div><div class="flex ac g8" style="margin-top:14px"><span class="w5 num">AED 199</span><span class="t-ui strike num">AED 278</span></div><div class="t-ui c-clay w5">AED 149 on renewal</div><div style="margin-top:auto;padding-top:20px"><span class="btn btn-secondary btn-s">Load this set</span></div></div>
+        <div class="msetc"><span class="badge badge-clay">Save 25%</span><div class="pair">{{circ|96}}<div>{{circ|64}}</div></div><div class="t-card" style="margin-top:20px">The House</div><div class="t-cap c-smoke" style="margin-top:4px">Pads, Back Strap, kids’ pieces, 4 soaps</div><div class="flex ac g8" style="margin-top:14px"><span class="w5 num">AED 299</span><span class="t-ui strike num">AED 401</span></div><div class="t-ui c-clay w5">AED 219 on renewal</div><div style="margin-top:auto;padding-top:20px"><span class="btn btn-secondary btn-s">Load this set</span></div></div>
+        <div class="msetc"><div class="pair">{{circ|96}}<div>{{circ|64}}</div></div><div class="t-card" style="margin-top:20px">The Grooming Kit</div><div class="t-cap c-smoke" style="margin-top:4px">Back Strap, Daily Pad (Deep), Laurel 30</div><div class="flex ac g8" style="margin-top:14px"><span class="w5 num">AED 129</span><span class="t-ui strike num">AED 164</span></div><div class="t-ui c-clay w5">AED 99 on renewal</div><div style="margin-top:auto;padding-top:20px"><span class="btn btn-secondary btn-s">Load this set</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  {{mfooter}}
+</section>
+
+<!-- ======================================================================= MOBILE · SUMMARY SHEET -->
+<section class="frame mobile" data-name="04 Build — Mobile 390 · Summary sheet" style="height:844px">
+  {{mann}}{{mheader}}
+  <div style="padding:32px 20px 0">
+    <div class="flex ac g12"><span class="step-n on">2</span><div class="t-title-m">Choose your loofahs</div></div>
+    <div class="col g12" style="margin-top:20px">
+      <div class="item m on">{{circ|72}}<div class="meta"><div class="t-card">Daily Pad · Gentle</div><div class="t-spec-s c-smoke" style="margin-top:6px">Grade A · 58 / cm²</div><div class="buy" style="padding-top:12px"><span class="w5 num">AED 44</span><span class="stepper stepper-m">{{icon|minus|16}}<span class="num w5">1</span>{{icon|plus|16}}</span></div></div></div>
+    </div>
+  </div>
+  <div class="scrim"></div>
+  <div class="sheet shadow" style="position:absolute;left:0;right:0;bottom:0;padding:0 20px 28px">
+    {{mk|M18|-15|20}}
+    <div class="grab-bar"></div>
+    <div class="flex jb ac" style="margin-top:18px"><div class="t-title-m">Your ritual</div><span class="flex ac jc" style="width:40px;height:40px;border-radius:50%;border:1px solid var(--line2)">{{icon|close|18}}</span></div>
+    <div class="t-cap c-smoke" style="margin-top:2px">Two of us · 5 items · every 60 days</div>
+    <div class="col" style="margin-top:14px;border-top:1px solid var(--line);padding-top:4px">
+      <div class="srow" style="padding:8px 0"><span>Daily Pad · Gentle <span class="c-smoke">×1</span></span><span class="num">AED 44</span></div>
+      <div class="srow" style="padding:8px 0"><span>Daily Pad · Deep <span class="c-smoke">×1</span></span><span class="num">AED 44</span></div>
+      <div class="srow" style="padding:8px 0"><span>The Back Strap <span class="c-smoke">×1</span></span><span class="num">AED 65</span></div>
+      <div class="srow" style="padding:8px 0"><span>Laurel 16 <span class="c-smoke">×1</span></span><span class="num">AED 45</span></div>
+      <div class="srow" style="padding:8px 0"><span>Laurel 30 <span class="c-smoke">×1</span></span><span class="num">AED 55</span></div>
+    </div>
+    <div class="rel" style="margin-top:4px;border-top:1px solid var(--line);padding-top:4px">
+      <div class="srow" style="padding:8px 0"><span class="c-smoke">Value</span><span class="num">AED 253</span></div>
+      <div class="srow c-clay w5" style="padding:8px 0"><span>Bundle saving</span><span class="num">−AED 58 (23%)</span></div>
+      <div class="flex jb ae" style="margin-top:4px"><span class="t-ui w5" style="padding-bottom:4px">Today</span><span class="w5 num" style="font-size:26px;line-height:34px;">AED 195</span></div>
+      <div class="t-ui c-clay w5 tr">Then AED 156 every 60 days</div>
+    </div>
+    <div style="margin-top:20px">
+      <div class="segs"><span class="seg f"></span><span class="seg f"></span><span class="seg f"></span><span class="seg"></span></div>
+      <div class="segl">
+        <div>2 items<br><span class="c-smoke">5%</span></div>
+        <div>4 items<br><span class="c-smoke">15%</span></div>
+        <div class="w5">5 items<br>23%</div>
+        <div class="c-smoke">7 items<br>28%</div>
+      </div>
+      <div class="t-cap" style="margin-top:10px">Add 2 more items to save 28%.</div>
+    </div>
+    <span class="btn btn-primary btn-block" style="margin-top:20px">Add ritual to bag · AED 195</span>
+    <div class="t-cap c-smoke tc" style="margin-top:10px">Skip, swap or pause any time. Cancel before any ship date.</div>
+  </div>
+</section>
+
+<!-- ======================================================================= NOTES -->
+<section class="frame notes" data-name="04 Build your ritual — Notes">
+  <div class="n-kick">04 · Build your ritual · /pages/build</div>
+  <div class="n-title">Build your ritual</div>
+  <p class="n-lead">For people who want their own mix: who it’s for, loofahs, soaps and a cycle, with the bundle saving updating as they go. Arrives from “Build yours” in the header, the Basalt tile on Rituals, the mega menu and the Duo page. The one primary action: <b>Add ritual to bag · AED 195</b>.</p>
+
+  <div class="n-block"><div class="n-h">Sections, top to bottom</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Intro and step pills</b> — headline, one line of promise, and four pills that show progress (done, current, to come). Tapping a pill scrolls to that step.</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Who’s it for?</b> — four choice cards. Picking one presets quantities and tag colours (Two of us = the state shown). Nothing is locked; every step stays editable.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>Choose your loofahs</b> — six item cards with steppers. Cards with a quantity of 1 or more get the Basalt selected border. Kids’ pieces carry an age badge. Tag colours are chosen per pad, so nobody borrows the wrong one.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>Choose your soaps</b> — same card pattern: Laurel 16, Laurel 30, Shaped Trio, Guest Bar.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>How often?</b> — cycle chips (60 days preselected) plus a three-part “what happens next” strip: today, day 50, day 60. Teaches the renewal before the customer pays.</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>Your ritual (summary)</b> — sticky card: line items, value, bundle saving, today’s price, the renewal price, a four-tier saving bar and the primary button.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span><b>Or start from a set</b> — four sets on Dune. “Load this set” fills the steps and scrolls back to step 1. The Pair is flagged “Closest to yours” because the current build is The Pair minus its soap rest.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M06</span><span><b>Sticky summary</b> — the summary column sticks 24 px below the top once the header hides (M03) and releases at the end of step 4. The step pills follow the step at viewport centre.<span class="n-ref">Lula: hover-image-v2.js pattern (sticky column + active list)</span></span></div>
+    <div class="n-item"><span class="n-chip">M13</span><span><b>Options and totals</b> — a stepper or chip change sets the card border in 200 ms; value, saving, today and renewal figures roll to the new number (300 ms); the button label updates with the price; the tier bar fills segment by segment.<span class="n-ref">Lula: Horizon variant-picker</span></span></div>
+    <div class="n-item"><span class="n-chip">M14</span><span><b>Add ritual to bag</b> — button shows “Added” with a tick (400 ms), then the bag drawer slides in with the ritual as one grouped line.<span class="n-ref">Lula: atc-slide-in, cart-drawer</span></span></div>
+    <div class="n-item"><span class="n-chip">M18</span><span><b>Mobile summary sheet</b> — “Review” in the sticky bar opens the summary as a bottom sheet (400 ms, drag to dismiss).</span></div>
+    <div class="n-item"><span class="n-chip">M07</span><span><b>Mobile set cards</b> — horizontal swipe with momentum.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Mobile</div><div class="n-list">
+    <div class="n-item"><span class="n-num">—</span><span>Steps stack. Who’s it for becomes a 2 × 2 grid; item cards become full-width rows with 44 px steppers; the cycle chips become full-width option rows (easier to hit with a thumb than wrapped chips).</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>A sticky bottom bar (“5 items · AED 195 · save 23%” + Review) appears after step 2 and hides when the in-page summary scrolls into view.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>The full summary sits at the end of step 4 with the one primary button; the same content opens as a sheet from the bar (frame “Summary sheet”).</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">—</span><span><b>Arithmetic shown:</b> 44 + 44 + 65 + 45 + 55 = AED 253 value. 23% saving = AED 58. Today AED 195. Renewal AED 156 = 195 × 0.8, the same 20% renewal step as the Duo (85 → 68).</span></div>
+    <div class="n-item"><span class="n-num">—</span><span><b>Tiers:</b> 2 items 5% · 4 items 15% · 5 items 23% · 7 items 28%. Only loofahs and soaps count; the nudge line always names the next tier.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span><b>Rules:</b> at least 1 loofah and 1 soap, otherwise the button is disabled with a hint. “A gift” defaults the cycle to Just once and adds a card message in the bag. The first box carries the caddy box and ritual card; refills are loofahs and soaps only.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Built on Shopify bundles + Recharge or Skio; the summary is one bundle line in the bag, not five products.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span>Tier logic is illustrative. Confirm against landed cost and the 70% margin floor.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>First-box rule differs from the Duo page: the Duo charges AED 68 from the first renewing delivery, the builder charges AED 195 today, then AED 156. Pick one rule for both.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>“Every 90 days” contradicts “when the tag fades (day 60)”. Keep it, or replace with a pause?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Does “Just once” keep the full bundle saving, or a smaller one?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Tag colours: are Silt, Basalt and Kraft stocked for every loofah? What does the Back Strap get?</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Deep fibre copy (“for oily skin and a deeper scrub”) and the Soft Pebble / Camel Mitt spec lines need confirming against the final product sheet.</span></div>
+  </div></div>
+</section>
+
+</body></html>

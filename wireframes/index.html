@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website wireframes</title>
+<style>
+  :root { --ecru:#F3EEE4; --basalt:#2B2A27; --smoke:#6F6A62; --line:rgba(43,42,39,.14); --silt:#B5583B; --clay:#7E3A26; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ecru:#22211F; --basalt:#F3EEE4; --smoke:#B3ACA1; --line:rgba(243,238,228,.16); --clay:#E39A7E; } }
+  :root[data-theme="dark"] { --ecru:#22211F; --basalt:#F3EEE4; --smoke:#B3ACA1; --line:rgba(243,238,228,.16); --clay:#E39A7E; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--ecru); color: var(--basalt); font: 16px/1.6 "IBM Plex Sans", Helvetica, Arial, sans-serif; padding: 64px 16px; }
+  main { max-width: 880px; margin: 0 auto; }
+  .kick { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--clay); font-weight: 600; }
+  h1 { font: 500 48px/1.05 "Cormorant Garamond", Georgia, serif; margin: 12px 0 16px; }
+  p.lead { color: var(--smoke); max-width: 640px; }
+  ol { list-style: none; margin-top: 40px; border-top: 1px solid var(--line); }
+  li { border-bottom: 1px solid var(--line); }
+  a { display: grid; grid-template-columns: 48px 1fr auto; gap: 16px; align-items: baseline; padding: 18px 4px; color: inherit; text-decoration: none; }
+  a:hover .name { text-decoration: underline; text-underline-offset: 4px; }
+  .n { color: var(--smoke); font-variant-numeric: tabular-nums; font-size: 14px; }
+  .name { font-weight: 500; }
+  .desc { display: block; color: var(--smoke); font-size: 14px; }
+  .frames { color: var(--smoke); font-size: 13px; white-space: nowrap; }
+  .tip { margin-top: 32px; font-size: 14px; color: var(--smoke); }
+  @media (max-width: 560px) { a { grid-template-columns: 36px 1fr; } .frames { display: none; } h1 { font-size: 36px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="kick">Al Reef &amp; Laurel · Round 1</div>
+  <h1>Website wireframes</h1>
+  <p class="lead">Branded mid-fidelity wireframes, desktop 1440 and mobile 390, each with a notes panel explaining sections, motion (M-codes) and open questions. Built from Brand Guidelines Ed.01 and Brand Strategy Ed.01, with lulaoil.com as the reference for arrangement and motion.</p>
+  <ol>
+    <li><a href="pages/00-foundations.html"><span class="n">00</span><span><span class="name">Foundations</span><span class="desc">Cover, sitemap and journeys, design system, motion system, Lula reference</span></span><span class="frames">5 boards</span></a></li>
+    <li><a href="pages/01-home.html"><span class="n">01</span><span><span class="name">Home</span><span class="desc">The front door: hero, Duo buy module, proofs, specimen, ritual, renewal, gifting</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/02-rituals.html"><span class="n">02</span><span><span class="name">Rituals</span><span class="desc">All 7 sets, filters, compare table, FAQ</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/03-the-duo.html"><span class="n">03</span><span><span class="name">The Duo</span><span class="desc">Product page with renewal preselected, spec sheet, traceability</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/04-build.html"><span class="n">04</span><span><span class="name">Build your ritual</span><span class="desc">Bundle builder with a live saving summary</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/05-little-reef.html"><span class="n">05</span><span><span class="name">Little Reef</span><span class="desc">Kids range, sets, the camel tag</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/06-gifts.html"><span class="n">06</span><span><span class="name">Gifts</span><span class="desc">Ramadan and Eid gifting, the Hammam Chest, corporate enquiry</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/07-our-farm.html"><span class="n">07</span><span><span class="name">Our farm</span><span class="desc">Field 7 story, seed to shower, the hands, the soap, the route</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/08-batch.html"><span class="n">08</span><span><span class="name">Batch page</span><span class="desc">QR landing from the tag: origin, day tracker, day-50 reminder</span></span><span class="frames">Mobile first · Desktop · Notes</span></a></li>
+    <li><a href="pages/09-account.html"><span class="n">09</span><span><span class="name">Your ritual</span><span class="desc">Account renewal management: skip, swap, pause, cancel</span></span><span class="frames">Desktop · Mobile · Notes</span></a></li>
+    <li><a href="pages/10-overlays.html"><span class="n">10</span><span><span class="name">Bag, menu and modals</span><span class="desc">Mega menu, bag drawer, founding list, search, mobile menu, day-50 WhatsApp</span></span><span class="frames">Overlays · Notes</span></a></li>
+  </ol>
+  <p class="tip">Each page opens as one wide board (desktop, mobile, notes side by side). Zoom out with your browser (⌘ − on Mac) to see a whole board.</p>
+</main>
+</body>
+</html>

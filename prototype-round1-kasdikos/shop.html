@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop all — Al Reef &amp; Laurel</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .shop-hero { position: relative; height: clamp(360px, 52vh, 520px); overflow: hidden; color: var(--on-dark); }
+  .shop-hero img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; object-position: 60% 42%; }
+  .shop-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18, 20, 16, .55), rgba(18, 20, 16, .05) 60%); }
+  .shop-hero .h1 { position: absolute; z-index: 2; left: var(--gutter); bottom: 40px; color: var(--on-dark); }
+  .intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; padding: 48px var(--gutter) 40px; }
+  .filters { position: sticky; top: 0; z-index: 30; background: var(--linen); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: top .5s var(--ease); }
+  .filters .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 64px; }
+  .tabs { display: flex; gap: 30px; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs button { font: 500 11.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--soft); padding: 8px 0; position: relative; white-space: nowrap; transition: color .3s; }
+  .tabs button::after { content: ""; position: absolute; left: 0; right: .2em; bottom: 0; height: 1px; background: var(--laurel); transform: scaleX(0); transition: transform .5s var(--ease); }
+  .tabs button.on { color: var(--laurel); }
+  .tabs button.on::after { transform: scaleX(1); }
+  .tabs sup { font-size: 9px; margin-left: 3px; letter-spacing: 0; }
+  .toggle { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
+  .toggle .sw { width: 38px; height: 22px; border-radius: 99px; background: var(--rule); position: relative; transition: background .3s; }
+  .toggle .sw::after { content: ""; position: absolute; left: 3px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--cream); transition: transform .4s var(--ease); }
+  .toggle[aria-pressed="true"] .sw { background: var(--laurel); }
+  .toggle[aria-pressed="true"] .sw::after { transform: translateX(16px); }
+  .shop-grid { row-gap: clamp(36px, 4vw, 56px); padding: 48px 0 0; }
+  .shop-grid .card { transition: opacity .45s var(--ease), transform .45s var(--ease); }
+  .shop-grid .card.out { display: none; }
+  .no-renew .card-price .renew { display: none; }
+  .build { margin-top: clamp(64px, 7vw, 100px); display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+  .build .copy { padding: clamp(36px, 5vw, 80px); display: flex; flex-direction: column; justify-content: center; }
+  .build .media { position: relative; overflow: hidden; }
+  .build .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%; }
+  @media (max-width: 860px) { .intro, .build { grid-template-columns: 1fr; } .build .media { min-height: 300px; } .toggle span:first-child { display: none; } }
+</style>
+</head>
+<body data-page="shop">
+<main>
+  <section class="shop-hero"><img data-parallax="5" src="assets/img/mosaic.jpg" alt="Loofahs and a linen tote hanging on a warm mosaic wall"><h1 class="h1" data-split>Shop all</h1></section>
+
+  <div class="wrap intro">
+    <p class="lede" data-reveal>Loofahs grown in the Nile Delta, Sabon Ghar cured in the Levant, and rituals that put them together. Every loofah renews every 60 days, so nobody in the house keeps one too long.</p>
+    <p class="small soft" style="text-align:right" data-reveal style="--d:.1s"><span class="num" data-count>12</span> pieces · free UAE delivery</p>
+  </div>
+
+  <div class="filters">
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="Filter">
+        <button class="on" data-f="all">All<sup class="num">12</sup></button>
+        <button data-f="rituals">Rituals<sup class="num">5</sup></button>
+        <button data-f="loofahs" id="loofahs">Loofahs<sup class="num">3</sup></button>
+        <button data-f="soap" id="soap">Sabon Ghar<sup class="num">3</sup></button>
+        <button data-f="gifts" id="gifts">Gifts<sup class="num">1</sup></button>
+      </div>
+      <button class="toggle caps-s" aria-pressed="true" data-renew><span>Show renewal prices</span><span class="sw"></span></button>
+    </div>
+  </div>
+
+  <section class="wrap">
+    <div class="grid g3 shop-grid" data-grid></div>
+
+    <div class="build bg-laurel tiles" data-reveal>
+      <div class="copy"><span class="caps" style="opacity:.7">Build yours</span>
+        <h2 class="h2" style="margin-top:16px">Your own mix of<br><em>loofahs and soap.</em></h2>
+        <p class="body" style="color:var(--on-dark-soft);margin-top:18px;max-width:420px">Pick a fibre, a soap and a cycle. The saving grows with every piece, up to 28%.</p>
+        <div style="margin-top:30px"><a class="btn btn-light" href="product.html?p=the-duo">Start with the Duo</a></div></div>
+      <div class="media"><img src="assets/img/still-life.jpg" alt="" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="section-s"></section>
+</main>
+<script src="assets/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  const grid = document.querySelector("[data-grid]");
+  grid.innerHTML = window.PRODUCTS.map((p, i) => window.cardHTML(p, (i % 3) * 0.08)).join("");
+  window.observeReveal(grid);
+  const tabs = [...document.querySelectorAll(".tabs button")];
+  const apply = (f) => {
+    tabs.forEach((t) => t.classList.toggle("on", t.dataset.f === f));
+    const cards = [...grid.children];
+    // FLIP-lite: fade out, swap, fade in
+    grid.style.opacity = 0; grid.style.transform = "translateY(10px)"; grid.style.transition = "opacity .25s, transform .25s";
+    setTimeout(() => {
+      let n = 0; cards.forEach((c) => { const show = f === "all" || c.dataset.type === f; c.classList.toggle("out", !show); if (show) { n++; c.classList.add("is-in"); } });
+      document.querySelector("[data-count]").textContent = n;
+      grid.style.transition = "opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1)"; grid.style.opacity = 1; grid.style.transform = "none";
+    }, 250);
+  };
+  tabs.forEach((t) => t.addEventListener("click", () => { apply(t.dataset.f); history.replaceState(null, "", t.dataset.f === "all" ? "shop.html" : "#" + t.dataset.f); }));
+  const h = location.hash.slice(1); if (["rituals", "loofahs", "soap", "gifts"].includes(h)) apply(h);
+  document.querySelector("[data-renew]").addEventListener("click", (e) => { const b = e.currentTarget; const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); grid.classList.toggle("no-renew", !on); });
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>08 Batch page</title>
+<link rel="stylesheet" href="../system.css">
+<style>
+/* 08 Batch page — page-level helpers (wireframe only) */
+.slot{background:#FFF1C2;color:#5A4500;border-radius:4px;padding:0 3px}             /* data still to be supplied */
+.lnum{font-variant-numeric:lining-nums tabular-nums}
+.receipt{background:var(--steam);border-radius:16px;border-top:1.5px dashed var(--line2)}
+.receipt .kv > span:last-child{font-size:15px;line-height:20px;text-align:right}
+.kv-last{border-bottom:1px solid var(--line)}
+.ico-c{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--steam);flex:none}
+.cc{display:flex;align-items:center;gap:4px;color:var(--basalt);font-weight:500}
+.vsep{display:block;width:1px;height:24px;background:var(--line2);margin:0 14px;flex:none}
+.tick{position:absolute;top:-5px;width:1.5px;height:16px;background:var(--basalt)}
+.ulink{color:var(--basalt);font-weight:500;box-shadow:inset 0 -1px 0 currentColor}
+.step-cell{border-top:1px solid var(--line);padding-top:16px}
+</style></head>
+<body class="board">
+
+<!-- ================================================================ -->
+<!-- 08 BATCH — MOBILE 390 (primary: people scan the tag with a phone) -->
+<!-- ================================================================ -->
+<section class="frame mobile" data-name="08 Batch — Mobile 390">
+  <!-- Minimal header: no announcement · menu · logo · Shop -->
+  <header class="mhdr">
+    <span class="flex ac g8 t-spec-s" style="width:80px">{{icon|menu|20}}Menu</span>
+    {{logo|15}}
+    <span class="t-ui tr" style="width:80px">Shop</span>
+  </header>
+
+  <!-- 1 Hero -->
+  <div class="sec-m" style="padding:40px 20px 0">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">Batch F7-0926</span></div>
+    <h1 class="t-display-m" style="margin-top:16px">Your loofah<br><em>grew here.</em></h1>
+    <div class="rel" style="margin-top:28px">
+      {{win|350|467|IMG 03 · Field 7, harvest week}}
+      {{mk|M02|4|4}}
+    </div>
+    <div class="flex jc ac g8 t-spec-s c-smoke" style="margin-top:18px">{{icon|pin|16}}31.03° N · 30.47° E · Damanhour, Egypt</div>
+  </div>
+
+  <!-- 2 Receipt -->
+  <div class="sec-m" style="padding:32px 20px 0">
+    <div class="receipt" style="padding:24px 24px 24px">
+      <div class="flex jb ac">
+        <div class="col g4"><span class="t-spec">Batch F7-0926</span><span class="t-cap c-smoke it">Luffa aegyptiaca</span></div>
+        {{icon|qr|28}}
+      </div>
+      <div class="col" style="margin-top:18px">
+        <div class="kv"><span>Field</span><span>Field 7, Damanhour</span></div>
+        <div class="kv"><span>Coordinates</span><span>31.03° N, 30.47° E</span></div>
+        <div class="kv"><span>Planted</span><span>March 2026</span></div>
+        <div class="kv"><span>Harvested</span><span>September 2026</span></div>
+        <div class="kv"><span>Sun-dried</span><span>21 days, 8–29 Sept</span></div>
+        <div class="kv"><span>Grade</span><span>A · 58 fibres per cm²</span></div>
+        <div class="kv"><span>Graded by</span><span><span class="slot">[initials]</span></span></div>
+        <div class="kv"><span>Packed</span><span>October 2026, Dubai</span></div>
+        <div class="kv kv-last"><span>Soap</span><span>Laurel 16 · L16-0826</span></div>
+      </div>
+      <div style="margin-top:16px">{{flag|Real batch data feed · rows from the batch record}}</div>
+    </div>
+  </div>
+
+  <!-- 3 Day tracker -->
+  <div class="sec-m" style="padding:72px 20px 0">
+    <div class="flex jb ae">
+      <div class="col">
+        <div class="rail"><span class="rule"></span><span class="t-spec-s">Your loofah, today</span></div>
+        <h2 class="t-title-m lnum" style="margin-top:14px">Day 01 of 60</h2>
+      </div>
+      {{tag|60|01|0}}
+    </div>
+    <div class="rel" style="margin-top:28px">
+      {{mk|M10|-14|-8}}
+      <div class="rel" style="height:26px"><span class="flex ac g4 t-cap c-smoke" style="position:absolute;right:59px;top:0">{{icon|whatsapp|16}}Day 50</span></div>
+      <div class="rel"><div class="bar"><i style="width:2%"></i></div><span class="tick" style="left:291px"></span></div>
+      <div class="flex jb t-cap c-smoke" style="margin-top:10px"><span>Today</span><span>Day 60 · tag gone</span></div>
+    </div>
+    <p class="t-body-s" style="margin-top:24px">Hang it to dry after every shower. Dry fibre lasts longer.</p>
+
+    <div class="t-spec-s c-smoke" style="margin-top:40px">The two-minute scrub</div>
+    <div class="flex g12" style="margin-top:16px">
+      <div class="f1 col step-cell"><span class="t-spec-s c-smoke">01</span><span class="t-card" style="margin-top:6px">Wet.</span><p class="t-ui c-smoke" style="margin-top:6px">Soak the loofah under warm water for 30 seconds; it softens as it drinks.</p></div>
+      <div class="f1 col step-cell"><span class="t-spec-s c-smoke">02</span><span class="t-card" style="margin-top:6px">Lather.</span><p class="t-ui c-smoke" style="margin-top:6px">Work the Sabon Ghar into the fibre, not onto your skin.</p></div>
+    </div>
+    <div class="flex g12" style="margin-top:24px">
+      <div class="f1 col step-cell"><span class="t-spec-s c-smoke">03</span><span class="t-card" style="margin-top:6px">Circle.</span><p class="t-ui c-smoke" style="margin-top:6px">Small circles for two minutes, one area at a time; lighter where skin is thin.</p></div>
+      <div class="f1 col step-cell"><span class="t-spec-s c-smoke">04</span><span class="t-card" style="margin-top:6px">Hang to dry.</span><p class="t-ui c-smoke" style="margin-top:6px">Hang it by the cotton tag, out of the spray.</p></div>
+    </div>
+    <div style="margin-top:28px"><a class="tlink" style="font-size:15px">{{icon|play|14}}Watch the two-minute scrub · 0:45</a></div>
+  </div>
+
+  <!-- 4 Reminder (the one primary action) -->
+  <div class="sec-m" style="padding:56px 20px 0">
+    <div class="bg-dune" style="border-radius:16px;padding:28px 24px 24px">
+      <h2 class="t-title-m">Want a nudge<br>on day 50?</h2>
+      <p class="t-body-s" style="margin-top:12px">We’ll send one WhatsApp when your tag is nearly gone. Nothing else.</p>
+      <div class="rel" style="margin-top:24px"><div class="field-sq" style="padding:0 16px 0 14px"><span class="cc">+971{{icon|chev-down|14}}</span><span class="vsep"></span><span>WhatsApp number</span></div>{{mk|M18|-15|-12}}</div>
+      <span class="btn btn-primary btn-block" style="margin-top:12px">Remind me on day 50</span>
+      <p class="t-cap c-smoke" style="margin-top:16px">Already renewing? Your reminder is set. <span class="ulink">Manage it in your account.</span></p>
+    </div>
+  </div>
+
+  <!-- 5 When the tag fades -->
+  <div class="sec-m" style="padding:72px 20px 0">
+    <div class="rail"><span class="rule"></span><span class="t-spec-s">Day 60</span></div>
+    <h2 class="t-title-m" style="margin-top:14px">When the tag fades</h2>
+    <p class="t-body-s" style="margin-top:12px">Everything composts or becomes the caddy.</p>
+    <div class="col" style="margin-top:24px">
+      <div class="flex ac g16" style="padding:16px 0;border-top:1px solid var(--line)"><span class="ico-c">{{icon|fibre|30}}</span><div class="col g4"><span class="t-spec-s c-smoke">01</span><span class="t-body-s w5">Cut it into pieces</span></div></div>
+      <div class="flex ac g16" style="padding:16px 0;border-top:1px solid var(--line)"><span class="ico-c">{{icon|compost|30}}</span><div class="col g4"><span class="t-spec-s c-smoke">02</span><span class="t-body-s w5">Compost it or bury it</span></div></div>
+      <div class="flex ac g16" style="padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><span class="ico-c">{{icon|box|30}}</span><div class="col g4"><span class="t-spec-s c-smoke">03</span><span class="t-body-s w5">Keep the box: it folds into a caddy</span></div></div>
+    </div>
+    <div class="rel" style="margin-top:24px">
+      {{ph|350|200|DIAGRAM · box to caddy in 3 folds|steam|12}}
+      {{mk|M09|12|12}}
+    </div>
+  </div>
+
+  <!-- 6 Gift card -->
+  <div class="sec-m" style="padding:56px 20px 72px">
+    <div class="bg-steam col ac tc" style="border-radius:16px;padding:32px 24px 24px">
+      {{circ|88}}
+      <h2 class="t-title-m" style="margin-top:20px">Got this as a gift?</h2>
+      <p class="t-body-s" style="margin-top:8px">Start your own ritual with the Duo.</p>
+      <span class="btn btn-secondary btn-block" style="margin-top:24px">See the Duo</span>
+    </div>
+  </div>
+
+  <!-- 7 Mini footer -->
+  <footer class="ftr">
+    <div style="overflow:hidden;height:40px;border-bottom:1px solid var(--lined)">{{pattern|390|40|.10|ecru}}</div>
+    <div class="col ac" style="padding:36px 20px 40px">
+      {{logo|17|ecru}}
+      <div class="flex g24 c-ecru" style="margin-top:24px">{{icon|insta|22}}{{icon|whatsapp|22}}</div>
+      <span class="t-cap c-ecru70" style="margin-top:16px">alreefandlaurel.com</span>
+    </div>
+  </footer>
+</section>
+
+<!-- ================================================================ -->
+<!-- 08 BATCH — DESKTOP 1440                                           -->
+<!-- ================================================================ -->
+<section class="frame desktop" data-name="08 Batch — Desktop 1440">
+{{header|none}}
+
+  <div class="sec" style="padding:88px 40px 144px">
+    <div class="rail"><span class="rule"></span><span class="t-spec">Batch F7-0926</span></div>
+    <h1 class="t-display" style="margin-top:24px">Your loofah <em>grew here.</em></h1>
+
+    <div class="flex as" style="gap:139px;margin-top:56px">
+      <!-- LEFT · 6 cols: Window + receipt (+ gift) -->
+      <div class="col fn" style="width:668px">
+        <div class="rel bg-steam flex ac jc" style="height:891px;border-radius:16px">
+          {{win|540|720|IMG 03 · Field 7, harvest week}}
+          {{mk|M02|-15|-15}}
+          <div class="flex jc ac g8 t-spec-s c-smoke" style="position:absolute;left:0;right:0;bottom:32px">{{icon|pin|16}}31.03° N · 30.47° E · Damanhour, Egypt</div>
+        </div>
+
+        <div class="receipt" style="margin-top:24px;padding:32px 40px 36px">
+          <div class="flex jb ac">
+            <div class="col g4"><span class="t-spec">Batch F7-0926</span><span class="t-cap c-smoke it">Luffa aegyptiaca</span></div>
+            {{icon|qr|32}}
+          </div>
+          <div class="col" style="margin-top:20px">
+            <div class="kv"><span>Field</span><span>Field 7, Damanhour</span></div>
+            <div class="kv"><span>Coordinates</span><span>31.03° N, 30.47° E</span></div>
+            <div class="kv"><span>Planted</span><span>March 2026</span></div>
+            <div class="kv"><span>Harvested</span><span>September 2026</span></div>
+            <div class="kv"><span>Sun-dried</span><span>21 days, 8–29 Sept</span></div>
+            <div class="kv"><span>Grade</span><span>A · 58 fibres per cm²</span></div>
+            <div class="kv"><span>Graded by</span><span><span class="slot">[initials]</span></span></div>
+            <div class="kv"><span>Packed</span><span>October 2026, Dubai</span></div>
+            <div class="kv kv-last"><span>Soap</span><span>Laurel 16 · L16-0826</span></div>
+          </div>
+          <div style="margin-top:20px">{{flag|Real batch data feed · rows from the batch record}}</div>
+        </div>
+
+        <div class="bg-steam flex ac g40" style="margin-top:24px;border-radius:16px;padding:40px">
+          {{circ|140}}
+          <div class="col as f1">
+            <h2 class="t-title">Got this as a gift?</h2>
+            <p class="t-body-s" style="margin-top:8px">Start your own ritual with the Duo.</p>
+            <span class="btn btn-secondary" style="margin-top:24px">See the Duo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT · 5 cols: tracker, reminder, afterlife -->
+      <div class="col fn" style="width:553px">
+        <div class="flex jb ae">
+          <div class="col">
+            <div class="rail"><span class="rule"></span><span class="t-spec">Your loofah, today</span></div>
+            <h2 class="t-title lnum" style="margin-top:20px">Day 01 of 60</h2>
+          </div>
+          {{tag|96|01|0}}
+        </div>
+        <div class="rel" style="margin-top:32px">
+          {{mk|M10|-12|-36}}
+          <div class="rel" style="height:26px"><span class="flex ac g4 t-cap c-smoke" style="position:absolute;right:93px;top:0">{{icon|whatsapp|16}}Day 50 · one WhatsApp</span></div>
+          <div class="rel"><div class="bar"><i style="width:2%"></i></div><span class="tick" style="left:460px"></span></div>
+          <div class="flex jb t-cap c-smoke" style="margin-top:10px"><span>Today</span><span>Day 60 · tag gone</span></div>
+        </div>
+        <p class="t-body" style="margin-top:28px">Hang it to dry after every shower. Dry fibre lasts longer.</p>
+
+        <div class="t-spec-s c-smoke" style="margin-top:48px">The two-minute scrub</div>
+        <div class="flex g24" style="margin-top:16px">
+          <div class="f1 col step-cell"><span class="t-spec-s c-smoke">01</span><span class="t-card" style="margin-top:8px">Wet.</span><p class="t-ui c-smoke" style="margin-top:8px">Soak the loofah under warm water for 30 seconds; it softens as it drinks.</p></div>
+          <div class="f1 col step-cell"><span class="t-spec-s c-smoke">02</span><span class="t-card" style="margin-top:8px">Lather.</span><p class="t-ui c-smoke" style="margin-top:8px">Work the Sabon Ghar into the fibre, not onto your skin.</p></div>
+        </div>
+        <div class="flex g24" style="margin-top:28px">
+          <div class="f1 col step-cell"><span class="t-spec-s c-smoke">03</span><span class="t-card" style="margin-top:8px">Circle.</span><p class="t-ui c-smoke" style="margin-top:8px">Small circles for two minutes, one area at a time; lighter where skin is thin.</p></div>
+          <div class="f1 col step-cell"><span class="t-spec-s c-smoke">04</span><span class="t-card" style="margin-top:8px">Hang to dry.</span><p class="t-ui c-smoke" style="margin-top:8px">Hang it by the cotton tag, out of the spray.</p></div>
+        </div>
+        <div style="margin-top:28px"><a class="tlink">{{icon|play|14}}Watch the two-minute scrub · 0:45</a></div>
+
+        <div class="bg-dune" style="margin-top:64px;border-radius:16px;padding:40px">
+          <h2 class="t-title">Want a nudge on day 50?</h2>
+          <p class="t-body-s" style="margin-top:12px">We’ll send one WhatsApp when your tag is nearly gone. Nothing else.</p>
+          <div class="field-sq" style="margin-top:28px;padding:0 18px 0 16px"><span class="cc">+971{{icon|chev-down|14}}</span><span class="vsep"></span><span>WhatsApp number</span></div>
+          <span class="btn btn-primary btn-block" style="margin-top:12px">Remind me on day 50</span>
+          <p class="t-cap c-smoke" style="margin-top:16px">Already renewing? Your reminder is set. <span class="ulink">Manage it in your account.</span></p>
+        </div>
+
+        <div style="margin-top:80px">
+          <div class="rail"><span class="rule"></span><span class="t-spec">Day 60</span></div>
+          <h2 class="t-title" style="margin-top:20px">When the tag fades</h2>
+          <p class="t-body-s" style="margin-top:12px">Everything composts or becomes the caddy.</p>
+          <div class="flex g24" style="margin-top:32px">
+            <div class="f1 col g12"><span class="ico-c">{{icon|fibre|30}}</span><span class="t-spec-s c-smoke" style="margin-top:4px">01</span><span class="t-ui w5">Cut it into pieces</span></div>
+            <div class="f1 col g12"><span class="ico-c">{{icon|compost|30}}</span><span class="t-spec-s c-smoke" style="margin-top:4px">02</span><span class="t-ui w5">Compost it or bury it</span></div>
+            <div class="f1 col g12"><span class="ico-c">{{icon|box|30}}</span><span class="t-spec-s c-smoke" style="margin-top:4px">03</span><span class="t-ui w5">Keep the box: it folds into a caddy</span></div>
+          </div>
+          <div class="rel" style="margin-top:32px">
+            {{ph|553|300|DIAGRAM · box to caddy in 3 folds|steam|12}}
+            {{mk|M09|-15|-15}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{{footer}}
+</section>
+
+<!-- ================================================================ -->
+<!-- 08 BATCH — MOBILE 390 · REMINDER SET (state after the primary action) -->
+<!-- ================================================================ -->
+<section class="frame mobile" data-name="08 Batch — Mobile 390 · Reminder set" style="height:844px">
+  <header class="mhdr">
+    <span class="flex ac g8 t-spec-s" style="width:80px">{{icon|menu|20}}Menu</span>
+    {{logo|15}}
+    <span class="t-ui tr" style="width:80px">Shop</span>
+  </header>
+  <div class="sec-m" style="padding:28px 20px 0">
+    <!-- tail of the day tracker, for context -->
+    <div class="flex jb ac"><span class="t-card lnum">Day 01 of 60</span><span class="t-cap c-smoke">Batch F7-0926</span></div>
+    <div class="rel" style="margin-top:16px"><div class="bar"><i style="width:2%"></i></div><span class="tick" style="left:291px"></span></div>
+
+    <!-- confirmed card -->
+    <div class="bg-dune" style="border-radius:16px;padding:28px 24px 24px;margin-top:32px">
+      <span class="flex ac jc c-ecru" style="width:44px;height:44px;border-radius:50%;background:var(--basalt)">{{icon|check|22}}</span>
+      <h2 class="t-title-m" style="margin-top:20px">See you on <em>day 50.</em></h2>
+      <p class="t-body-s" style="margin-top:12px">One WhatsApp on Monday 21 December, when your tag is nearly gone, with the option to order a fresh one. Nothing else.</p>
+      <div class="col" style="margin-top:20px">
+        <div class="kv"><span>Reminder</span><span class="t-ui">Day 50 · Mon 21 Dec</span></div>
+        <div class="kv kv-last"><span>WhatsApp</span><span class="t-ui">+971 50 ••• ••21 · <span class="ulink">Change</span></span></div>
+      </div>
+      <div style="margin-top:20px"><a class="tlink c-smoke" style="font-size:14px">Cancel the reminder</a></div>
+    </div>
+    <div style="margin-top:14px">{{flag|Sample date: assumes day 01 is 2 Nov 2026}}</div>
+
+    <!-- next section begins -->
+    <div class="rail" style="margin-top:56px"><span class="rule"></span><span class="t-spec-s">Day 60</span></div>
+    <h2 class="t-title-m" style="margin-top:14px">When the tag fades</h2>
+    <p class="t-body-s" style="margin-top:12px">Everything composts or becomes the caddy.</p>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 08 BATCH — NOTES                                                  -->
+<!-- ================================================================ -->
+<section class="frame notes" data-name="08 Batch — Notes">
+  <div class="n-kick">08 · Batch page · /batch/f7-0926</div>
+  <div class="n-title">Batch page</div>
+  <p class="n-lead">The page behind the QR code on every cotton tag. People arrive from a phone camera, often holding the loofah: the buyer on day 1, a gift recipient, later a hotel guest. It proves origin, teaches the ritual and asks for one thing, a WhatsApp number for the day-50 reminder. That reminder is how one-time buyers and gift recipients become renewals. Primary action: <b>Remind me on day 50</b>. Mobile is the primary design; desktop follows it.</p>
+
+  <div class="n-block"><div class="n-h">Sections, top to bottom (mobile)</div><div class="n-list">
+    <div class="n-item"><span class="n-num">01</span><span><b>Minimal header</b>: no announcement bar and no promotions. Menu, logo, “Shop”. Hand-built from the header classes because the macro has no “Shop” variant.</span></div>
+    <div class="n-item"><span class="n-num">02</span><span><b>Hero</b>: batch code rail, “Your loofah grew here.”, the Window on Field 7 at harvest, coordinates as its caption.</span></div>
+    <div class="n-item"><span class="n-num">03</span><span><b>Receipt</b>: the batch record as a slip with a dashed top edge, nine rows. This is the proof, so it sits straight under the image.</span></div>
+    <div class="n-item"><span class="n-num">04</span><span><b>Day tracker</b>: “Day 01 of 60”, the tag at today’s fade, the bar with day 50 marked, the drying tip, then the two-minute scrub in four steps.</span></div>
+    <div class="n-item"><span class="n-num">05</span><span><b>Reminder</b>: the only primary button. One field, one promise: one message, nothing else.</span></div>
+    <div class="n-item"><span class="n-num">06</span><span><b>When the tag fades</b>: cut, compost, keep the box, plus a diagram of the box folding into a caddy.</span></div>
+    <div class="n-item"><span class="n-num">07</span><span><b>Gift card</b>: for recipients. The Duo as a secondary button, so the reminder stays the main ask.</span></div>
+    <div class="n-item"><span class="n-num">08</span><span><b>Mini footer</b>: logo, Instagram, WhatsApp, domain.</span></div>
+    <div class="n-item"><span class="n-num">+</span><span><b>Reminder set</b> (state frame): the reminder card after a successful submit. It confirms the date and number and offers change and cancel.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Motion and interaction</div><div class="n-list">
+    <div class="n-item"><span class="n-chip">M02</span><span><b>Window opens</b>: on load the Window scales .94 → 1 and the photo settles 1.08 → 1 (1200 ms); the coordinates caption fades in after.<span class="n-ref">Our own; replaces Lula’s static hero</span></span></div>
+    <div class="n-item"><span class="n-chip">M10</span><span><b>The Fade, live</b>: here it shows the real day, not a scroll scrub. On load the bar fills to today and the tag’s ink lines fade to match (900 ms, once). Day 01 shown.<span class="n-ref">Our own, the renewal story</span></span></div>
+    <div class="n-item"><span class="n-chip">M09</span><span><b>Line draw</b>: the box-to-caddy diagram draws its folds one after another as it enters (900 ms each).<span class="n-ref">Our own, from the icon construction</span></span></div>
+    <div class="n-item"><span class="n-num">—</span><span><b>Reminder submit</b>: the button shows a spinner (max 1 s), then the card crossfades to “Reminder set” (300 ms) and the page does not jump. On error, an inline line under the field: “That number doesn’t look right. Check the country code.”</span></div>
+    <div class="n-item"><span class="n-chip">M18</span><span><b>Country code</b>: the +971 chip opens a bottom sheet (400 ms) on mobile, a dropdown on desktop; +966 is listed for Saudi Arabia from April 2027.<span class="n-ref">Lula: Horizon dialog</span></span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Everything else fades up 24 px (600 ms). No momentum, no parallax: this page should load fast on hotel Wi-Fi and in a bathroom.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Desktop</div><div class="n-list">
+    <div class="n-item"><span class="n-num">—</span><span>For people who type the URL from the card or open a shared link. Header with no active item; announcement dropped to match mobile.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Left (6 cols): Window on a Steam stage, receipt, gift card. Right (5 cols): tracker, reminder, afterlife. The columns end level, so nothing needs to stick.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Content and data</div><div class="n-list">
+    <div class="n-item"><span class="n-num">—</span><span>The QR on each tag opens /batch/{code}. It identifies a batch, not a single loofah, so the day count is kept per device from the first scan, or from the delivery date when the visitor is signed in.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Receipt rows come from one batch record (Shopify metaobject): field, coordinates, planted, harvested, drying dates, grade and density, graded by, packed date and place, soap batch. Missing rows hide rather than show blanks.</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Signed-in renewers see the “Reminder set” state in place of the form (their day-50 message is already scheduled).</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>WhatsApp via Bitespeed: one opt-in template on day 50. One-time buyers get the renewal offer in that message; renewers get “Your tag is fading. A fresh one ships Tuesday.”</span></div>
+    <div class="n-item"><span class="n-num">—</span><span>Two-minute scrub copy is the ritual card’s; step 04 drops “Dry fibre lasts longer.” because the tip just above already says it.</span></div>
+  </div></div>
+
+  <div class="n-block"><div class="n-h">Open questions</div><div class="n-list">
+    <div class="n-item"><span class="n-flag">Check</span><span>Real batch data feed: who fills the record, when, and what the page shows for an unknown or mistyped code.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>“Graded by [initials]”: whose initials, and their consent to appear.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>WhatsApp opt-in wording and consent record (UAE PDPL; Saudi PDPL from April 2027). Does “Nothing else” hold if the day-50 message also offers a reorder? The confirmation says so plainly.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Day 01 source for gift recipients, who may scan weeks after delivery: first scan, or ask “When did you start using it?”</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Packed in Dubai or in Egypt? The receipt says “Packed · October 2026, Dubai”; Our farm step 07 says packed, then shipped from Egypt.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Afterlife claims (“composts”, “bury it”) need the regulatory adviser before launch.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>Afterlife icons: the spec suggested “water?” for step 02. Used fibre (a slice) for “cut”, compost for “compost or bury” and box for the caddy.</span></div>
+    <div class="n-item"><span class="n-flag">Check</span><span>No Ruqaa word on this page, to keep it a utility page. Confirm that is acceptable.</span></div>
+  </div></div>
+</section>
+
+</body></html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop all — Al Reef &amp; Laurel</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .shop-hero { position: relative; height: 400px; overflow: hidden; color: var(--on-dark); }
+  .shop-hero img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; object-position: 60% 42%; }
+  .shop-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18, 20, 16, .55), rgba(18, 20, 16, .05) 60%); }
+  .shop-body { padding-top: var(--sec-s); }
+  .shop-grid2 .card { transition: opacity var(--t-ui) var(--ease), transform var(--t-ui) var(--ease); }
+  .no-renew .card-price .renew { display: none; }
+  .toggle { display: inline-flex; align-items: center; gap: var(--s-3); white-space: nowrap; }
+  .toggle .sw { width: 40px; height: 24px; border-radius: var(--r-pill); background: var(--rule); position: relative; transition: background var(--t-fast); flex: none; }
+  .toggle .sw::after { content: ""; position: absolute; left: 4px; top: 4px; width: 16px; height: 16px; border-radius: var(--r-round); background: var(--cream); transition: transform var(--t-fast) var(--ease); }
+  .toggle[aria-pressed="true"] .sw { background: var(--laurel); }
+  .toggle[aria-pressed="true"] .sw::after { transform: translateX(16px); }
+  @media (max-width: 860px) { .shop-hero { height: 320px; } .toggle span:first-child { display: none; } }
+</style>
+</head>
+<body data-page="shop">
+<main>
+  <section class="shop-hero"><img data-parallax="5" src="assets/img/ref/sink-yellow.jpg" alt="A brass tap and amber bottles against dark green tiles" style="object-position:50% 28%"><span class="h1" data-split style="position:absolute;z-index:2;left:var(--gutter);bottom:var(--s-7);color:var(--on-dark)">Grown, <em>not made.</em></span></section>
+
+  <section class="wrap shop-body">
+    <div class="shop-layout">
+      <nav class="side" aria-label="Categories">
+        <span class="side-h">Shop</span>
+        <button class="cat on" data-f="all">All <sup class="num">12</sup></button>
+        <button class="cat" data-f="rituals">Rituals <sup class="num">5</sup></button>
+        <button class="cat" data-f="loofahs">Loofahs <sup class="num">3</sup></button>
+        <button class="cat" data-f="soap">Sabon Ghar <sup class="num">3</sup></button>
+        <button class="cat" data-f="gifts">Gifts <sup class="num">1</sup></button>
+        <div class="sep"></div>
+        <a class="cat-link small soft" href="renewal.html" style="padding:var(--s-2) 0 var(--s-2) var(--s-3)">How renewal works</a>
+        <div class="sep"></div>
+        <button class="toggle caps-s" aria-pressed="true" data-renew style="padding-left:var(--s-3)"><span>Renewal prices</span><span class="sw"></span></button>
+      </nav>
+      <div class="shop-grid2" data-grid></div>
+    </div>
+
+  </section>
+
+  <section class="section-s"></section>
+</main>
+<script src="assets/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  const INTRO = {
+    all: ["Shop all", "Loofahs grown in the Nile Delta, Sabon Ghar cured in the Levant, and rituals that put them together. Every loofah renews every 60 days."],
+    rituals: ["Rituals", "Complete sets that renew together: everyone’s own loofah, the right soap, and a box that becomes a caddy."],
+    loofahs: ["Loofahs", "Sun-dried for 21 days at Field 7 and graded before they are cut. Each wears a cotton tag that fades by day 60."],
+    soap: ["Sabon Ghar", "Olive and laurel oil soap from the Levant, cured slowly. Laurel 16 for every day; Laurel 30 for oily skin."],
+    gifts: ["Gifts", "Wrapped in tissue and twine with a ritual card, delivered on the date you choose."],
+  };
+  const grid = document.querySelector("[data-grid]");
+  const cards = window.PRODUCTS.map((p, i) => window.cardHTML(p, (i % 3) * 0.08));
+  const intro = `<div class="intro-cell" data-reveal><h1 class="h1" data-intro-h>Shop all</h1><p class="lede soft" data-intro-p style="margin-top:var(--gap-text);max-width:520px"></p><p class="caps-s soft" style="margin-top:var(--gap-text)"><span class="num" data-count>12</span> pieces · free UAE delivery</p></div>`;
+  const edit = `<a class="edit-cell" href="notes.html" data-reveal data-edit><img src="assets/img/ref/loofah-tap.jpg" alt="A round loofah hung to dry from a wall tap" style="--fx:40%;--fy:55%" loading="lazy"><span class="cap"><span class="caps-s">The ritual</span><br><span class="h4" style="color:inherit">Hang it to dry. Dry fibre lasts longer.</span></span></a>`;
+  const build = `<a class="edit-cell build-cell bg-laurel tiles" href="product.html?p=the-duo" data-reveal data-edit style="display:flex;flex-direction:column;justify-content:center;padding:var(--s-8);color:var(--on-dark)"><span class="caps">Build yours</span><span class="h2 flush" style="color:var(--on-dark);margin-top:var(--gap-label)">Your own mix of<br><em>loofahs and soap.</em></span><span class="body" style="color:var(--on-dark-soft);margin-top:var(--gap-text);max-width:420px">Pick a fibre, a soap and a cycle. The saving grows with every piece, up to 28%.</span><span class="btn btn-light" style="margin-top:var(--gap-actions);align-self:flex-start">Start with the Duo</span></a>`;
+  grid.innerHTML = cards[0] + intro + cards.slice(1, 7).join("") + edit + cards.slice(7).join("") + build;
+  window.observeReveal(grid);
+  const cats = [...document.querySelectorAll(".side .cat")];
+  const apply = (f) => {
+    cats.forEach((t) => t.classList.toggle("on", t.dataset.f === f));
+    document.querySelector("[data-intro-h]").textContent = INTRO[f][0];
+    document.querySelector("[data-intro-p]").textContent = INTRO[f][1];
+    grid.style.opacity = 0; grid.style.transform = "translateY(10px)"; grid.style.transition = "opacity var(--t-fast), transform var(--t-fast)";
+    setTimeout(() => {
+      let n = 0;
+      grid.querySelectorAll(".card").forEach((c) => { const show = f === "all" || c.dataset.type === f; c.classList.toggle("out", !show); if (show) { n++; c.classList.add("is-in"); } });
+      grid.querySelectorAll("[data-edit]").forEach((e) => e.classList.toggle("out", f !== "all"));
+      // keep the intro next to the first visible card
+      const first = grid.querySelector(".card:not(.out)"); const ic = grid.querySelector(".intro-cell"); if (first) first.after(ic);
+      document.querySelector("[data-count]").textContent = n;
+      grid.style.transition = "opacity var(--t-ui) var(--ease), transform var(--t-ui) var(--ease)"; grid.style.opacity = 1; grid.style.transform = "none";
+    }, 300);
+  };
+  apply("all");
+  cats.forEach((t) => t.addEventListener("click", () => { apply(t.dataset.f); history.replaceState(null, "", t.dataset.f === "all" ? "shop.html" : "#" + t.dataset.f); }));
+  const h = location.hash.slice(1); if (INTRO[h]) apply(h);
+  document.querySelector("[data-renew]").addEventListener("click", (e) => { const b = e.currentTarget; const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); grid.classList.toggle("no-renew", !on); });
+</script>
+</body>
+</html>
