@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al Reef &amp; Laurel — Project</title>
+<style>
+  @font-face { font-family: "Literata"; src: url(prototype/assets/fonts/literata.woff2) format("woff2"); font-weight: 200 900; font-display: swap; }
+  @font-face { font-family: "Inter"; src: url(prototype/assets/fonts/inter.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root {
+    --cream: #FBF5EC; --linen: #EEE4D8; --laurel: #293329; --ink: #3E443D;
+    --soft: #595E54; --earth: #6A2E0C; --rule: rgba(41, 51, 41, .18);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font: 16px/1.5 "Inter", "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 72px 16px; }
+  h1 { font: 400 36px/1.15 "Literata", Georgia, serif; color: var(--laurel); margin: 0 0 8px; }
+  .lede { color: var(--soft); margin: 0 0 40px; }
+  ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  li { border-bottom: 1px solid var(--rule); }
+  a { display: block; padding: 20px 0; color: inherit; text-decoration: none; }
+  a:hover .name, a:focus-visible .name { color: var(--earth); }
+  .name { font: 400 22px/1.3 "Literata", Georgia, serif; color: var(--laurel); }
+  .name::after { content: " →"; }
+  .desc { display: block; color: var(--soft); font-size: 14px; margin-top: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Al Reef &amp; Laurel</h1>
+  <p class="lede">Website and brand work in progress.</p>
+  <ul>
+    <li><a href="prototype/index.html"><span class="name">Website prototype</span><span class="desc">Round 2, the current version. Home, Shop, Product, Renewal, Our farm, Field notes.</span></a></li>
+    <li><a href="wireframes/index.html"><span class="name">Wireframes</span><span class="desc">Page layouts for the site.</span></a></li>
+    <li><a href="brand-guidelines-v2-source/guide.html"><span class="name">Brand guidelines V2</span><span class="desc">Logo, colour, type and imagery.</span></a></li>
+    <li><a href="prototype-round1-kasdikos/index.html"><span class="name">Website prototype, Round 1</span><span class="desc">Earlier version, kept for comparison.</span></a></li>
+  </ul>
+</main>
+</body>
+</html>
