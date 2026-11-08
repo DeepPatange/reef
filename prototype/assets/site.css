@@ -356,6 +356,13 @@ a:hover .arrow, button:hover .arrow { transform: translateX(5px); }
 .qty button:hover { background: rgba(41, 51, 41, .15); }
 .qty span { min-width: var(--s-6); text-align: center; font: 400 var(--fs-16)/1 var(--sans); font-variant-numeric: tabular-nums; }
 .empty { padding: var(--s-9) 0; text-align: center; }
+/* cart: how the subscription works, shown only when the bag holds one */
+.bag-sub { margin-bottom: var(--s-4); padding: var(--s-4); background: var(--linen); border: 1px solid var(--rule-soft); }
+.bag-sub[hidden] { display: none; }
+.bag-sub .small { margin-top: var(--s-2); max-width: none; }
+.bag-sub .links { display: flex; gap: var(--s-5); }
+.bag-sub .links a { color: var(--laurel); text-decoration: underline; text-underline-offset: 3px; }
+.line-note { font-style: italic; margin-top: var(--s-1); }
 .totals { display: flex; justify-content: space-between; margin-bottom: var(--s-4); }
 .menu-links > a { display: flex; justify-content: space-between; align-items: center; padding: var(--s-4) 0; border-bottom: 1px solid var(--rule-soft); font: 300 var(--fs-32)/1.2 var(--serif); letter-spacing: -.02em; color: var(--laurel); }
 .menu-links .stack > * + * { margin-top: 0; }

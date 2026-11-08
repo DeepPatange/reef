@@ -160,7 +160,7 @@
 <script>
   // page data: categories, sets, singles, ticker, tag monogram (runs before site.js so reveals pick them up)
   const P = (s) => window.findProduct(s);
-  const from = (type) => Math.min(...window.PRODUCTS.filter((p) => p.type === type).map((p) => p.price));
+  const from = (type) => Math.min(...window.PRODUCTS.filter((p) => p.type === type || (type === "gifts" && p.type === "rituals")).map((p) => p.price)); // any set can be a gift
 
   // shop by category: photo, name, lowest one-time price
   const CATS = [

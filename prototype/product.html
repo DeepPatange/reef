@@ -48,6 +48,28 @@
   .zoom.on img { transform: none; }
   .story-wrap { margin-top: var(--sec); border-top: 1px solid var(--laurel); padding-top: var(--s-8); }
   .stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-8) var(--gap-grid); }
+  /* gift package: a checkbox row like the purchase options, square box instead of a radio */
+  .gift { margin-top: var(--s-6); }
+  .gift-opt { position: relative; }
+  .gift-opt .box { width: 18px; height: 18px; border: 1px solid var(--laurel); flex: none; margin-top: 2px; position: relative; transition: background var(--t-fast); }
+  .gift-opt .box::after { content: ""; position: absolute; left: 5px; top: 1px; width: 5px; height: 10px; border-right: 1.5px solid var(--on-dark); border-bottom: 1.5px solid var(--on-dark); transform: rotate(45deg) scale(0); transition: transform var(--t-fast) var(--ease); }
+  .gift-opt.on .box { background: var(--laurel); }
+  .gift-opt.on .box::after { transform: rotate(45deg) scale(1); }
+  .gift-opt:has(input:focus-visible) { outline: 2px solid var(--focus); outline-offset: 3px; }
+  .gift-note { margin-top: var(--s-2); display: grid; gap: var(--s-1); }
+  .gift-note[hidden] { display: none; }
+  .gift-note textarea { width: 100%; resize: vertical; padding: var(--s-3) var(--s-4); border: 1px solid var(--rule); border-radius: var(--r-box); background: var(--cream); font: 300 var(--fs-16)/1.5 var(--sans); color: var(--laurel); }
+  .gift-note textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--laurel); }
+  .gift-note .small { justify-self: end; }
+  /* how subscription works, beside the add button */
+  .how-sub { margin-top: var(--s-5); padding: var(--s-5); background: var(--cream); border: 1px solid var(--rule-soft); }
+  .how-sub[hidden] { display: none; }
+  .how-sub ol { list-style: none; margin: var(--s-4) 0; display: grid; gap: var(--s-3); }
+  .how-sub li { display: grid; grid-template-columns: var(--s-6) minmax(0, 1fr); gap: var(--s-3); align-items: baseline; }
+  .how-sub .n { font: 300 var(--fs-24)/1 var(--serif); color: var(--clay); }
+  .how-sub .small { color: var(--ink); max-width: none; }
+  .how-sub .small b { display: block; font-weight: var(--bold); color: var(--laurel); }
+  .how-sub a:not(.link) { color: var(--laurel); text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 1180px) { .pdp { gap: var(--s-8); } }
   @media (max-width: 860px) {
     .pdp { grid-template-columns: minmax(0, 1fr); }
@@ -90,12 +112,12 @@
 
       <div data-reveal data-modes>
         <div class="row-label"><span class="caps-s">How would you like it?</span></div>
-        <label class="opt on" data-mode="renew"><span class="radio"></span><span><span class="t">Renew every 60 days <span class="save">Save 20%</span></span><span class="d">Skip, swap or pause any time. One WhatsApp on day 50.</span></span><span class="p num" data-p-renew></span></label>
-        <label class="opt" data-mode="once"><span class="radio"></span><span><span class="t">One-time purchase</span><span class="d">The day-50 reminder still offers a refill.</span></span><span class="p num" data-p-once></span></label>
+        <label class="opt on" data-mode="renew"><span class="radio"></span><span><span class="t">Subscribe and save <span class="save" data-pct>Save 20%</span></span><span class="d" data-renew-d>A fresh one every 60 days. Skip, pause or cancel any time.</span></span><span class="p num" data-p-renew></span></label>
+        <label class="opt" data-mode="once"><span class="radio"></span><span><span class="t">One-time purchase</span><span class="d">Buy once, no subscription.</span></span><span class="p num" data-p-once></span></label>
       </div>
 
       <div data-reveal data-cycle-wrap>
-        <div class="row-label"><span class="caps-s">How often</span><span class="small soft">60 matches the tag</span></div>
+        <div class="row-label"><span class="caps-s">Delivered every</span><span class="small soft">60 matches the tag</span></div>
         <div class="chips" data-cycle><button class="chip" data-v="30">Every 30 days</button><button class="chip on" data-v="60">Every 60 days</button><button class="chip" data-v="90">Every 90 days</button></div>
       </div>
 
@@ -104,15 +126,32 @@
         <div class="chips" data-fibre><button class="chip on" data-v="Gentle">Gentle</button><button class="chip" data-v="Deep">Deep</button></div>
       </div>
 
+      <!-- gift package: any piece can go out wrapped, with a note on the ritual card -->
+      <div data-reveal class="gift">
+        <label class="opt gift-opt"><input class="sr" type="checkbox" data-gift><span class="box"></span><span><span class="t">Send it as a gift</span><span class="d" data-gift-d>Wrapped in tissue and twine, with your note on the ritual card. No prices inside.</span></span></label>
+        <div class="gift-note" data-gift-note hidden><label class="sr" for="gift-msg">Gift note</label><textarea id="gift-msg" maxlength="200" rows="3" placeholder="Your note, printed on the ritual card"></textarea><span class="small soft num" data-gift-count>0 / 200</span></div>
+      </div>
+
       <div class="add-row" data-reveal>
         <div class="qty"><button data-qd="-1" aria-label="Less">−</button><span class="num" data-qty>1</span><button data-qd="1" aria-label="More">+</button></div>
         <button class="btn btn-clay" data-add-main>Add to bag · <span class="num" data-btn-price>AED 68</span></button>
       </div>
 
-      <p class="terms" data-terms data-reveal>Renewal is a recurring purchase. By adding it you agree to the renewal terms and authorise a charge on each ship date until you pause or cancel, which you can do any time before the next one.</p>
+      <!-- how subscription works, right where people decide (client: explain it at the PDP and cart, not in the header) -->
+      <div class="how-sub" data-how data-reveal>
+        <span class="label">How subscription works</span>
+        <ol>
+          <li><span class="n">1</span><p class="small"><b>Now</b>Your first delivery ships, at <span class="num" data-how-price>AED 68</span> instead of <span class="num" data-how-was>AED 85</span>.</p></li>
+          <li><span class="n">2</span><p class="small"><b data-how-every>Every 60 days</b>A fresh one follows. We WhatsApp you ten days before, and you’re only charged when it ships.</p></li>
+          <li><span class="n">3</span><p class="small"><b>Any time</b>Skip, change, pause or cancel in <a href="account.html">My subscription</a>.</p></li>
+        </ol>
+        <a class="link caps" href="renewal.html">More about subscribing</a>
+      </div>
+
+      <p class="terms" data-terms data-reveal>A subscription is a recurring purchase. By adding it you agree to the subscription terms and authorise a charge on each ship date until you pause or cancel, which you can do any time before the next one.</p>
 
       <div class="facts" data-reveal>
-        <div><dl><dt>Origin</dt><dd>Field 7, Damanhour, Nile Delta</dd><dt>Grade</dt><dd data-grade>A · 58 fibres per cm²</dd><dt>Renews</dt><dd>When the tag fades, by day 60</dd></dl></div>
+        <div><dl><dt>Origin</dt><dd>Field 7, Damanhour, Nile Delta</dd><dt>Grade</dt><dd data-grade>A · 58 fibres per cm²</dd><dt>Lasts</dt><dd>About 60 days, until the tag fades</dd></dl></div>
         <ul class="checks"><li>Grown in Egypt</li><li>Sun-dried, never bleached</li><li>Plastic-free packaging</li><li>Compostable loofah</li><li>Free UAE delivery</li></ul>
       </div>
 
@@ -122,7 +161,7 @@
           <dt>Species</dt><dd>Luffa aegyptiaca</dd><dt>Origin</dt><dd>Field 7, Damanhour, Nile Delta, Egypt</dd><dt>Drying</dt><dd>21 days in the sun, never bleached</dd>
           <dt>Grade</dt><dd>A · 58 fibres per cm²</dd><dt>Soap</dt><dd>Olive oil and laurel oil, cured in the Levant</dd><dt>Afterlife</dt><dd>The loofah composts; the box becomes a caddy</dd></dl></div></div></details>
         <details class="acc"><summary>How to use <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Wet the loofah for 30 seconds. Work the soap into the fibre, not onto your skin. Small circles for two minutes, one area at a time. Hang it by the tag to dry.</div></div></details>
-        <details class="acc"><summary>Delivery &amp; returns <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Free delivery across the UAE in 2 working days. Saudi Arabia from April 2027. Unopened sets can be returned within 14 days.</div></div></details>
+        <details class="acc"><summary>Delivery &amp; returns <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Free delivery across the UAE with DHL Express, in 2 working days. Saudi Arabia from April 2027. Unopened sets can be returned within 14 days.</div></div></details>
       </div>
 
       <div class="set-rows" data-reveal><span class="label">Complete the set</span><p class="small soft" data-set-note style="margin-bottom:var(--s-2)"></p><div data-set></div></div>
@@ -214,19 +253,30 @@
     $("[data-was]").textContent = mode === "renew" ? window.AED(p.price) : (p.value && p.value > p.price ? window.AED(p.value) : "");
     $("[data-per]").textContent = mode === "renew" ? "per delivery" : (p.from ? "from" : "");
     $("[data-qty]").textContent = qty;
-    $("[data-sticky-mode]").textContent = mode === "renew" ? `Renew every ${cycle} days` : "One-time";
+    $("[data-sticky-mode]").textContent = mode === "renew" ? `Subscription · every ${cycle} days` : "One-time";
     $("[data-sticky-price]").textContent = window.AED(unit() * qty);
-    $$(".opt").forEach((o) => o.classList.toggle("on", o.dataset.mode === mode));
+    $$(".opt[data-mode]").forEach((o) => o.classList.toggle("on", o.dataset.mode === mode));
     const cw = $("[data-cycle-wrap]"); if (cw) { cw.style.opacity = mode === "renew" ? 1 : .35; cw.style.pointerEvents = mode === "renew" ? "" : "none"; }
+    const how = $("[data-how]"); if (how) { how.hidden = mode !== "renew"; $("[data-how-every]").textContent = `Every ${cycle} days`; }
+    const rd = $("[data-renew-d]"); if (rd) rd.textContent = `A fresh one every ${cycle} days. Skip, pause or cancel any time.`;
+    $("[data-gift-d]").textContent = "Wrapped in tissue and twine, with your note on the ritual card. No prices inside." + (mode === "renew" ? " Your first delivery arrives wrapped." : "");
     renderSet();
   };
-  if (p.renew) { $("[data-p-renew]").textContent = window.AED(p.renew); $("[data-p-once]").textContent = window.AED(p.price); }
-  $$(".opt").forEach((o) => o.addEventListener("click", (e) => { e.preventDefault(); mode = o.dataset.mode; update(); }));
+  if (p.renew) { $("[data-p-renew]").textContent = window.AED(p.renew); $("[data-p-once]").textContent = window.AED(p.price);
+    $("[data-pct]").textContent = `Save ${Math.round((1 - p.renew / p.price) * 100)}%`; $("[data-how-price]").textContent = window.AED(p.renew); $("[data-how-was]").textContent = window.AED(p.price); }
+  else $("[data-how]").remove();
+  // gift package: tick to wrap it and add a note for the ritual card
+  const giftBox = $("[data-gift]"), giftNote = $("#gift-msg");
+  giftBox.addEventListener("change", () => { giftBox.closest(".opt").classList.toggle("on", giftBox.checked); $("[data-gift-note]").hidden = !giftBox.checked; if (giftBox.checked) giftNote.focus(); });
+  giftNote.addEventListener("input", () => ($("[data-gift-count]").textContent = `${giftNote.value.length} / 200`));
+  const variantOf = () => { const fib = $("[data-fibre] .chip.on"); return [fib ? fib.dataset.v : "", giftBox.checked ? "Gift wrapped" : ""].filter(Boolean).join(" · "); };
+  const giftMsg = () => (giftBox.checked ? giftNote.value.trim() : "");
+  $$(".opt[data-mode]").forEach((o) => o.addEventListener("click", (e) => { e.preventDefault(); mode = o.dataset.mode; update(); }));
   $$("[data-cycle] .chip").forEach((c) => c.addEventListener("click", () => { cycle = +c.dataset.v; $$("[data-cycle] .chip").forEach((x) => x.classList.toggle("on", x === c)); update(); }));
   $$("[data-qd]").forEach((b) => b.addEventListener("click", () => { qty = Math.max(1, qty + +b.dataset.qd); update(); }));
   $$("[data-add-main]").forEach((b) => b.addEventListener("click", () => {
-    const fib = $("[data-fibre] .chip.on"); const lbl = b.innerHTML; b.textContent = "Added";
-    window.addToBag(p.slug, { mode, qty, cycle, variant: fib ? fib.dataset.v : "" }); setTimeout(() => (b.innerHTML = lbl, update()), 1400); }));
+    const lbl = b.innerHTML; b.textContent = "Added";
+    window.addToBag(p.slug, { mode, qty, cycle, variant: variantOf(), note: giftMsg() }); setTimeout(() => (b.innerHTML = lbl, update()), 1400); }));
   // complete the set: extras augment the product on this page, they don't replace it.
   // "Add to set" puts this product (with the options chosen above) in the bag if it isn't there yet, plus the extra.
   // Extras follow the set: subscribed sets take extras on the same cycle; one-time sets take them one-time.
@@ -242,8 +292,8 @@
   }
   $("[data-set]").addEventListener("click", (e) => {
     const b = e.target.closest("[data-set-add]"); if (!b) return;
-    const q = window.findProduct(b.dataset.setAdd), fib = $("[data-fibre] .chip.on"), variant = fib ? fib.dataset.v : "";
-    if (!window.bagHas(p.slug, mode, variant)) window.addToBag(p.slug, { mode, qty, cycle, variant }); // the set you're looking at
+    const q = window.findProduct(b.dataset.setAdd), variant = variantOf();
+    if (!window.bagHas(p.slug, mode, variant)) window.addToBag(p.slug, { mode, qty, cycle, variant, note: giftMsg() }); // the set you're looking at
     window.addToBag(q.slug, { mode: extraMode(q), cycle, variant: `with ${p.name}` });                   // plus the extra
     b.textContent = "Added"; setTimeout(() => (b.textContent = "Add to set"), 1400);
   });

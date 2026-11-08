@@ -79,9 +79,10 @@
       <div class="ship-bar"><span class="small" data-ship>Free UAE delivery on every ritual</span><div class="bar"><i style="width:0"></i></div></div>
       <div class="drawer-body" data-lines></div>
       <div class="drawer-foot">
+        <div class="bag-sub" data-bag-sub hidden><span class="label">How your subscription works</span><p class="small soft" data-bag-sub-t></p><p class="small links"><a href="renewal.html">How it works</a><a href="account.html">My subscription</a></p></div>
         <div class="totals"><span class="caps">Subtotal</span><span class="num" data-sub>AED 0</span></div>
         <button class="btn btn-clay btn-block" onclick="window.toast('Checkout is not part of this prototype')">Checkout</button>
-        <p class="small soft center" style="margin-top:var(--s-3)">Renewals ship every 60 days. Skip, swap or pause any time.</p>
+        <p class="small soft center" style="margin-top:var(--s-3)" data-foot-note>Free UAE delivery with DHL Express.</p>
       </div>
     </aside>
     <aside class="drawer left" id="menu" aria-label="Menu" aria-hidden="true">
@@ -124,11 +125,16 @@
     $("[data-bag-n]").textContent = `(${n})`; $("[data-sub]").textContent = AED(sub);
     $(".ship-bar i").style.width = n ? "100%" : "0";
     $("[data-ship]").textContent = n ? "Free UAE delivery unlocked" : "Free UAE delivery on every ritual";
+    // explain the subscription in the cart whenever there is one (client: at the PDP and cart, not in the header)
+    const cycles = [...new Set(bag.filter((l) => l.mode === "renew").map((l) => l.cycle || 60))].sort((a, b) => a - b);
+    $("[data-bag-sub]").hidden = !cycles.length;
+    if (cycles.length) $("[data-bag-sub-t]").textContent = `Ships every ${cycles.join(" and ")} days. We WhatsApp you ten days before each delivery, and you’re only charged when it ships. Skip, pause or cancel any time.`;
+    $("[data-foot-note]").textContent = cycles.length ? "Today you only pay for the first delivery." : "Free UAE delivery with DHL Express.";
     const box = $("[data-lines]");
     if (!bag.length) { box.innerHTML = `<div class="empty"><div style="width:var(--s-9);margin:0 auto var(--s-4);opacity:.5">${MONO}</div><p class="h4">Your bag is empty</p><p class="small soft" style="margin:var(--s-2) auto var(--s-5)">Start with the Duo: a loofah and a bar of laurel soap.</p><a class="btn" href="product.html?p=the-duo">Shop the Duo</a></div>`; return; }
     box.innerHTML = bag.map((l, i) => { const p = window.findProduct(l.slug); const im = p.images[0];
       return `<div class="line"><div class="thumb"><img src="${im.sm}" style="${imgStyle(im)}" alt=""></div>
-        <div><div class="h4">${p.name}</div><div class="small soft">${l.mode === "renew" ? "Renews every " + (l.cycle || 60) + " days" : "One-time"}${l.variant ? " · " + l.variant : ""}</div>
+        <div><div class="h4">${p.name}</div><div class="small soft">${l.mode === "renew" ? "Subscription · every " + (l.cycle || 60) + " days" : "One-time"}${l.variant ? " · " + l.variant : ""}</div>${l.note ? `<div class="small soft line-note">“${l.note.replace(/[<>&"]/g, "")}”</div>` : ""}
         <div class="qty"><button data-q="${i}" data-d="-1" aria-label="Less">−</button><span class="num">${l.qty}</span><button data-q="${i}" data-d="1" aria-label="More">+</button></div></div>
         <div class="num" style="text-align:right">${AED(l.price * l.qty)}<br><button class="small soft" data-rm="${i}" style="margin-top:var(--s-6);text-decoration:underline">Remove</button></div></div>`; }).join("");
   };
@@ -137,8 +143,9 @@
     const p = window.findProduct(slug);
     const mode = opts.mode || (p.renew ? "renew" : "once");
     const price = mode === "renew" && p.renew ? p.renew : p.price;
-    const ex = bag.find((l) => l.slug === slug && l.mode === mode && l.variant === opts.variant);
-    if (ex) ex.qty += opts.qty || 1; else bag.push({ slug, mode, price, qty: opts.qty || 1, variant: opts.variant || "", cycle: opts.cycle || 60 });
+    const ex = bag.find((l) => l.slug === slug && l.mode === mode && (l.variant || "") === (opts.variant || ""));
+    if (ex) { ex.qty += opts.qty || 1; if (opts.note) ex.note = opts.note; }
+    else bag.push({ slug, mode, price, qty: opts.qty || 1, variant: opts.variant || "", cycle: opts.cycle || 60, note: opts.note || "" });
     save(); renderBag();
     const c = $(".bag-count"); c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump");
     setTimeout(() => open("bag"), 380);

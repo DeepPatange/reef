@@ -36,7 +36,7 @@
         <div class="sep"></div>
         <a class="cat-link small soft" href="renewal.html" style="padding:var(--s-2) 0 var(--s-2) var(--s-3)">How subscription works</a>
         <div class="sep"></div>
-        <button class="toggle caps-s" aria-pressed="true" data-renew style="padding-left:var(--s-3)"><span>Renewal prices</span><span class="sw"></span></button>
+        <button class="toggle caps-s" aria-pressed="true" data-renew style="padding-left:var(--s-3)"><span>Subscriber prices</span><span class="sw"></span></button>
       </nav>
       <div class="shop-grid2" data-grid></div>
     </div>
@@ -53,7 +53,7 @@
     rituals: ["Sets", "Complete sets that renew together: everyone’s own loofah, the right soap, and a box that becomes a caddy."],
     loofahs: ["Loofahs", "Sun-dried for 21 days at Field 7 and graded before they are cut. Each wears a cotton tag that fades by day 60."],
     soap: ["Sabon Ghar", "Olive and laurel oil soap from the Levant, cured slowly. Laurel 16 for every day; Laurel 30 for oily skin."],
-    gifts: ["Gifts", "Wrapped in tissue and twine with a ritual card, delivered on the date you choose."],
+    gifts: ["Gifts", "The Hammam Chest, or any set sent as a gift: wrapped in tissue and twine, with your note on the ritual card. No prices inside."],
   };
   const grid = document.querySelector("[data-grid]");
   const cards = window.PRODUCTS.map((p, i) => window.cardHTML(p, (i % 3) * 0.08));
@@ -70,7 +70,7 @@
     grid.style.opacity = 0; grid.style.transform = "translateY(10px)"; grid.style.transition = "opacity var(--t-fast), transform var(--t-fast)";
     setTimeout(() => {
       let n = 0;
-      grid.querySelectorAll(".card").forEach((c) => { const show = f === "all" || c.dataset.type === f; c.classList.toggle("out", !show); if (show) { n++; c.classList.add("is-in"); } });
+      grid.querySelectorAll(".card").forEach((c) => { const show = f === "all" || c.dataset.type === f || (f === "gifts" && c.dataset.type === "rituals"); c.classList.toggle("out", !show); if (show) { n++; c.classList.add("is-in"); } });
       grid.querySelectorAll("[data-edit]").forEach((e) => e.classList.toggle("out", f !== "all"));
       // keep the intro next to the first visible card
       const first = grid.querySelector(".card:not(.out)"); const ic = grid.querySelector(".intro-cell"); if (first) first.after(ic);
@@ -78,6 +78,8 @@
       grid.style.transition = "opacity var(--t-ui) var(--ease), transform var(--t-ui) var(--ease)"; grid.style.opacity = 1; grid.style.transform = "none";
     }, 300);
   };
+  // sidebar counts from the catalogue (gifts include the sets)
+  cats.forEach((t) => { const f = t.dataset.f; t.querySelector("sup").textContent = window.PRODUCTS.filter((p) => f === "all" || p.type === f || (f === "gifts" && p.type === "rituals")).length; });
   apply("all");
   cats.forEach((t) => t.addEventListener("click", () => { apply(t.dataset.f); history.replaceState(null, "", t.dataset.f === "all" ? "shop.html" : "#" + t.dataset.f); window.syncNav(); }));
   // header and footer category links while already on the shop: filter in place

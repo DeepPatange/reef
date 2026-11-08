@@ -8,6 +8,13 @@ Open `index.html` in Chrome or Safari. No server or install needed.
 - Header: Shop all · Sets · Loofahs · Soap · Gifts · Our Farm · [My subscription]. Category links open the shop already filtered. Renewal left the header; it's now explained on the homepage, with a link to its page from there and from the footer.
 - Homepage order: hero (Shop the sets) → shop by category → sets you can subscribe to or buy once right from the card → how subscription works (fading tag) → singles → gifts and farm tiles → values.
 - Customer-facing wording is "Subscribe and save"; "renews every 60 days" explains how it works. The renewal page itself is unchanged.
+- **Subscription explained where people decide**, not in the header:
+  - Product page: "Subscribe and save" with the real saving %, a "How subscription works" box under Add to bag that follows the chosen schedule, and subscription terms.
+  - Bag: "How your subscription works" appears whenever the bag holds a subscription, and lines read "Subscription · every 60 days".
+  - Field notes: a linked "Why every 60 days" article. The renewal page now says subscription throughout.
+- **Gift package:** "Send it as a gift" on every product page, with a note for the ritual card (no prices inside). The note shows in the bag. Shop › Gifts lists every set plus the Hammam Chest. Gift wrap is not charged in the prototype.
+- **Complete the set** adds the product you're viewing plus the extra, and extras follow its subscription.
+- **DHL Express** is named in delivery info and the bag.
 - **My subscription** (`account.html`): the customer's own view, asked for in the meeting. Opens from the boxed "My subscription" button at the end of the main nav (a person icon on phones; also in the phone menu and the footer).
   - At a glance: active subscriptions, next delivery, orders so far, total saved by subscribing.
   - Subscriptions: next delivery date with a fading-tag countdown, the day-50 WhatsApp date, and delivery every 30, 60 or 90 days. Ship now, skip, pause or resume, and cancel. Cancel asks for confirmation and offers "Pause instead".
