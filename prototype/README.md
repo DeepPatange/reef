@@ -4,6 +4,18 @@ Open `index.html` in Chrome or Safari. No server or install needed.
 
 **Pages:** Home · Shop (category sidebar, renewal-price toggle) · Product (`product.html?p=the-duo`, any product slug works) · Renewal · Our farm · Field notes.
 
+**Round 3 (client feedback, Nov 2026): sales-first homepage and shop-first navigation.** Same look; only the homepage, header, menu and footer changed.
+- Header: Shop all · Sets · Loofahs · Soap · Gifts · Our Farm · [My subscription]. Category links open the shop already filtered. Renewal left the header; it's now explained on the homepage, with a link to its page from there and from the footer.
+- Homepage order: hero (Shop the sets) → shop by category → sets you can subscribe to or buy once right from the card → how subscription works (fading tag) → singles → gifts and farm tiles → values.
+- Customer-facing wording is "Subscribe and save"; "renews every 60 days" explains how it works. The renewal page itself is unchanged.
+- **My subscription** (`account.html`): the customer's own view, asked for in the meeting. Opens from the boxed "My subscription" button at the end of the main nav (a person icon on phones; also in the phone menu and the footer).
+  - At a glance: active subscriptions, next delivery, orders so far, total saved by subscribing.
+  - Subscriptions: next delivery date with a fading-tag countdown, the day-50 WhatsApp date, and delivery every 30, 60 or 90 days. Ship now, skip, pause or resume, and cancel. Cancel asks for confirmation and offers "Pause instead".
+  - Add to your next delivery: one-time extras (Laurel 16, Hammam Mitt, Guest Bar).
+  - Orders: the scheduled delivery, then past orders with DHL tracking and Buy again. Profile: details, address, card, reminders.
+  - Tabs can be linked directly: `account.html#orders`, `#profile`.
+  - Sample customer "Layla". Dates count from today, and changes are saved in the browser. "Reset sample data" puts it back.
+
 **Round 2 adds patterns from framacph.com:**
 - word links in the header (Search, Account, Bag)
 - two-up image tiles on the homepage (Renew every 60 days, Gift sets)

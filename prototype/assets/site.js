@@ -25,9 +25,12 @@
 
   /* ---------------------------------------------------------------- shared chrome */
   const page = document.body.dataset.page || "";
-  const nav = [["shop", "shop.html", "Shop"], ["renewal", "renewal.html", "Renewal"], ["farm", "farm.html", "Our Farm"], ["notes", "notes.html", "Field Notes"]];
-  const navHTML = nav.map(([k, h, t]) => `<a href="${h}"${k === page ? ' aria-current="page"' : ""}>${t}</a>`).join("");
-  const tick = ["Founding members · 25% off your first Duo", "Free UAE delivery on every ritual", "Harvest September 2026 · now shipping", "Renewed every 60 days · skip or pause any time"];
+  // shop-first navigation: categories go straight to the filtered shop; subscription lives on the homepage, PDP and footer
+  // My subscription closes the row as a boxed button: the customer's own subscription view (account.html)
+  const nav = [["shop", "shop.html", "Shop all"], ["rituals", "shop.html#rituals", "Sets"], ["loofahs", "shop.html#loofahs", "Loofahs"], ["soap", "shop.html#soap", "Soap"], ["gifts", "shop.html#gifts", "Gifts"], ["farm", "farm.html", "Our Farm"], ["account", "account.html", "My subscription"]];
+  const navKey = () => (page === "shop" ? ({ rituals: 1, loofahs: 1, soap: 1, gifts: 1 }[location.hash.slice(1)] ? location.hash.slice(1) : "shop") : page);
+  const navHTML = nav.map(([k, h, t]) => `<a href="${h}" data-k="${k}"${k === "account" ? ' class="nav-btn"' : ""}>${t}</a>`).join("");
+  const tick = ["Founding members · 25% off your first Duo", "Free UAE delivery on every order", "Subscribe and save at least 20% · skip or pause any time", "Harvest September 2026 · now shipping"];
   const tickHTML = [...tick, ...tick].map((t) => `<span>${t}</span>`).join("");
 
   document.body.insertAdjacentHTML("afterbegin", `
@@ -41,7 +44,7 @@
         </div>
         <a href="index.html" aria-label="Al Reef &amp; Laurel, home">${WM}</a>
         <div class="hdr-right">
-          <a class="txt-link" href="#" onclick="event.preventDefault();window.toast('Accounts are not part of this prototype')">Account</a>
+          <a class="icon-btn sub-icon" href="account.html" data-k="account" aria-label="My subscription">${I.user}</a>
           <button class="txt-link" data-open="bag">Bag (<span class="num" data-bag-txt>0</span>)</button>
           <button class="icon-btn bag-icon" data-open="bag" aria-label="Bag">${I.bag}<span class="bag-count num">0</span></button>
         </div>
@@ -57,9 +60,9 @@
     <footer class="site-footer" id="letters">
       <div class="wrap">
         <div class="ftr-grid">
-          <div><h5>Shop</h5><ul><li><a href="shop.html">All rituals</a></li><li><a href="product.html?p=the-duo">The Duo</a></li><li><a href="shop.html#loofahs">Loofahs</a></li><li><a href="shop.html#soap">Sabon Ghar</a></li><li><a href="shop.html#gifts">Gifts</a></li></ul></div>
-          <div><h5>Learn</h5><ul><li><a href="farm.html">Our farm</a></li><li><a href="notes.html">Field notes</a></li><li><a href="renewal.html">How renewal works</a></li><li><a href="#">Look up a batch</a></li></ul></div>
-          <div><h5>Help</h5><ul><li><a href="#">Shipping &amp; returns</a></li><li><a href="#">Manage your renewal</a></li><li><a href="#">FAQ</a></li><li><a href="#">WhatsApp us</a></li></ul></div>
+          <div><h5>Shop</h5><ul><li><a href="shop.html">Shop all</a></li><li><a href="product.html?p=the-duo">The Duo</a></li><li><a href="shop.html#rituals">Sets</a></li><li><a href="shop.html#loofahs">Loofahs</a></li><li><a href="shop.html#soap">Soap</a></li><li><a href="shop.html#gifts">Gifts</a></li></ul></div>
+          <div><h5>Learn</h5><ul><li><a href="renewal.html">How subscription works</a></li><li><a href="farm.html">Our farm</a></li><li><a href="notes.html">Field notes</a></li><li><a href="#">Look up a batch</a></li></ul></div>
+          <div><h5>Help</h5><ul><li><a href="#">Shipping &amp; returns</a></li><li><a href="account.html">Manage your subscription</a></li><li><a href="#">FAQ</a></li><li><a href="#">WhatsApp us</a></li></ul></div>
           <div><h5>Letters from the Delta</h5>
             <form class="letter" onsubmit="event.preventDefault(); window.toast('Thank you. Your first letter arrives next month.'); this.reset();">
               <label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Enter your email" required><button aria-label="Subscribe">${ARROW}</button></form>
@@ -83,10 +86,15 @@
     </aside>
     <aside class="drawer left" id="menu" aria-label="Menu" aria-hidden="true">
       <div class="drawer-head">${WM}<button class="icon-btn" data-close aria-label="Close">${I.close}</button></div>
-      <div class="drawer-body menu-links">${nav.map(([, h, t]) => `<a href="${h}">${t}${ARROW}</a>`).join("")}
-        <div style="margin-top:var(--s-7)" class="stack"><a class="small" href="#">Account</a><a class="small" href="#">Manage your renewal</a><a class="small" href="#">WhatsApp us</a></div></div>
+      <div class="drawer-body menu-links">${nav.map(([k, h, t]) => `<a href="${h}" data-k="${k}">${t}${ARROW}</a>`).join("")}
+        <div style="margin-top:var(--s-7)" class="stack"><a class="small" href="renewal.html">How subscription works</a><a class="small" href="notes.html">Field notes</a><a class="small" href="#">WhatsApp us</a></div></div>
     </aside>
     <div class="toast" role="status" aria-live="polite"></div>`);
+
+  /* ---------------------------------------------------------------- current nav item (shop categories follow the hash) */
+  window.syncNav = () => { const k = navKey(); $$(".site-header [data-k], .menu-links > a").forEach((a) => (a.dataset.k === k ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"))); };
+  addEventListener("hashchange", window.syncNav);
+  window.syncNav();
 
   /* ---------------------------------------------------------------- toast */
   let toastT;
@@ -149,9 +157,9 @@
       <div class="card-media">${p.badge ? `<span class="card-badge caps-s">${p.badge}</span>` : ""}
         <div class="ph"><img src="${a.sm}" alt="${p.name}" loading="lazy" style="${imgStyle(a)}"></div>
         ${b ? `<div class="ph alt"><img src="${b.sm}" alt="" loading="lazy" style="${imgStyle(b)}"></div>` : ""}
-        <button class="quick" data-add="${p.slug}">Quick add · ${p.renew ? AED(p.renew) : price}</button></div>
+        <button class="quick" data-add="${p.slug}">${p.renew ? `Subscribe · ${AED(p.renew)}` : `Quick add · ${price}`}</button></div>
       <div class="card-info"><div><div class="card-name">${p.name}</div><div class="card-sub">${p.sub}</div></div>
-        <div class="card-price num">${price}${p.renew ? `<span class="renew">${AED(p.renew)} on renewal</span>` : ""}</div></div></a>`;
+        <div class="card-price num">${price}${p.renew ? `<span class="renew">${AED(p.renew)} subscribed</span>` : ""}</div></div></a>`;
   };
   window.imgStyle = imgStyle;
 
@@ -216,6 +224,8 @@
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a[href]"); if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || a.target) return;
     const href = a.getAttribute("href"); if (!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("mailto")) return;
+    // same page with a new #hash (shop categories from the shop): let the browser jump, no fade, or the cover never lifts
+    const to = new URL(href, location.href); if (to.hash && to.pathname === location.pathname && to.search === location.search) return;
     if (reduce) return; e.preventDefault(); document.documentElement.classList.add("leaving"); setTimeout(() => (location.href = href), 320);
   });
   const ready = () => requestAnimationFrame(() => document.documentElement.classList.add("loaded"));

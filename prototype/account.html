@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My subscription — Al Reef &amp; Laurel</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* My subscription: the customer's own view (client meeting, Nov 2026).
+     How many they've bought, when the next one ships, and the ability to change or cancel. Sample customer, no backend. */
+  .acct-head { padding-block: var(--sec-s) var(--s-8); }
+  .acct-head .steps4 { margin-top: var(--s-8); }
+  .acct-head .steps4 .small { margin-top: var(--s-3); }
+  .acct-body { padding-bottom: var(--sec); }
+  [data-panel][hidden] { display: none; }
+  .panel-head { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s-4); flex-wrap: wrap; margin-bottom: var(--s-5); }
+
+  /* subscription cards */
+  .subs { display: grid; gap: var(--s-5); }
+  .sub { background: var(--cream); border: 1px solid var(--rule-soft); padding: var(--s-6); }
+  .sub-top { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: var(--s-5); align-items: start; }
+  .sub .thumb { display: block; width: 96px; aspect-ratio: 4 / 5; overflow: hidden; background: var(--photo-bg, #E6DBCC); }
+  .sub .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: var(--fx) var(--fy); transform: scale(var(--z, 1)); transform-origin: var(--fx) var(--fy); }
+  .sub-title { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
+  .sub-title .h3 a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px; text-decoration-thickness: 1px; transition: text-decoration-color var(--t-fast); }
+  .sub-title .h3 a:hover { text-decoration-color: currentColor; }
+  .sub-top .small { margin-top: var(--s-1); }
+  .sub-price { text-align: right; white-space: nowrap; }
+  .sub-price .num { display: block; font: 400 var(--fs-18)/1.4 var(--sans); color: var(--laurel); }
+  .sub-price .small { color: var(--accent-text); }
+  .pill { font: var(--bold) var(--fs-12)/1 var(--sans); letter-spacing: var(--track-caps); text-transform: uppercase; padding: 5px var(--s-3) 4px; border: 1px solid currentColor; border-radius: var(--r-pill); }
+  .pill.active { color: var(--laurel); }
+  .pill.paused { color: var(--accent-text); }
+  .pill.cancelled { color: var(--soft); }
+  .sub-block { margin-top: var(--s-5); padding-top: var(--s-5); border-top: 1px solid var(--rule-soft); }
+  .sub-next { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); flex-wrap: wrap; }
+  .tagbar { height: 4px; border-radius: var(--r-pill); background: var(--rule-soft); margin: var(--s-3) 0 var(--s-2); overflow: hidden; }
+  .tagbar i { display: block; height: 100%; border-radius: inherit; background: var(--clay); transition: width var(--t-ui) var(--ease); } /* the tag's fading ink, as a bar */
+  .sub-freq { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); flex-wrap: wrap; }
+  .sub-extras { list-style: none; margin-top: var(--s-3); }
+  .sub-extras li { display: flex; justify-content: space-between; gap: var(--s-4); padding: var(--s-2) 0; border-bottom: 1px solid var(--rule-soft); font: 300 var(--fs-14)/1.5 var(--sans); color: var(--laurel); }
+  .sub-extras li:last-child { border-bottom: 0; }
+  .sub-extras button { font: 300 var(--fs-13)/1.5 var(--sans); color: var(--soft); text-decoration: underline; text-underline-offset: 3px; margin-left: var(--s-3); }
+  .sub-actions { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; margin-top: var(--s-5); }
+  .text-btn { font: 400 var(--fs-14)/1 var(--sans); color: var(--soft); text-decoration: underline; text-underline-offset: 4px; padding: var(--s-3) 0; margin-left: auto; transition: color var(--t-fast); }
+  .text-btn:hover { color: var(--laurel); }
+  .sub-confirm { margin-top: var(--s-5); padding: var(--s-5); border: 1px solid var(--laurel); background: var(--linen); animation: lineIn var(--t-ui) var(--ease) both; }
+  .sub-confirm .small { margin-top: var(--s-2); }
+  .sub-confirm .sub-actions { margin-top: var(--s-4); }
+
+  /* add to the next delivery (Complete the set rows from the PDP) */
+  .addons { margin-top: var(--s-9); }
+  .addons .set-rows { margin-top: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 var(--gap-grid); }
+
+  /* orders */
+  .orders { border-top: 1px solid var(--laurel); }
+  .order { display: grid; grid-template-columns: 168px minmax(0, 1fr) 104px 208px; gap: var(--s-4); padding: var(--s-5) 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .order .caps-s { display: block; color: var(--soft); margin-bottom: var(--s-1); }
+  .order .items { font: 300 var(--fs-16)/1.6 var(--sans); color: var(--laurel); }
+  .order .items .soft { font-size: var(--fs-14); }
+  .order .total { text-align: right; font: 400 var(--fs-16)/1.6 var(--sans); color: var(--laurel); }
+  .order .st { text-align: right; font: 300 var(--fs-14)/1.6 var(--sans); color: var(--soft); }
+  .order .st b { display: block; font-weight: var(--bold); color: var(--laurel); }
+  .order .st button { font: 400 var(--fs-14)/1.6 var(--sans); color: var(--laurel); text-decoration: underline; text-underline-offset: 3px; margin-top: var(--s-1); }
+  .order.upcoming .caps-s { color: var(--accent-text); }
+
+  /* profile */
+  .prof { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-grid); }
+  .prof > div { background: var(--cream); border: 1px solid var(--rule-soft); padding: var(--s-6); display: flex; flex-direction: column; }
+  .prof .label { margin-bottom: var(--s-4); }
+  .prof .kv dd { font: 300 var(--fs-16)/1.6 var(--sans); color: var(--laurel); }
+  .prof .btn { align-self: flex-start; margin-top: auto; }
+  .prof .kv { margin-bottom: var(--s-5); }
+
+  @media (max-width: 860px) {
+    .sub { padding: var(--s-5); }
+    .sub-top { grid-template-columns: 72px minmax(0, 1fr); }
+    .sub .thumb { width: 72px; }
+    .sub-price { grid-column: 2; text-align: left; }
+    .addons .set-rows, .prof { grid-template-columns: minmax(0, 1fr); }
+    .order { grid-template-columns: minmax(0, 1fr) auto; }
+    .order .items, .order .st { grid-column: 1 / -1; }
+    .order .st { text-align: left; }
+    .acct-body .side { margin-bottom: var(--s-5); }
+    .acct-body .side .cat-link { white-space: nowrap; min-height: var(--hit); display: inline-flex; align-items: center; }
+  }
+  @media (max-width: 560px) {
+    .text-btn { margin-left: 0; }
+  }
+</style>
+</head>
+<body data-page="account">
+<main>
+
+  <!-- HELLO + AT A GLANCE · how many, when next, what it's saved them -->
+  <section class="wrap acct-head">
+    <span class="eyebrow caps" data-reveal>My subscription · sample customer</span>
+    <h1 class="h1" data-split>Hello, Layla.</h1>
+    <p class="lede soft" data-reveal data-hello style="--d:.2s;margin-top:var(--gap-text)"></p>
+    <div class="steps4" data-stats data-reveal style="--d:.3s"></div>
+  </section>
+
+  <!-- PANELS · subscriptions, orders, profile (same sidebar as the shop) -->
+  <section class="wrap acct-body">
+    <div class="shop-layout">
+      <nav class="side" aria-label="My account">
+        <span class="side-h">My account</span>
+        <button class="cat on" data-tab="subscriptions">Subscriptions <sup class="num" data-n-subs></sup></button>
+        <button class="cat" data-tab="orders">Orders <sup class="num" data-n-orders></sup></button>
+        <button class="cat" data-tab="profile">Profile</button>
+        <div class="sep"></div>
+        <a class="cat-link small soft" href="renewal.html" style="padding:var(--s-2) 0 var(--s-2) var(--s-3)">How subscription works</a>
+        <a class="cat-link small soft" href="#" data-toast="WhatsApp opens here in the live site" style="padding:var(--s-2) 0 var(--s-2) var(--s-3)">WhatsApp us</a>
+        <a class="cat-link small soft" href="#" data-reset style="padding:var(--s-2) 0 var(--s-2) var(--s-3)">Reset sample data</a>
+      </nav>
+
+      <div>
+        <div data-panel="subscriptions">
+          <div class="panel-head"><h2 class="h2 flush">Your subscriptions</h2><a class="link caps" href="shop.html">Add a subscription</a></div>
+          <div class="subs" data-subs></div>
+          <div class="addons" data-addons>
+            <div class="panel-head" style="margin-bottom:var(--s-2)"><div><span class="eyebrow caps">One-time, no extra delivery fee</span><h3 class="h3" data-addons-h>Add to your next delivery</h3></div></div>
+            <div class="set-rows" data-addon-rows></div>
+          </div>
+        </div>
+
+        <div data-panel="orders" hidden>
+          <div class="panel-head"><h2 class="h2 flush">Orders</h2><span class="small soft">Delivered by DHL across the UAE</span></div>
+          <div class="orders" data-orders></div>
+        </div>
+
+        <div data-panel="profile" hidden>
+          <div class="panel-head"><h2 class="h2 flush">Profile</h2></div>
+          <div class="prof">
+            <div><span class="label">Your details</span><dl class="kv"><dt>Name</dt><dd>Layla Mansour</dd><dt>Email</dt><dd>layla@example.com</dd><dt>WhatsApp</dt><dd>+971 50 ••• 4417</dd></dl><button class="btn btn-s" data-toast="Editing is not part of this prototype">Edit details</button></div>
+            <div><span class="label">Delivery address</span><dl class="kv"><dt>Home</dt><dd>Villa 12, Street 4<br>Al Safa 1, Dubai</dd><dt>Courier</dt><dd>DHL Express</dd></dl><button class="btn btn-s" data-toast="Editing is not part of this prototype">Change address</button></div>
+            <div><span class="label">Payment</span><dl class="kv"><dt>Card</dt><dd>Visa ending 4242</dd><dt>Charged</dt><dd>On each ship date, after your day-50 reminder</dd></dl><button class="btn btn-s" data-toast="Editing is not part of this prototype">Update card</button></div>
+            <div><span class="label">Reminders</span><dl class="kv"><dt>Day 50</dt><dd>WhatsApp, 10 days before each delivery</dd><dt>Letters</dt><dd>Field notes once a month</dd></dl><button class="btn btn-s" data-toast="Editing is not part of this prototype">Change reminders</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script src="assets/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const P = (s) => window.findProduct(s);
+  const AED = window.AED;
+
+  /* ---------------------------------------------- dates: sample data is always relative to today */
+  const DAY = 864e5;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const add = (d, n) => new Date(+d + n * DAY);
+  const days = (a, b) => Math.round((b - a) / DAY);
+  const fmt = (d) => new Date(d).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+  const fmtY = (d) => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  const later = (a, b) => (+a > +b ? +a : +b);
+
+  /* ---------------------------------------------- sample customer: two subscriptions, five orders */
+  const seed = () => ({
+    subs: [
+      { id: "duo", slug: "the-duo", variant: "Gentle", cycle: 60, since: +add(today, -169), last: +add(today, -49), next: +add(today, 11), deliveries: 3, status: "active", extras: [] },
+      { id: "l30", slug: "laurel-30", variant: "", cycle: 90, since: +add(today, -139), last: +add(today, -49), next: +add(today, 41), deliveries: 2, status: "active", extras: [] },
+    ],
+    orders: [
+      { no: "ARL-1131", date: +add(today, -6), items: [["the-hammam-chest", "Gift, to Mariam", "once"]], status: "shipped" },
+      { no: "ARL-1118", date: +add(today, -49), items: [["the-duo", "Subscription, 3rd delivery", "renew"], ["laurel-30", "Subscription, 2nd delivery", "renew"]], status: "delivered" },
+      { no: "ARL-1084", date: +add(today, -109), items: [["the-duo", "Subscription, 2nd delivery", "renew"]], status: "delivered" },
+      { no: "ARL-1052", date: +add(today, -139), items: [["laurel-30", "Subscription, first delivery", "renew"], ["the-hammam-mitt", "One-time", "once"]], status: "delivered" },
+      { no: "ARL-1006", date: +add(today, -169), items: [["the-duo", "Subscription, first set", "renew"]], status: "delivered" },
+    ],
+  });
+  const KEY = "arl-account-v1";
+  let S;
+  try { S = JSON.parse(localStorage.getItem(KEY)); } catch (e) { S = null; }
+  if (!S || !S.subs) S = seed();
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+  const lineTotal = (it) => (it[2] === "renew" ? P(it[0]).renew : P(it[0]).price);
+  const orderTotal = (o) => o.items.reduce((a, it) => a + lineTotal(it), 0);
+  const active = () => S.subs.filter((s) => s.status === "active");
+  const soonest = () => active().sort((a, b) => a.next - b.next)[0];
+
+  /* ---------------------------------------------- at a glance */
+  const renderHead = () => {
+    const nxt = soonest();
+    const saved = S.orders.reduce((a, o) => a + o.items.reduce((b, it) => b + (it[2] === "renew" ? P(it[0]).price - P(it[0]).renew : 0), 0), 0);
+    const first = Math.min(...S.orders.map((o) => o.date));
+    $("[data-hello]").textContent = `Member since ${new Date(first).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}. ` +
+      (nxt ? `Your next delivery, ${P(nxt.slug).name}, ships ${fmt(nxt.next)}.` : "Nothing is scheduled right now.");
+    $("[data-stats]").innerHTML = [
+      [active().length, "Active subscriptions"],
+      [nxt ? new Date(nxt.next).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "—", "Next delivery"],
+      [S.orders.length, "Orders so far"],
+      [AED(saved), "Saved by subscribing"],
+    ].map(([n, l]) => `<div><div class="n num">${n}</div><p class="small soft">${l}</p></div>`).join("");
+    $("[data-n-subs]").textContent = active().length;
+    $("[data-n-orders]").textContent = S.orders.length;
+  };
+
+  /* ---------------------------------------------- subscriptions */
+  const LABEL = { active: "Active", paused: "Paused", cancelled: "Cancelled" };
+  const subHTML = (s) => {
+    const p = P(s.slug), im = p.images[0];
+    const extras = s.extras.map((x, i) => `<li><span>${P(x).name} <span class="soft">· one-time</span></span><span class="num">${AED(P(x).price)}<button data-act="unextra" data-i="${i}">Remove</button></span></li>`).join("");
+    const total = p.renew + s.extras.reduce((a, x) => a + P(x).price, 0);
+    let state = "";
+    if (s.status === "active") {
+      const span = Math.max(1, days(s.last, s.next)), d = Math.min(span, Math.max(0, days(s.last, today)));
+      const remind = add(s.next, -10);
+      state = `<div class="sub-block">
+          <div class="sub-next"><span class="label">Next delivery</span><span class="h4 num">${fmt(s.next)}${extras ? ` · ${AED(total)}` : ""}</span></div>
+          <div class="tagbar" role="img" aria-label="Day ${d} of ${span}"><i style="width:${(d / span) * 100}%"></i></div>
+          <p class="small soft">Day ${d} of ${span}. ${+remind > +today ? `We’ll WhatsApp you on ${fmt(remind)}, before anything is charged.` : "Your day-50 reminder has been sent."}</p>
+          ${extras ? `<ul class="sub-extras"><li><span>${p.name} <span class="soft">· subscription</span></span><span class="num">${AED(p.renew)}</span></li>${extras}</ul>` : ""}
+        </div>
+        <div class="sub-block sub-freq"><span class="label">Delivers every</span>
+          <div class="chips">${[30, 60, 90].map((c) => `<button class="chip${c === s.cycle ? " on" : ""}" data-act="cycle" data-v="${c}" aria-pressed="${c === s.cycle}">${c} days</button>`).join("")}</div></div>
+        <div class="sub-actions"><button class="btn btn-s" data-act="now">Ship now</button><button class="btn btn-s" data-act="skip">Skip next delivery</button><button class="btn btn-s" data-act="pause">Pause</button><button class="text-btn" data-act="ask">Cancel subscription</button></div>`;
+    } else if (s.status === "paused") {
+      state = `<div class="sub-block"><p class="small soft">Paused. Nothing ships and nothing is charged until you resume.</p></div>
+        <div class="sub-actions"><button class="btn btn-solid btn-s" data-act="resume">Resume</button><button class="text-btn" data-act="ask">Cancel subscription</button></div>`;
+    } else {
+      state = `<div class="sub-block"><p class="small soft">Cancelled on ${fmt(s.ended)}. Nothing more will ship.</p></div>
+        <div class="sub-actions"><button class="btn btn-solid btn-s" data-act="restart">Restart subscription</button></div>`;
+    }
+    const confirm = s.asking ? `<div class="sub-confirm" role="alertdialog" aria-label="Cancel ${p.name}">
+        <p class="h4">Cancel your ${p.name} subscription?</p>
+        <p class="small soft">Nothing more will ship and you won’t be charged again. Pausing keeps your ${AED(p.price - p.renew)} saving for when you come back.</p>
+        <div class="sub-actions">${s.status === "active" ? `<button class="btn btn-solid btn-s" data-act="pause">Pause instead</button>` : ""}<button class="btn btn-s" data-act="keep">Keep it</button><button class="text-btn" data-act="cancel">Yes, cancel</button></div></div>` : "";
+    return `<article class="sub" data-id="${s.id}">
+      <div class="sub-top">
+        <a class="thumb" href="product.html?p=${p.slug}"><img src="${im.sm}" alt="" style="${window.imgStyle(im)}"></a>
+        <div><div class="sub-title"><h3 class="h3"><a href="product.html?p=${p.slug}">${p.name}</a></h3><span class="pill ${s.status}">${LABEL[s.status]}</span></div>
+          <p class="small soft">${p.sub}${s.variant ? ` · ${s.variant}` : ""}</p>
+          <p class="small soft">${s.deliveries} ${s.deliveries === 1 ? "delivery" : "deliveries"} since ${fmtY(s.since)}</p></div>
+        <div class="sub-price"><span class="num">${AED(p.renew)}</span><span class="small">per delivery · you save ${AED(p.price - p.renew)}</span></div>
+      </div>${state}${confirm}</article>`;
+  };
+  const renderSubs = () => {
+    const order = { active: 0, paused: 1, cancelled: 2 };
+    $("[data-subs]").innerHTML = [...S.subs].sort((a, b) => order[a.status] - order[b.status]).map(subHTML).join("");
+    const nxt = soonest();
+    $("[data-addons]").hidden = !nxt;
+    if (nxt) {
+      $("[data-addons-h]").textContent = `Add to your ${fmt(nxt.next)} delivery`;
+      $("[data-addon-rows]").innerHTML = ["laurel-16", "the-hammam-mitt", "guest-bar"].map((slug) => { const p = P(slug), im = p.images[0];
+        return `<div class="set-row"><div class="thumb"><img src="${im.sm}" alt="" style="${window.imgStyle(im)}"></div>
+          <div><a class="h4" href="product.html?p=${p.slug}">${p.name}</a><div class="small soft">${p.spec}</div><button class="btn btn-s" data-addon="${p.slug}">Add · ${AED(p.price)}</button></div></div>`; }).join("");
+    }
+  };
+
+  /* ---------------------------------------------- orders */
+  const renderOrders = () => {
+    const upcoming = active().sort((a, b) => a.next - b.next).map((s) => { const p = P(s.slug);
+      return `<div class="order upcoming"><div><span class="caps-s">Scheduled</span><span class="h4 num">${fmt(s.next)}</span></div>
+        <div class="items">${p.name} <span class="soft">· subscription</span>${s.extras.map((x) => `<br>${P(x).name} <span class="soft">· one-time</span>`).join("")}</div>
+        <div class="total num">${AED(p.renew + s.extras.reduce((a, x) => a + P(x).price, 0))}</div>
+        <div class="st"><b>Not charged yet</b><button data-goto="subscriptions">Change</button></div></div>`; }).join("");
+    const past = S.orders.map((o) => `<div class="order"><div><span class="caps-s">#${o.no}</span><span class="h4 num">${fmtY(o.date)}</span></div>
+        <div class="items">${o.items.map((it) => `${P(it[0]).name} <span class="soft">· ${it[1]}</span>`).join("<br>")}</div>
+        <div class="total num">${AED(orderTotal(o))}</div>
+        <div class="st">${o.status === "shipped" ? `<b>On its way</b>With DHL · arrives ${fmt(add(o.date, 8))}<br><button data-toast="DHL tracking opens here in the live site">Track with DHL</button>` : `<b>Delivered</b>${fmt(add(o.date, 2))}<br><button data-reorder="${o.items.find((it) => it[2] === "once")?.[0] || o.items[0][0]}">Buy again</button>`}</div></div>`).join("");
+    $("[data-orders]").innerHTML = upcoming + past;
+  };
+
+  const render = () => { renderHead(); renderSubs(); renderOrders(); save(); };
+  render();
+
+  /* ---------------------------------------------- actions */
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-toast]"); if (t) { e.preventDefault(); window.toast(t.dataset.toast); return; }
+    if (e.target.closest("[data-reset]")) { e.preventDefault(); S = seed(); render(); window.toast("Sample data reset"); return; }
+    const g = e.target.closest("[data-goto]"); if (g) { tab(g.dataset.goto); scrollTo({ top: 0, behavior: "smooth" }); return; }
+    const r = e.target.closest("[data-reorder]"); if (r) { window.addToBag(r.dataset.reorder, { mode: "once" }); return; }
+    const ad = e.target.closest("[data-addon]");
+    if (ad) { const s = soonest(); if (!s) return; s.extras.push(ad.dataset.addon); render(); window.toast(`${P(ad.dataset.addon).name} added to your ${fmt(s.next)} delivery`); return; }
+    const b = e.target.closest("[data-act]"); if (!b) return;
+    const card = b.closest(".sub"); const s = S.subs.find((x) => x.id === card.dataset.id); const name = P(s.slug).name;
+    const act = b.dataset.act;
+    if (act === "cycle") { s.cycle = +b.dataset.v; s.next = later(add(s.last, s.cycle), add(today, 1)); window.toast(`${name} now every ${s.cycle} days. Next: ${fmt(s.next)}`); }
+    if (act === "now") { s.next = +add(today, 1); window.toast(`${name} ships tomorrow with DHL`); }
+    if (act === "skip") { s.next = +add(s.next, s.cycle); window.toast(`Skipped. Next ${name}: ${fmt(s.next)}`); }
+    if (act === "pause") { s.status = "paused"; s.asking = false; s.held = s.next; window.toast(`${name} paused. Resume any time.`); }
+    if (act === "resume") { s.status = "active"; s.next = later(s.held || s.next, add(today, 3)); window.toast(`${name} resumed. Next: ${fmt(s.next)}`); }
+    if (act === "ask") s.asking = true;
+    if (act === "keep") s.asking = false;
+    if (act === "cancel") { s.status = "cancelled"; s.asking = false; s.ended = +today; s.extras = []; window.toast(`${name} cancelled`); }
+    if (act === "restart") { s.status = "active"; s.next = +add(today, 2); window.toast(`${name} restarted. First delivery ${fmt(s.next)}`); }
+    if (act === "unextra") s.extras.splice(+b.dataset.i, 1);
+    render();
+    const again = document.querySelector(`.sub[data-id="${s.id}"]`);
+    if (act === "ask") again.querySelector(".sub-confirm button")?.focus();
+    else if (act !== "unextra") (again.querySelector(`[data-act="${act}"]`) || again.querySelector("[data-act]"))?.focus({ preventScroll: true });
+  });
+
+  /* ---------------------------------------------- tabs, deep-linkable: account.html#orders */
+  const tabs = $$(".side [data-tab]");
+  const tab = (k) => {
+    if (!tabs.some((t) => t.dataset.tab === k)) k = "subscriptions";
+    tabs.forEach((t) => { const on = t.dataset.tab === k; t.classList.toggle("on", on); t.setAttribute("aria-pressed", on); });
+    $$("[data-panel]").forEach((p) => (p.hidden = p.dataset.panel !== k));
+    history.replaceState(null, "", k === "subscriptions" ? "account.html" : "#" + k);
+  };
+  tabs.forEach((t) => t.addEventListener("click", () => tab(t.dataset.tab)));
+  addEventListener("hashchange", () => tab(location.hash.slice(1)));
+  tab(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
