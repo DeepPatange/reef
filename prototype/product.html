@@ -125,7 +125,7 @@
         <details class="acc"><summary>Delivery &amp; returns <span class="pm"></span></summary><div class="acc-body"><div class="acc-inner">Free delivery across the UAE in 2 working days. Saudi Arabia from April 2027. Unopened sets can be returned within 14 days.</div></div></details>
       </div>
 
-      <div class="set-rows" data-reveal><span class="label">Complete the set</span><div data-set></div></div>
+      <div class="set-rows" data-reveal><span class="label">Complete the set</span><p class="small soft" data-set-note style="margin-bottom:var(--s-2)"></p><div data-set></div></div>
     </div>
   </section>
 
@@ -218,6 +218,7 @@
     $("[data-sticky-price]").textContent = window.AED(unit() * qty);
     $$(".opt").forEach((o) => o.classList.toggle("on", o.dataset.mode === mode));
     const cw = $("[data-cycle-wrap]"); if (cw) { cw.style.opacity = mode === "renew" ? 1 : .35; cw.style.pointerEvents = mode === "renew" ? "" : "none"; }
+    renderSet();
   };
   if (p.renew) { $("[data-p-renew]").textContent = window.AED(p.renew); $("[data-p-once]").textContent = window.AED(p.price); }
   $$(".opt").forEach((o) => o.addEventListener("click", (e) => { e.preventDefault(); mode = o.dataset.mode; update(); }));
@@ -226,18 +227,32 @@
   $$("[data-add-main]").forEach((b) => b.addEventListener("click", () => {
     const fib = $("[data-fibre] .chip.on"); const lbl = b.innerHTML; b.textContent = "Added";
     window.addToBag(p.slug, { mode, qty, cycle, variant: fib ? fib.dataset.v : "" }); setTimeout(() => (b.innerHTML = lbl, update()), 1400); }));
+  // complete the set: extras augment the product on this page, they don't replace it.
+  // "Add to set" puts this product (with the options chosen above) in the bag if it isn't there yet, plus the extra.
+  // Extras follow the set: subscribed sets take extras on the same cycle; one-time sets take them one-time.
+  const setSlugs = ["laurel-30", "the-back-strap", "guest-bar", "the-hammam-mitt", "laurel-16"].filter((x) => x !== slug).slice(0, 3);
+  const extraMode = (q) => (mode === "renew" && q.renew ? "renew" : "once");
+  function renderSet() {
+    const note = $("[data-set-note]"); if (!note) return;
+    note.textContent = mode === "renew" ? `Extras join your ${p.name} and renew with it, every ${cycle} days.` : `Extras ship together with your ${p.name}.`;
+    $("[data-set]").innerHTML = setSlugs.map((x) => { const q = window.findProduct(x), im = q.images[0], renew = extraMode(q) === "renew";
+      return `<div class="set-row"><a class="thumb" href="product.html?p=${q.slug}"><img src="${im.sm}" alt="" style="--fx:${im.fx}%;--fy:${im.fy}%;--z:${im.z}"></a>
+        <div><a class="h4" href="product.html?p=${q.slug}">${q.name}</a><div class="small soft">${q.spec}</div><button class="btn" data-set-add="${q.slug}">Add to set</button></div>
+        <span class="num small" style="color:var(--laurel);text-align:right">${window.AED(renew ? q.renew : q.price)}${renew ? `<br><span class="soft">per delivery</span>` : ""}</span></div>`; }).join("");
+  }
+  $("[data-set]").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-set-add]"); if (!b) return;
+    const q = window.findProduct(b.dataset.setAdd), fib = $("[data-fibre] .chip.on"), variant = fib ? fib.dataset.v : "";
+    if (!window.bagHas(p.slug, mode, variant)) window.addToBag(p.slug, { mode, qty, cycle, variant }); // the set you're looking at
+    window.addToBag(q.slug, { mode: extraMode(q), cycle, variant: `with ${p.name}` });                   // plus the extra
+    b.textContent = "Added"; setTimeout(() => (b.textContent = "Add to set"), 1400);
+  });
   update();
 
   // sticky add-to-bag once the buy box scrolls away
   const sb = $(".sticky-buy"), anchor = $(".add-row");
   new IntersectionObserver(([e]) => { const on = !e.isIntersecting && e.boundingClientRect.top < 0; sb.classList.toggle("on", on); sb.setAttribute("aria-hidden", !on); }).observe(anchor);
 
-  // complete the set (Frama cross-sell rows)
-  const setSlugs = ["laurel-30", "the-back-strap", "guest-bar", "the-hammam-mitt", "laurel-16"].filter((x) => x !== slug).slice(0, 3);
-  $("[data-set]").innerHTML = setSlugs.map((x) => { const q = window.findProduct(x), im = q.images[0];
-    return `<div class="set-row"><a class="thumb" href="product.html?p=${q.slug}"><img src="${im.sm}" alt="" style="--fx:${im.fx}%;--fy:${im.fy}%;--z:${im.z}"></a>
-      <div><a class="h4" href="product.html?p=${q.slug}">${q.name}</a><div class="small soft">${q.spec}</div><button class="btn" data-add="${q.slug}" data-mode="once">Add to bag</button></div>
-      <span class="num small" style="color:var(--laurel)">${window.AED(q.price)}</span></div>`; }).join("");
   if (!p.renew) $("[data-terms]").remove();
   $("[data-grade]").textContent = p.spec;
 

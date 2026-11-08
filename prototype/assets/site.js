@@ -132,6 +132,7 @@
         <div class="qty"><button data-q="${i}" data-d="-1" aria-label="Less">−</button><span class="num">${l.qty}</span><button data-q="${i}" data-d="1" aria-label="More">+</button></div></div>
         <div class="num" style="text-align:right">${AED(l.price * l.qty)}<br><button class="small soft" data-rm="${i}" style="margin-top:var(--s-6);text-decoration:underline">Remove</button></div></div>`; }).join("");
   };
+  window.bagHas = (slug, mode, variant = "") => bag.some((l) => l.slug === slug && l.mode === mode && (l.variant || "") === variant);
   window.addToBag = (slug, opts = {}) => {
     const p = window.findProduct(slug);
     const mode = opts.mode || (p.renew ? "renew" : "once");
